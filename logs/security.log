@@ -1,9 +1,13 @@
-2025-07-18 01:42:31,999 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
-2025-07-18 01:42:32,001 - INFO - app.core.security - [Redis] AOF persistence already enabled.
-2025-07-18 01:47:08,627 - INFO - app.core.security - [Redis] Connection closed successfully.
-2025-07-18 01:47:11,296 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
-2025-07-18 01:47:11,299 - INFO - app.core.security - [Redis] AOF persistence already enabled.
-2025-07-18 01:47:15,500 - INFO - app.core.security - [Redis] Connection closed successfully.
-2025-07-18 01:47:17,907 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
-2025-07-18 01:47:17,910 - INFO - app.core.security - [Redis] AOF persistence already enabled.
-2025-07-18 01:48:52,424 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 04:22:53,181 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 04:22:53,184 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 04:24:22,062 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 04:25:21,378 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 04:25:21,379 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 04:26:25,428 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 04:27:29,601 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 04:27:29,602 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 04:28:04,506 - INFO - app.core.security - LOGIN: user_id=1, email=dhanush777ss@gmail.com, user_type=demo, time=2025-07-18T11:28:04.506376
+2025-07-18 04:29:16,606 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 04:43:05,883 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 04:43:05,884 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 04:44:44,296 - INFO - app.core.security - [Redis] Connection closed successfully.

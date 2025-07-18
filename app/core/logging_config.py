@@ -60,7 +60,7 @@ def setup_stream_logger(name: str, level=logging.ERROR) -> logging.Logger:
 
 # Order lifecycle tracking
 
-orders_logger = setup_file_logger("orders", "orders.log", logging.INFO)
+orders_logger = setup_file_logger("orders", "orders.log", logging.DEBUG if not IS_PRODUCTION else logging.INFO)
 autocutoff_logger = setup_file_logger("autocutoff", "autocutoff.log", logging.DEBUG if not IS_PRODUCTION else logging.INFO)
 app_logger = setup_file_logger("app", "app.log", logging.DEBUG if not IS_PRODUCTION else logging.INFO)
 
@@ -78,7 +78,7 @@ error_logger = setup_file_logger("error", "error.log", logging.ERROR)
 # These loggers are set to WARNING to reduce disk usage while retaining error visibility
 
 # High-frequency operational loggers
-cache_logger = setup_file_logger("cache", "cache.log", logging.WARNING)
+cache_logger = setup_file_logger("cache", "cache.log", logging.DEBUG if not IS_PRODUCTION else logging.INFO)
 websocket_logger = setup_file_logger("websocket", "websocket.log", logging.DEBUG)
 market_data_logger = setup_file_logger("market_data", "market_data.log", logging.WARNING)
 redis_logger = setup_file_logger("redis", "redis.log", logging.WARNING)

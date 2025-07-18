@@ -301,6 +301,7 @@ async def update_user_static_orders(user_id: int, db: AsyncSession, redis_client
         }
         await set_user_static_orders_cache(redis_client, user_id, static_orders_data)
         orders_logger.info(f"Updated static orders cache for user {user_id} with {len(open_orders_data)} open orders and {len(pending_orders_data)} pending orders")
+        orders_logger.debug(f"[CACHE] static_orders_data for user {user_id}: open_orders={[o['order_id'] for o in open_orders_data]}, pending_orders={[o['order_id'] for o in pending_orders_data]}")
         
         # FIXED: Also update balance/margin cache to ensure websocket gets correct values after autocutoff
         try:
@@ -1596,6 +1597,12 @@ async def close_order(
                     # Log the user's wallet balance and margin after commit
                     orders_logger.info(f"AFTER COMMIT: User {db_user_locked.id} wallet_balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
                     
+                    # --- PATCH: Update static orders cache and log ---
+                    orders_logger.debug(f"[CACHE] Calling update_user_static_orders for user_id={db_user_locked.id}, user_type={user_type}")
+                    static_orders_data = await update_user_static_orders(db_user_locked.id, db, redis_client, user_type)
+                    orders_logger.debug(f"[CACHE] After update_user_static_orders: open_orders={[o['order_id'] for o in static_orders_data.get('open_orders', [])]}, pending_orders={[o['order_id'] for o in static_orders_data.get('pending_orders', [])]}")
+                    # --- END PATCH ---
+
                     # Update user data cache with the latest values from db_user_locked
                     user_data_to_cache = {
                         "id": db_user_locked.id,
@@ -1799,48 +1806,74 @@ async def close_order(
                 await db.refresh(db_order)
                 
                 # Log the user's wallet balance and margin after commit
+                # orders_logger.info(f"AFTER COMMIT: User {db_user_locked.id} wallet_balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
+                
+                # # Define variables needed for WebSocket updates
+                # user_id = db_user_locked.id  # Changed from db_order.order_user_id to db_user_locked.id
+                # user_type_str = 'demo' if isinstance(db_user_locked, DemoUser) else 'live'
+                
+                # # Update user data cache with the latest values from db_user_locked
+                # user_data_to_cache = {
+                #     "id": db_user_locked.id,
+                #     "email": getattr(db_user_locked, 'email', None),
+                #     "group_name": db_user_locked.group_name,
+                #     "leverage": db_user_locked.leverage,
+                #     "user_type": user_type_str,
+                #     "account_number": getattr(db_user_locked, 'account_number', None),
+                #     "wallet_balance": db_user_locked.wallet_balance,
+                #     "margin": db_user_locked.margin,
+                #     "first_name": getattr(db_user_locked, 'first_name', None),
+                #     "last_name": getattr(db_user_locked, 'last_name', None),
+                #     "country": getattr(db_user_locked, 'country', None),
+                #     "phone_number": getattr(db_user_locked, 'phone_number', None)
+                # }
+                # orders_logger.info(f"Setting user data cache for user {user_id} with wallet_balance={user_data_to_cache['wallet_balance']}, margin={user_data_to_cache['margin']}")
+                # await set_user_data_cache(redis_client, user_id, user_data_to_cache, user_type_str)
+                # orders_logger.info(f"User data cache updated for user {user_id}")
+                
+                # # Update balance/margin cache for websocket
+                # await set_user_balance_margin_cache(redis_client, user_id, db_user_locked.wallet_balance, db_user_locked.margin)
+                # orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
+                
+                # # Update static orders cache and publish websocket updates after commit
+                # await update_user_static_orders(user_id, db, redis_client, user_type_str)
+                # orders_logger.info(f"Publishing order update for user {user_id}")
+                # await publish_order_update(redis_client, user_id)
+                # orders_logger.info(f"Publishing user data update for user {user_id}")
+                # await publish_user_data_update(redis_client, user_id)
+                # orders_logger.info(f"Publishing market data trigger")
+                # await publish_market_data_trigger(redis_client)
+                # return OrderResponse.model_validate(db_order, from_attributes=True)
                 orders_logger.info(f"AFTER COMMIT: User {db_user_locked.id} wallet_balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
-                
-                # Define variables needed for WebSocket updates
-                user_id = db_user_locked.id  # Changed from db_order.order_user_id to db_user_locked.id
-                user_type_str = 'demo'
-                
-                # Update user data cache with the latest values from db_user_locked
-                user_data_to_cache = {
-                    "id": db_user_locked.id,
-                    "email": getattr(db_user_locked, 'email', None),
-                    "group_name": db_user_locked.group_name,
-                    "leverage": db_user_locked.leverage,
-                    "user_type": user_type_str,
-                    "account_number": getattr(db_user_locked, 'account_number', None),
-                    "wallet_balance": db_user_locked.wallet_balance,
-                    "margin": db_user_locked.margin,
-                    "first_name": getattr(db_user_locked, 'first_name', None),
-                    "last_name": getattr(db_user_locked, 'last_name', None),
-                    "country": getattr(db_user_locked, 'country', None),
-                    "phone_number": getattr(db_user_locked, 'phone_number', None)
-                }
-                orders_logger.info(f"Setting user data cache for user {user_id} with wallet_balance={user_data_to_cache['wallet_balance']}, margin={user_data_to_cache['margin']}")
-                await set_user_data_cache(redis_client, user_id, user_data_to_cache, user_type_str)
-                orders_logger.info(f"User data cache updated for user {user_id}")
-                
-                # Update balance/margin cache for websocket
-                await set_user_balance_margin_cache(redis_client, user_id, db_user_locked.wallet_balance, db_user_locked.margin)
-                orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
-                
-                await update_user_static_orders(user_id, db, redis_client, user_type_str)
-                
-                # Publish updates in the correct order
-                orders_logger.info(f"Publishing order update for user {user_id}")
-                await publish_order_update(redis_client, user_id)
-                
-                orders_logger.info(f"Publishing user data update for user {user_id}")
-                await publish_user_data_update(redis_client, user_id)
-                
-                orders_logger.info(f"Publishing market data trigger")
-                await publish_market_data_trigger(redis_client)
-                
+
+                user_id = db_user_locked.id
+                user_type_str = 'demo' if isinstance(db_user_locked, DemoUser) else 'live'
+                order_symbol = db_order.order_company_name.upper()
+
+                from app.services.pending_orders import add_user_to_symbol_cache
+                async def push_websocket_updates():
+                    try:
+                        orders_logger.info(f"[PUBLISH_ASYNC] Triggering websocket updates for user {user_id}")
+                        await publish_order_update(redis_client, user_id)
+                        await publish_user_data_update(redis_client, user_id)
+                        await publish_market_data_trigger(redis_client)
+                    except Exception as e:
+                        orders_logger.error(f"[PUBLISH_ASYNC] Failed to push websocket updates for user {user_id}: {e}", exc_info=True)
+
+                if background_tasks:
+                    background_tasks.add_task(update_user_cache, user_id, db, redis_client, user_type_str)
+                    background_tasks.add_task(update_portfolio, user_id, db, redis_client, user_type_str)
+                    background_tasks.add_task(add_user_to_symbol_cache, redis_client, order_symbol, user_id, user_type_str)
+                    background_tasks.add_task(push_websocket_updates)
+                else:
+                    import asyncio
+                    asyncio.create_task(update_user_cache(user_id, db, redis_client, user_type_str))
+                    asyncio.create_task(update_portfolio(user_id, db, redis_client, user_type_str))
+                    asyncio.create_task(add_user_to_symbol_cache(redis_client, order_symbol, user_id, user_type_str))
+                    asyncio.create_task(push_websocket_updates())
+
                 return OrderResponse.model_validate(db_order, from_attributes=True)
+
         except Exception as e:
             orders_logger.error(f"Error processing close order: {str(e)}", exc_info=True)
             raise HTTPException(status_code=500, detail=f"Error processing close order: {str(e)}")
@@ -2440,11 +2473,35 @@ async def add_stoploss(
             )
             
             # Update static orders cache
-            await update_user_static_orders(user_id_for_operation, db, redis_client, request.user_type)
+            # await update_user_static_orders(user_id_for_operation, db, redis_client, request.user_type)
             
-            # Publish updates to notify WebSocket clients
-            await publish_order_update(redis_client, user_id_for_operation)
-            await publish_user_data_update(redis_client, user_id_for_operation)
+            # # Publish updates to notify WebSocket clients
+            # await publish_order_update(redis_client, user_id_for_operation)
+            # await publish_user_data_update(redis_client, user_id_for_operation)
+
+            user_type_str = request.user_type
+            order_symbol = db_order.order_company_name.upper()
+            from app.services.pending_orders import add_user_to_symbol_cache
+
+            async def push_websocket_updates():
+                try:
+                    orders_logger.info(f"[PUBLISH_ASYNC] Triggering websocket updates for user {user_id_for_operation}")
+                    await publish_order_update(redis_client, user_id_for_operation)
+                    await publish_user_data_update(redis_client, user_id_for_operation)
+                    await publish_market_data_trigger(redis_client)
+                except Exception as e:
+                    orders_logger.error(f"[PUBLISH_ASYNC] Failed to push websocket updates for user {user_id_for_operation}: {e}", exc_info=True)
+
+            if background_tasks:
+                background_tasks.add_task(update_user_cache, user_id_for_operation, db, redis_client, user_type_str)
+                background_tasks.add_task(add_user_to_symbol_cache, redis_client, order_symbol, user_id_for_operation, user_type_str)
+                background_tasks.add_task(push_websocket_updates)
+            else:
+                import asyncio
+                asyncio.create_task(update_user_cache(user_id_for_operation, db, redis_client, user_type_str))
+                asyncio.create_task(add_user_to_symbol_cache(redis_client, order_symbol, user_id_for_operation, user_type_str))
+                asyncio.create_task(push_websocket_updates())
+
             
             return {
                 "order_id": updated_order.order_id,
@@ -2601,12 +2658,35 @@ async def add_takeprofit(
             )
             
             # Update static orders cache
-            await update_user_static_orders(user_id_for_operation, db, redis_client, request.user_type)
+            # await update_user_static_orders(user_id_for_operation, db, redis_client, request.user_type)
             
-            # Publish updates to notify WebSocket clients
-            await publish_order_update(redis_client, user_id_for_operation)
-            await publish_user_data_update(redis_client, user_id_for_operation)
+            # # Publish updates to notify WebSocket clients
+            # await publish_order_update(redis_client, user_id_for_operation)
+            # await publish_user_data_update(redis_client, user_id_for_operation)
             
+            user_type_str = request.user_type
+            order_symbol = db_order.order_company_name.upper()
+            from app.services.pending_orders import add_user_to_symbol_cache
+
+            async def push_websocket_updates():
+                try:
+                    orders_logger.info(f"[PUBLISH_ASYNC] Triggering websocket updates for user {user_id_for_operation}")
+                    await publish_order_update(redis_client, user_id_for_operation)
+                    await publish_user_data_update(redis_client, user_id_for_operation)
+                    await publish_market_data_trigger(redis_client)
+                except Exception as e:
+                    orders_logger.error(f"[PUBLISH_ASYNC] Failed to push websocket updates for user {user_id_for_operation}: {e}", exc_info=True)
+
+            if background_tasks:
+                background_tasks.add_task(update_user_cache, user_id_for_operation, db, redis_client, user_type_str)
+                background_tasks.add_task(add_user_to_symbol_cache, redis_client, order_symbol, user_id_for_operation, user_type_str)
+                background_tasks.add_task(push_websocket_updates)
+            else:
+                import asyncio
+                asyncio.create_task(update_user_cache(user_id_for_operation, db, redis_client, user_type_str))
+                asyncio.create_task(add_user_to_symbol_cache(redis_client, order_symbol, user_id_for_operation, user_type_str))
+                asyncio.create_task(push_websocket_updates())
+
             return {
                 "order_id": updated_order.order_id,
                 "takeprofit_id": updated_order.takeprofit_id,
@@ -2622,6 +2702,7 @@ async def add_takeprofit(
 @router.post("/cancel-stoploss", response_model=dict)
 async def cancel_stoploss(
     request: CancelStopLossRequest,
+    background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client),
     current_user: User | DemoUser = Depends(get_current_user)
@@ -2733,11 +2814,34 @@ async def cancel_stoploss(
                 action_type="STOPLOSS_CANCELLED"
             )
             
-            # Update static orders cache
-            await update_user_static_orders(user_id_for_operation, db, redis_client, request.user_type)
+            # # Update static orders cache
+            # await update_user_static_orders(user_id_for_operation, db, redis_client, request.user_type)
             
-            # Publish updates to notify WebSocket clients
-            await publish_order_update(redis_client, user_id_for_operation)
+            # # Publish updates to notify WebSocket clients
+            # await publish_order_update(redis_client, user_id_for_operation)
+
+            user_type_str = request.user_type
+            order_symbol = db_order.order_company_name.upper()
+            from app.services.pending_orders import add_user_to_symbol_cache
+
+            async def push_websocket_updates():
+                try:
+                    orders_logger.info(f"[PUBLISH_ASYNC] Triggering websocket updates for user {user_id_for_operation}")
+                    await publish_order_update(redis_client, user_id_for_operation)
+                    await publish_user_data_update(redis_client, user_id_for_operation)
+                    await publish_market_data_trigger(redis_client)
+                except Exception as e:
+                    orders_logger.error(f"[PUBLISH_ASYNC] Failed to push websocket updates for user {user_id_for_operation}: {e}", exc_info=True)
+
+            if 'background_tasks' in locals() and background_tasks:
+                background_tasks.add_task(update_user_cache, user_id_for_operation, db, redis_client, user_type_str)
+                background_tasks.add_task(add_user_to_symbol_cache, redis_client, order_symbol, user_id_for_operation, user_type_str)
+                background_tasks.add_task(push_websocket_updates)
+            else:
+                import asyncio
+                asyncio.create_task(update_user_cache(user_id_for_operation, db, redis_client, user_type_str))
+                asyncio.create_task(add_user_to_symbol_cache(redis_client, order_symbol, user_id_for_operation, user_type_str))
+                asyncio.create_task(push_websocket_updates())
             
             return {
                 "order_id": request.order_id,
@@ -2752,6 +2856,7 @@ async def cancel_stoploss(
 @router.post("/cancel-takeprofit", response_model=dict)
 async def cancel_takeprofit(
     request: CancelTakeProfitRequest,
+    background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client),
     current_user: User | DemoUser = Depends(get_current_user)
@@ -2864,10 +2969,33 @@ async def cancel_takeprofit(
             )
             
             # Update static orders cache
-            await update_user_static_orders(user_id_for_operation, db, redis_client, request.user_type)
+            # await update_user_static_orders(user_id_for_operation, db, redis_client, request.user_type)
             
-            # Publish updates to notify WebSocket clients
-            await publish_order_update(redis_client, user_id_for_operation)
+            # # Publish updates to notify WebSocket clients
+            # await publish_order_update(redis_client, user_id_for_operation)
+
+            user_type_str = request.user_type
+            order_symbol = db_order.order_company_name.upper()
+            from app.services.pending_orders import add_user_to_symbol_cache
+
+            async def push_websocket_updates():
+                try:
+                    orders_logger.info(f"[PUBLISH_ASYNC] Triggering websocket updates for user {user_id_for_operation}")
+                    await publish_order_update(redis_client, user_id_for_operation)
+                    await publish_user_data_update(redis_client, user_id_for_operation)
+                    await publish_market_data_trigger(redis_client)
+                except Exception as e:
+                    orders_logger.error(f"[PUBLISH_ASYNC] Failed to push websocket updates for user {user_id_for_operation}: {e}", exc_info=True)
+
+            if 'background_tasks' in locals() and background_tasks:
+                background_tasks.add_task(update_user_cache, user_id_for_operation, db, redis_client, user_type_str)
+                background_tasks.add_task(add_user_to_symbol_cache, redis_client, order_symbol, user_id_for_operation, user_type_str)
+                background_tasks.add_task(push_websocket_updates)
+            else:
+                import asyncio
+                asyncio.create_task(update_user_cache(user_id_for_operation, db, redis_client, user_type_str))
+                asyncio.create_task(add_user_to_symbol_cache(redis_client, order_symbol, user_id_for_operation, user_type_str))
+                asyncio.create_task(push_websocket_updates())
             
             return {
                 "order_id": request.order_id,

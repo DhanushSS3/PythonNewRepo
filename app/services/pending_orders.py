@@ -877,6 +877,16 @@ async def process_order_stoploss_takeprofit(
         if not group_name:
             logger.error(f"[SLTP_CHECK] No group name found for user {order_user_id}")
             return
+        # Check if this is a Barclays user and skip local SL/TP execution
+        group_settings = await get_group_settings_cache(redis_client, group_name)
+        # if group_settings and group_settings.get('sending_orders', '').lower() == 'barclays':
+        #     logger.info(f"[SLTP_CHECK] Skipping SL/TP execution for Barclays user {order_user_id} order {order_id} (handled by service provider)")
+        #     return
+        sending_orders = group_settings.get('sending_orders', '').lower() if group_settings else ''
+        user_type = user.get('user_type') if isinstance(user, dict) else getattr(user, 'user_type', None)
+        if sending_orders == 'barclays' and user_type == 'live':
+            logger.info(f"[SLTP_CHECK] Skipping SL/TP execution for Barclays live user {order_user_id} order {order_id} (handled by service provider)")
+            return
         # Get adjusted market price
         adjusted_price = await get_adjusted_market_price_cache(redis_client, group_name, symbol)
         if not adjusted_price:

@@ -254,7 +254,16 @@ async def adjusted_price_worker(redis_client: Redis):
                 except Exception:
                     continue
                 latest_market_data = message_data
-                await process_latest()
+                try:
+                    await process_latest()
+                except Exception as bpe:
+                    logger.error(f"[adjusted_price_worker] BrokenProcessPool detected: {bpe}. Shutting down worker.", exc_info=True)
+                    process_pool.shutdown(wait=True)
+                    return  # Exit the worker cleanly
+            except Exception as bpe:
+                logger.error(f"[adjusted_price_worker] BrokenProcessPool detected in main loop: {bpe}. Shutting down worker.", exc_info=True)
+                process_pool.shutdown(wait=True)
+                return  # Exit the worker cleanly
             except Exception as e:
                 logger.error(f"Error in adjusted_price_worker main loop: {e}", exc_info=True)
             await asyncio.sleep(0.01)

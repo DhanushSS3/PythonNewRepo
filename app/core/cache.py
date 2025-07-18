@@ -483,6 +483,7 @@ async def set_user_static_orders_cache(redis_client: Redis, user_id: int, static
         return
 
     key = f"{REDIS_USER_STATIC_ORDERS_KEY_PREFIX}{user_type}:{user_id}"
+    logger.debug(f"[CACHE][WRITE] Writing static_orders_data to {key}: open_orders={[o['order_id'] for o in static_orders_data.get('open_orders', [])]}, pending_orders={[o['order_id'] for o in static_orders_data.get('pending_orders', [])]}")
     try:
         # Ensure all Decimal values are handled by DecimalEncoder
         data_serializable = json.dumps(static_orders_data, cls=DecimalEncoder)
@@ -736,6 +737,9 @@ async def get_live_adjusted_buy_price_for_pair(redis_client: Redis, symbol: str,
     Cache Key Format: adjusted_market_price:{group}:{symbol}
     Value: {"buy": "1.12345", "sell": "...", "spread_value": "..."}
     """
+    user_group_name = user_group_name.strip().lower()
+    symbol = symbol.strip().upper()
+    
     cache_key = f"{REDIS_ADJUSTED_MARKET_PRICE_KEY_PREFIX}{user_group_name}:{symbol.upper()}"
     try:
         cached_data_json = await redis_client.get(cache_key)
@@ -775,6 +779,8 @@ async def get_live_adjusted_sell_price_for_pair(redis_client: Redis, symbol: str
     Cache Key Format: adjusted_market_price:{group}:{symbol}
     Value: {"buy": "1.12345", "sell": "...", "spread_value": "..."}
     """
+    user_group_name = user_group_name.strip().lower()
+    symbol = symbol.strip().upper()
     cache_key = f"{REDIS_ADJUSTED_MARKET_PRICE_KEY_PREFIX}{user_group_name}:{symbol.upper()}"
     try:
         cached_data_json = await redis_client.get(cache_key)
