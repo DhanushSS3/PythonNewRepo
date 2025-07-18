@@ -1,5 +1,530 @@
-2025-07-18 04:44:44,280 - INFO - app.firebase_stream - Firebase listener closed.
-2025-07-18 04:44:44,283 - INFO - app.firebase_stream - Firebase Admin event processing task finished.
-2025-07-18 04:44:44,284 - DEBUG - app - BarclaysMarginChecker heartbeat: loop is alive
-2025-07-18 04:44:44,296 - INFO - app - Redis connection closed
-2025-07-18 04:44:44,296 - INFO - app - Application shutdown completed
+2025-07-18 05:07:17,786 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:07:17,810 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:07:17,825 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:07:17,825 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:07:18,099 - INFO - app - Application starting up - Trading system initialized
+2025-07-18 05:07:18,099 - INFO - app - SL/TP Epsilon accuracy configured: 0.00001
+2025-07-18 05:07:18,099 - INFO - app - Environment: PRODUCTION
+2025-07-18 05:07:18,159 - INFO - app - Application startup initiated
+2025-07-18 05:07:18,159 - INFO - app - Initializing core services...
+2025-07-18 05:07:18,194 - INFO - app - Firebase initialized
+2025-07-18 05:07:18,194 - WARNING - app.dependencies.redis_client - [Redis] Client not initialized, attempting late connection.
+2025-07-18 05:07:18,215 - INFO - app - Redis initialized
+2025-07-18 05:07:18,691 - INFO - app - All group settings, group-symbol settings, and external symbol info cached in Redis at startup.
+2025-07-18 05:07:18,745 - INFO - app - [SWAP] daily_swap_charge_job triggered
+2025-07-18 05:07:18,745 - INFO - app - [AUTO-CUTOFF] update_all_users_dynamic_portfolio will run as a background asyncio task, not via APScheduler.
+2025-07-18 05:07:18,748 - INFO - app - Scheduler initialized
+2025-07-18 05:07:18,753 - INFO - app.firebase_stream - Starting Firebase Admin event processing task for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-18 05:07:18,755 - INFO - app.firebase_stream - Attempting to start Firebase Admin listener for path: 'datafeeds'.
+2025-07-18 05:07:19,939 - INFO - app.firebase_stream - Firebase Admin listener started successfully for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-18 05:07:19,946 - INFO - app - Starting stale cache cleanup task
+2025-07-18 05:07:19,979 - INFO - app - Cleaned up pending order stream for new trigger price format
+2025-07-18 05:07:19,979 - INFO - app - Background tasks initialized
+2025-07-18 05:07:20,618 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-18 05:07:20,619 - INFO - app - Application startup completed successfully
+2025-07-18 05:07:20,619 - INFO - app - Starting cache validation task
+2025-07-18 05:07:20,623 - INFO - app - Starting Barclays pending order margin checker task.
+2025-07-18 05:07:20,625 - INFO - app - Starting auto-cutoff order monitoring task.
+2025-07-18 05:07:20,627 - INFO - app - [AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio background loop
+2025-07-18 05:07:20,627 - INFO - app - [AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio job...
+2025-07-18 05:07:20,627 - INFO - app - [AUTO-CUTOFF] update_all_users_dynamic_portfolio heartbeat: task is alive and running.
+2025-07-18 05:07:20,627 - INFO - app - [AUTO-CUTOFF] Fetching all active users (live and demo)...
+2025-07-18 05:07:20,660 - INFO - app - Found 47 static orders cache entries to check
+2025-07-18 05:07:20,668 - INFO - app - [AUTO-CUTOFF] Found 18 live users and 11 demo users.
+2025-07-18 05:07:20,668 - INFO - app - [AUTO-CUTOFF] Processing 29 users for dynamic portfolio update...
+2025-07-18 05:07:20,668 - INFO - app - [AUTO-CUTOFF] Processing user 4 (live), group: Group B
+2025-07-18 05:07:20,669 - INFO - app - Validating cache for 29 users
+2025-07-18 05:07:20,678 - WARNING - app - User 4: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,687 - WARNING - app - Found stale cache entry for user 12, will be refreshed on next access
+2025-07-18 05:07:20,694 - WARNING - app - Found stale cache entry for user 5, will be refreshed on next access
+2025-07-18 05:07:20,695 - WARNING - app - Found stale cache entry for user 2, will be refreshed on next access
+2025-07-18 05:07:20,697 - WARNING - app - Found stale cache entry for user live:13, will be refreshed on next access
+2025-07-18 05:07:20,698 - WARNING - app - Found stale cache entry for user 4, will be refreshed on next access
+2025-07-18 05:07:20,698 - WARNING - app - User 5: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,699 - WARNING - app - Found stale cache entry for user live:8, will be refreshed on next access
+2025-07-18 05:07:20,701 - WARNING - app - Found stale cache entry for user live:19, will be refreshed on next access
+2025-07-18 05:07:20,702 - WARNING - app - Found stale cache entry for user live:12, will be refreshed on next access
+2025-07-18 05:07:20,703 - WARNING - app - Found stale cache entry for user 13, will be refreshed on next access
+2025-07-18 05:07:20,703 - WARNING - app - User 8: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,706 - WARNING - app - Found stale cache entry for user live:20, will be refreshed on next access
+2025-07-18 05:07:20,707 - WARNING - app - Found stale cache entry for user 6, will be refreshed on next access
+2025-07-18 05:07:20,709 - WARNING - app - Found stale cache entry for user 3, will be refreshed on next access
+2025-07-18 05:07:20,712 - WARNING - app - Found stale cache entry for user 16, will be refreshed on next access
+2025-07-18 05:07:20,714 - WARNING - app - Found stale cache entry for user live:16, will be refreshed on next access
+2025-07-18 05:07:20,716 - WARNING - app - Found stale cache entry for user 23, will be refreshed on next access
+2025-07-18 05:07:20,716 - WARNING - app - User 9: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,718 - WARNING - app - Found stale cache entry for user live:21, will be refreshed on next access
+2025-07-18 05:07:20,720 - WARNING - app - Found stale cache entry for user live:6, will be refreshed on next access
+2025-07-18 05:07:20,723 - WARNING - app - Found stale cache entry for user 18, will be refreshed on next access
+2025-07-18 05:07:20,724 - WARNING - app - Found stale cache entry for user 19, will be refreshed on next access
+2025-07-18 05:07:20,726 - WARNING - app - Found stale cache entry for user live:22, will be refreshed on next access
+2025-07-18 05:07:20,728 - WARNING - app - Found stale cache entry for user demo:1, will be refreshed on next access
+2025-07-18 05:07:20,729 - WARNING - app - Found stale cache entry for user live:2, will be refreshed on next access
+2025-07-18 05:07:20,730 - WARNING - app - Found stale cache entry for user 8, will be refreshed on next access
+2025-07-18 05:07:20,731 - WARNING - app - User 10: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,732 - WARNING - app - Found stale cache entry for user 25, will be refreshed on next access
+2025-07-18 05:07:20,734 - WARNING - app - Found stale cache entry for user 17, will be refreshed on next access
+2025-07-18 05:07:20,736 - WARNING - app - Found stale cache entry for user live:3, will be refreshed on next access
+2025-07-18 05:07:20,737 - WARNING - app - Found stale cache entry for user 21, will be refreshed on next access
+2025-07-18 05:07:20,737 - WARNING - app - Found stale cache entry for user 22, will be refreshed on next access
+2025-07-18 05:07:20,738 - WARNING - app - Found stale cache entry for user 20, will be refreshed on next access
+2025-07-18 05:07:20,741 - WARNING - app - Found stale cache entry for user live:5, will be refreshed on next access
+2025-07-18 05:07:20,742 - WARNING - app - Found stale cache entry for user live:18, will be refreshed on next access
+2025-07-18 05:07:20,742 - WARNING - app - User 11: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,744 - WARNING - app - Found stale cache entry for user live:17, will be refreshed on next access
+2025-07-18 05:07:20,746 - WARNING - app - Found stale cache entry for user live:23, will be refreshed on next access
+2025-07-18 05:07:20,748 - INFO - app - Completed stale cache cleanup task
+2025-07-18 05:07:20,753 - WARNING - app - User 13: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,763 - WARNING - app - User 14: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,775 - WARNING - app - User 16: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,785 - WARNING - app - User 17: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,794 - WARNING - app - User 18: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,802 - WARNING - app - User 19: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,810 - WARNING - app - User 20: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,816 - WARNING - app - User 21: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,823 - WARNING - app - User 22: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,830 - WARNING - app - User 23: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,837 - WARNING - app - User 25: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,843 - WARNING - app - User 26: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,869 - WARNING - app - User 1: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,883 - WARNING - app - User 2: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,895 - WARNING - app - User 3: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:20,899 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 4...
+2025-07-18 05:07:21,179 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 53.09608570183239096296889297% which is below threshold 100.0%
+2025-07-18 05:07:21,179 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 4: {'balance': '19815.43000000', 'equity': '1725.50597392100867503637049', 'margin': '3249.78', 'free_margin': '-1524.27402607899132496362951', 'profit_loss': '-18089.92402607899132496362951', 'margin_level': '53.09608570183239096296889297', 'positions': [{'order_id': '1016-005', 'order_company_name': 'AUDJPY', 'order_type': 'BUY', 'order_quantity': Decimal('10.00000000'), 'order_price': Decimal('99.52000000'), 'margin': Decimal('3249.77540855'), 'contract_value': Decimal('1000000.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 4, 'order_status': 'OPEN', 'commission': Decimal('100.00000000'), 'created_at': '2025-07-17T23:14:15', 'profit_loss': '-18089.92402607899132496362951', 'current_price': '96.8490000000'}], 'margin_call': True}
+2025-07-18 05:07:21,180 - INFO - app - [AUTO-CUTOFF] User 4 margin_level: 53.09608570183239096296889297
+2025-07-18 05:07:21,181 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 4
+2025-07-18 05:07:21,181 - INFO - app - [AUTO-CUTOFF] Processing user 5 (live), group: Admin
+2025-07-18 05:07:21,182 - WARNING - app - User 5: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:21,184 - WARNING - app - [AUTO-CUTOFF] No user data found for user 5 (live). Skipping portfolio update.
+2025-07-18 05:07:21,185 - INFO - app - [AUTO-CUTOFF] Processing user 8 (live), group: string
+2025-07-18 05:07:21,189 - WARNING - app - User 6: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:21,192 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-18 05:07:21,195 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 8.
+2025-07-18 05:07:21,195 - INFO - app - [AUTO-CUTOFF] Processing user 9 (live), group: Standard
+2025-07-18 05:07:21,202 - WARNING - app - User 12: Missing balance/margin cache, refreshing...
+2025-07-18 05:07:21,213 - INFO - app - Cache validation completed
+2025-07-18 05:07:21,376 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 9...
+2025-07-18 05:07:21,659 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 14.29340835235405624975821115% which is below threshold 100.0%
+2025-07-18 05:07:21,659 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 9: {'balance': '8436.59000000', 'equity': '1182.305000000000000000000000', 'margin': '8271.68', 'free_margin': '-7089.375000000000000000000000', 'profit_loss': '-7254.285000000000000000000000', 'margin_level': '14.29340835235405624975821115', 'positions': [{'order_id': '1000347-001', 'order_company_name': 'BTCUSD', 'order_type': 'BUY', 'order_quantity': Decimal('0.35000000'), 'order_price': Decimal('139205.60000000'), 'margin': Decimal('8271.68000000'), 'contract_value': Decimal('0.35000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 9, 'order_status': 'OPEN', 'commission': Decimal('206.79000000'), 'swap': 'None', 'created_at': '2025-07-17T04:29:22', 'profit_loss': '-7254.285000000000000000000000', 'current_price': '119069.9000000000'}], 'margin_call': True}
+2025-07-18 05:07:21,661 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 14.29340835235405624975821115
+2025-07-18 05:07:22,486 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:07:22,574 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:07:22,624 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:07:22,628 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:07:22,651 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:07:22,656 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:07:22,673 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:07:22,916 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:07:22,953 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:07:22,953 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:07:22,987 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:07:23,013 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:07:23,013 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:07:23,013 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:07:23,015 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:07:23,065 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:07:23,065 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:07:23,068 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:07:23,075 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:07:23,075 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:07:23,081 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:07:23,101 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:07:23,102 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:07:23,115 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:07:23,125 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:07:23,126 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:07:23,136 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:07:23,136 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:07:25,087 - INFO - app - [AUTO-CUTOFF] Sent margin call warning email (HTML) to user 9 at kodideladinesh123@gmail.com
+2025-07-18 05:07:25,097 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 9
+2025-07-18 05:07:25,097 - INFO - app - [AUTO-CUTOFF] Processing user 10 (live), group: Group B
+2025-07-18 05:07:25,192 - INFO - app - [BarclaysMarginChecker] User 4: free_margin=-1524.2740260789913, total_pending_margin=3.26463987, num_pending_orders=1
+2025-07-18 05:07:25,192 - INFO - app - [BarclaysMarginChecker] Considering cancellation: user 4, order 1142-001, order_margin=3.26463987, free_margin=-1524.2740260789913, total_pending_margin=3.26463987
+2025-07-18 05:07:25,196 - WARNING - app - [BarclaysMarginChecker] Cancelling order 1142-001 for user 4 (order_margin=3.26463987) due to insufficient margin.
+2025-07-18 05:07:25,265 - INFO - app.core.firebase - [FIREBASE] Payload being pushed to Firebase (all stringified): {'order_id': '1142-001', 'cancel_id': '1177-002', 'user_id': '4', 'order_type': 'SELL_LIMIT', 'timestamp': '2025-07-18T12:07:25.265476', 'status': 'CANCELLED', 'order_quantity': '0.01000000', 'order_status': 'AUTO-CANCELLED', 'contract_value': '1000.00000000', 'cancel_message': 'Auto-cancelled due to insufficient margin', 'account_type': 'live'}
+2025-07-18 05:07:25,545 - INFO - app.core.firebase - Order data (ID: 1142-001) sent to Firebase successfully.
+2025-07-18 05:07:25,553 - WARNING - app - [AUTO-CUTOFF] User 10 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:25,553 - INFO - app - [AUTO-CUTOFF] Processing user 11 (live), group: Group B
+2025-07-18 05:07:25,609 - WARNING - app - [AUTO-CUTOFF] User 11 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:25,609 - INFO - app - [AUTO-CUTOFF] Processing user 13 (live), group: Group B
+2025-07-18 05:07:25,611 - INFO - app - [BarclaysMarginChecker] Successfully cancelled order 1142-001 for user 4
+2025-07-18 05:07:25,653 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:25,653 - INFO - app - [AUTO-CUTOFF] Processing user 14 (live), group: Standard
+2025-07-18 05:07:26,063 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 14...
+2025-07-18 05:07:26,470 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 6.066442280383854002023261414% which is below threshold 100.0%
+2025-07-18 05:07:26,470 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 14: {'balance': '9902.02000000', 'equity': '575.976542378360903065897948', 'margin': '9494.47', 'free_margin': '-8918.493457621639096934102052', 'profit_loss': '-9326.043457621639096934102052', 'margin_level': '6.066442280383854002023261414', 'positions': [{'order_id': '1000330-001', 'order_company_name': 'BTCUSD', 'order_type': 'BUY', 'order_quantity': Decimal('0.40000000'), 'order_price': Decimal('141908.50000000'), 'margin': Decimal('9422.73000000'), 'contract_value': Decimal('0.40000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 14, 'order_status': 'OPEN', 'commission': Decimal('235.57000000'), 'created_at': '2025-07-15T23:00:09', 'profit_loss': '-9308.570000000000000000000000', 'current_price': '119226.0000000000'}, {'order_id': '1000332-001', 'order_company_name': 'AUDJPY', 'order_type': 'BUY', 'order_quantity': Decimal('0.10000000'), 'order_price': Decimal('97.09700000'), 'margin': Decimal('65.21517371'), 'contract_value': Decimal('10000.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 14, 'order_status': 'OPEN', 'commission': Decimal('1.00000000'), 'created_at': '2025-07-16T01:49:52', 'profit_loss': '-15.88496147421736084918368447', 'current_price': '96.8760000000'}, {'order_id': '1000333-001', 'order_company_name': 'AUDJPY', 'order_type': 'BUY', 'order_quantity': Decimal('0.01000000'), 'order_price': Decimal('97.09700000'), 'margin': Decimal('6.52134765'), 'contract_value': Decimal('1000.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 14, 'order_status': 'OPEN', 'commission': Decimal('0.10000000'), 'created_at': '2025-07-16T01:51:54', 'profit_loss': '-1.588496147421736084918368447', 'current_price': '96.8760000000'}], 'margin_call': True}
+2025-07-18 05:07:26,472 - INFO - app - [AUTO-CUTOFF] User 14 margin_level: 6.066442280383854002023261414
+2025-07-18 05:07:26,543 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 14
+2025-07-18 05:07:26,543 - INFO - app - [AUTO-CUTOFF] Processing user 16 (live), group: Standard
+2025-07-18 05:07:26,586 - WARNING - app - [AUTO-CUTOFF] User 16 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:26,586 - INFO - app - [AUTO-CUTOFF] Processing user 17 (live), group: Group B
+2025-07-18 05:07:26,619 - WARNING - app - [AUTO-CUTOFF] User 17 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:26,619 - INFO - app - [AUTO-CUTOFF] Processing user 18 (live), group: Group B
+2025-07-18 05:07:26,659 - WARNING - app - [AUTO-CUTOFF] User 18 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:26,659 - INFO - app - [AUTO-CUTOFF] Processing user 19 (live), group: Elite
+2025-07-18 05:07:26,702 - WARNING - app - [AUTO-CUTOFF] User 19 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:26,702 - INFO - app - [AUTO-CUTOFF] Processing user 20 (live), group: Standard
+2025-07-18 05:07:26,731 - WARNING - app - [AUTO-CUTOFF] User 20 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:26,731 - INFO - app - [AUTO-CUTOFF] Processing user 21 (live), group: Group B
+2025-07-18 05:07:26,770 - WARNING - app - [AUTO-CUTOFF] User 21 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:26,771 - INFO - app - [AUTO-CUTOFF] Processing user 22 (live), group: VIP
+2025-07-18 05:07:26,806 - WARNING - app - [AUTO-CUTOFF] User 22 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:26,806 - INFO - app - [AUTO-CUTOFF] Processing user 23 (live), group: Group B
+2025-07-18 05:07:26,838 - WARNING - app - [AUTO-CUTOFF] User 23 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:26,838 - INFO - app - [AUTO-CUTOFF] Processing user 25 (live), group: Group B
+2025-07-18 05:07:27,003 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 25...
+2025-07-18 05:07:27,294 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 4.798269048717957356206056645% which is below threshold 100.0%
+2025-07-18 05:07:27,294 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 25: {'balance': '6389.62000000', 'equity': '284.855000000000000000000000', 'margin': '5936.62', 'free_margin': '-5651.765000000000000000000000', 'profit_loss': '-6104.765000000000000000000000', 'margin_level': '4.798269048717957356206056645', 'positions': [{'order_id': '1031-001', 'order_company_name': 'BTCUSD', 'order_type': 'BUY', 'order_quantity': Decimal('0.10000000'), 'order_price': Decimal('179986.15000000'), 'margin': Decimal('5936.62000000'), 'contract_value': Decimal('0.10000000'), 'stop_loss': Decimal('118576.15000000'), 'take_profit': Decimal('118976.15000000'), 'order_user_id': 25, 'order_status': 'OPEN', 'commission': Decimal('23.75000000'), 'created_at': '2025-07-18T02:09:29', 'profit_loss': '-6104.765000000000000000000000', 'current_price': '119176.0'}], 'margin_call': True}
+2025-07-18 05:07:27,298 - INFO - app - [AUTO-CUTOFF] User 25 margin_level: 4.798269048717957356206056645
+2025-07-18 05:07:27,324 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 25
+2025-07-18 05:07:27,324 - INFO - app - [AUTO-CUTOFF] Processing user 26 (live), group: Royal+
+2025-07-18 05:07:27,386 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 26...
+2025-07-18 05:07:27,655 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 70.35064194859700826988690337% which is below threshold 100.0%
+2025-07-18 05:07:27,656 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 26: {'balance': '184345.81000000', 'equity': '103052.7650000000000000000000', 'margin': '146484.47', 'free_margin': '-43431.7050000000000000000000', 'profit_loss': '-81293.04500000000000000000000', 'margin_level': '70.35064194859700826988690337', 'positions': [{'order_id': Decimal('7987141755'), 'order_company_name': 'XAGUSD', 'order_type': 'BUY', 'order_quantity': Decimal('0.01000000'), 'order_price': Decimal('41.09800000'), 'margin': Decimal('19.54000000'), 'contract_value': Decimal('50.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 26, 'order_status': 'OPEN', 'commission': Decimal('0.10000000'), 'swap': Decimal('-0.00283800'), 'created_at': '2025-07-14T03:43:34', 'profit_loss': '-136.025000000000000000000000', 'current_price': '38.3795'}, {'order_id': Decimal('1116628265'), 'order_company_name': 'BTCUSD', 'order_type': 'BUY', 'order_quantity': Decimal('6.00000000'), 'order_price': Decimal('132091.90000000'), 'margin': Decimal('146464.93000000'), 'contract_value': Decimal('6.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 26, 'order_status': 'OPEN', 'commission': Decimal('3661.62000000'), 'swap': Decimal('-9621.57600000'), 'created_at': '2025-07-14T03:46:06', 'profit_loss': '-81157.02000000000000000000000', 'current_price': '119176.0'}], 'margin_call': True}
+2025-07-18 05:07:27,658 - INFO - app - [AUTO-CUTOFF] User 26 margin_level: 70.35064194859700826988690337
+2025-07-18 05:07:27,660 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 26
+2025-07-18 05:07:27,660 - INFO - app - [AUTO-CUTOFF] Processing user 1 (demo), group: Group B
+2025-07-18 05:07:27,692 - WARNING - app - [AUTO-CUTOFF] User 1 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:27,692 - INFO - app - [AUTO-CUTOFF] Processing user 2 (demo), group: 
+2025-07-18 05:07:27,693 - WARNING - app - [AUTO-CUTOFF] User 2 has no group_name set. Skipping portfolio update.
+2025-07-18 05:07:27,693 - INFO - app - [AUTO-CUTOFF] Processing user 3 (demo), group: string
+2025-07-18 05:07:27,700 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-18 05:07:27,701 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 3.
+2025-07-18 05:07:27,701 - INFO - app - [AUTO-CUTOFF] Processing user 4 (demo), group: Group B
+2025-07-18 05:07:27,719 - WARNING - app - [AUTO-CUTOFF] User 4 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:27,719 - INFO - app - [AUTO-CUTOFF] Processing user 5 (demo), group: None
+2025-07-18 05:07:27,720 - WARNING - app - [AUTO-CUTOFF] User 5 has no group_name set. Skipping portfolio update.
+2025-07-18 05:07:27,720 - INFO - app - [AUTO-CUTOFF] Processing user 6 (demo), group: None
+2025-07-18 05:07:27,721 - WARNING - app - [AUTO-CUTOFF] User 6 has no group_name set. Skipping portfolio update.
+2025-07-18 05:07:27,721 - INFO - app - [AUTO-CUTOFF] Processing user 9 (demo), group: Group B
+2025-07-18 05:07:27,792 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 9...
+2025-07-18 05:07:27,793 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 9, falling back to DB and updating cache.
+2025-07-18 05:07:28,224 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 9: {'balance': '8436.59000000', 'equity': '8436.59000000', 'margin': '8271.68', 'free_margin': '164.91000000', 'profit_loss': '0.0', 'margin_level': '101.9936699678904406360013927', 'positions': [], 'margin_call': False}
+2025-07-18 05:07:28,227 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 101.9936699678904406360013927
+2025-07-18 05:07:28,229 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 9
+2025-07-18 05:07:28,229 - INFO - app - [AUTO-CUTOFF] Processing user 10 (demo), group: Group B
+2025-07-18 05:07:28,342 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 10...
+2025-07-18 05:07:28,343 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 10, falling back to DB and updating cache.
+2025-07-18 05:07:28,630 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 10: {'balance': '9707.74000000', 'equity': '9707.74000000', 'margin': '0.0', 'free_margin': '9707.74000000', 'profit_loss': '0.0', 'margin_level': '0.0', 'positions': [], 'margin_call': False}
+2025-07-18 05:07:28,632 - INFO - app - [AUTO-CUTOFF] User 10 margin_level: 0.0
+2025-07-18 05:07:28,633 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 10
+2025-07-18 05:07:28,633 - INFO - app - [AUTO-CUTOFF] Processing user 11 (demo), group: Group B
+2025-07-18 05:07:28,769 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 11...
+2025-07-18 05:07:28,770 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 11, falling back to DB and updating cache.
+2025-07-18 05:07:29,147 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 11: {'balance': '14420.38000000', 'equity': '14420.38000000', 'margin': '0.0', 'free_margin': '14420.38000000', 'profit_loss': '0.0', 'margin_level': '0.0', 'positions': [], 'margin_call': False}
+2025-07-18 05:07:29,189 - INFO - app - [AUTO-CUTOFF] User 11 margin_level: 0.0
+2025-07-18 05:07:29,190 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 11
+2025-07-18 05:07:29,190 - INFO - app - [AUTO-CUTOFF] Processing user 12 (demo), group: Group B
+2025-07-18 05:07:29,260 - WARNING - app - [AUTO-CUTOFF] User 12 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:29,260 - INFO - app - [AUTO-CUTOFF] Processing user 13 (demo), group: Group B
+2025-07-18 05:07:29,289 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:07:35,621 - INFO - app - Starting stale cache cleanup task
+2025-07-18 05:07:35,625 - INFO - app - Found 47 static orders cache entries to check
+2025-07-18 05:07:35,630 - WARNING - app - Found stale cache entry for user 12, will be refreshed on next access
+2025-07-18 05:07:35,636 - WARNING - app - Found stale cache entry for user 5, will be refreshed on next access
+2025-07-18 05:07:35,638 - WARNING - app - Found stale cache entry for user 2, will be refreshed on next access
+2025-07-18 05:07:35,640 - WARNING - app - Found stale cache entry for user live:13, will be refreshed on next access
+2025-07-18 05:07:35,644 - WARNING - app - Found stale cache entry for user 4, will be refreshed on next access
+2025-07-18 05:07:35,646 - WARNING - app - Found stale cache entry for user live:8, will be refreshed on next access
+2025-07-18 05:07:35,648 - WARNING - app - Found stale cache entry for user live:19, will be refreshed on next access
+2025-07-18 05:07:35,650 - WARNING - app - Found stale cache entry for user live:12, will be refreshed on next access
+2025-07-18 05:07:35,652 - WARNING - app - Found stale cache entry for user 13, will be refreshed on next access
+2025-07-18 05:07:35,655 - WARNING - app - Found stale cache entry for user live:20, will be refreshed on next access
+2025-07-18 05:07:35,658 - WARNING - app - Found stale cache entry for user 6, will be refreshed on next access
+2025-07-18 05:07:35,659 - WARNING - app - Found stale cache entry for user 3, will be refreshed on next access
+2025-07-18 05:07:35,664 - WARNING - app - Found stale cache entry for user 16, will be refreshed on next access
+2025-07-18 05:07:35,666 - WARNING - app - Found stale cache entry for user live:16, will be refreshed on next access
+2025-07-18 05:07:35,671 - WARNING - app - Found stale cache entry for user 23, will be refreshed on next access
+2025-07-18 05:07:35,674 - WARNING - app - Found stale cache entry for user live:21, will be refreshed on next access
+2025-07-18 05:07:35,676 - WARNING - app - Found stale cache entry for user live:6, will be refreshed on next access
+2025-07-18 05:07:35,679 - WARNING - app - Found stale cache entry for user 18, will be refreshed on next access
+2025-07-18 05:07:35,680 - WARNING - app - Found stale cache entry for user 19, will be refreshed on next access
+2025-07-18 05:07:35,682 - WARNING - app - Found stale cache entry for user live:22, will be refreshed on next access
+2025-07-18 05:07:35,687 - WARNING - app - Found stale cache entry for user demo:1, will be refreshed on next access
+2025-07-18 05:07:35,688 - WARNING - app - Found stale cache entry for user live:2, will be refreshed on next access
+2025-07-18 05:07:35,693 - WARNING - app - Found stale cache entry for user 8, will be refreshed on next access
+2025-07-18 05:07:35,696 - WARNING - app - Found stale cache entry for user 25, will be refreshed on next access
+2025-07-18 05:07:35,700 - WARNING - app - Found stale cache entry for user 17, will be refreshed on next access
+2025-07-18 05:07:35,703 - WARNING - app - Found stale cache entry for user live:3, will be refreshed on next access
+2025-07-18 05:07:35,705 - WARNING - app - Found stale cache entry for user 21, will be refreshed on next access
+2025-07-18 05:07:35,707 - WARNING - app - Found stale cache entry for user 22, will be refreshed on next access
+2025-07-18 05:07:35,708 - WARNING - app - Found stale cache entry for user 20, will be refreshed on next access
+2025-07-18 05:07:35,712 - WARNING - app - Found stale cache entry for user live:5, will be refreshed on next access
+2025-07-18 05:07:35,714 - WARNING - app - Found stale cache entry for user live:18, will be refreshed on next access
+2025-07-18 05:07:35,719 - WARNING - app - Found stale cache entry for user live:17, will be refreshed on next access
+2025-07-18 05:07:35,721 - WARNING - app - Found stale cache entry for user live:23, will be refreshed on next access
+2025-07-18 05:07:35,723 - INFO - app - Completed stale cache cleanup task
+2025-07-18 05:07:59,297 - INFO - app - [AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio job...
+2025-07-18 05:07:59,302 - INFO - app - [AUTO-CUTOFF] update_all_users_dynamic_portfolio heartbeat: task is alive and running.
+2025-07-18 05:07:59,302 - INFO - app - [AUTO-CUTOFF] Fetching all active users (live and demo)...
+2025-07-18 05:07:59,476 - INFO - app - Application shutdown initiated
+2025-07-18 05:07:59,486 - INFO - app - Scheduler shutdown completed
+2025-07-18 05:07:59,561 - INFO - app - [AUTO-CUTOFF] Found 18 live users and 11 demo users.
+2025-07-18 05:07:59,561 - INFO - app - [AUTO-CUTOFF] Processing 29 users for dynamic portfolio update...
+2025-07-18 05:07:59,561 - INFO - app - [AUTO-CUTOFF] Processing user 4 (live), group: Group B
+2025-07-18 05:07:59,589 - INFO - app.firebase_stream - Firebase event processing task cancelled.
+2025-07-18 05:08:01,302 - INFO - app.firebase_stream - Firebase listener closed.
+2025-07-18 05:08:01,303 - INFO - app.firebase_stream - Firebase Admin event processing task finished.
+2025-07-18 05:08:01,322 - INFO - app - Redis connection closed
+2025-07-18 05:08:01,322 - INFO - app - Application shutdown completed
+2025-07-18 05:10:24,413 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:10:24,449 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:10:24,469 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:10:24,469 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:10:24,994 - INFO - app - Application starting up - Trading system initialized
+2025-07-18 05:10:24,994 - INFO - app - SL/TP Epsilon accuracy configured: 0.00001
+2025-07-18 05:10:24,994 - INFO - app - Environment: PRODUCTION
+2025-07-18 05:10:25,053 - INFO - app - Application startup initiated
+2025-07-18 05:10:25,053 - INFO - app - Initializing core services...
+2025-07-18 05:10:25,086 - INFO - app - Firebase initialized
+2025-07-18 05:10:25,086 - WARNING - app.dependencies.redis_client - [Redis] Client not initialized, attempting late connection.
+2025-07-18 05:10:25,123 - INFO - app - Redis initialized
+2025-07-18 05:10:25,693 - INFO - app - All group settings, group-symbol settings, and external symbol info cached in Redis at startup.
+2025-07-18 05:10:25,759 - INFO - app - [SWAP] daily_swap_charge_job triggered
+2025-07-18 05:10:25,759 - INFO - app - [AUTO-CUTOFF] update_all_users_dynamic_portfolio will run as a background asyncio task, not via APScheduler.
+2025-07-18 05:10:25,763 - INFO - app - Scheduler initialized
+2025-07-18 05:10:25,769 - INFO - app.firebase_stream - Starting Firebase Admin event processing task for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-18 05:10:25,770 - INFO - app.firebase_stream - Attempting to start Firebase Admin listener for path: 'datafeeds'.
+2025-07-18 05:10:26,703 - INFO - app.firebase_stream - Firebase Admin listener started successfully for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-18 05:10:26,715 - INFO - app - Starting stale cache cleanup task
+2025-07-18 05:10:26,753 - INFO - app - Cleaned up pending order stream for new trigger price format
+2025-07-18 05:10:26,754 - INFO - app - Background tasks initialized
+2025-07-18 05:10:27,417 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-18 05:10:27,418 - INFO - app - Application startup completed successfully
+2025-07-18 05:10:27,418 - INFO - app - Starting cache validation task
+2025-07-18 05:10:27,422 - INFO - app - Starting Barclays pending order margin checker task.
+2025-07-18 05:10:27,425 - INFO - app - Starting auto-cutoff order monitoring task.
+2025-07-18 05:10:27,429 - INFO - app - [AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio background loop
+2025-07-18 05:10:27,430 - INFO - app - [AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio job...
+2025-07-18 05:10:27,430 - INFO - app - [AUTO-CUTOFF] update_all_users_dynamic_portfolio heartbeat: task is alive and running.
+2025-07-18 05:10:27,430 - INFO - app - [AUTO-CUTOFF] Fetching all active users (live and demo)...
+2025-07-18 05:10:27,459 - INFO - app - [AUTO-CUTOFF] Found 18 live users and 11 demo users.
+2025-07-18 05:10:27,460 - INFO - app - [AUTO-CUTOFF] Processing 29 users for dynamic portfolio update...
+2025-07-18 05:10:27,460 - INFO - app - [AUTO-CUTOFF] Processing user 4 (live), group: Group B
+2025-07-18 05:10:27,461 - INFO - app - Found 47 static orders cache entries to check
+2025-07-18 05:10:27,463 - INFO - app - Validating cache for 29 users
+2025-07-18 05:10:27,486 - WARNING - app - Found stale cache entry for user 12, will be refreshed on next access
+2025-07-18 05:10:27,489 - WARNING - app - Found stale cache entry for user 5, will be refreshed on next access
+2025-07-18 05:10:27,490 - WARNING - app - Found stale cache entry for user 2, will be refreshed on next access
+2025-07-18 05:10:27,493 - WARNING - app - Found stale cache entry for user live:13, will be refreshed on next access
+2025-07-18 05:10:27,494 - WARNING - app - Found stale cache entry for user 4, will be refreshed on next access
+2025-07-18 05:10:27,495 - WARNING - app - Found stale cache entry for user live:8, will be refreshed on next access
+2025-07-18 05:10:27,496 - WARNING - app - Found stale cache entry for user live:19, will be refreshed on next access
+2025-07-18 05:10:27,497 - WARNING - app - Found stale cache entry for user live:12, will be refreshed on next access
+2025-07-18 05:10:27,498 - WARNING - app - Found stale cache entry for user 13, will be refreshed on next access
+2025-07-18 05:10:27,499 - WARNING - app - Found stale cache entry for user live:20, will be refreshed on next access
+2025-07-18 05:10:27,500 - WARNING - app - Found stale cache entry for user 6, will be refreshed on next access
+2025-07-18 05:10:27,502 - WARNING - app - Found stale cache entry for user 3, will be refreshed on next access
+2025-07-18 05:10:27,505 - WARNING - app - Found stale cache entry for user 16, will be refreshed on next access
+2025-07-18 05:10:27,507 - WARNING - app - Found stale cache entry for user live:16, will be refreshed on next access
+2025-07-18 05:10:27,512 - WARNING - app - Found stale cache entry for user 23, will be refreshed on next access
+2025-07-18 05:10:27,515 - WARNING - app - Found stale cache entry for user live:21, will be refreshed on next access
+2025-07-18 05:10:27,516 - WARNING - app - Found stale cache entry for user live:6, will be refreshed on next access
+2025-07-18 05:10:27,516 - WARNING - app - Found stale cache entry for user 18, will be refreshed on next access
+2025-07-18 05:10:27,518 - WARNING - app - Found stale cache entry for user 19, will be refreshed on next access
+2025-07-18 05:10:27,519 - WARNING - app - Found stale cache entry for user live:22, will be refreshed on next access
+2025-07-18 05:10:27,521 - WARNING - app - Found stale cache entry for user demo:1, will be refreshed on next access
+2025-07-18 05:10:27,521 - WARNING - app - Found stale cache entry for user live:2, will be refreshed on next access
+2025-07-18 05:10:27,522 - WARNING - app - Found stale cache entry for user 8, will be refreshed on next access
+2025-07-18 05:10:27,524 - WARNING - app - Found stale cache entry for user 25, will be refreshed on next access
+2025-07-18 05:10:27,526 - WARNING - app - Found stale cache entry for user 17, will be refreshed on next access
+2025-07-18 05:10:27,527 - WARNING - app - Found stale cache entry for user live:3, will be refreshed on next access
+2025-07-18 05:10:27,528 - WARNING - app - Found stale cache entry for user 21, will be refreshed on next access
+2025-07-18 05:10:27,529 - WARNING - app - Found stale cache entry for user 22, will be refreshed on next access
+2025-07-18 05:10:27,529 - WARNING - app - Found stale cache entry for user 20, will be refreshed on next access
+2025-07-18 05:10:27,531 - WARNING - app - Found stale cache entry for user live:5, will be refreshed on next access
+2025-07-18 05:10:27,532 - WARNING - app - Found stale cache entry for user live:18, will be refreshed on next access
+2025-07-18 05:10:27,534 - WARNING - app - Found stale cache entry for user live:17, will be refreshed on next access
+2025-07-18 05:10:27,535 - WARNING - app - Found stale cache entry for user live:23, will be refreshed on next access
+2025-07-18 05:10:27,536 - INFO - app - Completed stale cache cleanup task
+2025-07-18 05:10:27,547 - INFO - app - Cache validation completed
+2025-07-18 05:10:27,613 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 4...
+2025-07-18 05:10:27,953 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 58.31108451250567700159152435% which is below threshold 100.0%
+2025-07-18 05:10:27,953 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 4: {'balance': '19815.43000000', 'equity': '1894.98196227050699006232104', 'margin': '3249.78', 'free_margin': '-1354.79803772949300993767896', 'profit_loss': '-17920.44803772949300993767896', 'margin_level': '58.31108451250567700159152435', 'positions': [{'order_id': '1016-005', 'order_company_name': 'AUDJPY', 'order_type': 'BUY', 'order_quantity': Decimal('10.00000000'), 'order_price': Decimal('99.52000000'), 'margin': Decimal('3249.77540855'), 'contract_value': Decimal('1000000.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 4, 'order_status': 'OPEN', 'commission': Decimal('100.00000000'), 'swap': 'None', 'created_at': '2025-07-17T23:14:15', 'profit_loss': '-17920.44803772949300993767896', 'current_price': '96.8750000000'}], 'margin_call': True}
+2025-07-18 05:10:27,956 - INFO - app - [AUTO-CUTOFF] User 4 margin_level: 58.31108451250567700159152435
+2025-07-18 05:10:27,957 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 4
+2025-07-18 05:10:27,957 - INFO - app - [AUTO-CUTOFF] Processing user 5 (live), group: Admin
+2025-07-18 05:10:27,964 - WARNING - app - [AUTO-CUTOFF] No user data found for user 5 (live). Skipping portfolio update.
+2025-07-18 05:10:27,964 - INFO - app - [AUTO-CUTOFF] Processing user 8 (live), group: string
+2025-07-18 05:10:27,976 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-18 05:10:27,979 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 8.
+2025-07-18 05:10:27,979 - INFO - app - [AUTO-CUTOFF] Processing user 9 (live), group: Standard
+2025-07-18 05:10:28,234 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 9...
+2025-07-18 05:10:28,518 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 15.07873853920848001856938373% which is below threshold 100.0%
+2025-07-18 05:10:28,518 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 9: {'balance': '8436.59000000', 'equity': '1247.265000000000000000000000', 'margin': '8271.68', 'free_margin': '-7024.415000000000000000000000', 'profit_loss': '-7189.325000000000000000000000', 'margin_level': '15.07873853920848001856938373', 'positions': [{'order_id': '1000347-001', 'order_company_name': 'BTCUSD', 'order_type': 'BUY', 'order_quantity': Decimal('0.35000000'), 'order_price': Decimal('139205.60000000'), 'margin': Decimal('8271.68000000'), 'contract_value': Decimal('0.35000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 9, 'order_status': 'OPEN', 'commission': Decimal('206.79000000'), 'swap': 'None', 'created_at': '2025-07-17T04:29:22', 'profit_loss': '-7189.325000000000000000000000', 'current_price': '119255.5000000000'}], 'margin_call': True}
+2025-07-18 05:10:28,520 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 15.07873853920848001856938373
+2025-07-18 05:10:29,564 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:10:29,578 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:10:29,593 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:10:29,642 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:10:29,647 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:10:29,657 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:10:29,662 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-18 05:10:29,919 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:10:29,945 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:10:29,953 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:10:29,954 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:10:29,961 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:10:29,986 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:10:29,988 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:10:29,988 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:10:29,994 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:10:29,996 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:10:29,999 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:10:29,999 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:10:30,007 - INFO - app.core.config - .env file loaded successfully.
+2025-07-18 05:10:30,030 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:10:30,030 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:10:30,032 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:10:30,032 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:10:30,037 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:10:30,037 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:10:30,039 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-18 05:10:30,040 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-18 05:10:31,833 - ERROR - app - [AUTO-CUTOFF] Failed to send margin call warning email to user 9 at kodideladinesh123@gmail.com: (451, b'4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded')
+2025-07-18 05:10:31,834 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 9
+2025-07-18 05:10:31,834 - INFO - app - [AUTO-CUTOFF] Processing user 10 (live), group: Group B
+2025-07-18 05:10:31,952 - WARNING - app - [AUTO-CUTOFF] User 10 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:31,952 - INFO - app - [AUTO-CUTOFF] Processing user 11 (live), group: Group B
+2025-07-18 05:10:31,998 - WARNING - app - [AUTO-CUTOFF] User 11 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:31,998 - INFO - app - [AUTO-CUTOFF] Processing user 13 (live), group: Group B
+2025-07-18 05:10:32,022 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:32,022 - INFO - app - [AUTO-CUTOFF] Processing user 14 (live), group: Standard
+2025-07-18 05:10:32,190 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 14...
+2025-07-18 05:10:32,473 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 5.988411233427045304023368645% which is below threshold 100.0%
+2025-07-18 05:10:32,473 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 14: {'balance': '9902.02000000', 'equity': '568.567908034360788276907529', 'margin': '9494.47', 'free_margin': '-8925.902091965639211723092471', 'profit_loss': '-9333.452091965639211723092471', 'margin_level': '5.988411233427045304023368645', 'positions': [{'order_id': '1000330-001', 'order_company_name': 'BTCUSD', 'order_type': 'BUY', 'order_quantity': Decimal('0.40000000'), 'order_price': Decimal('141908.50000000'), 'margin': Decimal('9422.73000000'), 'contract_value': Decimal('0.40000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 14, 'order_status': 'OPEN', 'commission': Decimal('235.57000000'), 'created_at': '2025-07-15T23:00:09', 'profit_loss': '-9315.010000000000000000000000', 'current_price': '119209.9000000000'}, {'order_id': '1000332-001', 'order_company_name': 'AUDJPY', 'order_type': 'BUY', 'order_quantity': Decimal('0.10000000'), 'order_price': Decimal('97.09700000'), 'margin': Decimal('65.21517371'), 'contract_value': Decimal('10000.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 14, 'order_status': 'OPEN', 'commission': Decimal('1.00000000'), 'created_at': '2025-07-16T01:49:52', 'profit_loss': '-16.76553815058110156644770086', 'current_price': '96.8630000000'}, {'order_id': '1000333-001', 'order_company_name': 'AUDJPY', 'order_type': 'BUY', 'order_quantity': Decimal('0.01000000'), 'order_price': Decimal('97.09700000'), 'margin': Decimal('6.52134765'), 'contract_value': Decimal('1000.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 14, 'order_status': 'OPEN', 'commission': Decimal('0.10000000'), 'created_at': '2025-07-16T01:51:54', 'profit_loss': '-1.676553815058110156644770086', 'current_price': '96.8630000000'}], 'margin_call': True}
+2025-07-18 05:10:32,475 - INFO - app - [AUTO-CUTOFF] User 14 margin_level: 5.988411233427045304023368645
+2025-07-18 05:10:32,505 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 14
+2025-07-18 05:10:32,505 - INFO - app - [AUTO-CUTOFF] Processing user 16 (live), group: Standard
+2025-07-18 05:10:32,527 - WARNING - app - [AUTO-CUTOFF] User 16 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:32,527 - INFO - app - [AUTO-CUTOFF] Processing user 17 (live), group: Group B
+2025-07-18 05:10:32,549 - WARNING - app - [AUTO-CUTOFF] User 17 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:32,549 - INFO - app - [AUTO-CUTOFF] Processing user 18 (live), group: Group B
+2025-07-18 05:10:32,574 - WARNING - app - [AUTO-CUTOFF] User 18 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:32,574 - INFO - app - [AUTO-CUTOFF] Processing user 19 (live), group: Elite
+2025-07-18 05:10:32,597 - WARNING - app - [AUTO-CUTOFF] User 19 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:32,597 - INFO - app - [AUTO-CUTOFF] Processing user 20 (live), group: Standard
+2025-07-18 05:10:32,621 - WARNING - app - [AUTO-CUTOFF] User 20 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:32,621 - INFO - app - [AUTO-CUTOFF] Processing user 21 (live), group: Group B
+2025-07-18 05:10:32,644 - WARNING - app - [AUTO-CUTOFF] User 21 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:32,644 - INFO - app - [AUTO-CUTOFF] Processing user 22 (live), group: VIP
+2025-07-18 05:10:32,665 - WARNING - app - [AUTO-CUTOFF] User 22 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:32,665 - INFO - app - [AUTO-CUTOFF] Processing user 23 (live), group: Group B
+2025-07-18 05:10:32,683 - WARNING - app - [AUTO-CUTOFF] User 23 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:32,684 - INFO - app - [AUTO-CUTOFF] Processing user 25 (live), group: Group B
+2025-07-18 05:10:32,751 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 25...
+2025-07-18 05:10:33,019 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 4.771149239803120294039369203% which is below threshold 100.0%
+2025-07-18 05:10:33,019 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 25: {'balance': '6389.62000000', 'equity': '283.245000000000000000000000', 'margin': '5936.62', 'free_margin': '-5653.375000000000000000000000', 'profit_loss': '-6106.375000000000000000000000', 'margin_level': '4.771149239803120294039369203', 'positions': [{'order_id': '1031-001', 'order_company_name': 'BTCUSD', 'order_type': 'BUY', 'order_quantity': Decimal('0.10000000'), 'order_price': Decimal('179986.15000000'), 'margin': Decimal('5936.62000000'), 'contract_value': Decimal('0.10000000'), 'stop_loss': Decimal('118576.15000000'), 'take_profit': Decimal('118976.15000000'), 'order_user_id': 25, 'order_status': 'OPEN', 'commission': Decimal('23.75000000'), 'created_at': '2025-07-18T02:09:29', 'profit_loss': '-6106.375000000000000000000000', 'current_price': '119159.9'}], 'margin_call': True}
+2025-07-18 05:10:33,022 - INFO - app - [AUTO-CUTOFF] User 25 margin_level: 4.771149239803120294039369203
+2025-07-18 05:10:33,046 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 25
+2025-07-18 05:10:33,046 - INFO - app - [AUTO-CUTOFF] Processing user 26 (live), group: Royal+
+2025-07-18 05:10:33,222 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 26...
+2025-07-18 05:10:33,498 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 70.28459399143131009041436270% which is below threshold 100.0%
+2025-07-18 05:10:33,498 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 26: {'balance': '184345.81000000', 'equity': '102956.0150000000000000000000', 'margin': '146484.47', 'free_margin': '-43528.4550000000000000000000', 'profit_loss': '-81389.79500000000000000000000', 'margin_level': '70.28459399143131009041436270', 'positions': [{'order_id': Decimal('7987141755'), 'order_company_name': 'XAGUSD', 'order_type': 'BUY', 'order_quantity': Decimal('0.01000000'), 'order_price': Decimal('41.09800000'), 'margin': Decimal('19.54000000'), 'contract_value': Decimal('50.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 26, 'order_status': 'OPEN', 'commission': Decimal('0.10000000'), 'swap': Decimal('-0.00283800'), 'created_at': '2025-07-14T03:43:34', 'profit_loss': '-136.175000000000000000000000', 'current_price': '38.3765'}, {'order_id': Decimal('1116628265'), 'order_company_name': 'BTCUSD', 'order_type': 'BUY', 'order_quantity': Decimal('6.00000000'), 'order_price': Decimal('132091.90000000'), 'margin': Decimal('146464.93000000'), 'contract_value': Decimal('6.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 26, 'order_status': 'OPEN', 'commission': Decimal('3661.62000000'), 'swap': Decimal('-9621.57600000'), 'created_at': '2025-07-14T03:46:06', 'profit_loss': '-81253.62000000000000000000000', 'current_price': '119159.9'}], 'margin_call': True}
+2025-07-18 05:10:33,500 - INFO - app - [AUTO-CUTOFF] User 26 margin_level: 70.28459399143131009041436270
+2025-07-18 05:10:33,501 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 26
+2025-07-18 05:10:33,501 - INFO - app - [AUTO-CUTOFF] Processing user 1 (demo), group: Group B
+2025-07-18 05:10:33,538 - WARNING - app - [AUTO-CUTOFF] User 1 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:33,538 - INFO - app - [AUTO-CUTOFF] Processing user 2 (demo), group: 
+2025-07-18 05:10:33,540 - WARNING - app - [AUTO-CUTOFF] User 2 has no group_name set. Skipping portfolio update.
+2025-07-18 05:10:33,540 - INFO - app - [AUTO-CUTOFF] Processing user 3 (demo), group: string
+2025-07-18 05:10:33,555 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-18 05:10:33,558 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 3.
+2025-07-18 05:10:33,558 - INFO - app - [AUTO-CUTOFF] Processing user 4 (demo), group: Group B
+2025-07-18 05:10:33,597 - WARNING - app - [AUTO-CUTOFF] User 4 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:33,598 - INFO - app - [AUTO-CUTOFF] Processing user 5 (demo), group: None
+2025-07-18 05:10:33,599 - WARNING - app - [AUTO-CUTOFF] User 5 has no group_name set. Skipping portfolio update.
+2025-07-18 05:10:33,599 - INFO - app - [AUTO-CUTOFF] Processing user 6 (demo), group: None
+2025-07-18 05:10:33,602 - WARNING - app - [AUTO-CUTOFF] User 6 has no group_name set. Skipping portfolio update.
+2025-07-18 05:10:33,602 - INFO - app - [AUTO-CUTOFF] Processing user 9 (demo), group: Group B
+2025-07-18 05:10:33,773 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 9...
+2025-07-18 05:10:33,775 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 9, falling back to DB and updating cache.
+2025-07-18 05:10:34,206 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 9: {'balance': '8436.59000000', 'equity': '8436.59000000', 'margin': '8271.68', 'free_margin': '164.91000000', 'profit_loss': '0.0', 'margin_level': '101.9936699678904406360013927', 'positions': [], 'margin_call': False}
+2025-07-18 05:10:34,209 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 101.9936699678904406360013927
+2025-07-18 05:10:34,210 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 9
+2025-07-18 05:10:34,210 - INFO - app - [AUTO-CUTOFF] Processing user 10 (demo), group: Group B
+2025-07-18 05:10:34,316 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 10...
+2025-07-18 05:10:34,317 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 10, falling back to DB and updating cache.
+2025-07-18 05:10:34,593 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 10: {'balance': '9707.74000000', 'equity': '9707.74000000', 'margin': '0.0', 'free_margin': '9707.74000000', 'profit_loss': '0.0', 'margin_level': '0.0', 'positions': [], 'margin_call': False}
+2025-07-18 05:10:34,595 - INFO - app - [AUTO-CUTOFF] User 10 margin_level: 0.0
+2025-07-18 05:10:34,596 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 10
+2025-07-18 05:10:34,596 - INFO - app - [AUTO-CUTOFF] Processing user 11 (demo), group: Group B
+2025-07-18 05:10:34,699 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 11...
+2025-07-18 05:10:34,700 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 11, falling back to DB and updating cache.
+2025-07-18 05:10:34,974 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 11: {'balance': '14420.38000000', 'equity': '14420.38000000', 'margin': '0.0', 'free_margin': '14420.38000000', 'profit_loss': '0.0', 'margin_level': '0.0', 'positions': [], 'margin_call': False}
+2025-07-18 05:10:34,983 - INFO - app - [AUTO-CUTOFF] User 11 margin_level: 0.0
+2025-07-18 05:10:34,983 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 11
+2025-07-18 05:10:34,983 - INFO - app - [AUTO-CUTOFF] Processing user 12 (demo), group: Group B
+2025-07-18 05:10:35,008 - WARNING - app - [AUTO-CUTOFF] User 12 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:35,008 - INFO - app - [AUTO-CUTOFF] Processing user 13 (demo), group: Group B
+2025-07-18 05:10:35,030 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:10:42,431 - INFO - app - Starting stale cache cleanup task
+2025-07-18 05:10:42,434 - INFO - app - Found 47 static orders cache entries to check
+2025-07-18 05:10:42,437 - WARNING - app - Found stale cache entry for user 12, will be refreshed on next access
+2025-07-18 05:10:42,455 - WARNING - app - Found stale cache entry for user 5, will be refreshed on next access
+2025-07-18 05:10:42,458 - WARNING - app - Found stale cache entry for user 2, will be refreshed on next access
+2025-07-18 05:10:42,466 - WARNING - app - Found stale cache entry for user live:13, will be refreshed on next access
+2025-07-18 05:10:42,474 - WARNING - app - Found stale cache entry for user 4, will be refreshed on next access
+2025-07-18 05:10:42,478 - WARNING - app - Found stale cache entry for user live:8, will be refreshed on next access
+2025-07-18 05:10:42,481 - WARNING - app - Found stale cache entry for user live:19, will be refreshed on next access
+2025-07-18 05:10:42,486 - WARNING - app - Found stale cache entry for user live:12, will be refreshed on next access
+2025-07-18 05:10:42,490 - WARNING - app - Found stale cache entry for user 13, will be refreshed on next access
+2025-07-18 05:10:42,496 - WARNING - app - Found stale cache entry for user live:20, will be refreshed on next access
+2025-07-18 05:10:42,498 - WARNING - app - Found stale cache entry for user 6, will be refreshed on next access
+2025-07-18 05:10:42,500 - WARNING - app - Found stale cache entry for user 3, will be refreshed on next access
+2025-07-18 05:10:42,503 - WARNING - app - Found stale cache entry for user 16, will be refreshed on next access
+2025-07-18 05:10:42,504 - WARNING - app - Found stale cache entry for user live:16, will be refreshed on next access
+2025-07-18 05:10:42,505 - WARNING - app - Found stale cache entry for user 23, will be refreshed on next access
+2025-07-18 05:10:42,507 - WARNING - app - Found stale cache entry for user live:21, will be refreshed on next access
+2025-07-18 05:10:42,508 - WARNING - app - Found stale cache entry for user live:6, will be refreshed on next access
+2025-07-18 05:10:42,509 - WARNING - app - Found stale cache entry for user 18, will be refreshed on next access
+2025-07-18 05:10:42,510 - WARNING - app - Found stale cache entry for user 19, will be refreshed on next access
+2025-07-18 05:10:42,510 - WARNING - app - Found stale cache entry for user live:22, will be refreshed on next access
+2025-07-18 05:10:42,512 - WARNING - app - Found stale cache entry for user demo:1, will be refreshed on next access
+2025-07-18 05:10:42,513 - WARNING - app - Found stale cache entry for user live:2, will be refreshed on next access
+2025-07-18 05:10:42,514 - WARNING - app - Found stale cache entry for user 8, will be refreshed on next access
+2025-07-18 05:10:42,516 - WARNING - app - Found stale cache entry for user 25, will be refreshed on next access
+2025-07-18 05:10:42,518 - WARNING - app - Found stale cache entry for user 17, will be refreshed on next access
+2025-07-18 05:10:42,519 - WARNING - app - Found stale cache entry for user live:3, will be refreshed on next access
+2025-07-18 05:10:42,520 - WARNING - app - Found stale cache entry for user 21, will be refreshed on next access
+2025-07-18 05:10:42,521 - WARNING - app - Found stale cache entry for user 22, will be refreshed on next access
+2025-07-18 05:10:42,522 - WARNING - app - Found stale cache entry for user 20, will be refreshed on next access
+2025-07-18 05:10:42,525 - WARNING - app - Found stale cache entry for user live:5, will be refreshed on next access
+2025-07-18 05:10:42,526 - WARNING - app - Found stale cache entry for user live:18, will be refreshed on next access
+2025-07-18 05:10:42,528 - WARNING - app - Found stale cache entry for user live:17, will be refreshed on next access
+2025-07-18 05:10:42,529 - WARNING - app - Found stale cache entry for user live:23, will be refreshed on next access
+2025-07-18 05:10:42,530 - INFO - app - Completed stale cache cleanup task
+2025-07-18 05:11:05,040 - INFO - app - [AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio job...
+2025-07-18 05:11:05,040 - INFO - app - [AUTO-CUTOFF] update_all_users_dynamic_portfolio heartbeat: task is alive and running.
+2025-07-18 05:11:05,040 - INFO - app - [AUTO-CUTOFF] Fetching all active users (live and demo)...
+2025-07-18 05:11:05,045 - INFO - app - [AUTO-CUTOFF] Found 18 live users and 11 demo users.
+2025-07-18 05:11:05,046 - INFO - app - [AUTO-CUTOFF] Processing 29 users for dynamic portfolio update...
+2025-07-18 05:11:05,046 - INFO - app - [AUTO-CUTOFF] Processing user 4 (live), group: Group B
+2025-07-18 05:11:05,126 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 4...
+2025-07-18 05:11:05,511 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 43.28543128320424960366439451% which is below threshold 100.0%
+2025-07-18 05:11:05,511 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 4: {'balance': '19815.43000000', 'equity': '1406.68128875531506276996476', 'margin': '3249.78', 'free_margin': '-1843.09871124468493723003524', 'profit_loss': '-18408.74871124468493723003524', 'margin_level': '43.28543128320424960366439451', 'positions': [{'order_id': '1016-005', 'order_company_name': 'AUDJPY', 'order_type': 'BUY', 'order_quantity': Decimal('10.00000000'), 'order_price': Decimal('99.52000000'), 'margin': Decimal('3249.77540855'), 'contract_value': Decimal('1000000.00000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 4, 'order_status': 'OPEN', 'commission': Decimal('100.00000000'), 'swap': 'None', 'created_at': '2025-07-17T23:14:15', 'profit_loss': '-18408.74871124468493723003524', 'current_price': '96.803'}], 'margin_call': True}
+2025-07-18 05:11:05,514 - INFO - app - [AUTO-CUTOFF] User 4 margin_level: 43.28543128320424960366439451
+2025-07-18 05:11:05,516 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 4
+2025-07-18 05:11:05,516 - INFO - app - [AUTO-CUTOFF] Processing user 5 (live), group: Admin
+2025-07-18 05:11:05,521 - WARNING - app - [AUTO-CUTOFF] No user data found for user 5 (live). Skipping portfolio update.
+2025-07-18 05:11:05,521 - INFO - app - [AUTO-CUTOFF] Processing user 8 (live), group: string
+2025-07-18 05:11:05,536 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-18 05:11:05,539 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 8.
+2025-07-18 05:11:05,539 - INFO - app - [AUTO-CUTOFF] Processing user 9 (live), group: Standard
+2025-07-18 05:11:05,678 - INFO - app - [AUTO-CUTOFF] Calculating portfolio metrics for user 9...
+2025-07-18 05:11:05,991 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 14.83501537777090022824867500% which is below threshold 100.0%
+2025-07-18 05:11:05,992 - INFO - app - [AUTO-CUTOFF] Portfolio metrics for user 9: {'balance': '8436.59000000', 'equity': '1227.105000000000000000000000', 'margin': '8271.68', 'free_margin': '-7044.575000000000000000000000', 'profit_loss': '-7209.485000000000000000000000', 'margin_level': '14.83501537777090022824867500', 'positions': [{'order_id': '1000347-001', 'order_company_name': 'BTCUSD', 'order_type': 'BUY', 'order_quantity': Decimal('0.35000000'), 'order_price': Decimal('139205.60000000'), 'margin': Decimal('8271.68000000'), 'contract_value': Decimal('0.35000000'), 'stop_loss': None, 'take_profit': None, 'order_user_id': 9, 'order_status': 'OPEN', 'commission': Decimal('206.79000000'), 'swap': 'None', 'created_at': '2025-07-17T04:29:22', 'profit_loss': '-7209.485000000000000000000000', 'current_price': '119197.9'}], 'margin_call': True}
+2025-07-18 05:11:05,994 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 14.83501537777090022824867500
+2025-07-18 05:11:09,934 - ERROR - app - [AUTO-CUTOFF] Failed to send margin call warning email to user 9 at kodideladinesh123@gmail.com: (451, b'4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded')
+2025-07-18 05:11:09,935 - INFO - app - [AUTO-CUTOFF] Portfolio update completed for user 9
+2025-07-18 05:11:09,935 - INFO - app - [AUTO-CUTOFF] Processing user 10 (live), group: Group B
+2025-07-18 05:11:10,012 - WARNING - app - [AUTO-CUTOFF] User 10 has no open or pending orders. Skipping portfolio update.
+2025-07-18 05:11:10,012 - INFO - app - [AUTO-CUTOFF] Processing user 11 (live), group: Group B
+2025-07-18 05:11:10,041 - INFO - app - Application shutdown initiated
+2025-07-18 05:11:10,041 - INFO - app - Scheduler shutdown completed
+2025-07-18 05:11:10,041 - INFO - app.firebase_stream - Firebase event processing task cancelled.
+2025-07-18 05:11:10,150 - INFO - app.firebase_stream - Firebase listener closed.
+2025-07-18 05:11:10,151 - INFO - app.firebase_stream - Firebase Admin event processing task finished.
+2025-07-18 05:11:10,155 - INFO - app - Redis connection closed
+2025-07-18 05:11:10,155 - INFO - app - Application shutdown completed

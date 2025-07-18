@@ -1,13 +1,14 @@
-2025-07-18 04:22:53,181 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
-2025-07-18 04:22:53,184 - INFO - app.core.security - [Redis] AOF persistence already enabled.
-2025-07-18 04:24:22,062 - INFO - app.core.security - [Redis] Connection closed successfully.
-2025-07-18 04:25:21,378 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
-2025-07-18 04:25:21,379 - INFO - app.core.security - [Redis] AOF persistence already enabled.
-2025-07-18 04:26:25,428 - INFO - app.core.security - [Redis] Connection closed successfully.
-2025-07-18 04:27:29,601 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
-2025-07-18 04:27:29,602 - INFO - app.core.security - [Redis] AOF persistence already enabled.
-2025-07-18 04:28:04,506 - INFO - app.core.security - LOGIN: user_id=1, email=dhanush777ss@gmail.com, user_type=demo, time=2025-07-18T11:28:04.506376
-2025-07-18 04:29:16,606 - INFO - app.core.security - [Redis] Connection closed successfully.
-2025-07-18 04:43:05,883 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
-2025-07-18 04:43:05,884 - INFO - app.core.security - [Redis] AOF persistence already enabled.
-2025-07-18 04:44:44,296 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 04:47:25,890 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 04:47:25,892 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 04:49:05,838 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 04:52:01,646 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 04:52:01,648 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 04:52:20,335 - INFO - app.core.security - LOGOUT: user_id=1, email=dhanush777ss@gmail.com, user_type=demo, time=2025-07-18T11:52:20.335677
+2025-07-18 04:52:22,821 - INFO - app.core.security - LOGIN: user_id=4, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-18T11:52:22.821053
+2025-07-18 04:54:13,563 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 05:07:18,213 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 05:07:18,215 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 05:08:01,322 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 05:10:25,120 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 05:10:25,122 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 05:11:10,155 - INFO - app.core.security - [Redis] Connection closed successfully.

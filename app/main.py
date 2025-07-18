@@ -1545,9 +1545,10 @@ async def barclays_pending_order_margin_checker():
                                 cancel_id = await generate_unique_10_digit_id(db, order_model, 'cancel_id')
                                 cancel_message = "Auto-cancelled due to insufficient margin"
                                 update_fields = {
-                                    "order_status": "CANCELLED-PROCESSING",
+                                    "order_status": "AUTO-CANCELLED",
                                     "cancel_id": cancel_id,
                                     "cancel_message": cancel_message
+
                                 }
                                 from app.crud.crud_order import update_order_with_tracking
                                 await update_order_with_tracking(

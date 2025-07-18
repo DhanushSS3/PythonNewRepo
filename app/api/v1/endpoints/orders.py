@@ -405,7 +405,9 @@ async def get_rejected_orders(
     if order_model is None:
         logger.error(f"[get_rejected_orders] Could not determine order model for user_type: {user_type}")
         raise HTTPException(status_code=400, detail="Invalid user_type for order model.")
-    orders = await crud_order.get_orders_by_user_id_and_statuses(db, current_user.id, ["REJECTED"], order_model)
+    orders = await crud_order.get_orders_by_user_id_and_statuses(
+        db, current_user.id, ["REJECTED", "AUTO-CANCELLED"], order_model
+    )
     return orders
 
     from app.core.logging_config import orders_logger
