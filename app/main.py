@@ -759,7 +759,7 @@ async def rotate_service_account_jwt():
     try:
         service_name = "barclays_service_provider"
         # Generate a token valid for 35 minutes. It will be refreshed every 30 minutes.
-        token = create_service_account_token(service_name, expires_minutes=1333)
+        token = create_service_account_token(service_name, expires_minutes=10080)
 
         # Path in Firebase to store the token
         jwt_ref = firebase_db.reference(f"service_provider_credentials/{service_name}")
