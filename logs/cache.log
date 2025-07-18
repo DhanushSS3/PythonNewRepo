@@ -1,0 +1,52 @@
+2025-07-18 01:42:34,803 - ERROR - cache - Cache verification failed for user 4: expected balance=19815.43000000, margin=3249.78, cached balance=19815.43000000, margin=3249.78
+2025-07-18 01:42:34,820 - ERROR - cache - User 5 not found in database
+2025-07-18 01:42:34,847 - ERROR - cache - Cache verification failed for user 8: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-18 01:42:34,878 - ERROR - cache - Cache verification failed for user 9: expected balance=8436.59000000, margin=8271.68, cached balance=8436.59000000, margin=8271.68
+2025-07-18 01:42:34,895 - ERROR - cache - Cache verification failed for user 10: expected balance=9707.74000000, margin=0.0, cached balance=9707.74000000, margin=0.0
+2025-07-18 01:42:34,904 - ERROR - cache - Cache verification failed for user 11: expected balance=14420.38000000, margin=0.0, cached balance=14420.38000000, margin=0.0
+2025-07-18 01:42:34,914 - ERROR - cache - Cache verification failed for user 13: expected balance=94.25000000, margin=0.0, cached balance=94.25000000, margin=0.0
+2025-07-18 01:42:34,924 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:42:34,933 - ERROR - cache - Cache verification failed for user 16: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-18 01:42:34,943 - ERROR - cache - Cache verification failed for user 17: expected balance=26302.98000000, margin=0.0, cached balance=26302.98000000, margin=0.0
+2025-07-18 01:42:34,952 - ERROR - cache - Cache verification failed for user 18: expected balance=17323.75000000, margin=0.0, cached balance=17323.75000000, margin=0.0
+2025-07-18 01:42:34,960 - ERROR - cache - Cache verification failed for user 19: expected balance=9610.04000000, margin=0.0, cached balance=9610.04000000, margin=0.0
+2025-07-18 01:42:34,969 - ERROR - cache - Cache verification failed for user 20: expected balance=8712.00000000, margin=0.0, cached balance=8712.00000000, margin=0.0
+2025-07-18 01:42:34,979 - ERROR - cache - Cache verification failed for user 21: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-18 01:42:34,986 - ERROR - cache - Cache verification failed for user 22: expected balance=5961.56000000, margin=0.0, cached balance=5961.56000000, margin=0.0
+2025-07-18 01:42:35,029 - ERROR - cache - Cache verification failed for user 23: expected balance=1000000.00000000, margin=0.0, cached balance=1000000.00000000, margin=0.0
+2025-07-18 01:42:35,041 - ERROR - cache - Cache verification failed for user 25: expected balance=250000.00000000, margin=59910.39, cached balance=250000.00000000, margin=59910.39
+2025-07-18 01:42:35,054 - ERROR - cache - Cache verification failed for user 26: expected balance=184345.81000000, margin=146484.47, cached balance=184345.81000000, margin=146484.47
+2025-07-18 01:42:35,076 - ERROR - cache - Cache verification failed for user 1: expected balance=17009.69000000, margin=16907.79, cached balance=17009.69000000, margin=16907.79
+2025-07-18 01:42:35,088 - ERROR - cache - Cache verification failed for user 2: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-18 01:42:35,102 - ERROR - cache - Cache verification failed for user 3: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-18 01:42:35,121 - ERROR - cache - Cache verification failed for user 5: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-18 01:42:35,433 - ERROR - cache - Cache verification failed for user 6: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-18 01:42:35,442 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:42:35,457 - ERROR - cache - Cache verification failed for user 12: expected balance=99984.34000000, margin=0.0, cached balance=99984.34000000, margin=0.0
+2025-07-18 01:42:40,761 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:42:48,536 - ERROR - cache - Cache verification failed for user 25: expected balance=250000.00000000, margin=59910.39000000, cached balance=250000.00000000, margin=59910.39000000
+2025-07-18 01:42:49,005 - ERROR - cache - Cache verification failed for user 25: expected balance=250000.00000000, margin=59910.39, cached balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:14,763 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:43:20,267 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:43:54,777 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:43:59,961 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:44:34,318 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:44:39,267 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:45:12,920 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:45:17,913 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:45:51,938 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:45:56,573 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:46:04,798 - ERROR - cache - Cache verification failed for user 25: expected balance=250000.00000000, margin=59910.39000000, cached balance=250000.00000000, margin=59910.39000000
+2025-07-18 01:46:05,244 - ERROR - cache - Cache verification failed for user 25: expected balance=250000.00000000, margin=59910.39, cached balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:30,652 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:46:35,398 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:47:20,756 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:47:25,406 - ERROR - cache - Cache verification failed for user 25: expected balance=250000.00000000, margin=59910.39000000, cached balance=250000.00000000, margin=59910.39000000
+2025-07-18 01:47:26,071 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:47:26,084 - ERROR - cache - Cache verification failed for user 25: expected balance=250000.00000000, margin=59910.39, cached balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:59,932 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:48:00,987 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:48:17,610 - ERROR - cache - Cache verification failed for user 25: expected balance=250000.00000000, margin=59910.39, cached balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:35,775 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-18 01:48:37,505 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-18 01:48:43,686 - ERROR - cache - Cache verification failed for user 25: expected balance=250000.00000000, margin=59910.39, cached balance=250000.00000000, margin=59910.39

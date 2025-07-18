@@ -1,0 +1,9 @@
+2025-07-18 01:42:31,999 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 01:42:32,001 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 01:47:08,627 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 01:47:11,296 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 01:47:11,299 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 01:47:15,500 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-18 01:47:17,907 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-18 01:47:17,910 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-18 01:48:52,424 - INFO - app.core.security - [Redis] Connection closed successfully.

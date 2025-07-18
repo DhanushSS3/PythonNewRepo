@@ -1,0 +1,539 @@
+2025-07-18 01:42:34,008 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-18 01:42:43,017 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59616
+2025-07-18 01:42:43,018 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59616
+2025-07-18 01:42:43,022 - DEBUG - websocket - User 0: Successfully sent loading message
+2025-07-18 01:42:43,023 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:59616: Could not validate credentials
+2025-07-18 01:42:48,505 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59620
+2025-07-18 01:42:48,521 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59620
+2025-07-18 01:42:48,522 - DEBUG - websocket - User 0: Successfully sent loading message
+2025-07-18 01:42:48,522 - INFO - websocket - WebSocket auth: Authenticating user UVLB4 (live)
+2025-07-18 01:42:48,538 - INFO - websocket - User 25: WebSocket initialized with balance=250000.00000000, margin=59910.39000000
+2025-07-18 01:42:48,990 - DEBUG - websocket - Cached/updated group-symbol settings for group 'Group B'.
+2025-07-18 01:42:48,992 - DEBUG - websocket - User 25: Fetched 1 open orders directly from database
+2025-07-18 01:42:48,994 - DEBUG - websocket - User 25: Fetched 0 pending orders directly from database
+2025-07-18 01:42:48,997 - INFO - websocket - User 25: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-18 01:42:49,006 - DEBUG - websocket - User 25: Updated balance/margin cache: balance=250000.00000000, margin=59910.39
+2025-07-18 01:42:49,316 - DEBUG - websocket - User 25: Successfully sent initial connection data
+2025-07-18 01:42:49,316 - INFO - websocket - User UVLB4: WebSocket connection established successfully
+2025-07-18 01:42:49,696 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:42:49,697 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:42:49,698 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:42:51,943 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:42:51,943 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:42:51,943 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:42:54,198 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:42:54,199 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:42:54,205 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:42:56,542 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:42:56,543 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:42:56,548 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:42:58,813 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:42:58,813 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:42:58,815 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:01,528 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:01,530 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:01,531 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:03,924 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:03,925 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:03,926 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:06,218 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:06,218 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:06,221 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:08,423 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:08,427 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:08,429 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:10,726 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:10,727 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:10,727 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:13,051 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:13,051 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:13,059 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:15,481 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:15,481 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:15,482 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:19,347 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:19,348 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:19,349 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:19,832 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:19,832 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:19,833 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:20,281 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:20,281 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:20,282 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:22,257 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:22,257 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:22,258 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:24,436 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:24,437 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:24,439 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:26,679 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:26,679 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:26,686 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:29,039 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:29,040 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:29,042 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:31,290 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:31,290 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:31,291 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:33,561 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:33,563 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:33,565 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:35,910 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:35,911 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:35,914 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:38,150 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:38,150 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:38,151 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:40,393 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:40,396 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:40,403 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:42,649 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:42,650 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:42,651 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:45,026 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:45,026 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:45,027 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:47,372 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:47,372 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:47,373 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:49,704 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:49,704 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:49,705 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:52,101 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:52,102 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:52,102 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:54,330 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:54,330 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:54,331 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:59,118 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:59,118 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:59,119 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:59,145 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:59,145 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:59,147 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:43:59,972 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:43:59,972 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:43:59,972 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:01,364 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:01,364 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:01,365 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:03,738 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:03,738 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:03,739 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:05,681 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:05,681 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:05,685 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:08,075 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:08,076 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:08,077 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:10,285 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:10,285 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:10,286 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:12,651 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:12,652 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:12,653 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:14,897 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:14,897 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:14,898 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:17,192 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:17,195 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:17,196 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:19,527 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:19,528 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:19,533 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:21,794 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:21,794 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:21,797 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:24,007 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:24,008 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:24,013 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:26,413 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:26,413 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:26,414 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:28,636 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:28,636 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:28,638 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:30,879 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:30,879 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:30,880 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:33,227 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:33,227 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:33,229 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:38,654 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:38,654 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:38,655 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:38,668 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:38,669 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:38,670 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:39,277 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:39,277 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:39,277 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:40,386 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:40,386 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:40,386 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:42,387 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:42,387 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:42,388 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:44,589 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:44,589 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:44,593 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:46,826 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:46,828 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:46,830 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:49,182 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:49,183 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:49,184 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:51,406 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:51,407 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:51,412 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:53,685 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:53,689 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:53,691 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:56,029 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:56,031 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:56,033 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:44:58,296 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:44:58,298 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:44:58,299 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:00,551 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:00,551 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:00,551 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:02,873 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:02,873 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:02,880 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:05,148 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:05,149 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:05,150 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:07,518 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:07,519 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:07,519 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:09,760 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:09,761 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:09,763 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:12,019 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:12,019 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:12,021 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:17,289 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:17,289 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:17,290 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:17,303 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:17,303 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:17,304 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:17,919 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:17,919 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:17,919 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:19,184 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:19,184 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:19,185 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:21,359 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:21,360 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:21,360 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:23,480 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:23,481 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:23,482 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:25,770 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:25,770 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:25,771 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:28,094 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:28,094 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:28,095 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:30,365 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:30,366 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:30,367 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:32,603 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:32,604 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:32,606 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:34,950 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:34,951 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:34,954 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:37,169 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:37,170 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:37,176 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:39,437 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:39,437 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:39,438 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:41,825 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:41,826 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:41,828 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:44,074 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:44,075 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:44,077 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:46,325 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:46,325 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:46,329 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:48,574 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:48,575 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:48,575 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:50,917 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:50,917 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:50,917 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:55,952 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:55,953 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:55,954 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:55,967 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:55,967 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:55,967 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:56,577 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:56,578 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:56,578 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:45:57,805 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:45:57,806 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:45:57,806 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:00,054 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:00,054 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:00,055 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:02,397 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:02,397 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:42:49.001952', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:02,397 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:03,650 - INFO - websocket - User UVLB4: WebSocket disconnected
+2025-07-18 01:46:04,785 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:53597
+2025-07-18 01:46:04,786 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:53597
+2025-07-18 01:46:04,788 - DEBUG - websocket - User 0: Successfully sent loading message
+2025-07-18 01:46:04,789 - INFO - websocket - WebSocket auth: Authenticating user UVLB4 (live)
+2025-07-18 01:46:04,799 - INFO - websocket - User 25: WebSocket initialized with balance=250000.00000000, margin=59910.39000000
+2025-07-18 01:46:05,229 - DEBUG - websocket - Cached/updated group-symbol settings for group 'Group B'.
+2025-07-18 01:46:05,232 - DEBUG - websocket - User 25: Fetched 1 open orders directly from database
+2025-07-18 01:46:05,233 - DEBUG - websocket - User 25: Fetched 0 pending orders directly from database
+2025-07-18 01:46:05,235 - INFO - websocket - User 25: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-18 01:46:05,245 - DEBUG - websocket - User 25: Updated balance/margin cache: balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:05,434 - DEBUG - websocket - User 25: Successfully sent initial connection data
+2025-07-18 01:46:05,434 - INFO - websocket - User UVLB4: WebSocket connection established successfully
+2025-07-18 01:46:06,878 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:06,879 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:06,881 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:09,273 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:09,273 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:09,273 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:11,502 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:11,503 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:11,505 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:13,757 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:13,757 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:13,758 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:16,123 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:16,124 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:16,126 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:18,365 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:18,365 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:18,366 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:20,624 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:20,624 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:20,625 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:22,873 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:22,873 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:22,874 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:25,248 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:25,249 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:25,250 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:27,488 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:27,488 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:27,489 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:29,792 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:29,792 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:29,793 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:34,668 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:34,668 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:34,669 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:34,679 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:34,679 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:34,679 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:35,405 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:35,406 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:35,406 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:36,725 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:36,725 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:36,726 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:39,013 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:39,013 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:39,015 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:41,180 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:41,181 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:41,182 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:43,577 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:43,578 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:43,583 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:45,841 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:45,842 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:45,842 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:48,072 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:48,073 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:48,074 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:50,361 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:50,361 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:50,362 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:52,970 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:52,971 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:52,972 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:54,966 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:54,966 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:54,967 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:57,214 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:57,214 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:57,215 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:46:59,540 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:46:59,541 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:46:59,546 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:01,798 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:01,799 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:01,801 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:04,060 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:04,061 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:04,062 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:06,406 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:06,407 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:46:05.240731', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:06,408 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:07,149 - INFO - websocket - User UVLB4: WebSocket disconnected
+2025-07-18 01:47:07,816 - INFO - websocket - Redis publisher task cancelled.
+2025-07-18 01:47:07,816 - INFO - websocket - Redis publisher task finished.
+2025-07-18 01:47:13,462 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-18 01:47:14,298 - INFO - websocket - Redis publisher task cancelled.
+2025-07-18 01:47:14,298 - INFO - websocket - Redis publisher task finished.
+2025-07-18 01:47:19,474 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-18 01:47:25,318 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:53744
+2025-07-18 01:47:25,318 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:53744
+2025-07-18 01:47:25,320 - DEBUG - websocket - User 0: Successfully sent loading message
+2025-07-18 01:47:25,320 - INFO - websocket - WebSocket auth: Authenticating user UVLB4 (live)
+2025-07-18 01:47:25,416 - INFO - websocket - User 25: WebSocket initialized with balance=250000.00000000, margin=59910.39000000
+2025-07-18 01:47:26,075 - DEBUG - websocket - Cached/updated group-symbol settings for group 'Group B'.
+2025-07-18 01:47:26,076 - DEBUG - websocket - User 25: Fetched 1 open orders directly from database
+2025-07-18 01:47:26,078 - DEBUG - websocket - User 25: Fetched 0 pending orders directly from database
+2025-07-18 01:47:26,079 - INFO - websocket - User 25: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-18 01:47:26,085 - DEBUG - websocket - User 25: Updated balance/margin cache: balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:26,179 - DEBUG - websocket - User 25: Successfully sent initial connection data
+2025-07-18 01:47:26,179 - INFO - websocket - User UVLB4: WebSocket connection established successfully
+2025-07-18 01:47:27,088 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:27,088 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:27,089 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:29,245 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:29,245 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:29,246 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:31,509 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:31,509 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:31,511 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:33,836 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:33,837 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:33,838 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:36,129 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:36,129 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:36,130 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:38,445 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:38,446 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:38,448 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:40,704 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:40,705 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:40,707 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:43,058 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:43,059 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:43,060 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:45,722 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:45,722 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:45,725 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:47,979 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:47,979 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:47,982 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:50,323 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:50,323 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:50,324 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:52,585 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:52,587 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:52,591 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:54,963 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:54,963 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:54,966 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:57,208 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:57,209 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:57,210 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:47:59,430 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:47:59,430 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:47:59,432 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:01,005 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:01,005 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:01,006 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:01,828 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:01,829 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:01,829 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:04,368 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:04,369 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:04,370 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:06,338 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:06,339 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:06,339 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:08,579 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:08,579 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:08,580 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:10,954 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:10,954 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:10,957 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:13,190 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:13,190 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:13,191 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:15,451 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:15,452 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:47:26.082663', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:15,457 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:17,615 - INFO - websocket - [WEBSOCKET_DEBUG] User 25: Received ORDER_UPDATE message
+2025-07-18 01:48:17,619 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:17,619 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:17,620 - DEBUG - websocket - User 25: Successfully sent order update
+2025-07-18 01:48:17,620 - INFO - websocket - [WEBSOCKET_DEBUG] User 25: Received USER_DATA_UPDATE message
+2025-07-18 01:48:17,628 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:17,628 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:17,628 - DEBUG - websocket - User 25: Successfully sent user data update
+2025-07-18 01:48:17,699 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:17,702 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:17,703 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:20,080 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:20,085 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:20,092 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:22,332 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:22,332 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:22,333 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:24,680 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:24,680 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:24,681 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:26,913 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:26,913 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:26,916 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:29,172 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:29,179 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:29,180 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:31,436 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:31,437 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:31,438 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:33,893 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:33,895 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:33,901 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:36,146 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:36,147 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:36,149 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:37,520 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:37,520 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:37,521 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:38,697 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:38,698 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:38,698 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:41,002 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:41,002 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:41,003 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:42,992 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:42,992 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:17.606510', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:42,994 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:43,692 - INFO - websocket - [WEBSOCKET_DEBUG] User 25: Received ORDER_UPDATE message
+2025-07-18 01:48:43,699 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:43,699 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:43.682128', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:43,701 - DEBUG - websocket - User 25: Successfully sent order update
+2025-07-18 01:48:43,701 - INFO - websocket - [WEBSOCKET_DEBUG] User 25: Received USER_DATA_UPDATE message
+2025-07-18 01:48:43,710 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:43,711 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:43.682128', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:43,713 - DEBUG - websocket - User 25: Successfully sent user data update
+2025-07-18 01:48:45,292 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:45,293 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:43.682128', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:45,295 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:47,636 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:47,637 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:43.682128', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:47,638 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:49,842 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Reading from balance_margin_cache - balance=250000.00000000, margin=59910.39
+2025-07-18 01:48:49,842 - DEBUG - websocket - [WEBSOCKET_DEBUG] User 25: Full balance_margin_data from cache: {'wallet_balance': Decimal('250000.00000000'), 'margin': Decimal('59910.39'), 'updated_at': '2025-07-18T01:48:43.682128', 'cache_version': Decimal('2.0')}
+2025-07-18 01:48:49,843 - DEBUG - websocket - User 25: Successfully sent market update
+2025-07-18 01:48:51,468 - INFO - websocket - User UVLB4: WebSocket disconnected
+2025-07-18 01:48:52,164 - INFO - websocket - Redis publisher task cancelled.
+2025-07-18 01:48:52,169 - INFO - websocket - Redis publisher task finished.

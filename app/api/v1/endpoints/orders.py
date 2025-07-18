@@ -105,6 +105,14 @@ router = APIRouter(
     tags=["orders"]
 )
 
+# --- Helper to filter out order_id from update fields ---
+def filter_update_fields(update_fields: dict) -> dict:
+    """Remove 'order_id' from update fields to prevent accidental update."""
+    if 'order_id' in update_fields:
+        update_fields = dict(update_fields)  # Copy to avoid mutating caller's dict
+        update_fields.pop('order_id')
+    return update_fields
+
 # --- Global Helper Functions for Cache and Portfolio Updates ---
 async def update_user_cache(user_id, db, redis_client, user_type):
     """Update user cache in background after order changes."""
@@ -2491,8 +2499,9 @@ async def add_takeprofit(
         )
         
         if not db_order:
-            orders_logger.warning(f"Order {request.order_id} not found for user {user_id_for_operation}")
-            raise HTTPException(status_code=404, detail="Order not found")
+            msg = f"Order {request.order_id} not found for user {user_id_for_operation}"
+            orders_logger.warning(msg)
+            raise HTTPException(status_code=404, detail=msg)
         
         # Check if order is in OPEN status
         if db_order.order_status != "OPEN":
@@ -3045,10 +3054,11 @@ async def update_order_by_service_provider(
             orders_logger.info(f"Updating user {user_id} margin from {original_margin} to {db_user.margin}")
             
             # Update the order with the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_CONFIRM"
@@ -3251,10 +3261,11 @@ async def update_order_by_service_provider(
                 ))
             
             # Update the order with all the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_CLOSE"
@@ -3411,10 +3422,11 @@ async def update_order_by_service_provider(
             )
             
             # Update the order with the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_PENDING_ACTIVATE"
@@ -3470,10 +3482,11 @@ async def update_order_by_service_provider(
             )
             
             # Update the order with the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_CANCEL_PENDING"
@@ -3525,10 +3538,11 @@ async def update_order_by_service_provider(
             orders_logger.info(f"Processing regular update for order {db_order.order_id}")
             
             # Update the order with the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_UPDATE"
@@ -4122,10 +4136,11 @@ async def service_provider_order_update(
             )
             
             # Update the order with the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_PENDING_ACTIVATE"
@@ -4328,10 +4343,11 @@ async def service_provider_order_update(
                 ))
             
             # Update the order with all the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_CLOSE"
@@ -4488,10 +4504,11 @@ async def service_provider_order_update(
             )
             
             # Update the order with the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_PENDING_ACTIVATE"
@@ -4547,10 +4564,11 @@ async def service_provider_order_update(
             )
             
             # Update the order with the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_CANCEL_PENDING"
@@ -4602,10 +4620,11 @@ async def service_provider_order_update(
             orders_logger.info(f"Processing regular update for order {db_order.order_id}")
             
             # Update the order with the new fields
+            filtered_update_fields = filter_update_fields(update_fields)
             updated_order = await crud_order.update_order_with_tracking(
                 db,
                 db_order,
-                update_fields,
+                filtered_update_fields,
                 current_user.id,
                 'live',
                 action_type="SERVICE_PROVIDER_UPDATE"

@@ -1,0 +1,69 @@
+2025-07-18 01:44:44,916 - ERROR - database - Error in database session: 500: Failed to add takeprofit: 404: Order not found
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\orders.py", line 2503, in add_takeprofit
+    raise HTTPException(status_code=404, detail="Order not found")
+fastapi.exceptions.HTTPException: 404: Order not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\orders.py", line 2618, in add_takeprofit
+    raise HTTPException(status_code=500, detail=f"Failed to add takeprofit: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Failed to add takeprofit: 404: Order not found
+2025-07-18 01:45:17,284 - ERROR - database - Error in database session: 500: Failed to add takeprofit: 404: Order not found
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\orders.py", line 2503, in add_takeprofit
+    raise HTTPException(status_code=404, detail="Order not found")
+fastapi.exceptions.HTTPException: 404: Order not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\orders.py", line 2618, in add_takeprofit
+    raise HTTPException(status_code=500, detail=f"Failed to add takeprofit: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Failed to add takeprofit: 404: Order not found
+2025-07-18 01:45:41,425 - ERROR - database - Error in database session: 500: Failed to add takeprofit: 404: Order not found
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\orders.py", line 2503, in add_takeprofit
+    raise HTTPException(status_code=404, detail="Order not found")
+fastapi.exceptions.HTTPException: 404: Order not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\orders.py", line 2618, in add_takeprofit
+    raise HTTPException(status_code=500, detail=f"Failed to add takeprofit: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Failed to add takeprofit: 404: Order not found
