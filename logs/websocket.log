@@ -1625,3 +1625,9 @@
 2025-07-21 02:00:57,547 - INFO - websocket - User DYY5A: WebSocket disconnected
 2025-07-21 02:00:58,537 - INFO - websocket - Redis publisher task cancelled.
 2025-07-21 02:00:58,537 - INFO - websocket - Redis publisher task finished.
+2025-07-21 05:18:38,211 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-21 05:29:12,655 - INFO - websocket - Redis publisher task cancelled.
+2025-07-21 05:29:12,657 - INFO - websocket - Redis publisher task finished.
+2025-07-21 05:34:37,031 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-21 05:37:55,474 - INFO - websocket - Redis publisher task cancelled.
+2025-07-21 05:37:55,474 - INFO - websocket - Redis publisher task finished.

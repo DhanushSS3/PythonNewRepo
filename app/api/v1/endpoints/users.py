@@ -697,10 +697,10 @@ async def request_password_reset(
     otp = await crud_otp.create_otp(db, user_id=user.id) # Pass user_id
     await email_service.send_email(
         user.email,
-        "Password Reset OTP",
+        "OTP Verification",
         f"Your OTP is: {otp.otp_code}"
     )
-    return StatusResponse(message="Password reset OTP sent successfully.")
+    return StatusResponse(message="OTP sent successfully.")
 
 from uuid import uuid4
 from app.schemas.user import PasswordResetVerifyResponse, PasswordResetConfirmRequest
