@@ -16,8 +16,8 @@ loaded = load_dotenv(dotenv_path=dotenv_path, verbose=True)
 
 LOADED_SECRET_KEY = os.getenv("SECRET_KEY")
 LOADED_ALGORITHM = os.getenv("ALGORITHM")
-print(f"DEBUG: Loaded SECRET_KEY from env: '{LOADED_SECRET_KEY}'")
-print(f"DEBUG: Loaded ALGORITHM from env: '{LOADED_ALGORITHM}'")
+# print(f"DEBUG: Loaded SECRET_KEY from env: '{LOADED_SECRET_KEY}'")
+# print(f"DEBUG: Loaded ALGORITHM from env: '{LOADED_ALGORITHM}'")
 
 if loaded:
     logger.info(".env file loaded successfully.")

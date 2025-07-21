@@ -159,9 +159,6 @@ ALGORITHM = os.getenv("ALGORITHM")
 HOST = os.getenv("DATABASE_HOST")
 
 print(f"--- Application Startup ---")
-# print(f"Loaded SECRET_KEY (from code): '{SECRET_KEY}'")
-# print(f"Loaded ALGORITHM (from code): '{ALGORITHM}'")
-# print(f"Loaded HOST (from code): '{HOST}'")
 print(f"---------------------------")
 
 # Log application startup
@@ -851,8 +848,8 @@ async def startup_event():
                 try:
                     keys = await redis_client.keys("*")
                     print(f"[STARTUP] Redis contains {len(keys)} keys:")
-                    for k in keys:
-                        print(f"  - {k}")
+                    # for k in keys:
+                    #     print(f"  - {k}")
                 except Exception as e:
                     print(f"[STARTUP] Error fetching Redis keys: {e}")
     except Exception:

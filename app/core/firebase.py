@@ -65,35 +65,68 @@ def _stringify_value(value: Any) -> str:
         return json.dumps(value, default=str)
     return str(value)
 
-async def send_order_to_firebase(order_data: Dict[str, Any], account_type: str = "live") -> bool:
-    """
-    Sends order data to Firebase Realtime Database under 'trade_data'.
-    Only the fields present in order_data are sent (plus account_type and timestamp).
-    All field values are converted to strings before sending.
-    Returns True if successful, False otherwise.
-    """
+# async def send_order_to_firebase(order_data: Dict[str, Any], account_type: str = "live") -> bool:
+#     """
+#     Sends order data to Firebase Realtime Database under 'trade_data'.
+#     Only the fields present in order_data are sent (plus account_type and timestamp).
+#     All field values are converted to strings before sending.
+#     Returns True if successful, False otherwise.
+#     """
+#     try:
+#         _ensure_firebase_initialized()
+#         # Log the original order data received
+#         firebase_comm_logger.info(f"OUTGOING ORDER DATA: {json.dumps(order_data, default=str)}")
+        
+#         # Stringify all present fields
+#         payload = {k: _stringify_value(v) for k, v in order_data.items()}
+#         # Always add account_type and timestamp
+#         payload["account_type"] = account_type
+#         payload["timestamp"] = _stringify_value(datetime.utcnow().isoformat())
+        
+#         # Log the fully stringified payload that will be pushed to Firebase.
+#         logger.info(f"[FIREBASE] Payload being pushed to Firebase (all stringified): {payload}")
+#         firebase_comm_logger.info(f"FIREBASE PUSH: trade_data/{account_type} - {json.dumps(payload, default=str)}")
+        
+#         firebase_database_ref = db.reference("trade_data")
+#         push_result = firebase_database_ref.push(payload)
+        
+#         if push_result and hasattr(push_result, 'key'):
+#             firebase_comm_logger.info(f"FIREBASE PUSH RESULT: Key={push_result.key}")
+#         log_order_id = order_data.get('order_id') or order_data.get('user_id', 'N/A')
+#         logger.info(f"Order data (ID: {log_order_id}) sent to Firebase successfully.")
+#         return True
+#     except Exception as e:
+#         error_msg = f"Error sending order data to Firebase (ID: {order_data.get('order_id', 'N/A')}): {e}"
+#         logger.error(error_msg, exc_info=True)
+#         firebase_comm_logger.error(f"FIREBASE ERROR: {error_msg}", exc_info=True)
+#         return False
+
+import asyncio
+
+async def send_order_to_firebase(order_data: Dict[str, Any], account_type: str = "live", delete_after_seconds: int = 1) -> bool:
     try:
         _ensure_firebase_initialized()
-        # Log the original order data received
         firebase_comm_logger.info(f"OUTGOING ORDER DATA: {json.dumps(order_data, default=str)}")
-        
-        # Stringify all present fields
         payload = {k: _stringify_value(v) for k, v in order_data.items()}
-        # Always add account_type and timestamp
         payload["account_type"] = account_type
         payload["timestamp"] = _stringify_value(datetime.utcnow().isoformat())
-        
-        # Log the fully stringified payload that will be pushed to Firebase.
         logger.info(f"[FIREBASE] Payload being pushed to Firebase (all stringified): {payload}")
         firebase_comm_logger.info(f"FIREBASE PUSH: trade_data/{account_type} - {json.dumps(payload, default=str)}")
-        
         firebase_database_ref = db.reference("trade_data")
         push_result = firebase_database_ref.push(payload)
-        
         if push_result and hasattr(push_result, 'key'):
             firebase_comm_logger.info(f"FIREBASE PUSH RESULT: Key={push_result.key}")
         log_order_id = order_data.get('order_id') or order_data.get('user_id', 'N/A')
         logger.info(f"Order data (ID: {log_order_id}) sent to Firebase successfully.")
+
+        # --- NEW: Schedule deletion from Firebase Realtime DB ---
+        if delete_after_seconds > 0:
+            async def delayed_delete():
+                await asyncio.sleep(delete_after_seconds)
+                push_result.delete()
+                logger.info(f"Order data (ID: {log_order_id}) deleted from Firebase after {delete_after_seconds} seconds.")
+            asyncio.create_task(delayed_delete())
+
         return True
     except Exception as e:
         error_msg = f"Error sending order data to Firebase (ID: {order_data.get('order_id', 'N/A')}): {e}"
