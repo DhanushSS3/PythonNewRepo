@@ -528,3 +528,39 @@
 2025-07-18 05:11:10,151 - INFO - app.firebase_stream - Firebase Admin event processing task finished.
 2025-07-18 05:11:10,155 - INFO - app - Redis connection closed
 2025-07-18 05:11:10,155 - INFO - app - Application shutdown completed
+2025-07-20 20:56:06,412 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-20 20:56:06,451 - INFO - app.core.config - .env file loaded successfully.
+2025-07-20 20:56:06,465 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-20 20:56:06,465 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-20 20:56:06,832 - INFO - app - Application starting up - Trading system initialized
+2025-07-20 20:56:06,832 - INFO - app - SL/TP Epsilon accuracy configured: 0.00001
+2025-07-20 20:56:06,832 - INFO - app - Environment: PRODUCTION
+2025-07-20 20:56:06,894 - INFO - app - Application startup initiated
+2025-07-20 20:56:06,894 - INFO - app - Initializing core services...
+2025-07-20 20:56:06,960 - INFO - app - Firebase initialized
+2025-07-20 20:56:06,960 - WARNING - app.dependencies.redis_client - [Redis] Client not initialized, attempting late connection.
+2025-07-20 20:56:11,091 - WARNING - app - Redis initialization failed
+2025-07-20 20:56:11,095 - INFO - app - [SWAP] daily_swap_charge_job triggered
+2025-07-20 20:56:11,095 - INFO - app - [AUTO-CUTOFF] update_all_users_dynamic_portfolio will run as a background asyncio task, not via APScheduler.
+2025-07-20 20:56:11,097 - INFO - app - Scheduler initialized
+2025-07-20 20:56:11,097 - INFO - app - Background tasks initialized
+2025-07-20 20:56:12,195 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 20:56:12,195 - INFO - app - Application startup completed successfully
+2025-07-20 20:56:12,195 - INFO - app.firebase_stream - Starting Firebase Admin event processing task for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-20 20:56:12,196 - INFO - app.firebase_stream - Attempting to start Firebase Admin listener for path: 'datafeeds'.
+2025-07-20 20:56:12,918 - INFO - app.firebase_stream - Firebase Admin listener started successfully for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-20 20:57:11,482 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 20:58:11,411 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 20:59:11,403 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 21:00:11,443 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 21:01:11,404 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 21:02:11,511 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 21:03:11,515 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 21:04:11,418 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 21:05:11,392 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-20 21:05:29,098 - INFO - app - Application shutdown initiated
+2025-07-20 21:05:29,098 - INFO - app - Scheduler shutdown completed
+2025-07-20 21:05:29,098 - INFO - app.firebase_stream - Firebase event processing task cancelled.
+2025-07-20 21:05:31,014 - INFO - app.firebase_stream - Firebase listener closed.
+2025-07-20 21:05:31,015 - INFO - app.firebase_stream - Firebase Admin event processing task finished.
+2025-07-20 21:05:31,015 - INFO - app - Application shutdown completed
