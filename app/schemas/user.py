@@ -88,6 +88,7 @@ class UserResponse(BaseModel):
 
     reffered_code: Optional[str] = Field(None, description="User's unique referral code.")
     referred_by_id: Optional[int] = Field(None, description="ID of the user who referred this user.")
+    referral_code: Optional[str] = Field(None, description="User's own referral code.")
 
     created_at: datetime.datetime = Field(..., description="Timestamp when the user was created.")
     updated_at: datetime.datetime = Field(..., description="Timestamp when the user was last updated.")
