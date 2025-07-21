@@ -140,11 +140,22 @@ async def register_user_with_proofs(
     fund_manager: str = Form(None),
     user_type: str = Form(None),  # Changed from default="live" to None
     isActive: int = Form(None),
+    referral_code: str = Form(None),
     db: AsyncSession = Depends(get_db)
 ):
     # Force user_type to be "live" for this endpoint regardless of what's provided
     fixed_user_type = "live"
     
+    # Check if referral_code is provided and valid
+    referred_by_id = None
+    if referral_code:
+        referrer = await crud_user.get_user_by_referral_code(db, referral_code)
+        if referrer:
+            referred_by_id = referrer.id
+    
+    # Generate a unique 6-character referral_code for the new user
+    user_referral_code = await crud_user.generate_unique_referral_code(db)
+
     existing_user = await crud_user.get_user_by_email_phone_type(db, email=email, phone_number=phone_number, user_type=fixed_user_type)
     if existing_user:
         raise HTTPException(
@@ -186,6 +197,9 @@ async def register_user_with_proofs(
         "status": 1,
         "isActive": isActive if isActive is not None else 1,
         "account_number": await generate_unique_account_number(db),
+        "reffered_code": referral_code,  # Store what user gave
+        "referred_by_id": referred_by_id,  # Store user_id if valid, else None
+        "referral_code": user_referral_code,  # Store generated code
     }
 
     hashed_password = get_password_hash(password)

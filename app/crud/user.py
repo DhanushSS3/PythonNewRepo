@@ -533,3 +533,20 @@ async def get_user_email(redis_client, db, user_id, user_type):
     if db_user and getattr(db_user, 'email', None):
         return db_user.email
     return None 
+
+async def get_user_by_referral_code(db: AsyncSession, code: str) -> Optional[User]:
+    """
+    Retrieves a user from the database by their referral_code (for live users only).
+    """
+    result = await db.execute(select(User).filter(User.referral_code == code, User.user_type == 'live'))
+    return result.scalars().first()
+
+async def generate_unique_referral_code(db: AsyncSession) -> str:
+    """
+    Generate a unique 6-character alphanumeric referral code for a User (live only).
+    """
+    while True:
+        code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+        existing = await db.execute(select(User).filter(User.referral_code == code, User.user_type == 'live'))
+        if not existing.scalars().first():
+            return code 

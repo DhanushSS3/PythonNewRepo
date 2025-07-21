@@ -97,7 +97,10 @@ class User(Base):
     referred_by_id = Column(Integer, ForeignKey("users.id"), nullable=True) # ForeignKey references the table name
 
     # Unique Referral Code (Auto-generated - logic for generation needed elsewhere)
-    reffered_code = Column(String(20), unique=True, index=True, nullable=True)
+    reffered_code = Column(String(20), index=True, nullable=True)
+
+    # New: User's own referral code (6 characters, unique)
+    referral_code = Column(String(6), unique=True, index=True, nullable=True)
 
     # Timestamps (Using SQLAlchemy's func.now() for database-side default)
     created_at = Column(DateTime, server_default=func.now(), nullable=False)
