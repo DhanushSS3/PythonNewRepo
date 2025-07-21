@@ -171,6 +171,7 @@ logger.info(f"Environment: {'PRODUCTION' if os.getenv('ENVIRONMENT', 'developmen
 
 # --- Scheduled Job Functions ---
 async def daily_swap_charge_job():
+    logger.info("[SCHEDULER] Starting daily_swap_charge_job...")
     logger.info("Executing daily swap charge job...")
     async with AsyncSessionLocal() as db:
         if global_redis_client_instance:
@@ -184,6 +185,7 @@ async def daily_swap_charge_job():
 
 # --- New Dynamic Portfolio Update Job ---
 async def update_all_users_dynamic_portfolio():
+    logger.info("[SCHEDULER] Starting update_all_users_dynamic_portfolio job...")
     """
     Background task that updates the dynamic portfolio data (free_margin, margin_level)
     for all users, regardless of whether they are connected via WebSockets.
@@ -752,6 +754,7 @@ async def handle_margin_cutoff(db: AsyncSession, redis_client: Redis, user_id: i
 
 # --- Service Provider JWT Rotation Job ---
 async def rotate_service_account_jwt():
+    logger.info("[SCHEDULER] Starting rotate_service_account_jwt job...")
     """
     Generates a JWT for the Barclays service provider and pushes it to Firebase.
     This job is scheduled to run periodically.
@@ -760,6 +763,7 @@ async def rotate_service_account_jwt():
         service_name = "barclays_service_provider"
         # Generate a token valid for 35 minutes. It will be refreshed every 30 minutes.
         token = create_service_account_token(service_name, expires_minutes=10080)
+        print('Service token pushed to firebase')
 
         # Path in Firebase to store the token
         jwt_ref = firebase_db.reference(f"service_provider_credentials/{service_name}")
@@ -857,6 +861,7 @@ async def startup_event():
 
     # Initialize APScheduler
     try:
+        logger.info("[SCHEDULER] Initializing APScheduler...")
         scheduler = AsyncIOScheduler()
         
         scheduler.add_job(
@@ -893,10 +898,12 @@ async def startup_event():
             replace_existing=True
         )
         
+        logger.info("[SCHEDULER] About to start scheduler...")
         scheduler.start()
+        logger.info("[SCHEDULER] Scheduler started successfully.")
         logger.info("Scheduler initialized")
-    except Exception:
-        logger.error("Scheduler initialization error")
+    except Exception as e:
+        logger.error(f"Scheduler initialization error: {e}", exc_info=True)
     
     # Start background tasks
     try:
