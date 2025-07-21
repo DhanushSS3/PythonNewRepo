@@ -147,7 +147,7 @@ async def update_user_cache(user_id, db, redis_client, user_type):
 async def update_portfolio(user_id, db, redis_client, user_type):
     """Update portfolio in background after order changes."""
     from app.database.session import async_session_factory
-    from app.core.cache import get_user_data_cache, get_group_symbol_settings_cache, get_adjusted_market_price_cache
+    from app.core.cache import get_user_data_cache, get_group_symbol_settings_cache, get_last_known_price, get_adjusted_market_price_cache
     from app.crud import crud_order
     
     async with await async_session_factory() as background_db:
@@ -3781,19 +3781,14 @@ async def _handle_order_open_transition(
         raise HTTPException(status_code=400, detail="Missing final price or quantity for margin calculation.")
 
     try:
-        # Await get_latest_market_data if it's async
-        raw_market_data = get_latest_market_data
-        if callable(raw_market_data):
-            try:
-                raw_market_data = await get_latest_market_data()
-            except TypeError:
-                # If not async, just call it
-                raw_market_data = await get_latest_market_data()
+        # Get the last known price for the symbol from Redis
+        last_price_data = await get_last_known_price(redis_client, db_order.order_company_name)
+        raw_market_data = {}
+        if last_price_data:
+            orders_logger.info(f"Got last known price for {db_order.order_company_name}: {last_price_data}")
+            raw_market_data = {db_order.order_company_name.upper(): last_price_data}
         else:
-            raw_market_data = await get_latest_market_data()
-        if not raw_market_data:
-            orders_logger.error(f"Failed to get market data for margin calculation")
-            raw_market_data = {}
+            orders_logger.warning(f"Could not get last known price for {db_order.order_company_name}, margin calculation may be affected.")
         ext_symbol_info = await get_external_symbol_info(db, db_order.order_company_name)
         if not ext_symbol_info:
             orders_logger.error(f"External symbol info not found for {db_order.order_company_name}")
