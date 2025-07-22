@@ -1,15 +1,45 @@
-2025-07-21 23:17:33,484 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
-2025-07-21 23:17:37,139 - INFO - websocket - RawPriceBroadcaster initialized with 10 symbols: ['AUDCAD', 'AUDJPY', 'AUDUSD', 'BTCUSD', 'CADJPY', 'D30', 'JP225', 'US30', 'XAGUSD', 'XAUUSD']
-2025-07-21 23:17:37,143 - INFO - websocket - New client connected. Active connections: 1
-2025-07-21 23:17:37,143 - INFO - websocket - Starting subscriber task for first client
-2025-07-21 23:17:37,145 - INFO - websocket - RawPriceBroadcaster subscribed to 'market_data_updates' for symbols: ['AUDCAD', 'AUDJPY', 'AUDUSD', 'BTCUSD', 'CADJPY', 'D30', 'JP225', 'US30', 'XAGUSD', 'XAUUSD']
-2025-07-21 23:17:37,167 - WARNING - websocket - No price data found for XAUUSD
-2025-07-21 23:17:49,376 - INFO - websocket - Client disconnected: 127.0.0.1
-2025-07-21 23:17:49,376 - INFO - websocket - Client disconnected. Remaining connections: 0
-2025-07-21 23:17:49,377 - INFO - websocket - Stopping subscriber task - no more clients
-2025-07-21 23:17:49,378 - INFO - websocket - RawPriceBroadcaster subscriber task cancelled.
-2025-07-21 23:17:49,724 - INFO - websocket - Redis publisher task cancelled.
-2025-07-21 23:17:49,724 - INFO - websocket - Redis publisher task finished.
-2025-07-21 23:25:55,240 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
-2025-07-21 23:34:28,996 - INFO - websocket - Redis publisher task cancelled.
-2025-07-21 23:34:28,996 - INFO - websocket - Redis publisher task finished.
+2025-07-22 03:19:56,898 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 03:21:24,582 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 03:21:24,583 - INFO - websocket - Redis publisher task finished.
+2025-07-22 03:21:55,178 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 03:23:58,204 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 03:23:58,205 - INFO - websocket - Redis publisher task finished.
+2025-07-22 03:28:34,748 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 03:30:33,084 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:52824
+2025-07-22 03:30:33,085 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:52824
+2025-07-22 03:30:33,089 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-22 03:30:33,118 - INFO - websocket - User 30: WebSocket initialized with balance=10000.00000000, margin=0
+2025-07-22 03:30:33,984 - INFO - websocket - User 30: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 03:30:34,112 - INFO - websocket - User 5B0HV: WebSocket connection established successfully
+2025-07-22 03:30:41,100 - INFO - websocket - User 5B0HV: WebSocket disconnected
+2025-07-22 03:30:51,365 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:52912
+2025-07-22 03:30:51,366 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:52912
+2025-07-22 03:30:51,369 - INFO - websocket - WebSocket auth: Authenticating user UVLB4 (live)
+2025-07-22 03:30:51,383 - INFO - websocket - User 25: WebSocket initialized with balance=6389.62000000, margin=5936.62000000
+2025-07-22 03:30:51,932 - INFO - websocket - User 25: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-22 03:30:52,107 - INFO - websocket - User UVLB4: WebSocket connection established successfully
+2025-07-22 03:30:55,350 - INFO - websocket - [WEBSOCKET_DEBUG] User 25: Received ORDER_UPDATE message
+2025-07-22 03:30:55,369 - INFO - websocket - [WEBSOCKET_DEBUG] User 25: Received USER_DATA_UPDATE message
+2025-07-22 03:31:29,479 - INFO - websocket - [WEBSOCKET_DEBUG] User 25: Received ORDER_UPDATE message
+2025-07-22 03:31:29,504 - INFO - websocket - [WEBSOCKET_DEBUG] User 25: Received USER_DATA_UPDATE message
+2025-07-22 03:31:43,632 - INFO - websocket - User UVLB4: WebSocket disconnected
+2025-07-22 03:31:43,815 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 03:31:43,822 - INFO - websocket - Redis publisher task finished.
+2025-07-22 03:40:12,264 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 03:40:26,686 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:54077
+2025-07-22 03:40:26,688 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:54077
+2025-07-22 03:40:26,691 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-22 03:40:26,714 - INFO - websocket - User 30: WebSocket initialized with balance=10000.00000000, margin=0
+2025-07-22 03:40:27,414 - INFO - websocket - User 30: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 03:40:27,595 - INFO - websocket - User 5B0HV: WebSocket connection established successfully
+2025-07-22 03:40:51,159 - INFO - websocket - User 30: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 03:40:51,167 - INFO - websocket - [WEBSOCKET_DEBUG] User 30: Received ORDER_UPDATE message
+2025-07-22 03:40:51,221 - INFO - websocket - [WEBSOCKET_DEBUG] User 30: Received USER_DATA_UPDATE message
+2025-07-22 03:40:51,230 - INFO - websocket - User 30: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 03:41:54,221 - INFO - websocket - [WEBSOCKET_DEBUG] User 30: Received ORDER_UPDATE message
+2025-07-22 03:41:54,228 - INFO - websocket - [WEBSOCKET_DEBUG] User 30: Received USER_DATA_UPDATE message
+2025-07-22 03:41:54,652 - INFO - websocket - [WEBSOCKET_DEBUG] User 30: Received ORDER_UPDATE message
+2025-07-22 03:41:54,662 - INFO - websocket - [WEBSOCKET_DEBUG] User 30: Received USER_DATA_UPDATE message
+2025-07-22 03:42:34,771 - INFO - websocket - User 5B0HV: WebSocket disconnected
+2025-07-22 03:42:35,782 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 03:42:35,782 - INFO - websocket - Redis publisher task finished.

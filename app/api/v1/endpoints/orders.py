@@ -20,7 +20,7 @@ from sqlalchemy.future import select
 from sqlalchemy.orm import selectinload
 from sqlalchemy import or_
 from app.api.v1.endpoints.market_data_ws import update_static_orders_cache, update_dynamic_portfolio_cache
-
+from app.database.models import RejectedOrder
 from app.core.logging_config import orders_logger, order_audit_logger
 import orjson
 from app.core.security import get_user_from_service_or_user_token, get_current_user, get_user_from_service_token
@@ -394,49 +394,100 @@ async def get_closed_orders(
     orders = await crud_order.get_orders_by_user_id_and_statuses(db, current_user.id, ["CLOSED"], order_model)
     return orders
 
-@router.get("/rejected", response_model=List[OrderResponse], summary="Get all rejected orders for the current user")
+# @router.get("/rejected", response_model=List[OrderResponse], summary="Get all rejected orders for the current user")
+# async def get_rejected_orders(
+#     db: AsyncSession = Depends(get_db),
+#     current_user: User | DemoUser = Depends(get_current_user),
+# ):
+#     user_type = get_user_type(current_user)
+#     logger.info(f"[get_rejected_orders] user_type: {user_type}")
+#     order_model = get_order_model(user_type)
+#     if order_model is None:
+#         logger.error(f"[get_rejected_orders] Could not determine order model for user_type: {user_type}")
+#         raise HTTPException(status_code=400, detail="Invalid user_type for order model.")
+#     orders = await crud_order.get_orders_by_user_id_and_statuses(
+#         db, current_user.id, ["REJECTED", "AUTO-CANCELLED"], order_model
+#     )
+#     return orders
+
+#     from app.core.logging_config import orders_logger
+#     orders_logger.debug(f"[get_order_model] called with: {repr(user_or_type)} (type: {type(user_or_type)})")
+#     # Log attributes if it's an object
+#     if not isinstance(user_or_type, str):
+#         orders_logger.info(f"[get_order_model] user_or_type.__class__.__name__: {user_or_type.__class__.__name__}")
+#         orders_logger.info(f"[get_order_model] user_or_type attributes: {dir(user_or_type)}")
+#         user_type_attr = getattr(user_or_type, 'user_type', None)
+#         orders_logger.info(f"[get_order_model] user_type attribute value: {user_type_attr}, type: {type(user_type_attr)}")
+#     # If a string is passed
+#     if isinstance(user_or_type, str):
+#         orders_logger.info("[get_order_model] Branch: isinstance(user_or_type, str)")
+#         if user_or_type.lower() == 'demo':
+#             orders_logger.info("[get_order_model] Branch: user_type string is 'demo' -> DemoUserOrder")
+#             return DemoUserOrder
+#         orders_logger.info("[get_order_model] Branch: user_type string is not 'demo' -> UserOrder")
+#         return UserOrder
+#     # If a user object is passed
+#     user_type = getattr(user_or_type, 'user_type', None)
+#     if user_type and str(user_type).lower() == 'demo':
+#         orders_logger.info("[get_order_model] Branch: user_type attribute is 'demo' -> DemoUserOrder")
+#         return DemoUserOrder
+#     # Fallback: check class name
+#     if user_or_type.__class__.__name__ == 'DemoUser':
+#         orders_logger.info("[get_order_model] Branch: class name is 'DemoUser' -> DemoUserOrder (FORCED)")
+#         return DemoUserOrder
+#     orders_logger.info("[get_order_model] Branch: default -> UserOrder")
+#     return UserOrder
+
+@router.get("/rejected", response_model=List[dict], summary="Get all rejected orders for the current user")
 async def get_rejected_orders(
     db: AsyncSession = Depends(get_db),
     current_user: User | DemoUser = Depends(get_current_user),
 ):
-    user_type = get_user_type(current_user)
-    logger.info(f"[get_rejected_orders] user_type: {user_type}")
-    order_model = get_order_model(user_type)
-    if order_model is None:
-        logger.error(f"[get_rejected_orders] Could not determine order model for user_type: {user_type}")
-        raise HTTPException(status_code=400, detail="Invalid user_type for order model.")
-    orders = await crud_order.get_orders_by_user_id_and_statuses(
-        db, current_user.id, ["REJECTED", "AUTO-CANCELLED"], order_model
-    )
-    return orders
-
+    """
+    Fetch all rejected orders for the current user from the RejectedOrder model.
+    """
+    from app.database.models import RejectedOrder
+    from sqlalchemy import select
     from app.core.logging_config import orders_logger
-    orders_logger.debug(f"[get_order_model] called with: {repr(user_or_type)} (type: {type(user_or_type)})")
-    # Log attributes if it's an object
-    if not isinstance(user_or_type, str):
-        orders_logger.info(f"[get_order_model] user_or_type.__class__.__name__: {user_or_type.__class__.__name__}")
-        orders_logger.info(f"[get_order_model] user_or_type attributes: {dir(user_or_type)}")
-        user_type_attr = getattr(user_or_type, 'user_type', None)
-        orders_logger.info(f"[get_order_model] user_type attribute value: {user_type_attr}, type: {type(user_type_attr)}")
-    # If a string is passed
-    if isinstance(user_or_type, str):
-        orders_logger.info("[get_order_model] Branch: isinstance(user_or_type, str)")
-        if user_or_type.lower() == 'demo':
-            orders_logger.info("[get_order_model] Branch: user_type string is 'demo' -> DemoUserOrder")
-            return DemoUserOrder
-        orders_logger.info("[get_order_model] Branch: user_type string is not 'demo' -> UserOrder")
-        return UserOrder
-    # If a user object is passed
-    user_type = getattr(user_or_type, 'user_type', None)
-    if user_type and str(user_type).lower() == 'demo':
-        orders_logger.info("[get_order_model] Branch: user_type attribute is 'demo' -> DemoUserOrder")
-        return DemoUserOrder
-    # Fallback: check class name
-    if user_or_type.__class__.__name__ == 'DemoUser':
-        orders_logger.info("[get_order_model] Branch: class name is 'DemoUser' -> DemoUserOrder (FORCED)")
-        return DemoUserOrder
-    orders_logger.info("[get_order_model] Branch: default -> UserOrder")
-    return UserOrder
+    
+    user_id = current_user.id
+    orders_logger.info(f"Fetching rejected orders for user: {user_id}")
+    
+    try:
+        # Query rejected orders directly from RejectedOrder model
+        stmt = (
+            select(RejectedOrder)
+            .where(RejectedOrder.order_user_id == user_id)
+            .order_by(RejectedOrder.created_at.desc())
+        )
+        
+        result = await db.execute(stmt)
+        rejected_orders = result.scalars().all()
+        
+        orders_logger.info(f"Found {len(rejected_orders)} rejected orders for user {user_id}")
+        
+        # Convert to response format
+        response_orders = []
+        for order in rejected_orders:
+            response_orders.append({
+                "id": order.id,
+                "order_id": order.order_id,
+                "rejected_id": order.rejected_id,
+                "order_user_id": order.order_user_id,
+                "order_company_name": order.order_company_name,
+                "order_type": order.order_type,
+                "order_quantity": str(order.order_quantity),
+                "rejected_price": str(order.rejected_price),
+                "rejection_reason": order.rejection_reason,
+                "created_at": order.created_at.isoformat() if order.created_at else None,
+                "updated_at": order.updated_at.isoformat() if order.updated_at else None
+            })
+        
+        return response_orders
+        
+    except Exception as e:
+        orders_logger.error(f"Error fetching rejected orders: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Failed to fetch rejected orders: {str(e)}")
     
 class OrderPlacementRequest(BaseModel):
     # Required fields
@@ -5257,4 +5308,131 @@ async def update_user_dynamic_portfolio_cache(user_id: int, group_name: str, use
         user_type=user_type
     )
 
+from app.schemas.order import ServiceProviderRejectedOrderRequest
+@router.post("/service-provider/rejected-order", response_model=dict)
+async def service_provider_rejected_order(
+    request: ServiceProviderRejectedOrderRequest,
+    db: AsyncSession = Depends(get_db),
+    redis_client: Redis = Depends(get_redis_client),
+    current_user: User = Depends(get_user_from_service_token)
+):
+    """
+    Endpoint for service providers to report rejected orders.
+    """
+    from app.core.logging_config import service_provider_logger, frontend_orders_logger, error_logger
 
+    try:
+        # Ensure the user is a service account
+        if not getattr(current_user, 'is_service_account', False):
+            orders_logger.error(f"Non-service account attempted to use service provider endpoint: {current_user.id}")
+            raise HTTPException(status_code=403, detail="Only service accounts can use this endpoint")
+
+        # Log the request
+        order_audit_logger.info(orjson.dumps({
+            "event": "rejected_order_request",
+            "endpoint": "service_provider_rejected_order",
+            "rejected_id": request.rejected_id,
+            "symbol": request.order_company_name,
+            "order_type": request.order_type,
+            "quantity": str(request.order_quantity),
+            "price": str(request.rejected_price),
+            "reason": request.reason,
+            "timestamp": datetime.datetime.utcnow().isoformat()
+        }).decode())
+
+        # Extract suffix from rejected_id
+        if not request.rejected_id or '-' not in request.rejected_id:
+            raise HTTPException(status_code=400, detail="Invalid rejected_id format")
+
+        suffix = request.rejected_id.split('-')[-1]
+
+        # Map suffixes to corresponding fields and default reasons
+        suffix_mapping = {
+            '001': ('order_id', "Order got rejected"),
+            '002': ('cancel_id', "Cancelling order got rejected"),
+            '003': ('close_id', "Closing order got rejected"),
+            '004': ('modify_id', "Modify order got rejected"),
+            '005': ('stoploss_id', "Stoploss got rejected"),
+            '006': ('takeprofit_id', "Takeprofit got rejected"),
+            '007': ('stoploss_cancel_id', "Stoploss cancel got rejected"),
+            '008': ('takeprofit_cancel_id', "Takeprofit cancel got rejected")
+        }
+
+        if suffix not in suffix_mapping:
+            raise HTTPException(status_code=400, detail="Invalid rejected_id suffix")
+
+        field_name, default_reason = suffix_mapping[suffix]
+
+        # Find the order using the appropriate field
+        stmt = (
+            select(UserOrder)
+            .where(getattr(UserOrder, field_name) == request.rejected_id)
+        )
+        result = await db.execute(stmt)
+        db_order = result.scalar_one_or_none()
+
+        if not db_order:
+            raise HTTPException(
+                status_code=404, 
+                detail=f"No order found with {field_name}={request.rejected_id}"
+            )
+
+        # Check if rejection already exists
+        existing_rejection = await db.execute(
+            select(RejectedOrder)
+            .where(RejectedOrder.rejected_id == request.rejected_id)
+        )
+        if existing_rejection.scalar_one_or_none():
+            raise HTTPException(
+                status_code=400,
+                detail="Rejection already recorded for this ID"
+            )
+
+        # Create rejected order record
+        rejected_order = RejectedOrder(
+            rejected_id=request.rejected_id,
+            order_id=db_order.order_id,  # Link to original order
+            order_user_id=db_order.order_user_id,
+            order_company_name=request.order_company_name,
+            order_type=request.order_type,
+            order_quantity=request.order_quantity,
+            rejected_price=request.rejected_price,
+            # Use provided reason if it's "Under Maintenance", otherwise use default reason
+            rejection_reason=(
+                request.reason 
+                if request.reason == "Under Maintenance" 
+                else default_reason
+            )
+        )
+
+        db.add(rejected_order)
+        await db.commit()
+        await db.refresh(rejected_order)
+
+        # Log the rejection
+        orders_logger.info(
+            f"Order rejection recorded: order_id={rejected_order.order_id}, "
+            f"rejected_id={rejected_order.rejected_id}, "
+            f"reason={rejected_order.rejection_reason}"
+        )
+
+        # Return success response
+        return {
+            "status": "success",
+            "message": "Rejected order recorded",
+            "data": {
+                "rejected_id": rejected_order.rejected_id,
+                "order_id": rejected_order.order_id,
+                "reason": rejected_order.rejection_reason,
+                "user_id": rejected_order.order_user_id
+            }
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        orders_logger.error(f"Error recording rejected order: {e}", exc_info=True)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to record rejected order: {str(e)}"
+        )

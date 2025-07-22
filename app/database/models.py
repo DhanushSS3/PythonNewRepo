@@ -116,6 +116,7 @@ class User(Base):
     otps = relationship("OTP", back_populates="user")
     money_requests = relationship("MoneyRequest", back_populates="user")
     rock_orders = relationship("RockUserOrder", back_populates="user")
+    rejected_orders = relationship("RejectedOrder", back_populates="user")
     # Add back simple relationship without complex conditions
     user_favorites = relationship("UserFavoriteSymbol", 
                                 foreign_keys="[UserFavoriteSymbol.user_id]",
@@ -643,3 +644,114 @@ class IDCounter(Base):
 
     id = Column(Integer, primary_key=True)  # Always 1
     last_value = Column(BigInteger, nullable=False)
+
+
+# class RejectedOrder(Base):
+#     """
+#     SQLAlchemy model for storing rejected orders.
+#     Tracks orders that were rejected for various reasons.
+#     """
+#     __tablename__ = "rejected_orders"
+
+#     id = Column(Integer, primary_key=True, index=True)
+    
+#     # Order identification fields
+#     rejected_id = Column(String(64), unique=True, index=True, nullable=False)
+    
+#     # Order details
+#     order_company_name = Column(String(255), nullable=False)
+#     order_type = Column(String(20), nullable=False)  # e.g., 'BUY', 'SELL', 'BUY_LIMIT', etc.
+#     order_quantity = Column(SQLDecimal(18, 8), nullable=False)
+#     rejected_price = Column(SQLDecimal(18, 8), nullable=False)
+    
+#     # User reference
+#     order_user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
+    
+#     # Optional rejection reason
+#     rejection_reason = Column(String(500), nullable=True)
+    
+#     # Timestamps
+#     created_at = Column(DateTime, server_default=func.now(), nullable=False)
+#     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
+
+#     # Relationship to User model
+#     user = relationship("User", backref="rejected_orders")
+
+#     # Add foreign key constraint to UserOrder
+#     order_id = Column(
+#         String(64), 
+#         ForeignKey("user_orders.order_id", ondelete="CASCADE"),
+#         index=True, 
+#         nullable=False
+#     )
+
+#     # Add relationship to UserOrder
+#     original_order = relationship(
+#         "UserOrder",
+#         foreign_keys=[order_id],
+#         backref="rejected_order"
+#     )
+
+#     def __repr__(self):
+#         return f"<RejectedOrder(order_id='{self.order_id}', rejected_id='{self.rejected_id}', user_id={self.order_user_id})>"
+
+
+from sqlalchemy import Column, Integer, ForeignKey
+from sqlalchemy.dialects.mysql import VARCHAR # <<< Import VARCHAR from mysql dialects!
+from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
+from sqlalchemy.types import DECIMAL as SQLDecimal
+
+# Assuming 'Base' is imported correctly
+# from .base import Base # Adjust import path as needed
+
+class RejectedOrder(Base):
+    """
+    SQLAlchemy model for storing rejected orders.
+    Tracks orders that were rejected for various reasons.
+    """
+    __tablename__ = "rejected_orders"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    # Order identification fields
+    rejected_id = Column(VARCHAR(64), unique=True, index=True, nullable=False) # Consider VARCHAR here too for consistency if needed
+
+    # Order details
+    order_company_name = Column(VARCHAR(255), nullable=False) # Use VARCHAR for other strings if you want to set explicit charsets/collations for them too
+    order_type = Column(VARCHAR(20), nullable=False)
+    order_quantity = Column(SQLDecimal(18, 8), nullable=False)
+    rejected_price = Column(SQLDecimal(18, 8), nullable=False)
+
+    # User reference
+    order_user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
+
+    # Optional rejection reason
+    rejection_reason = Column(VARCHAR(500), nullable=True)
+
+    # Timestamps
+    created_at = Column(DateTime, server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
+
+    # Relationship to User model
+    user = relationship("User", back_populates="rejected_orders")
+
+    # Add foreign key constraint to UserOrder
+    order_id = Column(
+        # THIS IS THE CRITICAL CHANGE: Explicitly set charset and collation
+        VARCHAR(64, charset='utf8mb4', collation='utf8mb4_general_ci'),
+        ForeignKey("user_orders.order_id", ondelete="CASCADE"),
+        # unique=True, # Confirmed removed in previous step, keep it removed
+        index=True,
+        nullable=False # Keep this if you want ON DELETE CASCADE
+    )
+
+    # Add relationship to UserOrder
+    original_order = relationship(
+        "UserOrder",
+        foreign_keys=[order_id],
+        backref="rejected_user_orders"
+    )
+
+    def __repr__(self):
+        return f"<RejectedOrder(order_id='{self.order_id}', rejected_id='{self.rejected_id}', user_id={self.order_user_id})>"

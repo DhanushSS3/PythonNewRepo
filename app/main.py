@@ -1577,7 +1577,33 @@ async def barclays_pending_order_margin_checker():
                                     "cancel_message": cancel_message
                                 }
                                 await send_order_to_firebase(firebase_cancel_data, "live")
+                                # await update_user_static_orders(user_id, db, global_redis_client_instance, user_type)
+                                                                # Create rejected order record
+                                try:
+                                    from app.database.models import RejectedOrder
+                                    rejected_order = RejectedOrder(
+                                        rejected_id=cancel_id,  # Use cancel_id as rejected_id
+                                        order_id=order.order_id,  # Use original order_id
+                                        order_user_id=user_id,
+                                        order_company_name=order.order_company_name,
+                                        order_type=order.order_type,
+                                        order_quantity=order.order_quantity,
+                                        rejected_price=order.order_price,  # Use original order price as rejected price
+                                        rejection_reason="Cancelled due to insufficient margin"
+                                    )
+                                    
+                                    db.add(rejected_order)
+                                    await db.flush()  # Flush to get the ID without committing the transaction
+                                    
+                                    logger.info(f"[BarclaysMarginChecker] Created rejected order record: order_id={order.order_id}, rejected_id={cancel_id}")
+                                except Exception as reject_error:
+                                    logger.error(f"[BarclaysMarginChecker] Error creating rejected order record: {reject_error}", exc_info=True)
+                                    # Continue with the rest of the process even if this fails
+                                
+                                # Continue with the existing code
+                                await db.commit()
                                 await update_user_static_orders(user_id, db, global_redis_client_instance, user_type)
+                                # ... rest of the original code ...
                                 db_user = await get_user_by_id(db, user_id=user_id, user_type=user_type)
                                 if db_user:
                                     from app.services.order_processing import calculate_total_user_margin

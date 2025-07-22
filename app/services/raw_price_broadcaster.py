@@ -18,7 +18,7 @@ class RawPriceBroadcaster:
         # Ensure all symbols are uppercase and properly formatted
         self.symbols_to_broadcast = {
             'AUDJPY', 'AUDCAD', 'AUDUSD', 'JP225', 'US30',
-            'D30', 'CADJPY', 'BTCUSD', 'XAUUSD', 'XAGUSD'
+            'D30', 'CADJPY', 'BTCUSD', 'XAUUSD', 'XAGUSD', 'EURNZD'
         }
         self._subscriber_task = None
         logger.info(f"RawPriceBroadcaster initialized with {len(self.symbols_to_broadcast)} symbols: {sorted(list(self.symbols_to_broadcast))}")

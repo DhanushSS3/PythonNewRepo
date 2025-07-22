@@ -43,6 +43,18 @@ class OrderCreateInternal(BaseModel):
     takeprofit_id: Optional[str] = None
     close_id: Optional[str] = None # Added for tracking closed orders
 
+class ServiceProviderRejectedOrderRequest(BaseModel):
+    rejected_id: str
+    order_company_name: str
+    order_type: str
+    order_quantity: Decimal
+    rejected_price: Decimal
+    reason: Optional[str] = None
+
+    class Config:
+        json_encoders = {
+            Decimal: str
+        }
 
 # --- Order Response Schema ---
 class OrderResponse(BaseModel):
@@ -300,3 +312,7 @@ class OrderStatusResponse(BaseModel):
     order_id: str
     status: Optional[str] = None
     order_status: Optional[str] = None
+
+
+# Add to app/schemas/order.py
+
