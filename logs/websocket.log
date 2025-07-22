@@ -10,3 +10,6 @@
 2025-07-21 23:17:49,378 - INFO - websocket - RawPriceBroadcaster subscriber task cancelled.
 2025-07-21 23:17:49,724 - INFO - websocket - Redis publisher task cancelled.
 2025-07-21 23:17:49,724 - INFO - websocket - Redis publisher task finished.
+2025-07-21 23:25:55,240 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-21 23:34:28,996 - INFO - websocket - Redis publisher task cancelled.
+2025-07-21 23:34:28,996 - INFO - websocket - Redis publisher task finished.

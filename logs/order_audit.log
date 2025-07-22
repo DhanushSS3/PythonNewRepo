@@ -1,0 +1,2 @@
+2025-07-21 23:29:28,603 - INFO - order_audit - {"event":"order_info_request","endpoint":"get_order_info_for_service_provider","user_id":0,"order_id":"1031-001","symbol":"BTCUSD","timestamp":"2025-07-22T06:29:28.602290"}
+2025-07-21 23:29:28,624 - INFO - order_audit - {"event":"order_info_response","endpoint":"get_order_info_for_service_provider","user_id":0,"order_id":"1031-001","symbol":"BTCUSD","half_spread":"50.00000000","status":"TP/SL-CLOSED","timestamp":"2025-07-22T06:29:28.624108"}
