@@ -3951,7 +3951,18 @@ async def service_provider_order_execution(
         "price": str(getattr(request, 'order_price', '')),
         "timestamp": datetime.datetime.utcnow().isoformat()
     }).decode())
-    
+        # Log the incoming request to service provider log
+    service_provider_logger.info(f"SERVICE PROVIDER REQUEST: {json.dumps({
+        'endpoint': 'order_execution',
+        'order_id': request.order_id,
+        'symbol': request.order_company_name,
+        'order_type': request.order_type,
+        'quantity': str(request.order_quantity) if request.order_quantity else None,
+        'price': str(request.order_price) if request.order_price else None,
+        'status': request.order_status,
+        'timestamp': datetime.datetime.utcnow().isoformat()
+    }, default=str)}")
+
     try:
         # Extract the ID to find the order
         id_to_find = request.order_id
@@ -4100,7 +4111,18 @@ async def service_provider_order_update(
         "price": str(getattr(update_request, 'order_price', '')),
         "timestamp": datetime.datetime.utcnow().isoformat()
     }).decode())
-    
+       # Log the incoming request to service provider log
+    service_provider_logger.info(f"SERVICE PROVIDER REQUEST: {json.dumps({
+        'endpoint': 'order_update',
+        'order_id': update_request.order_id,
+        'symbol': update_request.order_company_name,
+        'order_type': update_request.order_type,
+        'quantity': str(update_request.order_quantity) if update_request.order_quantity else None,
+        'price': str(update_request.order_price) if update_request.order_price else None,
+        'status': update_request.order_status,
+        'timestamp': datetime.datetime.utcnow().isoformat()
+    }, default=str)}")
+
     try:
         # Ensure the user is a service account
         if not getattr(current_user, 'is_service_account', False):

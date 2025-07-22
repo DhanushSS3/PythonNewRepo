@@ -5,7 +5,7 @@ import json
 import logging
 from typing import Set, Dict, Any
 from redis.asyncio import Redis
-from app.core.cache import REDIS_MARKET_DATA_CHANNEL
+from app.core.cache import REDIS_MARKET_DATA_CHANNEL, DecimalEncoder
 from fastapi import WebSocket, WebSocketDisconnect
 from app.core.logging_config import websocket_logger
 
@@ -15,23 +15,29 @@ class RawPriceBroadcaster:
     def __init__(self, redis_client: Redis):
         self.redis_client = redis_client
         self.active_connections: Set[WebSocket] = set()
+        # Ensure all symbols are uppercase and properly formatted
         self.symbols_to_broadcast = {
             'AUDJPY', 'AUDCAD', 'AUDUSD', 'JP225', 'US30',
             'D30', 'CADJPY', 'BTCUSD', 'XAUUSD', 'XAGUSD'
         }
         self._subscriber_task = None
+        logger.info(f"RawPriceBroadcaster initialized with {len(self.symbols_to_broadcast)} symbols: {sorted(list(self.symbols_to_broadcast))}")
 
     async def connect(self, websocket: WebSocket):
         await websocket.accept()
         self.active_connections.add(websocket)
+        logger.info(f"New client connected. Active connections: {len(self.active_connections)}")
         if len(self.active_connections) == 1:
             # Start subscriber when first client connects
+            logger.info("Starting subscriber task for first client")
             self._subscriber_task = asyncio.create_task(self._subscriber())
 
     async def disconnect(self, websocket: WebSocket):
         self.active_connections.remove(websocket)
+        logger.info(f"Client disconnected. Remaining connections: {len(self.active_connections)}")
         if not self.active_connections and self._subscriber_task:
             # Stop subscriber when last client disconnects
+            logger.info("Stopping subscriber task - no more clients")
             self._subscriber_task.cancel()
             try:
                 await self._subscriber_task
@@ -42,10 +48,13 @@ class RawPriceBroadcaster:
     async def broadcast(self, message: str):
         """Broadcasts message to all connected clients."""
         disconnected = set()
+        logger.debug(f"Broadcasting message to {len(self.active_connections)} clients")
+        
         for connection in self.active_connections:
             try:
                 await connection.send_text(message)
             except WebSocketDisconnect:
+                logger.info(f"Client disconnected during broadcast")
                 disconnected.add(connection)
             except Exception as e:
                 logger.error(f"Error broadcasting to client: {e}")
@@ -61,7 +70,7 @@ class RawPriceBroadcaster:
         """
         pubsub = self.redis_client.pubsub()
         await pubsub.subscribe(REDIS_MARKET_DATA_CHANNEL)
-        logger.info(f"RawPriceBroadcaster subscribed to '{REDIS_MARKET_DATA_CHANNEL}' for symbols: {self.symbols_to_broadcast}")
+        logger.info(f"RawPriceBroadcaster subscribed to '{REDIS_MARKET_DATA_CHANNEL}' for symbols: {sorted(list(self.symbols_to_broadcast))}")
 
         while True:
             try:
@@ -79,6 +88,7 @@ class RawPriceBroadcaster:
                         }
 
                         if filtered_data:
+                            logger.debug(f"Got updates for {len(filtered_data)} symbols: {sorted(list(filtered_data.keys()))}")
                             # Format the data for public consumption
                             public_data = {
                                 symbol: {
@@ -88,7 +98,12 @@ class RawPriceBroadcaster:
                                 }
                                 for symbol, prices in filtered_data.items()
                             }
-                            await self.broadcast(json.dumps(public_data))
+                            # Include message type for real-time updates
+                            message_json = json.dumps({
+                                "type": "update",
+                                "data": public_data
+                            }, cls=DecimalEncoder)  # Use DecimalEncoder for JSON serialization
+                            await self.broadcast(message_json)
 
                     except json.JSONDecodeError:
                         logger.warning(f"Could not decode JSON from Redis message: {message['data']}")
