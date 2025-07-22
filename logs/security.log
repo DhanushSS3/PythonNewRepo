@@ -360,3 +360,12 @@ jose.exceptions.JWTError: Could not validate credentials
 2025-07-21 05:34:35,274 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
 2025-07-21 05:34:35,276 - INFO - app.core.security - [Redis] AOF persistence already enabled.
 2025-07-21 05:37:56,202 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-21 22:46:13,152 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-21 22:46:13,156 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-21 22:47:14,999 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-21 22:47:40,395 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-21 22:47:40,398 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-21 22:48:05,652 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-21 22:48:08,194 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-21 22:48:08,198 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-21 22:48:39,076 - INFO - app.core.security - [Redis] Connection closed successfully.

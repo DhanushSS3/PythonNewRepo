@@ -9,6 +9,7 @@ from app.api.v1.endpoints import favorites
 # Import the market data WebSocket router module
 from app.api.v1.endpoints import market_data_ws # Import the module
 from app.api.v1.endpoints import admin_wallet
+from app.api.v1.endpoints import public_market_data_ws # Add this import
 # Create the main API router for version 1
 api_router = APIRouter()
 
@@ -25,3 +26,5 @@ api_router.include_router(favorites.router, tags=["favorites"])
 # Include the WebSocket router
 api_router.include_router(market_data_ws.router, tags=["market_data"])
 api_router.include_router(admin_wallet.router, tags=["admin_wallet"])
+# Add the public market data WebSocket router
+api_router.include_router(public_market_data_ws.router, tags=["public-websocket"])

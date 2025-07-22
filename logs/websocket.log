@@ -1631,3 +1631,18 @@
 2025-07-21 05:34:37,031 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
 2025-07-21 05:37:55,474 - INFO - websocket - Redis publisher task cancelled.
 2025-07-21 05:37:55,474 - INFO - websocket - Redis publisher task finished.
+2025-07-21 22:46:14,938 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-21 22:47:13,393 - INFO - websocket - Redis publisher task cancelled.
+2025-07-21 22:47:13,394 - INFO - websocket - Redis publisher task finished.
+2025-07-21 22:47:41,945 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-21 22:47:53,149 - INFO - websocket - RawPriceBroadcaster subscribed to 'market_data_updates' for symbols: {'US30', 'AUDUSD', 'AUDCAD', 'JP225', 'XAUUSD', 'D30', 'AUDJPY', 'XAGUSD', 'BTCUSD', 'CADJPY'}
+2025-07-21 22:48:03,982 - INFO - websocket - Client disconnected: 127.0.0.1
+2025-07-21 22:48:03,984 - INFO - websocket - RawPriceBroadcaster subscriber task cancelled.
+2025-07-21 22:48:04,089 - INFO - websocket - Redis publisher task cancelled.
+2025-07-21 22:48:04,089 - INFO - websocket - Redis publisher task finished.
+2025-07-21 22:48:09,997 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-21 22:48:11,698 - INFO - websocket - RawPriceBroadcaster subscribed to 'market_data_updates' for symbols: {'US30', 'XAGUSD', 'AUDJPY', 'BTCUSD', 'AUDUSD', 'D30', 'CADJPY', 'XAUUSD', 'AUDCAD', 'JP225'}
+2025-07-21 22:48:36,864 - INFO - websocket - Client disconnected: 127.0.0.1
+2025-07-21 22:48:36,869 - INFO - websocket - RawPriceBroadcaster subscriber task cancelled.
+2025-07-21 22:48:37,060 - INFO - websocket - Redis publisher task cancelled.
+2025-07-21 22:48:37,065 - INFO - websocket - Redis publisher task finished.

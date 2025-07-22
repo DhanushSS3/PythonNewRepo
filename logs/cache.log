@@ -1383,3 +1383,125 @@
 2025-07-21 05:37:27,547 - ERROR - cache - Cache verification failed for user 25: expected balance=6389.62000000, margin=5936.62, cached balance=6389.62000000, margin=5936.62
 2025-07-21 05:37:27,548 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
 2025-07-21 05:37:27,549 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-21 22:46:15,627 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-21 22:46:15,631 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-21 22:46:15,637 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-21 22:46:15,640 - ERROR - cache - User 5 not found in database
+2025-07-21 22:46:15,644 - INFO - cache - Refreshing balance/margin cache for user 8 from database
+2025-07-21 22:46:15,654 - ERROR - cache - Cache verification failed for user 8: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-21 22:46:15,654 - INFO - cache - Successfully refreshed balance/margin cache for user 8: balance=0E-8, margin=0.0
+2025-07-21 22:46:15,660 - INFO - cache - Refreshing balance/margin cache for user 9 from database
+2025-07-21 22:46:15,667 - ERROR - cache - Cache verification failed for user 9: expected balance=8436.59000000, margin=8271.68, cached balance=8436.59000000, margin=8271.68
+2025-07-21 22:46:15,668 - INFO - cache - Successfully refreshed balance/margin cache for user 9: balance=8436.59000000, margin=8271.68
+2025-07-21 22:46:15,673 - INFO - cache - Refreshing balance/margin cache for user 10 from database
+2025-07-21 22:46:15,680 - ERROR - cache - Cache verification failed for user 10: expected balance=9707.74000000, margin=0.0, cached balance=9707.74000000, margin=0.0
+2025-07-21 22:46:15,681 - INFO - cache - Successfully refreshed balance/margin cache for user 10: balance=9707.74000000, margin=0.0
+2025-07-21 22:46:15,685 - INFO - cache - Refreshing balance/margin cache for user 11 from database
+2025-07-21 22:46:15,694 - ERROR - cache - Cache verification failed for user 11: expected balance=14420.38000000, margin=0.0, cached balance=14420.38000000, margin=0.0
+2025-07-21 22:46:15,695 - INFO - cache - Successfully refreshed balance/margin cache for user 11: balance=14420.38000000, margin=0.0
+2025-07-21 22:46:15,698 - INFO - cache - Refreshing balance/margin cache for user 13 from database
+2025-07-21 22:46:15,704 - ERROR - cache - Cache verification failed for user 13: expected balance=94.25000000, margin=0.0, cached balance=94.25000000, margin=0.0
+2025-07-21 22:46:15,706 - INFO - cache - Successfully refreshed balance/margin cache for user 13: balance=94.25000000, margin=0.0
+2025-07-21 22:46:15,708 - INFO - cache - Refreshing balance/margin cache for user 14 from database
+2025-07-21 22:46:15,714 - ERROR - cache - Cache verification failed for user 14: expected balance=9902.02000000, margin=9494.47, cached balance=9902.02000000, margin=9494.47
+2025-07-21 22:46:15,716 - INFO - cache - Successfully refreshed balance/margin cache for user 14: balance=9902.02000000, margin=9494.47
+2025-07-21 22:46:15,719 - INFO - cache - Refreshing balance/margin cache for user 16 from database
+2025-07-21 22:46:15,726 - ERROR - cache - Cache verification failed for user 16: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-21 22:46:15,727 - INFO - cache - Successfully refreshed balance/margin cache for user 16: balance=0E-8, margin=0.0
+2025-07-21 22:46:15,730 - INFO - cache - Refreshing balance/margin cache for user 17 from database
+2025-07-21 22:46:15,738 - ERROR - cache - Cache verification failed for user 17: expected balance=26302.98000000, margin=0.0, cached balance=26302.98000000, margin=0.0
+2025-07-21 22:46:15,740 - INFO - cache - Successfully refreshed balance/margin cache for user 17: balance=26302.98000000, margin=0.0
+2025-07-21 22:46:15,743 - INFO - cache - Refreshing balance/margin cache for user 18 from database
+2025-07-21 22:46:15,748 - ERROR - cache - Cache verification failed for user 18: expected balance=17323.75000000, margin=0.0, cached balance=17323.75000000, margin=0.0
+2025-07-21 22:46:15,750 - INFO - cache - Successfully refreshed balance/margin cache for user 18: balance=17323.75000000, margin=0.0
+2025-07-21 22:46:15,753 - INFO - cache - Refreshing balance/margin cache for user 19 from database
+2025-07-21 22:46:15,759 - ERROR - cache - Cache verification failed for user 19: expected balance=9610.04000000, margin=0.0, cached balance=9610.04000000, margin=0.0
+2025-07-21 22:46:15,760 - INFO - cache - Successfully refreshed balance/margin cache for user 19: balance=9610.04000000, margin=0.0
+2025-07-21 22:46:15,763 - INFO - cache - Refreshing balance/margin cache for user 20 from database
+2025-07-21 22:46:15,768 - ERROR - cache - Cache verification failed for user 20: expected balance=8712.00000000, margin=0.0, cached balance=8712.00000000, margin=0.0
+2025-07-21 22:46:15,769 - INFO - cache - Successfully refreshed balance/margin cache for user 20: balance=8712.00000000, margin=0.0
+2025-07-21 22:46:15,771 - INFO - cache - Refreshing balance/margin cache for user 21 from database
+2025-07-21 22:46:15,775 - ERROR - cache - Cache verification failed for user 21: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-21 22:46:15,776 - INFO - cache - Successfully refreshed balance/margin cache for user 21: balance=0E-8, margin=0.0
+2025-07-21 22:46:15,803 - INFO - cache - Refreshing balance/margin cache for user 22 from database
+2025-07-21 22:46:15,813 - ERROR - cache - Cache verification failed for user 22: expected balance=5961.56000000, margin=0.0, cached balance=5961.56000000, margin=0.0
+2025-07-21 22:46:15,814 - INFO - cache - Successfully refreshed balance/margin cache for user 22: balance=5961.56000000, margin=0.0
+2025-07-21 22:46:15,819 - INFO - cache - Refreshing balance/margin cache for user 23 from database
+2025-07-21 22:46:15,829 - ERROR - cache - Cache verification failed for user 23: expected balance=1000000.00000000, margin=0.0, cached balance=1000000.00000000, margin=0.0
+2025-07-21 22:46:15,830 - INFO - cache - Successfully refreshed balance/margin cache for user 23: balance=1000000.00000000, margin=0.0
+2025-07-21 22:46:15,834 - INFO - cache - Refreshing balance/margin cache for user 25 from database
+2025-07-21 22:46:15,842 - ERROR - cache - Cache verification failed for user 25: expected balance=6389.62000000, margin=5936.62, cached balance=6389.62000000, margin=5936.62
+2025-07-21 22:46:15,844 - INFO - cache - Successfully refreshed balance/margin cache for user 25: balance=6389.62000000, margin=5936.62
+2025-07-21 22:46:15,849 - INFO - cache - Refreshing balance/margin cache for user 26 from database
+2025-07-21 22:46:15,859 - ERROR - cache - Cache verification failed for user 26: expected balance=184345.81000000, margin=146484.47, cached balance=184345.81000000, margin=146484.47
+2025-07-21 22:46:15,861 - INFO - cache - Successfully refreshed balance/margin cache for user 26: balance=184345.81000000, margin=146484.47
+2025-07-21 22:46:15,865 - INFO - cache - Refreshing balance/margin cache for user 29 from database
+2025-07-21 22:46:15,873 - ERROR - cache - Cache verification failed for user 29: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-21 22:46:15,875 - INFO - cache - Successfully refreshed balance/margin cache for user 29: balance=0E-8, margin=0.0
+2025-07-21 22:46:15,879 - INFO - cache - Refreshing balance/margin cache for user 30 from database
+2025-07-21 22:46:15,888 - ERROR - cache - Cache verification failed for user 30: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-21 22:46:15,890 - INFO - cache - Successfully refreshed balance/margin cache for user 30: balance=0E-8, margin=0.0
+2025-07-21 22:46:15,893 - INFO - cache - Refreshing balance/margin cache for user 1 from database
+2025-07-21 22:46:15,914 - ERROR - cache - Cache verification failed for user 1: expected balance=16449.41000000, margin=0.0, cached balance=16449.41000000, margin=0.0
+2025-07-21 22:46:15,916 - INFO - cache - Successfully refreshed balance/margin cache for user 1: balance=16449.41000000, margin=0.0
+2025-07-21 22:46:15,919 - INFO - cache - Refreshing balance/margin cache for user 2 from database
+2025-07-21 22:46:15,930 - ERROR - cache - Cache verification failed for user 2: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-21 22:46:15,932 - INFO - cache - Successfully refreshed balance/margin cache for user 2: balance=100000.00000000, margin=0.0
+2025-07-21 22:46:15,936 - INFO - cache - Refreshing balance/margin cache for user 3 from database
+2025-07-21 22:46:15,943 - ERROR - cache - Cache verification failed for user 3: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-21 22:46:15,945 - INFO - cache - Successfully refreshed balance/margin cache for user 3: balance=100000.00000000, margin=0.0
+2025-07-21 22:46:15,950 - INFO - cache - Refreshing balance/margin cache for user 4 from database
+2025-07-21 22:46:15,959 - ERROR - cache - Cache verification failed for user 4: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-21 22:46:15,961 - INFO - cache - Successfully refreshed balance/margin cache for user 4: balance=100000.00000000, margin=0.0
+2025-07-21 22:46:15,965 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-21 22:46:15,974 - ERROR - cache - Cache verification failed for user 5: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-21 22:46:15,975 - INFO - cache - Successfully refreshed balance/margin cache for user 5: balance=100000.00000000, margin=0.0
+2025-07-21 22:46:16,515 - INFO - cache - Refreshing balance/margin cache for user 6 from database
+2025-07-21 22:46:16,522 - ERROR - cache - Cache verification failed for user 6: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-21 22:46:16,523 - INFO - cache - Successfully refreshed balance/margin cache for user 6: balance=100000.00000000, margin=0.0
+2025-07-21 22:46:16,545 - ERROR - cache - Cache verification failed for user 9: expected balance=98386.02000000, margin=0.00, cached balance=98386.02000000, margin=0.00
+2025-07-21 22:46:16,565 - ERROR - cache - Cache verification failed for user 10: expected balance=9958.40000000, margin=0.0, cached balance=9958.40000000, margin=0.0
+2025-07-21 22:46:16,583 - ERROR - cache - Cache verification failed for user 11: expected balance=99998.61000000, margin=6.55, cached balance=99998.61000000, margin=6.55
+2025-07-21 22:46:16,588 - INFO - cache - Refreshing balance/margin cache for user 12 from database
+2025-07-21 22:46:16,599 - ERROR - cache - Cache verification failed for user 12: expected balance=99984.34000000, margin=0.0, cached balance=99984.34000000, margin=0.0
+2025-07-21 22:46:16,601 - INFO - cache - Successfully refreshed balance/margin cache for user 12: balance=99984.34000000, margin=0.0
+2025-07-21 22:46:16,618 - ERROR - cache - Cache verification failed for user 13: expected balance=10000.00000000, margin=0.0, cached balance=10000.00000000, margin=0.0
+2025-07-21 22:46:17,981 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-21 22:46:18,002 - ERROR - cache - Cache verification failed for user 25: expected balance=6389.62000000, margin=5936.62, cached balance=6389.62000000, margin=5936.62
+2025-07-21 22:46:18,005 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-21 22:46:18,006 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-21 22:46:49,846 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-21 22:46:49,847 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-21 22:46:51,163 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-21 22:46:51,177 - ERROR - cache - Cache verification failed for user 25: expected balance=6389.62000000, margin=5936.62, cached balance=6389.62000000, margin=5936.62
+2025-07-21 22:46:51,181 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-21 22:46:51,182 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-21 22:47:42,751 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-21 22:47:42,755 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-21 22:47:42,770 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-21 22:47:42,773 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-21 22:47:42,795 - ERROR - cache - Cache verification failed for user 8: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-21 22:47:42,826 - ERROR - cache - Cache verification failed for user 16: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-21 22:47:42,842 - ERROR - cache - Cache verification failed for user 17: expected balance=26302.98000000, margin=0.0, cached balance=26302.98000000, margin=0.0
+2025-07-21 22:47:42,856 - ERROR - cache - Cache verification failed for user 18: expected balance=17323.75000000, margin=0.0, cached balance=17323.75000000, margin=0.0
+2025-07-21 22:47:42,873 - ERROR - cache - Cache verification failed for user 19: expected balance=9610.04000000, margin=0.0, cached balance=9610.04000000, margin=0.0
+2025-07-21 22:47:42,889 - ERROR - cache - Cache verification failed for user 20: expected balance=8712.00000000, margin=0.0, cached balance=8712.00000000, margin=0.0
+2025-07-21 22:47:42,903 - ERROR - cache - Cache verification failed for user 21: expected balance=0E-8, margin=0.0, cached balance=0E-8, margin=0.0
+2025-07-21 22:47:42,917 - ERROR - cache - Cache verification failed for user 22: expected balance=5961.56000000, margin=0.0, cached balance=5961.56000000, margin=0.0
+2025-07-21 22:47:42,931 - ERROR - cache - Cache verification failed for user 23: expected balance=1000000.00000000, margin=0.0, cached balance=1000000.00000000, margin=0.0
+2025-07-21 22:47:43,318 - ERROR - cache - Cache verification failed for user 26: expected balance=184345.81000000, margin=146484.47, cached balance=184345.81000000, margin=146484.47
+2025-07-21 22:47:43,348 - ERROR - cache - Cache verification failed for user 1: expected balance=16449.41000000, margin=0.0, cached balance=16449.41000000, margin=0.0
+2025-07-21 22:47:43,366 - ERROR - cache - Cache verification failed for user 2: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-21 22:47:43,387 - ERROR - cache - Cache verification failed for user 3: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-21 22:47:43,420 - ERROR - cache - Cache verification failed for user 6: expected balance=100000.00000000, margin=0.0, cached balance=100000.00000000, margin=0.0
+2025-07-21 22:47:43,454 - ERROR - cache - Cache verification failed for user 12: expected balance=99984.34000000, margin=0.0, cached balance=99984.34000000, margin=0.0
+2025-07-21 22:47:44,814 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-21 22:47:44,833 - ERROR - cache - Cache verification failed for user 25: expected balance=6389.62000000, margin=5936.62, cached balance=6389.62000000, margin=5936.62
+2025-07-21 22:47:44,838 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-21 22:47:44,839 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-21 22:48:10,888 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-21 22:48:10,897 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-21 22:48:13,080 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-21 22:48:13,096 - ERROR - cache - Cache verification failed for user 25: expected balance=6389.62000000, margin=5936.62, cached balance=6389.62000000, margin=5936.62
+2025-07-21 22:48:13,100 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-21 22:48:13,102 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers

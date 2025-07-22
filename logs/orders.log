@@ -26011,3 +26011,257 @@ WHERE users.id = %s AND users.user_type = %s]
 2025-07-21 05:37:40,158 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
 2025-07-21 05:37:42,441 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
 2025-07-21 05:37:53,954 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:46:14,017 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-21 22:46:14,939 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-21 22:46:14,939 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-21 22:46:14,939 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-21 22:46:14,939 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-21 22:46:14,970 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-21 22:46:14,970 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-21 22:46:15,664 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 9, Symbol BTCUSD
+2025-07-21 22:46:15,664 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: TotalBuyQty=0.35000000, TotalSellQty=0, NetQty=0.35000000, IsHedged=False
+2025-07-21 22:46:15,665 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23633.37142857142857142857143')], HighestMarginPerLot=23633.37142857142857142857143
+2025-07-21 22:46:15,665 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 9, Symbol BTCUSD: CalculatedTotalMargin=8271.68
+2025-07-21 22:46:15,665 - INFO - orders - [TOTAL_USER_MARGIN] User 9 total margin across all symbols: 8271.68
+2025-07-21 22:46:15,712 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-21 22:46:15,712 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-21 22:46:15,712 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-21 22:46:15,712 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-21 22:46:15,712 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-21 22:46:15,712 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-21 22:46:15,712 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-21 22:46:15,712 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-21 22:46:15,712 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-21 22:46:15,839 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-21 22:46:15,840 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-21 22:46:15,840 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-21 22:46:15,840 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-21 22:46:15,840 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-21 22:46:15,855 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol XAGUSD
+2025-07-21 22:46:15,855 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-21 22:46:15,855 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-21 22:46:15,855 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-21 22:46:15,855 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol BTCUSD
+2025-07-21 22:46:15,855 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: TotalBuyQty=6.00000000, TotalSellQty=0, NetQty=6.00000000, IsHedged=False
+2025-07-21 22:46:15,855 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24410.82166666666666666666667')], HighestMarginPerLot=24410.82166666666666666666667
+2025-07-21 22:46:15,855 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol BTCUSD: CalculatedTotalMargin=146464.93
+2025-07-21 22:46:15,855 - INFO - orders - [TOTAL_USER_MARGIN] User 26 total margin across all symbols: 146484.47
+2025-07-21 22:46:16,528 - INFO - orders - Starting update_user_static_orders for user 9, user_type demo
+2025-07-21 22:46:16,528 - INFO - orders - Using order model: DemoUserOrder
+2025-07-21 22:46:16,531 - INFO - orders - Fetched 4 open orders for user 9
+2025-07-21 22:46:16,535 - INFO - orders - Fetched 6 pending orders for user 9
+2025-07-21 22:46:16,536 - INFO - orders - Updated static orders cache for user 9 with 4 open orders and 6 pending orders
+2025-07-21 22:46:16,541 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 4 positions for User 9, Symbol GBPUSD
+2025-07-21 22:46:16,542 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol GBPUSD: TotalBuyQty=0.50000000, TotalSellQty=0.50000000, NetQty=0.50000000, IsHedged=True
+2025-07-21 22:46:16,542 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol GBPUSD: AllMarginsPerLot=[Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0')], HighestMarginPerLot=0
+2025-07-21 22:46:16,542 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 9, Symbol GBPUSD: CalculatedTotalMargin=0.00
+2025-07-21 22:46:16,542 - INFO - orders - [TOTAL_USER_MARGIN] User 9 total margin across all symbols: 0.00
+2025-07-21 22:46:16,547 - INFO - orders - User 9: Updated balance/margin cache after static orders update - balance=98386.02000000, margin=0.00
+2025-07-21 22:46:16,550 - INFO - orders - Starting update_user_static_orders for user 10, user_type demo
+2025-07-21 22:46:16,550 - INFO - orders - Using order model: DemoUserOrder
+2025-07-21 22:46:16,553 - INFO - orders - Fetched 0 open orders for user 10
+2025-07-21 22:46:16,556 - INFO - orders - Fetched 1 pending orders for user 10
+2025-07-21 22:46:16,557 - INFO - orders - Updated static orders cache for user 10 with 0 open orders and 1 pending orders
+2025-07-21 22:46:16,567 - INFO - orders - User 10: Updated balance/margin cache after static orders update - balance=9958.40000000, margin=0.0
+2025-07-21 22:46:16,569 - INFO - orders - Starting update_user_static_orders for user 11, user_type demo
+2025-07-21 22:46:16,569 - INFO - orders - Using order model: DemoUserOrder
+2025-07-21 22:46:16,571 - INFO - orders - Fetched 1 open orders for user 11
+2025-07-21 22:46:16,574 - INFO - orders - Fetched 0 pending orders for user 11
+2025-07-21 22:46:16,576 - INFO - orders - Updated static orders cache for user 11 with 1 open orders and 0 pending orders
+2025-07-21 22:46:16,580 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 11, Symbol AUDCAD
+2025-07-21 22:46:16,580 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-21 22:46:16,580 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDCAD: AllMarginsPerLot=[Decimal('655.364428')], HighestMarginPerLot=655.364428
+2025-07-21 22:46:16,580 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 11, Symbol AUDCAD: CalculatedTotalMargin=6.55
+2025-07-21 22:46:16,580 - INFO - orders - [TOTAL_USER_MARGIN] User 11 total margin across all symbols: 6.55
+2025-07-21 22:46:16,584 - INFO - orders - User 11: Updated balance/margin cache after static orders update - balance=99998.61000000, margin=6.55
+2025-07-21 22:46:16,606 - INFO - orders - Starting update_user_static_orders for user 13, user_type demo
+2025-07-21 22:46:16,606 - INFO - orders - Using order model: DemoUserOrder
+2025-07-21 22:46:16,608 - INFO - orders - Fetched 0 open orders for user 13
+2025-07-21 22:46:16,611 - INFO - orders - Fetched 0 pending orders for user 13
+2025-07-21 22:46:16,613 - INFO - orders - Updated static orders cache for user 13 with 0 open orders and 0 pending orders
+2025-07-21 22:46:16,621 - INFO - orders - User 13: Updated balance/margin cache after static orders update - balance=10000.00000000, margin=0.0
+2025-07-21 22:46:17,986 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-21 22:46:17,987 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:46:17,989 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-21 22:46:17,993 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-21 22:46:17,995 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-21 22:46:17,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-21 22:46:17,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-21 22:46:17,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-21 22:46:18,000 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-21 22:46:18,000 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-21 22:46:18,004 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-21 22:46:19,939 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-21 22:46:24,942 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-21 22:46:37,938 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:46:40,382 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:46:44,941 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:46:47,406 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:46:49,695 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:46:51,165 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-21 22:46:51,165 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:46:51,167 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-21 22:46:51,169 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-21 22:46:51,170 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-21 22:46:51,173 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-21 22:46:51,174 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-21 22:46:51,174 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-21 22:46:51,174 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-21 22:46:51,174 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-21 22:46:51,179 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-21 22:46:54,322 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:46:58,975 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:47:01,234 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:47:10,550 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:47:40,963 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-21 22:47:41,946 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-21 22:47:41,946 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-21 22:47:41,946 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-21 22:47:41,946 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-21 22:47:41,976 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-21 22:47:41,976 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-21 22:47:42,760 - INFO - orders - Starting update_user_static_orders for user 5, user_type live
+2025-07-21 22:47:42,760 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,765 - INFO - orders - Fetched 0 open orders for user 5
+2025-07-21 22:47:42,767 - INFO - orders - Fetched 0 pending orders for user 5
+2025-07-21 22:47:42,770 - INFO - orders - Updated static orders cache for user 5 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,775 - WARNING - orders - User 5: Could not get user data for balance/margin cache update
+2025-07-21 22:47:42,780 - INFO - orders - Starting update_user_static_orders for user 8, user_type live
+2025-07-21 22:47:42,780 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,783 - INFO - orders - Fetched 0 open orders for user 8
+2025-07-21 22:47:42,785 - INFO - orders - Fetched 0 pending orders for user 8
+2025-07-21 22:47:42,790 - INFO - orders - Updated static orders cache for user 8 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,797 - INFO - orders - User 8: Updated balance/margin cache after static orders update - balance=0E-8, margin=0.0
+2025-07-21 22:47:42,815 - INFO - orders - Starting update_user_static_orders for user 16, user_type live
+2025-07-21 22:47:42,815 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,817 - INFO - orders - Fetched 0 open orders for user 16
+2025-07-21 22:47:42,819 - INFO - orders - Fetched 0 pending orders for user 16
+2025-07-21 22:47:42,821 - INFO - orders - Updated static orders cache for user 16 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,827 - INFO - orders - User 16: Updated balance/margin cache after static orders update - balance=0E-8, margin=0.0
+2025-07-21 22:47:42,829 - INFO - orders - Starting update_user_static_orders for user 17, user_type live
+2025-07-21 22:47:42,829 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,832 - INFO - orders - Fetched 0 open orders for user 17
+2025-07-21 22:47:42,834 - INFO - orders - Fetched 0 pending orders for user 17
+2025-07-21 22:47:42,835 - INFO - orders - Updated static orders cache for user 17 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,843 - INFO - orders - User 17: Updated balance/margin cache after static orders update - balance=26302.98000000, margin=0.0
+2025-07-21 22:47:42,845 - INFO - orders - Starting update_user_static_orders for user 18, user_type live
+2025-07-21 22:47:42,845 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,848 - INFO - orders - Fetched 0 open orders for user 18
+2025-07-21 22:47:42,850 - INFO - orders - Fetched 0 pending orders for user 18
+2025-07-21 22:47:42,851 - INFO - orders - Updated static orders cache for user 18 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,859 - INFO - orders - User 18: Updated balance/margin cache after static orders update - balance=17323.75000000, margin=0.0
+2025-07-21 22:47:42,861 - INFO - orders - Starting update_user_static_orders for user 19, user_type live
+2025-07-21 22:47:42,861 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,863 - INFO - orders - Fetched 0 open orders for user 19
+2025-07-21 22:47:42,865 - INFO - orders - Fetched 0 pending orders for user 19
+2025-07-21 22:47:42,867 - INFO - orders - Updated static orders cache for user 19 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,874 - INFO - orders - User 19: Updated balance/margin cache after static orders update - balance=9610.04000000, margin=0.0
+2025-07-21 22:47:42,877 - INFO - orders - Starting update_user_static_orders for user 20, user_type live
+2025-07-21 22:47:42,877 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,879 - INFO - orders - Fetched 0 open orders for user 20
+2025-07-21 22:47:42,881 - INFO - orders - Fetched 0 pending orders for user 20
+2025-07-21 22:47:42,883 - INFO - orders - Updated static orders cache for user 20 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,890 - INFO - orders - User 20: Updated balance/margin cache after static orders update - balance=8712.00000000, margin=0.0
+2025-07-21 22:47:42,892 - INFO - orders - Starting update_user_static_orders for user 21, user_type live
+2025-07-21 22:47:42,893 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,895 - INFO - orders - Fetched 0 open orders for user 21
+2025-07-21 22:47:42,897 - INFO - orders - Fetched 0 pending orders for user 21
+2025-07-21 22:47:42,898 - INFO - orders - Updated static orders cache for user 21 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,904 - INFO - orders - User 21: Updated balance/margin cache after static orders update - balance=0E-8, margin=0.0
+2025-07-21 22:47:42,905 - INFO - orders - Starting update_user_static_orders for user 22, user_type live
+2025-07-21 22:47:42,905 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,907 - INFO - orders - Fetched 0 open orders for user 22
+2025-07-21 22:47:42,910 - INFO - orders - Fetched 0 pending orders for user 22
+2025-07-21 22:47:42,911 - INFO - orders - Updated static orders cache for user 22 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,918 - INFO - orders - User 22: Updated balance/margin cache after static orders update - balance=5961.56000000, margin=0.0
+2025-07-21 22:47:42,920 - INFO - orders - Starting update_user_static_orders for user 23, user_type live
+2025-07-21 22:47:42,920 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,922 - INFO - orders - Fetched 0 open orders for user 23
+2025-07-21 22:47:42,924 - INFO - orders - Fetched 0 pending orders for user 23
+2025-07-21 22:47:42,925 - INFO - orders - Updated static orders cache for user 23 with 0 open orders and 0 pending orders
+2025-07-21 22:47:42,932 - INFO - orders - User 23: Updated balance/margin cache after static orders update - balance=1000000.00000000, margin=0.0
+2025-07-21 22:47:42,935 - INFO - orders - Starting update_user_static_orders for user 26, user_type live
+2025-07-21 22:47:42,936 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:42,938 - INFO - orders - Fetched 2 open orders for user 26
+2025-07-21 22:47:42,940 - INFO - orders - Fetched 0 pending orders for user 26
+2025-07-21 22:47:42,940 - INFO - orders - Updated static orders cache for user 26 with 2 open orders and 0 pending orders
+2025-07-21 22:47:43,313 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol XAGUSD
+2025-07-21 22:47:43,314 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-21 22:47:43,314 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-21 22:47:43,314 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-21 22:47:43,314 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol BTCUSD
+2025-07-21 22:47:43,314 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: TotalBuyQty=6.00000000, TotalSellQty=0, NetQty=6.00000000, IsHedged=False
+2025-07-21 22:47:43,314 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24410.82166666666666666666667')], HighestMarginPerLot=24410.82166666666666666666667
+2025-07-21 22:47:43,314 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol BTCUSD: CalculatedTotalMargin=146464.93
+2025-07-21 22:47:43,314 - INFO - orders - [TOTAL_USER_MARGIN] User 26 total margin across all symbols: 146484.47
+2025-07-21 22:47:43,320 - INFO - orders - User 26: Updated balance/margin cache after static orders update - balance=184345.81000000, margin=146484.47
+2025-07-21 22:47:43,328 - INFO - orders - Starting update_user_static_orders for user 1, user_type demo
+2025-07-21 22:47:43,328 - INFO - orders - Using order model: DemoUserOrder
+2025-07-21 22:47:43,334 - INFO - orders - Fetched 0 open orders for user 1
+2025-07-21 22:47:43,338 - INFO - orders - Fetched 0 pending orders for user 1
+2025-07-21 22:47:43,341 - INFO - orders - Updated static orders cache for user 1 with 0 open orders and 0 pending orders
+2025-07-21 22:47:43,350 - INFO - orders - User 1: Updated balance/margin cache after static orders update - balance=16449.41000000, margin=0.0
+2025-07-21 22:47:43,353 - INFO - orders - Starting update_user_static_orders for user 2, user_type demo
+2025-07-21 22:47:43,353 - INFO - orders - Using order model: DemoUserOrder
+2025-07-21 22:47:43,356 - INFO - orders - Fetched 0 open orders for user 2
+2025-07-21 22:47:43,358 - INFO - orders - Fetched 0 pending orders for user 2
+2025-07-21 22:47:43,359 - INFO - orders - Updated static orders cache for user 2 with 0 open orders and 0 pending orders
+2025-07-21 22:47:43,368 - INFO - orders - User 2: Updated balance/margin cache after static orders update - balance=100000.00000000, margin=0.0
+2025-07-21 22:47:43,371 - INFO - orders - Starting update_user_static_orders for user 3, user_type demo
+2025-07-21 22:47:43,371 - INFO - orders - Using order model: DemoUserOrder
+2025-07-21 22:47:43,373 - INFO - orders - Fetched 0 open orders for user 3
+2025-07-21 22:47:43,376 - INFO - orders - Fetched 0 pending orders for user 3
+2025-07-21 22:47:43,377 - INFO - orders - Updated static orders cache for user 3 with 0 open orders and 0 pending orders
+2025-07-21 22:47:43,389 - INFO - orders - User 3: Updated balance/margin cache after static orders update - balance=100000.00000000, margin=0.0
+2025-07-21 22:47:43,400 - INFO - orders - Starting update_user_static_orders for user 6, user_type demo
+2025-07-21 22:47:43,400 - INFO - orders - Using order model: DemoUserOrder
+2025-07-21 22:47:43,403 - INFO - orders - Fetched 0 open orders for user 6
+2025-07-21 22:47:43,405 - INFO - orders - Fetched 0 pending orders for user 6
+2025-07-21 22:47:43,407 - INFO - orders - Updated static orders cache for user 6 with 0 open orders and 0 pending orders
+2025-07-21 22:47:43,422 - INFO - orders - User 6: Updated balance/margin cache after static orders update - balance=100000.00000000, margin=0.0
+2025-07-21 22:47:43,440 - INFO - orders - Starting update_user_static_orders for user 12, user_type demo
+2025-07-21 22:47:43,440 - INFO - orders - Using order model: DemoUserOrder
+2025-07-21 22:47:43,443 - INFO - orders - Fetched 0 open orders for user 12
+2025-07-21 22:47:43,445 - INFO - orders - Fetched 0 pending orders for user 12
+2025-07-21 22:47:43,448 - INFO - orders - Updated static orders cache for user 12 with 0 open orders and 0 pending orders
+2025-07-21 22:47:43,456 - INFO - orders - User 12: Updated balance/margin cache after static orders update - balance=99984.34000000, margin=0.0
+2025-07-21 22:47:44,815 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-21 22:47:44,815 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:47:44,819 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-21 22:47:44,822 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-21 22:47:44,824 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-21 22:47:44,828 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-21 22:47:44,829 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-21 22:47:44,829 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-21 22:47:44,829 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-21 22:47:44,829 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-21 22:47:44,834 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-21 22:47:49,127 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-21 22:47:50,361 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:47:51,946 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-21 22:48:01,231 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:48:03,438 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:48:09,195 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-21 22:48:10,017 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-21 22:48:10,017 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-21 22:48:10,017 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-21 22:48:10,018 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-21 22:48:10,077 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-21 22:48:10,077 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-21 22:48:13,081 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-21 22:48:13,082 - INFO - orders - Using order model: UserOrder
+2025-07-21 22:48:13,084 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-21 22:48:13,087 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-21 22:48:13,089 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-21 22:48:13,093 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-21 22:48:13,093 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-21 22:48:13,093 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-21 22:48:13,093 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-21 22:48:13,093 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-21 22:48:13,098 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-21 22:48:15,015 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-21 22:48:19,619 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:48:20,015 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-21 22:48:24,237 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:48:29,964 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-21 22:48:32,312 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
