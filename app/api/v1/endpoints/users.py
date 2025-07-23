@@ -1280,3 +1280,80 @@ async def get_user_closed_orders(
         "pages": (total_count + limit - 1) // limit if limit > 0 else 1,
         "limit": limit
     }
+
+@router.get(
+    "/{user_id}/rejected-orders",
+    summary="Get a user's rejected orders (Admin Only)",
+    description="Retrieves all rejected orders for a specific live user (requires admin authentication)."
+)
+async def get_user_rejected_orders(
+    user_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_admin_user)
+):
+    # Check if user exists
+    user = await crud_user.get_user_by_id(db, user_id=user_id, user_type="live")
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    
+    from app.crud.crud_order import get_rejected_orders_by_user_id
+    
+    # Get all rejected orders for the user
+    rejected_orders = await get_rejected_orders_by_user_id(
+        db=db,
+        user_id=user_id
+    )
+    
+    # Convert to dictionary format
+    return [
+        {
+            "rejected_id": order.rejected_id,
+            "order_id": order.order_id,
+            "order_user_id": order.order_user_id,
+            "order_company_name": order.order_company_name,
+            "order_type": order.order_type,
+            "order_quantity": str(order.order_quantity),
+            "rejected_price": str(order.rejected_price),
+            "rejection_reason": order.rejection_reason,
+            "created_at": order.created_at,
+            "updated_at": order.updated_at
+        }
+        for order in rejected_orders
+    ]
+
+@router.get(
+    "/{user_id}/wallet-transactions",
+    summary="Get a user's wallet transactions (Admin Only)",
+    description="Retrieves all wallet transactions for a specific live user (requires admin authentication)."
+)
+async def get_user_wallet_transactions(
+    user_id: int,
+    skip: int = Query(0, ge=0, description="Number of records to skip"),
+    limit: int = Query(100, ge=1, le=200, description="Maximum number of records to return"),
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_admin_user)
+):
+    # Check if user exists
+    user = await crud_user.get_user_by_id(db, user_id=user_id, user_type="live")
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    
+    from app.crud.wallet import get_wallet_records_by_user_id
+    from app.schemas.wallet import WalletResponse
+    
+    # Get wallet transactions for the user with pagination
+    wallet_transactions = await get_wallet_records_by_user_id(
+        db=db,
+        user_id=user_id,
+        skip=skip,
+        limit=limit
+    )
+    
+    # Convert to response schema
+    return [WalletResponse.model_validate(transaction.__dict__) for transaction in wallet_transactions]

@@ -543,3 +543,79 @@ def log_user_login(user):
 def log_user_logout(user):
     security_logger.info(f"LOGOUT: user_id={user.id}, email={getattr(user, 'email', None)}, user_type={getattr(user, 'user_type', None)}, time={datetime.utcnow().isoformat()}")
 
+
+async def get_user_for_action_with_admin_support(
+    request: Request,
+    db: AsyncSession = Depends(get_db),
+    token: str = Depends(oauth2_scheme)
+) -> User | DemoUser:
+    """
+    Dependency that allows:
+    - Regular users to act on their own behalf (from token)
+    - Service accounts to act on behalf of a user (from request body)
+    - Admins to act on behalf of any user (from request body)
+    Always uses BOTH user_type and id for DB lookup.
+    """
+    from app.database.models import User, DemoUser
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+    try:
+        payload = decode_token(token)
+        user_type_from_token = payload.get("user_type")
+        user_id_from_token = payload.get("sub")
+        is_service_account = payload.get("is_service_account", False)
+        # If admin, allow acting on behalf of any user by reading from request
+        if user_type_from_token == "admin":
+            try:
+                body = await request.json()
+            except Exception:
+                body = {}
+            user_id = body.get("user_id") or request.query_params.get("user_id")
+            target_user_type = body.get("user_type") or request.query_params.get("user_type")
+            if not user_id or target_user_type not in ["live", "demo"]:
+                raise HTTPException(status_code=400, detail="Missing or invalid user_id/user_type for admin operation.")
+            if target_user_type == "demo":
+                result = await db.execute(select(DemoUser).filter(DemoUser.id == int(user_id), DemoUser.user_type == "demo"))
+                user = result.scalars().first()
+            else:
+                result = await db.execute(select(User).filter(User.id == int(user_id), User.user_type == "live"))
+                user = result.scalars().first()
+            if not user:
+                raise HTTPException(status_code=404, detail=f"Target user (ID: {user_id}, Type: {target_user_type}) not found.")
+            user.is_admin_acting = True
+            return user
+        # If service account, same as before
+        elif is_service_account:
+            try:
+                body = await request.json()
+            except Exception:
+                body = {}
+            user_id = body.get("user_id") or request.query_params.get("user_id")
+            target_user_type = body.get("user_type") or request.query_params.get("user_type")
+            if not user_id or target_user_type not in ["live", "demo"]:
+                raise HTTPException(status_code=400, detail="Missing or invalid user_id/user_type for service account operation.")
+            if target_user_type == "demo":
+                result = await db.execute(select(DemoUser).filter(DemoUser.id == int(user_id), DemoUser.user_type == "demo"))
+                user = result.scalars().first()
+            else:
+                result = await db.execute(select(User).filter(User.id == int(user_id), User.user_type == "live"))
+                user = result.scalars().first()
+            if not user:
+                raise HTTPException(status_code=404, detail=f"Target user (ID: {user_id}, Type: {target_user_type}) not found.")
+            user.is_service_account = True
+            return user
+        # Otherwise, regular user
+        else:
+            user = await get_current_user(db=db, token=token)
+            user.is_service_account = False
+            user.is_admin_acting = False
+            return user
+    except HTTPException:
+        raise
+    except Exception as e:
+        security_logger.error(f"Authentication error in get_user_for_action_with_admin_support: {e}", exc_info=True)
+        raise credentials_exception
+

@@ -34,6 +34,7 @@ from app.schemas.order import (
 from app.schemas.user import StatusResponse
 from app.schemas.wallet import WalletCreate
 from app.core.cache import publish_account_structure_changed_event
+from app.core.security import get_user_for_action_with_admin_support
 
 from app.core.cache import (
     set_user_data_cache,
@@ -1246,7 +1247,8 @@ async def close_order(
     background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client),
-    current_user: User | DemoUser = Depends(get_user_from_service_or_user_token),
+    # current_user: User | DemoUser = Depends(get_user_from_service_or_user_token),
+    current_user: User | DemoUser = Depends(get_user_for_action_with_admin_support),
     token: str = Depends(oauth2_scheme)
 ):
     """
@@ -1478,7 +1480,7 @@ async def close_order(
                             "commission": str(getattr(db_order_for_response, 'commission', '')),
                             "timestamp": datetime.datetime.utcnow().isoformat()
                         }).decode())
-                        return {"message": "Order modification request sent to external service (Barclays)."}
+                        return {"message": "Order close request sent to external service (Barclays)."}
                     else:
                         raise HTTPException(status_code=404, detail="Order not found for external closure processing.")
                 else:

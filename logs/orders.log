@@ -3828,3 +3828,447 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-23 02:44:43,415 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
 2025-07-23 02:44:45,803 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
 2025-07-23 02:44:50,203 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:53:29,449 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 02:53:30,632 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 02:53:30,632 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 02:53:30,632 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 02:53:30,632 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 02:53:30,660 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 02:53:30,661 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 02:53:31,914 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol CADCHF
+2025-07-23 02:53:31,915 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:53:31,915 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: AllMarginsPerLot=[Decimal('736.585427')], HighestMarginPerLot=736.585427
+2025-07-23 02:53:31,915 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol CADCHF: CalculatedTotalMargin=7.37
+2025-07-23 02:53:31,915 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 7.37
+2025-07-23 02:53:32,463 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 10, Symbol AUDCAD
+2025-07-23 02:53:32,464 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:53:32,464 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: AllMarginsPerLot=[Decimal('658.916726')], HighestMarginPerLot=658.916726
+2025-07-23 02:53:32,464 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 10, Symbol AUDCAD: CalculatedTotalMargin=6.59
+2025-07-23 02:53:32,464 - INFO - orders - [TOTAL_USER_MARGIN] User 10 total margin across all symbols: 6.59
+2025-07-23 02:53:32,917 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 11, Symbol AUDJPY
+2025-07-23 02:53:32,918 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:53:32,918 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: AllMarginsPerLot=[Decimal('96717')], HighestMarginPerLot=96717
+2025-07-23 02:53:32,918 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 11, Symbol AUDJPY: CalculatedTotalMargin=967.17
+2025-07-23 02:53:32,918 - INFO - orders - [TOTAL_USER_MARGIN] User 11 total margin across all symbols: 967.17
+2025-07-23 02:53:33,176 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 13, Symbol XAGUSD
+2025-07-23 02:53:33,177 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: TotalBuyQty=0, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:53:33,177 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-23 02:53:33,177 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 13, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-23 02:53:33,177 - INFO - orders - [TOTAL_USER_MARGIN] User 13 total margin across all symbols: 19.54
+2025-07-23 02:53:34,396 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol AUDCAD
+2025-07-23 02:53:34,396 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:53:34,396 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: AllMarginsPerLot=[Decimal('657.55194')], HighestMarginPerLot=657.55194
+2025-07-23 02:53:34,396 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol AUDCAD: CalculatedTotalMargin=6.58
+2025-07-23 02:53:34,396 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol EURUSD
+2025-07-23 02:53:34,396 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:53:34,396 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: AllMarginsPerLot=[Decimal('1180')], HighestMarginPerLot=1180
+2025-07-23 02:53:34,397 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol EURUSD: CalculatedTotalMargin=11.80
+2025-07-23 02:53:34,397 - INFO - orders - [TOTAL_USER_MARGIN] User 20 total margin across all symbols: 18.38
+2025-07-23 02:53:35,139 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 22, Symbol AUDCHF
+2025-07-23 02:53:35,139 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:53:35,139 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: AllMarginsPerLot=[Decimal('657.101216')], HighestMarginPerLot=657.101216
+2025-07-23 02:53:35,139 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCHF: CalculatedTotalMargin=6.57
+2025-07-23 02:53:35,139 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 4 positions for User 22, Symbol AUDJPY
+2025-07-23 02:53:35,139 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 02:53:35,139 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: AllMarginsPerLot=[Decimal('657.431957'), Decimal('652.816419'), Decimal('652.829301'), Decimal('652.889785')], HighestMarginPerLot=657.431957
+2025-07-23 02:53:35,139 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDJPY: CalculatedTotalMargin=13.15
+2025-07-23 02:53:35,140 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 22, Symbol AUDCAD
+2025-07-23 02:53:35,140 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-23 02:53:35,140 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: AllMarginsPerLot=[Decimal('652.598728'), Decimal('652.660595')], HighestMarginPerLot=652.660595
+2025-07-23 02:53:35,140 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCAD: CalculatedTotalMargin=6.53
+2025-07-23 02:53:35,140 - INFO - orders - [TOTAL_USER_MARGIN] User 22 total margin across all symbols: 26.25
+2025-07-23 02:53:35,631 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 02:53:36,301 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 27, Symbol AUDJPY
+2025-07-23 02:53:36,301 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 02:53:36,301 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: AllMarginsPerLot=[Decimal('648.460213'), Decimal('651.498922')], HighestMarginPerLot=651.498922
+2025-07-23 02:53:36,302 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDJPY: CalculatedTotalMargin=13.03
+2025-07-23 02:53:36,302 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 27, Symbol AUDUSD
+2025-07-23 02:53:36,302 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:53:36,302 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: AllMarginsPerLot=[Decimal('652')], HighestMarginPerLot=652
+2025-07-23 02:53:36,302 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDUSD: CalculatedTotalMargin=6.52
+2025-07-23 02:53:36,302 - INFO - orders - [TOTAL_USER_MARGIN] User 27 total margin across all symbols: 19.55
+2025-07-23 02:53:36,391 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 28, Symbol EURPLN
+2025-07-23 02:53:36,391 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 02:53:36,392 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: AllMarginsPerLot=[Decimal('4257'), Decimal('4257')], HighestMarginPerLot=4257
+2025-07-23 02:53:36,392 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol EURPLN: CalculatedTotalMargin=85.14
+2025-07-23 02:53:36,392 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 28, Symbol BTCUSD
+2025-07-23 02:53:36,392 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:53:36,392 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24050.95')], HighestMarginPerLot=24050.95
+2025-07-23 02:53:36,392 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol BTCUSD: CalculatedTotalMargin=9620.38
+2025-07-23 02:53:36,392 - INFO - orders - [TOTAL_USER_MARGIN] User 28 total margin across all symbols: 9705.52
+2025-07-23 02:53:37,789 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:53:44,128 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 02:53:44,229 - ERROR - orders - Error getting symbols with open orders: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-23 02:53:44,527 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:53:45,201 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:53:46,066 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:53:47,199 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:53:48,599 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:53:49,041 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:53:51,631 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:53:53,986 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:53:56,212 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:53:58,670 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:53:58,985 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:01,096 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:03,377 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:05,572 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:54:05,855 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:07,847 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:54:08,133 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:15,291 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:19,579 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:54:24,129 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:54:26,767 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:28,865 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:54:31,403 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:33,996 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:36,175 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:38,558 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:40,547 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:47,614 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:49,771 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:52,203 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:54:54,729 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:01,168 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:55:02,256 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:03,471 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:55:05,752 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:55:06,056 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:08,276 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:11,074 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:15,211 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:17,671 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:19,977 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:22,389 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:26,860 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:29,242 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:31,435 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:38,589 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:40,862 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:55:43,225 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:55:43,348 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:02,008 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 03:41:03,484 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 03:41:03,484 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 03:41:03,485 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 03:41:03,485 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 03:41:03,548 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 03:41:03,548 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 03:41:04,531 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol CADCHF
+2025-07-23 03:41:04,531 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:41:04,531 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: AllMarginsPerLot=[Decimal('736.585427')], HighestMarginPerLot=736.585427
+2025-07-23 03:41:04,531 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol CADCHF: CalculatedTotalMargin=7.37
+2025-07-23 03:41:04,531 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 7.37
+2025-07-23 03:41:05,064 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 10, Symbol AUDCAD
+2025-07-23 03:41:05,065 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:41:05,065 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: AllMarginsPerLot=[Decimal('658.916726')], HighestMarginPerLot=658.916726
+2025-07-23 03:41:05,065 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 10, Symbol AUDCAD: CalculatedTotalMargin=6.59
+2025-07-23 03:41:05,065 - INFO - orders - [TOTAL_USER_MARGIN] User 10 total margin across all symbols: 6.59
+2025-07-23 03:41:05,547 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 11, Symbol AUDJPY
+2025-07-23 03:41:05,547 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:41:05,548 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: AllMarginsPerLot=[Decimal('96717')], HighestMarginPerLot=96717
+2025-07-23 03:41:05,548 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 11, Symbol AUDJPY: CalculatedTotalMargin=967.17
+2025-07-23 03:41:05,548 - INFO - orders - [TOTAL_USER_MARGIN] User 11 total margin across all symbols: 967.17
+2025-07-23 03:41:05,744 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 13, Symbol XAGUSD
+2025-07-23 03:41:05,745 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: TotalBuyQty=0, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:41:05,745 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-23 03:41:05,745 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 13, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-23 03:41:05,745 - INFO - orders - [TOTAL_USER_MARGIN] User 13 total margin across all symbols: 19.54
+2025-07-23 03:41:06,676 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol AUDCAD
+2025-07-23 03:41:06,676 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:41:06,676 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: AllMarginsPerLot=[Decimal('657.55194')], HighestMarginPerLot=657.55194
+2025-07-23 03:41:06,676 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol AUDCAD: CalculatedTotalMargin=6.58
+2025-07-23 03:41:06,676 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol EURUSD
+2025-07-23 03:41:06,676 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:41:06,677 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: AllMarginsPerLot=[Decimal('1180')], HighestMarginPerLot=1180
+2025-07-23 03:41:06,677 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol EURUSD: CalculatedTotalMargin=11.80
+2025-07-23 03:41:06,677 - INFO - orders - [TOTAL_USER_MARGIN] User 20 total margin across all symbols: 18.38
+2025-07-23 03:41:06,847 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 22, Symbol AUDCHF
+2025-07-23 03:41:06,847 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: AllMarginsPerLot=[Decimal('657.101216')], HighestMarginPerLot=657.101216
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCHF: CalculatedTotalMargin=6.57
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 4 positions for User 22, Symbol AUDJPY
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: AllMarginsPerLot=[Decimal('657.431957'), Decimal('652.816419'), Decimal('652.829301'), Decimal('652.889785')], HighestMarginPerLot=657.431957
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDJPY: CalculatedTotalMargin=13.15
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 22, Symbol AUDCAD
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: AllMarginsPerLot=[Decimal('652.598728'), Decimal('652.660595')], HighestMarginPerLot=652.660595
+2025-07-23 03:41:06,848 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCAD: CalculatedTotalMargin=6.53
+2025-07-23 03:41:06,848 - INFO - orders - [TOTAL_USER_MARGIN] User 22 total margin across all symbols: 26.25
+2025-07-23 03:41:07,648 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 27, Symbol AUDJPY
+2025-07-23 03:41:07,648 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 03:41:07,648 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: AllMarginsPerLot=[Decimal('648.460213'), Decimal('651.498922')], HighestMarginPerLot=651.498922
+2025-07-23 03:41:07,648 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDJPY: CalculatedTotalMargin=13.03
+2025-07-23 03:41:07,648 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 27, Symbol AUDUSD
+2025-07-23 03:41:07,648 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:41:07,648 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: AllMarginsPerLot=[Decimal('652')], HighestMarginPerLot=652
+2025-07-23 03:41:07,648 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDUSD: CalculatedTotalMargin=6.52
+2025-07-23 03:41:07,648 - INFO - orders - [TOTAL_USER_MARGIN] User 27 total margin across all symbols: 19.55
+2025-07-23 03:41:07,990 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 28, Symbol EURPLN
+2025-07-23 03:41:07,990 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 03:41:07,990 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: AllMarginsPerLot=[Decimal('4257'), Decimal('4257')], HighestMarginPerLot=4257
+2025-07-23 03:41:07,990 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol EURPLN: CalculatedTotalMargin=85.14
+2025-07-23 03:41:07,990 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 28, Symbol BTCUSD
+2025-07-23 03:41:07,990 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 03:41:07,990 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24050.95')], HighestMarginPerLot=24050.95
+2025-07-23 03:41:07,990 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol BTCUSD: CalculatedTotalMargin=9620.38
+2025-07-23 03:41:07,990 - INFO - orders - [TOTAL_USER_MARGIN] User 28 total margin across all symbols: 9705.52
+2025-07-23 03:41:08,473 - INFO - orders - Starting update_user_static_orders for user 4, user_type demo
+2025-07-23 03:41:08,473 - INFO - orders - Using order model: DemoUserOrder
+2025-07-23 03:41:08,483 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 03:41:08,507 - INFO - orders - Fetched 0 open orders for user 4
+2025-07-23 03:41:08,542 - INFO - orders - Fetched 0 pending orders for user 4
+2025-07-23 03:41:08,544 - INFO - orders - Updated static orders cache for user 4 with 0 open orders and 0 pending orders
+2025-07-23 03:41:08,582 - INFO - orders - User 4: Updated balance/margin cache after static orders update - balance=100000.00000000, margin=0.0
+2025-07-23 03:41:13,552 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 03:41:13,587 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:15,545 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:17,915 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:22,707 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:41:22,835 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:24,752 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:41:24,894 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:25,325 - INFO - orders - Fetching rejected orders for user: 4
+2025-07-23 03:41:25,366 - INFO - orders - Found 2 rejected orders for user 4
+2025-07-23 03:41:27,226 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:28,002 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol CADCHF
+2025-07-23 03:41:28,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:41:28,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: AllMarginsPerLot=[Decimal('736.585427')], HighestMarginPerLot=736.585427
+2025-07-23 03:41:28,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol CADCHF: CalculatedTotalMargin=7.37
+2025-07-23 03:41:28,004 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 7.37
+2025-07-23 03:41:29,638 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:32,182 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:33,996 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:41:36,297 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:41:36,557 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:39,197 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:41,763 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:44,002 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:46,344 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:41:46,595 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:51,216 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:41:55,188 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:41:55,421 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:02,512 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:04,539 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:06,687 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:42:06,913 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:20,522 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:42:25,546 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:27,794 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:42:29,942 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:32,493 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:34,792 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:36,881 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:42:39,193 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:42:41,540 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:42:41,934 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:44,382 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:48,613 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:42:48,899 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:42:51,091 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:00,255 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:03,139 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:05,093 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:43:07,679 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:09,698 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:12,290 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:14,289 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:23,563 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:25,902 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:28,082 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:30,757 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:35,378 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:37,514 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:49,547 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:51,754 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:43:56,314 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:00,783 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:07,637 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:12,363 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:19,380 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:21,574 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:24,180 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:26,106 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:28,579 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:29,480 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:30,734 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:30,877 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:33,104 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:35,264 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:37,545 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:37,881 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:39,765 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:39,948 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:42,497 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:44,390 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:44,680 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:46,689 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:46,949 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:51,409 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:44:56,302 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:44:58,584 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:00,927 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:02,940 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:05,264 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:05,368 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:10,094 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:12,441 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:14,716 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:16,766 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:19,060 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:19,274 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:21,397 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:21,505 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:23,677 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:25,962 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:28,427 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:30,824 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:32,999 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:33,099 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:35,269 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:35,416 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:37,721 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:39,870 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:39,968 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:42,164 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:45:42,353 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:44,968 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:51,529 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:53,849 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:56,143 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:45:58,436 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:00,843 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:03,062 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:07,635 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:09,584 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 10, Symbol AUDCAD
+2025-07-23 03:46:09,585 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:46:09,585 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: AllMarginsPerLot=[Decimal('658.916726')], HighestMarginPerLot=658.916726
+2025-07-23 03:46:09,585 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 10, Symbol AUDCAD: CalculatedTotalMargin=6.59
+2025-07-23 03:46:09,585 - INFO - orders - [TOTAL_USER_MARGIN] User 10 total margin across all symbols: 6.59
+2025-07-23 03:46:09,663 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 11, Symbol AUDJPY
+2025-07-23 03:46:09,663 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:46:09,664 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: AllMarginsPerLot=[Decimal('96717')], HighestMarginPerLot=96717
+2025-07-23 03:46:09,664 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 11, Symbol AUDJPY: CalculatedTotalMargin=967.17
+2025-07-23 03:46:09,664 - INFO - orders - [TOTAL_USER_MARGIN] User 11 total margin across all symbols: 967.17
+2025-07-23 03:46:09,823 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 13, Symbol XAGUSD
+2025-07-23 03:46:09,823 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: TotalBuyQty=0, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:46:09,823 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-23 03:46:09,823 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 13, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-23 03:46:09,823 - INFO - orders - [TOTAL_USER_MARGIN] User 13 total margin across all symbols: 19.54
+2025-07-23 03:46:09,936 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:10,265 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol AUDCAD
+2025-07-23 03:46:10,265 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:46:10,265 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: AllMarginsPerLot=[Decimal('657.55194')], HighestMarginPerLot=657.55194
+2025-07-23 03:46:10,265 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol AUDCAD: CalculatedTotalMargin=6.58
+2025-07-23 03:46:10,265 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol EURUSD
+2025-07-23 03:46:10,266 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:46:10,266 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: AllMarginsPerLot=[Decimal('1180')], HighestMarginPerLot=1180
+2025-07-23 03:46:10,266 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol EURUSD: CalculatedTotalMargin=11.80
+2025-07-23 03:46:10,266 - INFO - orders - [TOTAL_USER_MARGIN] User 20 total margin across all symbols: 18.38
+2025-07-23 03:46:10,441 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 22, Symbol AUDCHF
+2025-07-23 03:46:10,441 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:46:10,441 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: AllMarginsPerLot=[Decimal('657.101216')], HighestMarginPerLot=657.101216
+2025-07-23 03:46:10,441 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCHF: CalculatedTotalMargin=6.57
+2025-07-23 03:46:10,441 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 4 positions for User 22, Symbol AUDJPY
+2025-07-23 03:46:10,441 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 03:46:10,441 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: AllMarginsPerLot=[Decimal('657.431957'), Decimal('652.816419'), Decimal('652.829301'), Decimal('652.889785')], HighestMarginPerLot=657.431957
+2025-07-23 03:46:10,441 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDJPY: CalculatedTotalMargin=13.15
+2025-07-23 03:46:10,441 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 22, Symbol AUDCAD
+2025-07-23 03:46:10,442 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-23 03:46:10,442 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: AllMarginsPerLot=[Decimal('652.598728'), Decimal('652.660595')], HighestMarginPerLot=652.660595
+2025-07-23 03:46:10,442 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCAD: CalculatedTotalMargin=6.53
+2025-07-23 03:46:10,442 - INFO - orders - [TOTAL_USER_MARGIN] User 22 total margin across all symbols: 26.25
+2025-07-23 03:46:10,842 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 27, Symbol AUDJPY
+2025-07-23 03:46:10,842 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 03:46:10,842 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: AllMarginsPerLot=[Decimal('648.460213'), Decimal('651.498922')], HighestMarginPerLot=651.498922
+2025-07-23 03:46:10,842 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDJPY: CalculatedTotalMargin=13.03
+2025-07-23 03:46:10,843 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 27, Symbol AUDUSD
+2025-07-23 03:46:10,843 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:46:10,843 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: AllMarginsPerLot=[Decimal('652')], HighestMarginPerLot=652
+2025-07-23 03:46:10,843 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDUSD: CalculatedTotalMargin=6.52
+2025-07-23 03:46:10,843 - INFO - orders - [TOTAL_USER_MARGIN] User 27 total margin across all symbols: 19.55
+2025-07-23 03:46:10,915 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 28, Symbol EURPLN
+2025-07-23 03:46:10,916 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 03:46:10,916 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: AllMarginsPerLot=[Decimal('4257'), Decimal('4257')], HighestMarginPerLot=4257
+2025-07-23 03:46:10,916 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol EURPLN: CalculatedTotalMargin=85.14
+2025-07-23 03:46:10,916 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 28, Symbol BTCUSD
+2025-07-23 03:46:10,916 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 03:46:10,916 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24050.95')], HighestMarginPerLot=24050.95
+2025-07-23 03:46:10,916 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol BTCUSD: CalculatedTotalMargin=9620.38
+2025-07-23 03:46:10,916 - INFO - orders - [TOTAL_USER_MARGIN] User 28 total margin across all symbols: 9705.52
+2025-07-23 03:46:12,336 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:14,905 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:19,304 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:21,925 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:24,475 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:26,224 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:28,410 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol CADCHF
+2025-07-23 03:46:28,410 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:46:28,411 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: AllMarginsPerLot=[Decimal('736.843433')], HighestMarginPerLot=736.843433
+2025-07-23 03:46:28,411 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol CADCHF: CalculatedTotalMargin=7.37
+2025-07-23 03:46:28,411 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 7.37
+2025-07-23 03:46:28,512 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:30,825 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:33,181 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:35,508 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:37,805 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:40,058 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:44,779 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:47,050 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:46:47,089 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:49,277 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:51,592 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:46:53,878 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:47:03,118 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:47:16,820 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:47:26,213 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:47:46,886 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:47:51,567 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:47:53,796 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:47:53,938 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:47:56,017 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:47:56,162 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:47:57,630 - INFO - orders - Order close request received - Order ID: 1001790-001, User ID: 4, Close Price: 0.583445
+2025-07-23 03:47:57,630 - INFO - orders - Request to close order 1001790-001 for user 4 (user_type: live) with price 0.583445. Frontend provided type: BUY, company: CADCHF, status: CLOSED, frontend_status: CLOSED.
+2025-07-23 03:47:57,933 - INFO - orders - User group: Group B, sending_orders setting: barclays
+2025-07-23 03:47:57,934 - INFO - orders - Live user 4 from group 'Group B' has 'sending_orders' set to 'barclays'. Pushing close request to Firebase and skipping local DB update.
+2025-07-23 03:47:58,031 - INFO - orders - [FIREBASE_CLOSE_REQUEST] Preparing to send payload for user-initiated close: {'order_id': '1001790-001', 'close_price': '0.583445', 'user_id': 4, 'order_type': 'BUY', 'order_company_name': 'CADCHF', 'order_quantity': '0.01000000', 'contract_value': '1000.00000000', 'order_status': 'CLOSED', 'status': 'CLOSED', 'action': 'close_order', 'close_id': '1001859-003'}
+2025-07-23 03:47:58,499 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:48:02,918 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:05,217 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:07,611 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:48:10,194 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:48:12,217 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:14,627 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:14,750 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:48:21,411 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:23,911 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:48:26,064 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:30,629 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:32,919 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:35,220 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:37,542 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:37,774 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:48:39,864 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:48:40,119 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:48:42,438 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:48:53,543 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 03:48:54,741 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 03:48:54,741 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 03:48:54,741 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 03:48:54,742 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 03:48:54,777 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 03:48:54,777 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 03:48:59,804 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 03:49:01,201 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:49:02,904 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 03:49:03,361 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 03:49:04,252 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol CADCHF
+2025-07-23 03:49:04,252 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 03:49:04,252 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: AllMarginsPerLot=[Decimal('736.843433')], HighestMarginPerLot=736.843433
+2025-07-23 03:49:04,253 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol CADCHF: CalculatedTotalMargin=7.37
+2025-07-23 03:49:04,253 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 7.37

@@ -231,3 +231,16 @@ redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 10061] Conne
 2025-07-23 02:40:45,325 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
 2025-07-23 02:40:45,329 - INFO - app.core.security - [Redis] AOF persistence already enabled.
 2025-07-23 02:44:52,271 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-23 02:53:27,242 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-23 02:53:27,245 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-23 02:54:32,121 - INFO - app.core.security - LOGIN: user_id=5, email=livefxhub@gmail.com, user_type=admin, time=2025-07-23T09:54:32.121004
+2025-07-23 02:55:47,563 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-23 03:40:59,581 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-23 03:40:59,584 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-23 03:41:16,784 - INFO - app.core.security - LOGIN: user_id=4, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-23T10:41:16.784544
+2025-07-23 03:42:34,533 - INFO - app.core.security - LOGIN: user_id=5, email=livefxhub@gmail.com, user_type=admin, time=2025-07-23T10:42:34.533349
+2025-07-23 03:46:44,163 - INFO - app.core.security - LOGIN: user_id=5, email=livefxhub@gmail.com, user_type=admin, time=2025-07-23T10:46:44.163109
+2025-07-23 03:48:48,937 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-23 03:48:52,109 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-23 03:48:52,112 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-23 03:49:05,042 - INFO - app.core.security - [Redis] Connection closed successfully.

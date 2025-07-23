@@ -309,3 +309,28 @@
 2025-07-23 02:40:49,392 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
 2025-07-23 02:44:50,911 - INFO - websocket - Redis publisher task cancelled.
 2025-07-23 02:44:50,912 - INFO - websocket - Redis publisher task finished.
+2025-07-23 02:53:30,629 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 02:55:45,225 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 02:55:45,233 - INFO - websocket - Redis publisher task finished.
+2025-07-23 03:41:03,482 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 03:41:22,160 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:53855
+2025-07-23 03:41:22,162 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:53855
+2025-07-23 03:41:22,167 - INFO - websocket - WebSocket auth: Authenticating user DYY5A (live)
+2025-07-23 03:41:22,305 - INFO - websocket - User 4: WebSocket initialized with balance=244.67000000, margin=7.36585427
+2025-07-23 03:41:27,965 - INFO - websocket - User 4: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-23 03:41:28,193 - INFO - websocket - User DYY5A: WebSocket connection established successfully
+2025-07-23 03:46:28,318 - WARNING - websocket - [WEBSOCKET_DEBUG] User 4: Stale/missing balance_margin_cache, attempting refresh
+2025-07-23 03:46:28,414 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Strategy 1 successful - balance=244.84000000, margin=7.37
+2025-07-23 03:48:46,519 - INFO - websocket - User DYY5A: WebSocket disconnected
+2025-07-23 03:48:48,932 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 03:48:48,932 - INFO - websocket - Redis publisher task finished.
+2025-07-23 03:48:54,740 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 03:48:55,425 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:54197
+2025-07-23 03:48:55,426 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:54197
+2025-07-23 03:48:55,431 - INFO - websocket - WebSocket auth: Authenticating user DYY5A (live)
+2025-07-23 03:48:55,637 - INFO - websocket - User 4: WebSocket initialized with balance=244.84000000, margin=7.36843433
+2025-07-23 03:49:04,219 - INFO - websocket - User 4: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-23 03:49:04,384 - INFO - websocket - User 4: WebSocket disconnected while sending initial connection data
+2025-07-23 03:49:04,384 - WARNING - websocket - User DYY5A: Failed to send initial data, connection may be closed
+2025-07-23 03:49:05,040 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 03:49:05,040 - INFO - websocket - Redis publisher task finished.
