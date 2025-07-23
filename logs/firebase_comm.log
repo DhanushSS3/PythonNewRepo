@@ -6,3 +6,7 @@
 2025-07-22 03:41:54,291 - INFO - firebase_comm - FIREBASE PUSH: trade_data/live - {"order_id": "1194-001", "cancel_id": "1197-002", "user_id": "30", "order_type": "BUY_LIMIT", "timestamp": "2025-07-22T10:41:54.291353", "status": "CANCELLED", "order_quantity": "10.00000000", "order_status": "AUTO-CANCELLED", "contract_value": "10.00000000", "cancel_message": "Auto-cancelled due to insufficient margin", "account_type": "live"}
 2025-07-22 03:41:54,584 - INFO - firebase_comm - FIREBASE PUSH RESULT: Key=-OVliREbyPqPk1otfTev
 2025-07-22 03:41:55,893 - INFO - firebase_comm - FIREBASE DELETE: Deleted order data (ID: 1194-001) after 1 seconds
+2025-07-22 22:30:36,075 - INFO - firebase_comm - OUTGOING ORDER DATA: {"order_id": "1198-001", "user_id": 30, "order_company_name": "AUDJPY", "order_type": "BUY", "order_quantity": 0.01, "price": 96.57050000000001, "status": "OPEN", "contract_value": 1000.0}
+2025-07-22 22:30:36,077 - INFO - firebase_comm - FIREBASE PUSH: trade_data/live - {"order_id": "1198-001", "user_id": "30", "order_company_name": "AUDJPY", "order_type": "BUY", "order_quantity": "0.01", "price": "96.57050000000001", "status": "OPEN", "contract_value": "1000.0", "account_type": "live", "timestamp": "2025-07-23T05:30:36.077511"}
+2025-07-22 22:30:36,447 - INFO - firebase_comm - FIREBASE PUSH RESULT: Key=-OVpklgekoBnG7B0oTKb
+2025-07-22 22:30:37,895 - INFO - firebase_comm - FIREBASE DELETE: Deleted order data (ID: 1198-001) after 1 seconds

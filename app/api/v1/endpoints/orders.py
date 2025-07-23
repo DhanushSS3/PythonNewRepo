@@ -29,7 +29,7 @@ from app.schemas.order import (
     ServiceProviderUpdateRequest, OrderPlacementRequest, OrderResponse, CloseOrderRequest, 
     UpdateStopLossTakeProfitRequest, PendingOrderPlacementRequest, PendingOrderCancelRequest, 
     AddStopLossRequest, AddTakeProfitRequest, CancelStopLossRequest, CancelTakeProfitRequest, 
-    HalfSpreadRequest, HalfSpreadResponse, OrderStatusResponse
+    HalfSpreadRequest, HalfSpreadResponse, OrderStatusResponse, ClosedOrderSummaryResponse
 )
 from app.schemas.user import StatusResponse
 from app.schemas.wallet import WalletCreate
@@ -380,7 +380,7 @@ async def get_pending_orders(
     orders = await crud_order.get_orders_by_user_id_and_statuses(db, current_user.id, ["PENDING"], order_model)
     return orders
 
-@router.get("/closed", response_model=List[OrderResponse], summary="Get all closed orders for the current user")
+@router.get("/closed", response_model=List[ClosedOrderSummaryResponse], summary="Get all closed orders for the current user")
 async def get_closed_orders(
     db: AsyncSession = Depends(get_db),
     current_user: User | DemoUser = Depends(get_current_user),

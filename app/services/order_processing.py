@@ -358,7 +358,7 @@ async def process_new_order_ultra_optimized(
         if batch_cache_data and batch_cache_data.get('group_symbol_settings'):
             group_settings = batch_cache_data['group_symbol_settings']
         else:
-            group_settings = await get_group_symbol_settings_cache(redis_client, group_name, symbol)
+            group_settings = await get_group_symbol_settings_with_fallback(redis_client, db, group_name, symbol)
         
         if not group_settings:
             raise OrderProcessingError(f"Group settings not found for symbol {symbol}")

@@ -316,3 +316,22 @@ class OrderStatusResponse(BaseModel):
 
 # Add to app/schemas/order.py
 
+class ClosedOrderSummaryResponse(BaseModel):
+    order_id: str
+    order_company_name: str
+    order_type: str
+    order_quantity: Decimal
+    order_price: Decimal
+    close_price: Optional[Decimal] = None
+    commission: Optional[Decimal] = None
+    swap: Optional[Decimal] = None
+    net_profit: Optional[Decimal] = None
+    close_message: Optional[str] = None
+    created_at: Optional[Any] = None
+    updated_at: Optional[Any] = None
+
+    class Config:
+        json_encoders = {
+            Decimal: lambda v: str(v),
+        }
+

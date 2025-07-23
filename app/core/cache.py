@@ -1360,6 +1360,35 @@ async def cache_user_group_settings_and_symbols(user, db, redis_client):
 
 from app.crud import group as crud_group
 
+async def get_group_symbol_settings_with_fallback(redis_client, db, group_name, symbol):
+    """
+    Retrieve group symbol settings from cache, falling back to DB if not found, and cache the result.
+    - If symbol == 'ALL', fetch all symbols for the group and cache them.
+    - If symbol is a specific symbol, fetch that symbol's settings and cache.
+    """
+    settings = await get_group_symbol_settings_cache(redis_client, group_name, symbol)
+    if settings is not None:
+        return settings
+
+    if symbol.upper() == "ALL":
+        symbol_settings_dict = await crud_group.get_group_symbol_settings_for_all_symbols(db, group_name)
+        if symbol_settings_dict:
+            for symbol_key, symbol_settings in symbol_settings_dict.items():
+                await set_group_symbol_settings_cache(redis_client, group_name, symbol_key, symbol_settings)
+            # Reload from cache to ensure consistency
+            settings = await get_group_symbol_settings_cache(redis_client, group_name, "ALL")
+            return settings
+        else:
+            return None
+    else:
+        group_settings_db = await crud_group.get_group_by_symbol_and_name(db, symbol, group_name)
+        if group_settings_db:
+            symbol_settings = {k: getattr(group_settings_db, k) for k in group_settings_db.__table__.columns.keys()}
+            await set_group_symbol_settings_cache(redis_client, group_name, symbol, symbol_settings)
+            return symbol_settings
+        else:
+            return None
+
 async def cache_all_groups_and_symbols(redis_client, db):
     """
     Fetch all groups from the DB and cache their settings and symbol settings in Redis.

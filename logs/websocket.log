@@ -76,3 +76,62 @@
 2025-07-22 21:45:34,173 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
 2025-07-22 21:46:29,762 - INFO - websocket - Redis publisher task cancelled.
 2025-07-22 21:46:29,762 - INFO - websocket - Redis publisher task finished.
+2025-07-22 22:14:25,037 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 22:14:27,228 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 22:14:27,228 - INFO - websocket - Redis publisher task finished.
+2025-07-22 22:14:33,976 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 22:14:39,237 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:52004
+2025-07-22 22:14:39,253 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:52004
+2025-07-22 22:14:39,282 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-22 22:14:39,304 - INFO - websocket - User 30: WebSocket initialized with balance=10000.00000000, margin=0
+2025-07-22 22:14:40,397 - INFO - websocket - User 30: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 22:14:40,786 - INFO - websocket - User 5B0HV: WebSocket connection established successfully
+2025-07-22 22:14:49,562 - INFO - websocket - User 5B0HV: WebSocket disconnected
+2025-07-22 22:14:54,513 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:52051
+2025-07-22 22:14:54,514 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:52051
+2025-07-22 22:14:54,515 - INFO - websocket - WebSocket auth: Authenticating user 5O42G (demo)
+2025-07-22 22:14:54,531 - INFO - websocket - User 1: WebSocket initialized with balance=16449.41000000, margin=0
+2025-07-22 22:14:54,830 - INFO - websocket - User 1: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 22:14:54,913 - INFO - websocket - User 5O42G: WebSocket connection established successfully
+2025-07-22 22:15:15,139 - INFO - websocket - User 5O42G: WebSocket disconnected
+2025-07-22 22:15:16,026 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 22:15:16,026 - INFO - websocket - Redis publisher task finished.
+2025-07-22 22:30:00,801 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 22:30:01,528 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:53483
+2025-07-22 22:30:01,534 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:53483
+2025-07-22 22:30:01,538 - INFO - websocket - WebSocket auth: Authenticating user 5O42G (demo)
+2025-07-22 22:30:01,583 - INFO - websocket - User 1: WebSocket initialized with balance=16449.41000000, margin=0
+2025-07-22 22:30:02,622 - INFO - websocket - User 1: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 22:30:03,125 - INFO - websocket - User 5O42G: WebSocket connection established successfully
+2025-07-22 22:30:11,155 - INFO - websocket - User 5O42G: WebSocket disconnected
+2025-07-22 22:30:16,228 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:53539
+2025-07-22 22:30:16,229 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:53539
+2025-07-22 22:30:16,233 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-22 22:30:16,261 - INFO - websocket - User 30: WebSocket initialized with balance=10000.00000000, margin=0
+2025-07-22 22:30:17,151 - INFO - websocket - User 30: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 22:30:17,433 - INFO - websocket - User 5B0HV: WebSocket connection established successfully
+2025-07-22 22:30:35,998 - INFO - websocket - User 30: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 22:30:36,496 - INFO - websocket - [WEBSOCKET_DEBUG] User 30: Received ORDER_UPDATE message
+2025-07-22 22:30:36,520 - INFO - websocket - [WEBSOCKET_DEBUG] User 30: Received USER_DATA_UPDATE message
+2025-07-22 22:30:42,111 - INFO - websocket - User 5B0HV: WebSocket disconnected
+2025-07-22 22:30:49,404 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:53728
+2025-07-22 22:30:49,404 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:53728
+2025-07-22 22:30:49,408 - INFO - websocket - WebSocket auth: Authenticating user 5O42G (demo)
+2025-07-22 22:30:49,424 - INFO - websocket - User 1: WebSocket initialized with balance=16449.41000000, margin=0
+2025-07-22 22:30:50,059 - INFO - websocket - User 1: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 22:30:50,195 - INFO - websocket - User 5O42G: WebSocket connection established successfully
+2025-07-22 22:31:09,000 - INFO - websocket - User 1: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-22 22:31:09,557 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received ORDER_UPDATE message
+2025-07-22 22:31:09,570 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received USER_DATA_UPDATE message
+2025-07-22 22:31:11,144 - INFO - websocket - User 1: Successfully updated static orders cache with 2 open orders and 0 pending orders
+2025-07-22 22:31:11,978 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received ORDER_UPDATE message
+2025-07-22 22:31:12,003 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received USER_DATA_UPDATE message
+2025-07-22 22:31:14,397 - INFO - websocket - User 1: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-22 22:31:14,934 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received ORDER_UPDATE message
+2025-07-22 22:31:14,937 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received USER_DATA_UPDATE message
+2025-07-22 22:31:15,900 - INFO - websocket - User 1: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 22:31:15,974 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received ORDER_UPDATE message
+2025-07-22 22:31:16,030 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received USER_DATA_UPDATE message
+2025-07-22 22:31:21,837 - INFO - websocket - User 5O42G: WebSocket disconnected
+2025-07-22 22:31:22,017 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 22:31:22,017 - INFO - websocket - Redis publisher task finished.

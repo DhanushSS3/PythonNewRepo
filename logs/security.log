@@ -177,3 +177,19 @@ redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 10061] Conne
 2025-07-22 21:45:32,209 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
 2025-07-22 21:45:32,212 - INFO - app.core.security - [Redis] AOF persistence already enabled.
 2025-07-22 21:46:29,764 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-22 22:14:23,493 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-22 22:14:23,495 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-22 22:14:27,239 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-22 22:14:30,044 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-22 22:14:30,046 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-22 22:14:35,785 - INFO - app.core.security - LOGIN: user_id=30, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-23T05:14:35.785245
+2025-07-22 22:14:49,555 - INFO - app.core.security - LOGOUT: user_id=30, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-23T05:14:49.555234
+2025-07-22 22:14:52,724 - INFO - app.core.security - LOGIN: user_id=1, email=dhanush777ss@gmail.com, user_type=demo, time=2025-07-23T05:14:52.724094
+2025-07-22 22:15:16,027 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-22 22:29:59,310 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-22 22:29:59,312 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-22 22:30:11,148 - INFO - app.core.security - LOGOUT: user_id=1, email=dhanush777ss@gmail.com, user_type=demo, time=2025-07-23T05:30:11.148000
+2025-07-22 22:30:14,225 - INFO - app.core.security - LOGIN: user_id=30, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-23T05:30:14.225460
+2025-07-22 22:30:42,104 - INFO - app.core.security - LOGOUT: user_id=30, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-23T05:30:42.104748
+2025-07-22 22:30:46,743 - INFO - app.core.security - LOGIN: user_id=1, email=dhanush777ss@gmail.com, user_type=demo, time=2025-07-23T05:30:46.743583
+2025-07-22 22:31:25,554 - INFO - app.core.security - [Redis] Connection closed successfully.
