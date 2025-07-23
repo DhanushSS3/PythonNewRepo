@@ -1165,3 +1165,118 @@ async def demo_confirm_password_reset(
     await redis.delete(redis_key)
 
     return StatusResponse(message="Demo password reset successful.")
+
+# New API endpoints for admin to fetch user's orders
+
+@router.get(
+    "/{user_id}/open-orders",
+    summary="Get a user's open orders (Admin Only)",
+    description="Retrieves all open orders (order_status='OPEN') for a specific live user (requires admin authentication)."
+)
+async def get_user_open_orders(
+    user_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_admin_user)
+):
+    # Check if user exists
+    user = await crud_user.get_user_by_id(db, user_id=user_id, user_type="live")
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    
+    from app.crud.crud_order import get_orders_by_user_id_and_statuses
+    from app.database.models import UserOrder
+    
+    # Get all open orders for the user
+    open_orders = await get_orders_by_user_id_and_statuses(
+        db=db,
+        user_id=user_id,
+        statuses=["OPEN"],
+        order_model=UserOrder
+    )
+    
+    # Convert to response format
+    from app.schemas.order import OrderResponse
+    return [OrderResponse.model_validate(order.__dict__) for order in open_orders]
+
+@router.get(
+    "/{user_id}/pending-orders",
+    summary="Get a user's pending orders (Admin Only)",
+    description="Retrieves all pending orders (order_status='PENDING') for a specific live user (requires admin authentication)."
+)
+async def get_user_pending_orders(
+    user_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_admin_user)
+):
+    # Check if user exists
+    user = await crud_user.get_user_by_id(db, user_id=user_id, user_type="live")
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    
+    from app.crud.crud_order import get_orders_by_user_id_and_statuses
+    from app.database.models import UserOrder
+    
+    # Get all pending orders for the user
+    pending_orders = await get_orders_by_user_id_and_statuses(
+        db=db,
+        user_id=user_id,
+        statuses=["PENDING", "BUY_LIMIT", "SELL_LIMIT", "BUY_STOP", "SELL_STOP"],
+        order_model=UserOrder
+    )
+    
+    # Convert to response format
+    from app.schemas.order import OrderResponse
+    return [OrderResponse.model_validate(order.__dict__) for order in pending_orders]
+
+@router.get(
+    "/{user_id}/closed-orders",
+    summary="Get a user's closed orders with search (Admin Only)",
+    description="Retrieves all closed orders for a specific live user with pagination and search functionality (requires admin authentication)."
+)
+async def get_user_closed_orders(
+    user_id: int,
+    search: Optional[str] = Query(None, description="Search term for order_id, order_company_name, or order_type"),
+    skip: int = Query(0, ge=0, description="Number of records to skip"),
+    limit: int = Query(50, ge=1, le=100, description="Maximum number of records to return"),
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_admin_user)
+):
+    # Check if user exists
+    user = await crud_user.get_user_by_id(db, user_id=user_id, user_type="live")
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    
+    from app.crud.crud_order import get_closed_orders_with_search
+    from app.database.models import UserOrder
+    from app.schemas.order import ClosedOrderSummaryResponse
+    
+    # Get closed orders with search and pagination
+    closed_orders, total_count = await get_closed_orders_with_search(
+        db=db,
+        user_id=user_id,
+        search_term=search,
+        skip=skip,
+        limit=limit,
+        order_model=UserOrder
+    )
+    
+    # Convert to response format
+    response_data = [ClosedOrderSummaryResponse.model_validate(order.__dict__) for order in closed_orders]
+    
+    # Return with pagination metadata
+    return {
+        "items": response_data,
+        "total": total_count,
+        "page": skip // limit + 1 if limit > 0 else 1,
+        "pages": (total_count + limit - 1) // limit if limit > 0 else 1,
+        "limit": limit
+    }

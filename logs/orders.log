@@ -2738,3 +2738,1093 @@ TypeError: get_user_by_id() missing 1 required positional argument: 'user_type'
 2025-07-22 22:47:25,888 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
 2025-07-22 22:47:28,153 - INFO - orders - Starting the simplified pending order checker background task.
 2025-07-22 22:47:33,163 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 02:21:31,442 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 02:21:32,811 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 02:21:32,811 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 02:21:32,811 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 02:21:32,812 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 02:21:32,873 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 02:21:32,873 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 02:21:33,899 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 9, Symbol BTCUSD
+2025-07-23 02:21:33,899 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: TotalBuyQty=0.35000000, TotalSellQty=0, NetQty=0.35000000, IsHedged=False
+2025-07-23 02:21:33,899 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23633.37142857142857142857143')], HighestMarginPerLot=23633.37142857142857142857143
+2025-07-23 02:21:33,899 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 9, Symbol BTCUSD: CalculatedTotalMargin=8271.68
+2025-07-23 02:21:33,899 - INFO - orders - [TOTAL_USER_MARGIN] User 9 total margin across all symbols: 8271.68
+2025-07-23 02:21:33,944 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:21:33,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:21:33,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:21:33,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:21:33,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:21:33,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:21:33,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:21:33,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:21:33,945 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:21:34,044 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:21:34,044 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:21:34,044 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:21:34,044 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:21:34,044 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:21:34,057 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol XAGUSD
+2025-07-23 02:21:34,057 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:21:34,057 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-23 02:21:34,057 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-23 02:21:34,057 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol BTCUSD
+2025-07-23 02:21:34,057 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: TotalBuyQty=6.00000000, TotalSellQty=0, NetQty=6.00000000, IsHedged=False
+2025-07-23 02:21:34,057 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24410.82166666666666666666667')], HighestMarginPerLot=24410.82166666666666666666667
+2025-07-23 02:21:34,057 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol BTCUSD: CalculatedTotalMargin=146464.93
+2025-07-23 02:21:34,057 - INFO - orders - [TOTAL_USER_MARGIN] User 26 total margin across all symbols: 146484.47
+2025-07-23 02:21:34,158 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 1, Symbol AUDCHF
+2025-07-23 02:21:34,158 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 1, Symbol AUDCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:21:34,158 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 1, Symbol AUDCHF: AllMarginsPerLot=[Decimal('657.314831')], HighestMarginPerLot=657.314831
+2025-07-23 02:21:34,158 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 1, Symbol AUDCHF: CalculatedTotalMargin=6.57
+2025-07-23 02:21:34,158 - INFO - orders - [TOTAL_USER_MARGIN] User 1 total margin across all symbols: 6.57
+2025-07-23 02:21:35,296 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:21:35,296 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:21:35,298 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:21:35,300 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:21:35,301 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:21:35,304 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:21:35,304 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:21:35,304 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:21:35,304 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:21:35,304 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:21:35,304 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:21:35,304 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:21:35,304 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:21:35,304 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:21:35,307 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:21:36,197 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:21:36,197 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:21:36,202 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:21:36,205 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:21:36,208 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:21:36,213 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:21:36,213 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:21:36,213 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:21:36,214 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:21:36,214 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:21:36,220 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:21:37,827 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 02:21:42,822 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 02:21:43,447 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:01,983 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:14,403 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:22:14,404 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:22:14,408 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:22:14,413 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:22:14,415 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:22:14,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:22:14,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:22:14,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:22:14,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:22:14,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:22:14,422 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:22:14,422 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:22:14,422 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:22:14,422 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:22:14,429 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:22:15,309 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:22:15,309 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:22:15,322 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:22:15,336 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:22:15,340 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:22:15,347 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:22:15,347 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:22:15,347 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:22:15,348 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:22:15,348 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:22:15,355 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:22:30,053 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:32,261 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:43,859 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:46,103 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:48,470 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:53,409 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:53,460 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:54,022 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:22:54,023 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:22:54,026 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:22:54,031 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:22:54,034 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:22:54,042 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:22:54,042 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:22:54,042 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:22:54,042 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:22:54,043 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:22:54,043 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:22:54,043 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:22:54,043 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:22:54,043 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:22:54,052 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:22:55,143 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:22:55,143 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:22:55,145 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:22:55,150 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:22:55,152 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:22:55,158 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:22:55,159 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:22:55,159 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:22:55,159 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:22:55,159 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:22:55,165 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:22:57,801 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:22:59,942 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:23:13,801 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:23:25,315 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:23:33,747 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:23:33,747 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:23:33,751 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:23:33,754 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:23:33,756 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:23:33,762 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:23:33,762 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:23:33,762 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:23:33,762 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:23:33,762 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:23:33,763 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:23:33,763 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:23:33,763 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:23:33,763 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:23:33,776 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:23:34,783 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:23:34,783 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:23:34,787 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:23:34,796 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:23:34,801 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:23:34,810 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:23:34,811 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:23:34,811 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:23:34,811 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:23:34,811 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:23:34,817 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:23:55,841 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:24:09,388 - INFO - orders - Starting update_user_static_orders for user 9, user_type live
+2025-07-23 02:24:09,389 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:24:09,432 - INFO - orders - Fetched 1 open orders for user 9
+2025-07-23 02:24:09,441 - INFO - orders - Fetched 0 pending orders for user 9
+2025-07-23 02:24:09,460 - INFO - orders - Updated static orders cache for user 9 with 1 open orders and 0 pending orders
+2025-07-23 02:24:09,472 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 9, Symbol BTCUSD
+2025-07-23 02:24:09,472 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: TotalBuyQty=0.35000000, TotalSellQty=0, NetQty=0.35000000, IsHedged=False
+2025-07-23 02:24:09,472 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23633.37142857142857142857143')], HighestMarginPerLot=23633.37142857142857142857143
+2025-07-23 02:24:09,472 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 9, Symbol BTCUSD: CalculatedTotalMargin=8271.68
+2025-07-23 02:24:09,472 - INFO - orders - [TOTAL_USER_MARGIN] User 9 total margin across all symbols: 8271.68
+2025-07-23 02:24:09,483 - INFO - orders - User 9: Updated balance/margin cache after static orders update - balance=8436.59000000, margin=8271.68
+2025-07-23 02:24:09,505 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:24:10,103 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:24:10,103 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:24:10,106 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:24:10,110 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:24:10,113 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:24:10,119 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:24:10,119 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:24:10,119 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:24:10,119 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:24:10,119 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:24:10,120 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:24:10,120 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:24:10,120 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:24:10,120 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:24:10,126 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:24:11,859 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:24:11,860 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:24:11,869 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:24:11,887 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:24:11,904 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:24:11,928 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:24:11,929 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:24:11,929 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:24:11,929 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:24:11,929 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:24:11,939 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:24:29,593 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 02:24:30,576 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 02:24:30,576 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 02:24:30,576 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 02:24:30,576 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 02:24:30,631 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 02:24:30,631 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 02:24:35,893 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 02:24:36,730 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:24:36,730 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:24:36,734 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:24:36,737 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:24:36,739 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:24:36,744 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:24:36,745 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:24:36,745 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:24:36,745 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:24:36,745 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:24:36,745 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:24:36,746 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:24:36,746 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:24:36,746 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:24:36,752 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:24:37,711 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:24:37,712 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:24:37,727 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:24:37,748 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:24:37,911 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:24:37,919 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:24:37,919 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:24:37,919 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:24:37,919 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:24:37,919 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:24:37,928 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:24:40,796 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 02:24:44,477 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:25:16,672 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:25:16,672 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:25:16,676 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:25:16,682 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:25:16,684 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:25:16,691 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:25:16,691 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:25:16,691 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:25:16,691 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:25:16,691 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:25:16,691 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:25:16,692 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:25:16,692 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:25:16,692 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:25:16,701 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:25:17,575 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:25:17,575 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:25:17,579 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:25:17,582 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:25:17,584 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:25:17,588 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:25:17,588 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:25:17,588 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:25:17,588 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:25:17,588 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:25:17,592 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:25:40,182 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:25:55,988 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:25:55,988 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:25:55,992 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:25:55,995 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:25:55,997 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:25:56,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:25:56,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:25:56,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:25:56,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:25:56,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:25:56,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:25:56,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:25:56,003 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:25:56,004 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:25:56,010 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:25:57,133 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:25:57,133 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:25:57,136 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:25:57,140 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:25:57,142 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:25:57,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:25:57,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:25:57,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:25:57,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:25:57,148 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:25:57,155 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:26:00,995 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:03,337 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:14,799 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:17,149 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:19,412 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:23,988 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:26,365 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:28,607 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:35,588 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:26:35,589 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:26:35,592 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:26:35,597 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:26:35,600 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:26:35,606 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:26:35,607 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:26:35,607 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:26:35,607 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:26:35,607 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:26:35,607 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:26:35,607 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:26:35,607 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:26:35,607 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:26:35,611 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:35,614 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:26:36,530 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:26:36,530 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:26:36,534 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:26:36,539 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:26:36,542 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:26:36,548 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:26:36,549 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:26:36,549 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:26:36,549 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:26:36,549 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:26:36,557 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:26:42,550 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:44,856 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:26:58,721 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:27:01,080 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:27:14,879 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:27:14,931 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:27:15,527 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:27:15,527 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:27:15,530 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:27:15,534 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:27:15,536 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:27:15,540 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:27:15,540 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:27:15,540 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:27:15,540 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:27:15,540 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:27:15,541 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:27:15,541 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:27:15,541 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:27:15,541 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:27:15,547 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:27:16,358 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:27:16,358 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:27:16,361 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:27:16,363 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:27:16,365 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:27:16,370 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:27:16,370 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:27:16,370 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:27:16,370 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:27:16,371 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:27:16,375 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:27:21,751 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:27:40,304 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:35:41,521 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 02:35:42,821 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 02:35:42,821 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 02:35:42,821 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 02:35:42,821 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 02:35:42,863 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 02:35:42,863 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 02:35:43,878 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 9, Symbol BTCUSD
+2025-07-23 02:35:43,879 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: TotalBuyQty=0.35000000, TotalSellQty=0, NetQty=0.35000000, IsHedged=False
+2025-07-23 02:35:43,879 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23633.37142857142857142857143')], HighestMarginPerLot=23633.37142857142857142857143
+2025-07-23 02:35:43,879 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 9, Symbol BTCUSD: CalculatedTotalMargin=8271.68
+2025-07-23 02:35:43,879 - INFO - orders - [TOTAL_USER_MARGIN] User 9 total margin across all symbols: 8271.68
+2025-07-23 02:35:43,944 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:35:43,944 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:35:43,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:35:43,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:35:43,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:35:43,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:35:43,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:35:43,945 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:35:43,945 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:35:44,082 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:35:44,082 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:35:44,082 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:35:44,082 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:35:44,082 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:35:44,090 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol XAGUSD
+2025-07-23 02:35:44,090 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:35:44,090 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-23 02:35:44,090 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-23 02:35:44,090 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol BTCUSD
+2025-07-23 02:35:44,090 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: TotalBuyQty=6.00000000, TotalSellQty=0, NetQty=6.00000000, IsHedged=False
+2025-07-23 02:35:44,090 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24410.82166666666666666666667')], HighestMarginPerLot=24410.82166666666666666666667
+2025-07-23 02:35:44,090 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol BTCUSD: CalculatedTotalMargin=146464.93
+2025-07-23 02:35:44,090 - INFO - orders - [TOTAL_USER_MARGIN] User 26 total margin across all symbols: 146484.47
+2025-07-23 02:35:44,160 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 1, Symbol AUDCHF
+2025-07-23 02:35:44,160 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 1, Symbol AUDCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:35:44,160 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 1, Symbol AUDCHF: AllMarginsPerLot=[Decimal('657.314831')], HighestMarginPerLot=657.314831
+2025-07-23 02:35:44,160 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 1, Symbol AUDCHF: CalculatedTotalMargin=6.57
+2025-07-23 02:35:44,160 - INFO - orders - [TOTAL_USER_MARGIN] User 1 total margin across all symbols: 6.57
+2025-07-23 02:35:48,966 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 02:35:49,591 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:35:49,591 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:35:49,595 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:35:49,600 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:35:49,603 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:35:49,608 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:35:49,608 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:35:49,608 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:35:49,608 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:35:49,608 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:35:49,608 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:35:49,609 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:35:49,609 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:35:49,609 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:35:49,613 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:35:50,159 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:35:50,159 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:35:50,161 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:35:50,162 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:35:50,163 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:35:50,166 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:35:50,167 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:35:50,167 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:35:50,167 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:35:50,167 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:35:50,170 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:35:52,879 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 02:35:53,593 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:35:58,401 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:36:05,759 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:36:23,517 - INFO - orders - Starting update_user_static_orders for user 9, user_type live
+2025-07-23 02:36:23,518 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:36:23,521 - INFO - orders - Fetched 1 open orders for user 9
+2025-07-23 02:36:23,524 - INFO - orders - Fetched 0 pending orders for user 9
+2025-07-23 02:36:23,525 - INFO - orders - Updated static orders cache for user 9 with 1 open orders and 0 pending orders
+2025-07-23 02:36:23,533 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 9, Symbol BTCUSD
+2025-07-23 02:36:23,534 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: TotalBuyQty=0.35000000, TotalSellQty=0, NetQty=0.35000000, IsHedged=False
+2025-07-23 02:36:23,534 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23633.37142857142857142857143')], HighestMarginPerLot=23633.37142857142857142857143
+2025-07-23 02:36:23,535 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 9, Symbol BTCUSD: CalculatedTotalMargin=8271.68
+2025-07-23 02:36:23,535 - INFO - orders - [TOTAL_USER_MARGIN] User 9 total margin across all symbols: 8271.68
+2025-07-23 02:36:23,546 - INFO - orders - User 9: Updated balance/margin cache after static orders update - balance=8436.59000000, margin=8271.68
+2025-07-23 02:36:24,316 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-23 02:36:24,316 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:36:24,319 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-23 02:36:24,322 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-23 02:36:24,325 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-23 02:36:24,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-23 02:36:24,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:36:24,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-23 02:36:24,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-23 02:36:24,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-23 02:36:24,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-23 02:36:24,330 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-23 02:36:24,330 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-23 02:36:24,330 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-23 02:36:24,334 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-23 02:36:25,214 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-23 02:36:25,214 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:36:25,218 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-23 02:36:25,224 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-23 02:36:25,227 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-23 02:36:25,232 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-23 02:36:25,233 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 02:36:25,233 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-23 02:36:25,233 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-23 02:36:25,234 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-23 02:36:25,240 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-23 02:36:26,481 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 25 order 1031-001 (handled by service provider)
+2025-07-23 02:36:59,406 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 02:37:00,442 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 02:37:00,442 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 02:37:00,443 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 02:37:00,443 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 02:37:00,503 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 02:37:00,503 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 02:37:02,414 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 27, Symbol AUDJPY
+2025-07-23 02:37:02,414 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 02:37:02,414 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: AllMarginsPerLot=[Decimal('648.460213'), Decimal('651.498922')], HighestMarginPerLot=651.498922
+2025-07-23 02:37:02,415 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDJPY: CalculatedTotalMargin=13.03
+2025-07-23 02:37:02,415 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 27, Symbol AUDUSD
+2025-07-23 02:37:02,415 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:37:02,415 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: AllMarginsPerLot=[Decimal('652')], HighestMarginPerLot=652
+2025-07-23 02:37:02,415 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDUSD: CalculatedTotalMargin=6.52
+2025-07-23 02:37:02,415 - INFO - orders - [TOTAL_USER_MARGIN] User 27 total margin across all symbols: 19.55
+2025-07-23 02:37:02,976 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 28, Symbol EURPLN
+2025-07-23 02:37:02,977 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 02:37:02,977 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: AllMarginsPerLot=[Decimal('4257'), Decimal('4257')], HighestMarginPerLot=4257
+2025-07-23 02:37:02,977 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol EURPLN: CalculatedTotalMargin=85.14
+2025-07-23 02:37:02,977 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 28, Symbol BTCUSD
+2025-07-23 02:37:02,978 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:37:02,978 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24050.95')], HighestMarginPerLot=24050.95
+2025-07-23 02:37:02,978 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol BTCUSD: CalculatedTotalMargin=9620.38
+2025-07-23 02:37:02,978 - INFO - orders - [TOTAL_USER_MARGIN] User 28 total margin across all symbols: 9705.52
+2025-07-23 02:37:05,797 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 02:37:10,556 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 02:37:11,125 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:15,652 - ERROR - orders - Error getting group settings for group Classic: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\services\pending_orders.py", line 1084, in get_group_settings_cache
+    group = await get_group_by_name(db, group_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\crud\group.py", line 27, in get_group_by_name
+    result = await db.execute(select(Group).filter(Group.name == group_name))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 463, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3273, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-23 02:37:15,800 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:18,163 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:20,665 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:37:20,746 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:22,580 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:24,881 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:27,110 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:37:27,371 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:29,358 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:37:31,759 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:37:32,023 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:34,159 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:37:34,540 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:36,433 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:37:37,032 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:38,900 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:41,482 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:43,814 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:45,856 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:37:46,152 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:48,859 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:50,669 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:52,715 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:37:53,323 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:55,186 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:37:57,813 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:00,358 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:02,241 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:04,420 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:06,991 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:09,078 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:13,799 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:16,038 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:18,265 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:38:18,591 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:20,666 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:22,802 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:38:22,932 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:25,376 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:29,821 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:32,854 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:34,287 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:38:36,800 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:38:37,606 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:39,060 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:38:39,211 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:38:41,806 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:40:48,160 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 02:40:49,421 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 02:40:49,421 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 02:40:49,422 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 02:40:49,422 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 02:40:49,453 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 02:40:49,454 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 02:40:50,652 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol CADCHF
+2025-07-23 02:40:50,652 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:40:50,653 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: AllMarginsPerLot=[Decimal('736.585427')], HighestMarginPerLot=736.585427
+2025-07-23 02:40:50,653 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol CADCHF: CalculatedTotalMargin=7.37
+2025-07-23 02:40:50,653 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 7.37
+2025-07-23 02:40:51,019 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 10, Symbol AUDCAD
+2025-07-23 02:40:51,019 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:40:51,020 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: AllMarginsPerLot=[Decimal('658.916726')], HighestMarginPerLot=658.916726
+2025-07-23 02:40:51,020 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 10, Symbol AUDCAD: CalculatedTotalMargin=6.59
+2025-07-23 02:40:51,020 - INFO - orders - [TOTAL_USER_MARGIN] User 10 total margin across all symbols: 6.59
+2025-07-23 02:40:51,119 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 11, Symbol AUDJPY
+2025-07-23 02:40:51,119 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:40:51,119 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: AllMarginsPerLot=[Decimal('96717')], HighestMarginPerLot=96717
+2025-07-23 02:40:51,119 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 11, Symbol AUDJPY: CalculatedTotalMargin=967.17
+2025-07-23 02:40:51,119 - INFO - orders - [TOTAL_USER_MARGIN] User 11 total margin across all symbols: 967.17
+2025-07-23 02:40:51,749 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 13, Symbol XAGUSD
+2025-07-23 02:40:51,749 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: TotalBuyQty=0, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:40:51,749 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-23 02:40:51,749 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 13, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-23 02:40:51,749 - INFO - orders - [TOTAL_USER_MARGIN] User 13 total margin across all symbols: 19.54
+2025-07-23 02:40:52,764 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol AUDCAD
+2025-07-23 02:40:52,764 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:40:52,764 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: AllMarginsPerLot=[Decimal('657.55194')], HighestMarginPerLot=657.55194
+2025-07-23 02:40:52,764 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol AUDCAD: CalculatedTotalMargin=6.58
+2025-07-23 02:40:52,764 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol EURUSD
+2025-07-23 02:40:52,765 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:40:52,765 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: AllMarginsPerLot=[Decimal('1180')], HighestMarginPerLot=1180
+2025-07-23 02:40:52,766 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol EURUSD: CalculatedTotalMargin=11.80
+2025-07-23 02:40:52,766 - INFO - orders - [TOTAL_USER_MARGIN] User 20 total margin across all symbols: 18.38
+2025-07-23 02:40:53,147 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 22, Symbol AUDCHF
+2025-07-23 02:40:53,147 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:40:53,147 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: AllMarginsPerLot=[Decimal('657.101216')], HighestMarginPerLot=657.101216
+2025-07-23 02:40:53,147 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCHF: CalculatedTotalMargin=6.57
+2025-07-23 02:40:53,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 4 positions for User 22, Symbol AUDJPY
+2025-07-23 02:40:53,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 02:40:53,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: AllMarginsPerLot=[Decimal('657.431957'), Decimal('652.816419'), Decimal('652.829301'), Decimal('652.889785')], HighestMarginPerLot=657.431957
+2025-07-23 02:40:53,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDJPY: CalculatedTotalMargin=13.15
+2025-07-23 02:40:53,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 22, Symbol AUDCAD
+2025-07-23 02:40:53,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-23 02:40:53,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: AllMarginsPerLot=[Decimal('652.598728'), Decimal('652.660595')], HighestMarginPerLot=652.660595
+2025-07-23 02:40:53,148 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCAD: CalculatedTotalMargin=6.53
+2025-07-23 02:40:53,150 - INFO - orders - [TOTAL_USER_MARGIN] User 22 total margin across all symbols: 26.25
+2025-07-23 02:40:53,338 - INFO - orders - Starting update_user_static_orders for user 24, user_type live
+2025-07-23 02:40:53,339 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:40:53,767 - INFO - orders - Fetched 0 open orders for user 24
+2025-07-23 02:40:53,836 - INFO - orders - Fetched 0 pending orders for user 24
+2025-07-23 02:40:53,838 - INFO - orders - Updated static orders cache for user 24 with 0 open orders and 0 pending orders
+2025-07-23 02:40:53,991 - INFO - orders - User 24: Updated balance/margin cache after static orders update - balance=500000.00000000, margin=0.0
+2025-07-23 02:40:54,124 - INFO - orders - Starting update_user_static_orders for user 27, user_type live
+2025-07-23 02:40:54,124 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:40:54,165 - INFO - orders - Fetched 3 open orders for user 27
+2025-07-23 02:40:54,208 - INFO - orders - Fetched 0 pending orders for user 27
+2025-07-23 02:40:54,210 - INFO - orders - Updated static orders cache for user 27 with 3 open orders and 0 pending orders
+2025-07-23 02:40:54,248 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 27, Symbol AUDJPY
+2025-07-23 02:40:54,248 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 02:40:54,248 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: AllMarginsPerLot=[Decimal('648.460213'), Decimal('651.498922')], HighestMarginPerLot=651.498922
+2025-07-23 02:40:54,249 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDJPY: CalculatedTotalMargin=13.03
+2025-07-23 02:40:54,249 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 27, Symbol AUDUSD
+2025-07-23 02:40:54,249 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 02:40:54,249 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: AllMarginsPerLot=[Decimal('652')], HighestMarginPerLot=652
+2025-07-23 02:40:54,249 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDUSD: CalculatedTotalMargin=6.52
+2025-07-23 02:40:54,249 - INFO - orders - [TOTAL_USER_MARGIN] User 27 total margin across all symbols: 19.55
+2025-07-23 02:40:54,254 - INFO - orders - User 27: Updated balance/margin cache after static orders update - balance=0E-8, margin=19.55
+2025-07-23 02:40:54,258 - INFO - orders - Starting update_user_static_orders for user 28, user_type live
+2025-07-23 02:40:54,258 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:40:54,317 - INFO - orders - Fetched 3 open orders for user 28
+2025-07-23 02:40:54,356 - INFO - orders - Fetched 0 pending orders for user 28
+2025-07-23 02:40:54,358 - INFO - orders - Updated static orders cache for user 28 with 3 open orders and 0 pending orders
+2025-07-23 02:40:54,706 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 28, Symbol EURPLN
+2025-07-23 02:40:54,706 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 02:40:54,706 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: AllMarginsPerLot=[Decimal('4257'), Decimal('4257')], HighestMarginPerLot=4257
+2025-07-23 02:40:54,707 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol EURPLN: CalculatedTotalMargin=85.14
+2025-07-23 02:40:54,707 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 28, Symbol BTCUSD
+2025-07-23 02:40:54,707 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 02:40:54,707 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24050.95')], HighestMarginPerLot=24050.95
+2025-07-23 02:40:54,707 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol BTCUSD: CalculatedTotalMargin=9620.38
+2025-07-23 02:40:54,707 - INFO - orders - [TOTAL_USER_MARGIN] User 28 total margin across all symbols: 9705.52
+2025-07-23 02:40:54,708 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 02:40:54,723 - INFO - orders - User 28: Updated balance/margin cache after static orders update - balance=0E-8, margin=9705.52
+2025-07-23 02:40:55,013 - INFO - orders - Starting update_user_static_orders for user 31, user_type live
+2025-07-23 02:40:55,013 - INFO - orders - Using order model: UserOrder
+2025-07-23 02:40:55,054 - INFO - orders - Fetched 0 open orders for user 31
+2025-07-23 02:40:55,113 - INFO - orders - Fetched 0 pending orders for user 31
+2025-07-23 02:40:55,116 - INFO - orders - Updated static orders cache for user 31 with 0 open orders and 0 pending orders
+2025-07-23 02:40:55,186 - INFO - orders - User 31: Updated balance/margin cache after static orders update - balance=0E-8, margin=0.0
+2025-07-23 02:40:57,200 - ERROR - orders - Error getting group settings for group Group B: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\services\pending_orders.py", line 1084, in get_group_settings_cache
+    group = await get_group_by_name(db, group_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\crud\group.py", line 27, in get_group_by_name
+    result = await db.execute(select(Group).filter(Group.name == group_name))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 463, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3273, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-23 02:41:02,908 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 02:41:03,047 - ERROR - orders - Error getting symbols with open orders: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-23 02:41:04,455 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:05,978 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:41:06,474 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:07,172 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:24,201 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:26,787 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:28,783 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:31,263 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:33,855 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:38,618 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:41,236 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:43,136 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:45,300 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:41:45,949 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:50,569 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:52,617 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:41:54,960 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:00,081 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:01,794 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:04,221 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:06,617 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:08,768 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:11,164 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:13,223 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:42:13,552 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:15,845 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:18,092 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:20,158 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:42:20,319 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:22,981 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:23,008 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:42:25,165 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:30,748 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:33,362 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:37,393 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:42:37,903 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:42,120 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:42:42,381 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:46,985 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:49,406 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:56,873 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:42:58,936 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:01,095 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:03,657 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:10,105 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:43:10,920 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:12,746 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:43:17,387 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:43:19,678 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:43:24,220 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:43:24,434 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:26,676 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:43:26,911 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:29,154 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:31,681 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:33,976 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:38,343 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:40,612 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:43,010 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:45,509 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:47,790 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:50,637 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:52,721 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:54,516 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:43:55,091 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:56,791 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:43:57,395 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:43:59,469 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:43:59,643 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:01,587 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:44:02,081 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:03,888 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:44:04,156 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:08,526 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:15,550 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:17,989 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:24,923 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:29,751 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:32,049 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 28 order 1000812-006 (handled by service provider)
+2025-07-23 02:44:32,328 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:34,237 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:36,457 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:38,669 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:41,140 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:43,415 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:45,803 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)
+2025-07-23 02:44:50,203 - INFO - orders - [SLTP_CHECK] Skipping SL/TP execution for Barclays live user 11 order 1000566-008 (handled by service provider)

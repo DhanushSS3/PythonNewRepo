@@ -7,7 +7,7 @@ from app.database.models import UserOrder, DemoUserOrder, OrderActionHistory
 from app.schemas.order import OrderCreateInternal
 from sqlalchemy.orm import selectinload
 from datetime import datetime
-from sqlalchemy import and_, or_
+from sqlalchemy import and_, or_, func
 from typing import Dict
 from app.core.logging_config import orders_crud_logger, orders_logger
 
@@ -514,3 +514,62 @@ async def get_user_orders(
     except Exception as e:
         print(f"Error getting user orders: {e}")
         return []
+
+async def get_closed_orders_with_search(
+    db: AsyncSession,
+    user_id: Optional[int] = None,
+    search_term: Optional[str] = None,
+    skip: int = 0,
+    limit: int = 50,
+    order_model=UserOrder
+) -> tuple[List[Any], int]:
+    """
+    Get closed orders with optional search functionality and pagination.
+    
+    Args:
+        db: The database session
+        user_id: Optional user ID filter
+        search_term: Optional search term for order_id, order_company_name, or order_type
+        skip: Number of records to skip (pagination)
+        limit: Maximum number of records to return (pagination)
+        order_model: The order model to use (UserOrder or DemoUserOrder)
+        
+    Returns:
+        A tuple containing (list of orders, total count)
+    """
+    try:
+        # Base query
+        query = select(order_model).filter(order_model.order_status == "CLOSED")
+        count_query = select(func.count()).select_from(order_model).filter(order_model.order_status == "CLOSED")
+        
+        # Add user_id filter if provided
+        if user_id is not None:
+            query = query.filter(order_model.order_user_id == user_id)
+            count_query = count_query.filter(order_model.order_user_id == user_id)
+        
+        # Add search filter if provided
+        if search_term and search_term.strip():
+            search_term = f"%{search_term}%"
+            search_filter = or_(
+                order_model.order_id.ilike(search_term),
+                order_model.order_company_name.ilike(search_term),
+                order_model.order_type.ilike(search_term)
+            )
+            query = query.filter(search_filter)
+            count_query = count_query.filter(search_filter)
+        
+        # Get total count
+        count_result = await db.execute(count_query)
+        total_count = count_result.scalar_one()
+        
+        # Apply pagination and order by most recent first
+        query = query.order_by(order_model.updated_at.desc()).offset(skip).limit(limit)
+        
+        # Execute query
+        result = await db.execute(query)
+        orders = result.scalars().all()
+        
+        return list(orders), total_count
+    except Exception as e:
+        orders_crud_logger.error(f"Error getting closed orders: {e}", exc_info=True)
+        return [], 0
