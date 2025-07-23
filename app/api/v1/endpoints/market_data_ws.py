@@ -278,9 +278,18 @@ async def per_connection_redis_listener(
         return
     symbol_list = list(group_settings.keys())
 
+    # --- Add tracking for market_prices update ---
+    last_market_prices_sent = time.time()
+    warning_logged = False
+
     try:
         while websocket.client_state == WebSocketState.CONNECTED:
             message = await pubsub.get_message(ignore_subscribe_messages=True, timeout=1.0)
+            now = time.time()
+            # Check for market_prices staleness
+            if now - last_market_prices_sent > 30 and not warning_logged:
+                logger.warning(f"[WS_MONITOR] No market_prices update sent for user_id={user_id}, group_name={group_name} in over 30 seconds.")
+                warning_logged = True
             if message is None:
                 await asyncio.sleep(0.01)
                 continue
@@ -388,6 +397,9 @@ async def per_connection_redis_listener(
                     )
                     if is_initial_connection:
                         is_initial_connection = False
+                    # --- Reset market_prices staleness timer and warning flag ---
+                    last_market_prices_sent = time.time()
+                    warning_logged = False
                 elif channel == REDIS_ORDER_UPDATES_CHANNEL and message_data.get("type") == "ORDER_UPDATE" and str(message_data.get("user_id")) == str(user_id):
                     logger.info(f"[WEBSOCKET_DEBUG] User {user_id}: Received ORDER_UPDATE message")
                     # FIXED: Use cache refresh function to prevent orders from disappearing

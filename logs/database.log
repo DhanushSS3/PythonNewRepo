@@ -122,3 +122,92 @@ Traceback (most recent call last):
     ...<3 lines>...
     )
 fastapi.exceptions.HTTPException: 401: Could not validate credentials
+2025-07-22 03:56:52,270 - ERROR - database - Error in database session: 500: An error occurred while refreshing token.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 345, in refresh_access_token
+     raise HTTPException(
+    ...<3 lines>...
+    )
+fastapi.exceptions.HTTPException: 401: User not found or inactive
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 376, in refresh_access_token
+    raise HTTPException(
+    ...<2 lines>...
+    )
+fastapi.exceptions.HTTPException: 500: An error occurred while refreshing token.
+2025-07-22 03:56:52,295 - ERROR - database - Error in database session: 500: An error occurred while refreshing token.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 345, in refresh_access_token
+     raise HTTPException(
+    ...<3 lines>...
+    )
+fastapi.exceptions.HTTPException: 401: User not found or inactive
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 376, in refresh_access_token
+    raise HTTPException(
+    ...<2 lines>...
+    )
+fastapi.exceptions.HTTPException: 500: An error occurred while refreshing token.
+2025-07-22 21:31:22,598 - ERROR - database - Error in database session: 503: Redis unavailable
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\dependencies\utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\dependencies\redis_client.py", line 44, in get_redis_client
+    raise HTTPException(
+    ...<2 lines>...
+    )
+fastapi.exceptions.HTTPException: 503: Redis unavailable
+2025-07-22 21:42:03,492 - ERROR - database - Error in database session: Expected ASGI message "websocket.accept", "websocket.close" or "websocket.http.response.start", but got 'websocket.send'
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 383, in app
+    await dependant.call(**solved_result.values)
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\admin_wallet.py", line 105, in admin_raw_market_data_websocket
+    await websocket.send_text(json.dumps({
+    ...<2 lines>...
+    }, cls=DecimalEncoder))
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\starlette\websockets.py", line 165, in send_text
+    await self.send({"type": "websocket.send", "text": data})
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\starlette\websockets.py", line 65, in send
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: Expected ASGI message "websocket.accept", "websocket.close" or "websocket.http.response.start", but got 'websocket.send'

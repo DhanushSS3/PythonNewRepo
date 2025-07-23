@@ -72,3 +72,108 @@ jose.exceptions.JWTError: Could not validate credentials
 2025-07-22 03:40:18,138 - INFO - app.core.security - LOGOUT: user_id=25, email=huttonsgroups90@gmail.com, user_type=live, time=2025-07-22T10:40:18.138574
 2025-07-22 03:40:24,606 - INFO - app.core.security - LOGIN: user_id=30, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-22T10:40:24.606644
 2025-07-22 03:42:36,131 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-22 03:54:36,270 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-22 03:54:36,275 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-22 03:54:47,333 - INFO - app.core.security - LOGOUT: user_id=30, email=vadoveg221@dosonex.com, user_type=live, time=2025-07-22T10:54:47.333560
+2025-07-22 03:54:52,105 - INFO - app.core.security - LOGIN: user_id=1, email=dhanush777ss@gmail.com, user_type=demo, time=2025-07-22T10:54:52.105670
+2025-07-22 04:00:24,394 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-22 21:29:35,630 - ERROR - app.core.security - [Redis] Connection failed: Error Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6380, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6380) connecting to localhost:6380.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 302, in connect_check_health
+    await self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect()
+    )
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\retry.py", line 71, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 755, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\AppData\Local\Programs\Python\Python313\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1174, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+        ', '.join(str(exc) for exc in exceptions)))
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6380, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6380)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\core\security.py", line 206, in connect_to_redis
+    await client.ping()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\client.py", line 672, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 1141, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 1174, in ensure_connection
+    await connection.connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 310, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6380, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6380) connecting to localhost:6380.
+2025-07-22 21:31:22,593 - ERROR - app.core.security - [Redis] Connection failed: Error Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6380, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6380) connecting to localhost:6380.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 302, in connect_check_health
+    await self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect()
+    )
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\retry.py", line 71, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 755, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\AppData\Local\Programs\Python\Python313\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1174, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+        ', '.join(str(exc) for exc in exceptions)))
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6380, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6380)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\core\security.py", line 206, in connect_to_redis
+    await client.ping()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\client.py", line 672, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 1141, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 1174, in ensure_connection
+    await connection.connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 310, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6380, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6380) connecting to localhost:6380.
+2025-07-22 21:32:50,648 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-22 21:32:50,652 - WARNING - app.core.security - [Redis] AOF persistence not enabled. Enabling now...
+2025-07-22 21:32:50,656 - INFO - app.core.security - [Redis] AOF persistence enabled with appendfsync=everysec.
+2025-07-22 21:33:03,620 - INFO - app.core.security - LOGIN: user_id=5, email=livefxhub@gmail.com, user_type=admin, time=2025-07-23T04:33:03.619984
+2025-07-22 21:36:55,934 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-22 21:41:56,096 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-22 21:41:56,100 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-22 21:43:06,986 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-22 21:43:09,056 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-22 21:43:09,057 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-22 21:43:58,648 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-22 21:45:32,209 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-22 21:45:32,212 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-22 21:46:29,764 - INFO - app.core.security - [Redis] Connection closed successfully.

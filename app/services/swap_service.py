@@ -90,7 +90,7 @@ async def apply_daily_swap_charges_for_all_open_orders(db: AsyncSession, redis_c
             # ((order_quantity * pips) * (order_quantity * swap_rate))/10
             logger.info(f"[SWAP] Calculating daily swap charge for order {order.order_id}: ((order_quantity={order_quantity} * pips={pips}) * (order_quantity={order_quantity} * swap_rate_to_use={swap_rate_to_use}))/10")
             try:
-                daily_swap_charge = ((order_quantity * pips) * (order_quantity * swap_rate_to_use)) / Decimal('10')
+                daily_swap_charge = ((order_quantity * pips) * (swap_rate_to_use)) / Decimal('10')
             except Exception as e:
                 logger.error(f"Error calculating new swap formula for order {order.order_id}: {e}")
                 failed_count += 1

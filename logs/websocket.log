@@ -43,3 +43,36 @@
 2025-07-22 03:42:34,771 - INFO - websocket - User 5B0HV: WebSocket disconnected
 2025-07-22 03:42:35,782 - INFO - websocket - Redis publisher task cancelled.
 2025-07-22 03:42:35,782 - INFO - websocket - Redis publisher task finished.
+2025-07-22 03:54:39,678 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 03:54:46,359 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55084
+2025-07-22 03:54:46,362 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55084
+2025-07-22 03:54:46,400 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-22 03:54:46,489 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-22 03:54:58,730 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55135
+2025-07-22 03:54:58,731 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55135
+2025-07-22 03:54:58,733 - INFO - websocket - WebSocket auth: Authenticating user 5O42G (demo)
+2025-07-22 03:54:58,847 - INFO - websocket - User 1: WebSocket initialized with balance=16228.81000000, margin=0
+2025-07-22 03:55:04,271 - INFO - websocket - User 1: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 03:55:04,451 - INFO - websocket - User 5O42G: WebSocket connection established successfully
+2025-07-22 03:56:52,235 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55235
+2025-07-22 03:56:52,236 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55235
+2025-07-22 03:56:52,246 - INFO - websocket - WebSocket auth: Authenticating user 5O42G (demo)
+2025-07-22 03:56:52,380 - INFO - websocket - User 1: WebSocket initialized with balance=16228.81000000, margin=0
+2025-07-22 03:56:58,294 - INFO - websocket - User 1: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-22 03:56:58,587 - INFO - websocket - User 1: WebSocket disconnected while sending initial connection data
+2025-07-22 03:56:58,588 - WARNING - websocket - User 5O42G: Failed to send initial data, connection may be closed
+2025-07-22 04:00:22,812 - INFO - websocket - User 5O42G: WebSocket disconnected
+2025-07-22 04:00:23,674 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 04:00:23,674 - INFO - websocket - Redis publisher task finished.
+2025-07-22 21:32:52,652 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 21:36:55,931 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 21:36:55,931 - INFO - websocket - Redis publisher task finished.
+2025-07-22 21:41:57,697 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 21:43:06,979 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 21:43:06,979 - INFO - websocket - Redis publisher task finished.
+2025-07-22 21:43:10,906 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 21:43:58,628 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 21:43:58,629 - INFO - websocket - Redis publisher task finished.
+2025-07-22 21:45:34,173 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-22 21:46:29,762 - INFO - websocket - Redis publisher task cancelled.
+2025-07-22 21:46:29,762 - INFO - websocket - Redis publisher task finished.
