@@ -1942,7 +1942,7 @@ async def modify_pending_order(
     modify_request: ModifyPendingOrderRequest,
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client),
-    current_user: User | DemoUser = Depends(get_current_user),
+    current_user: User | DemoUser = Depends(get_user_for_action_with_admin_support),
 ):
     try:
         user_type = get_user_type(current_user)
@@ -2142,7 +2142,7 @@ async def cancel_pending_order(
     cancel_request: PendingOrderCancelRequest,
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client),
-    current_user: User | DemoUser = Depends(get_current_user)
+    current_user: User | DemoUser = Depends(get_user_for_action_with_admin_support),
 ):
     """
     Cancel a pending order.
@@ -2362,7 +2362,7 @@ async def add_stoploss(
     background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client),
-    current_user: User | DemoUser = Depends(get_current_user),
+    current_user: User | DemoUser = Depends(get_user_for_action_with_admin_support),
     
 ):
     """
@@ -2546,7 +2546,7 @@ async def add_takeprofit(
     background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client),
-    current_user: User | DemoUser = Depends(get_current_user),
+    current_user: User | DemoUser = Depends(get_user_for_action_with_admin_support),
     
 ):
     """
@@ -2731,7 +2731,7 @@ async def cancel_stoploss(
     background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client),
-    current_user: User | DemoUser = Depends(get_current_user)
+    current_user: User | DemoUser = Depends(get_user_for_action_with_admin_support),
 ):
     """
     Cancel a stop loss for an existing order.
@@ -2885,7 +2885,7 @@ async def cancel_takeprofit(
     background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client),
-    current_user: User | DemoUser = Depends(get_current_user)
+    current_user: User | DemoUser = Depends(get_user_for_action_with_admin_support),
 ):
     """
     Cancel a take profit for an existing order.

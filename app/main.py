@@ -189,6 +189,7 @@ async def update_all_users_dynamic_portfolio():
     This is critical for autocutoff and validation.
     """
     from app.services.email import send_email
+    from app.core.cache import get_user_data_cache, get_group_symbol_settings_cache, get_adjusted_market_price_cache, get_last_known_price, set_user_dynamic_portfolio_cache, set_group_symbol_settings_cache
     logger.info("[AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio job...")
     try:
         async with AsyncSessionLocal() as db:
@@ -759,7 +760,7 @@ async def rotate_service_account_jwt():
     try:
         service_name = "barclays_service_provider"
         # Generate a token valid for 35 minutes. It will be refreshed every 30 minutes.
-        token = create_service_account_token(service_name, expires_minutes=10080)
+        token = create_service_account_token(service_name, expires_minutes=60)
         print('Service token pushed to firebase')
 
         # Path in Firebase to store the token
@@ -863,7 +864,7 @@ async def startup_event():
         
         scheduler.add_job(
             daily_swap_charge_job,
-            CronTrigger(hour=10, minute=55, timezone='utc'),
+            CronTrigger(hour=0, minute=0, timezone='UTC'),
             # IntervalTrigger(minutes=1),
             logger.info("[SWAP] daily_swap_charge_job triggered"),
             id='daily_swap_charge_job',
@@ -881,7 +882,7 @@ async def startup_event():
         
         scheduler.add_job(
             rotate_service_account_jwt,
-            IntervalTrigger(minutes=1),
+            IntervalTrigger(minutes=25),
             id='rotate_service_account_jwt',
             replace_existing=True
         )

@@ -334,3 +334,6 @@
 2025-07-23 03:49:04,384 - WARNING - websocket - User DYY5A: Failed to send initial data, connection may be closed
 2025-07-23 03:49:05,040 - INFO - websocket - Redis publisher task cancelled.
 2025-07-23 03:49:05,040 - INFO - websocket - Redis publisher task finished.
+2025-07-23 04:53:32,953 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 04:54:02,997 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 04:54:02,997 - INFO - websocket - Redis publisher task finished.

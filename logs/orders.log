@@ -4272,3 +4272,56 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-23 03:49:04,252 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol CADCHF: AllMarginsPerLot=[Decimal('736.843433')], HighestMarginPerLot=736.843433
 2025-07-23 03:49:04,253 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol CADCHF: CalculatedTotalMargin=7.37
 2025-07-23 03:49:04,253 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 7.37
+2025-07-23 04:53:32,026 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 04:53:32,955 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 04:53:32,955 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 04:53:32,956 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 04:53:32,956 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 04:53:32,991 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 04:53:32,991 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 04:53:33,938 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol AUDJPY
+2025-07-23 04:53:33,940 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 04:53:33,940 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDJPY: AllMarginsPerLot=[Decimal('659.297807')], HighestMarginPerLot=659.297807
+2025-07-23 04:53:33,940 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol AUDJPY: CalculatedTotalMargin=6.59
+2025-07-23 04:53:33,940 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol AUDCAD
+2025-07-23 04:53:33,940 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 04:53:33,940 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDCAD: AllMarginsPerLot=[Decimal('659.531556')], HighestMarginPerLot=659.531556
+2025-07-23 04:53:33,940 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol AUDCAD: CalculatedTotalMargin=6.60
+2025-07-23 04:53:33,940 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 13.19
+2025-07-23 04:53:34,254 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 10, Symbol AUDCAD
+2025-07-23 04:53:34,254 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 04:53:34,254 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDCAD: AllMarginsPerLot=[Decimal('658.916726')], HighestMarginPerLot=658.916726
+2025-07-23 04:53:34,254 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 10, Symbol AUDCAD: CalculatedTotalMargin=6.59
+2025-07-23 04:53:34,254 - INFO - orders - [TOTAL_USER_MARGIN] User 10 total margin across all symbols: 6.59
+2025-07-23 04:53:34,615 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 11, Symbol AUDJPY
+2025-07-23 04:53:34,615 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 04:53:34,615 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: AllMarginsPerLot=[Decimal('96717')], HighestMarginPerLot=96717
+2025-07-23 04:53:34,615 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 11, Symbol AUDJPY: CalculatedTotalMargin=967.17
+2025-07-23 04:53:34,615 - INFO - orders - [TOTAL_USER_MARGIN] User 11 total margin across all symbols: 967.17
+2025-07-23 04:53:34,767 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 13, Symbol XAGUSD
+2025-07-23 04:53:34,767 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: TotalBuyQty=0, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=False
+2025-07-23 04:53:34,767 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 13, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-23 04:53:34,767 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 13, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-23 04:53:34,767 - INFO - orders - [TOTAL_USER_MARGIN] User 13 total margin across all symbols: 19.54
+2025-07-23 04:53:35,481 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol AUDCAD
+2025-07-23 04:53:35,481 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 04:53:35,481 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: AllMarginsPerLot=[Decimal('657.55194')], HighestMarginPerLot=657.55194
+2025-07-23 04:53:35,481 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol AUDCAD: CalculatedTotalMargin=6.58
+2025-07-23 04:53:35,481 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol EURUSD
+2025-07-23 04:53:35,481 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 04:53:35,481 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: AllMarginsPerLot=[Decimal('1180')], HighestMarginPerLot=1180
+2025-07-23 04:53:35,481 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol EURUSD: CalculatedTotalMargin=11.80
+2025-07-23 04:53:35,481 - INFO - orders - [TOTAL_USER_MARGIN] User 20 total margin across all symbols: 18.38
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 22, Symbol AUDCHF
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: AllMarginsPerLot=[Decimal('657.101216')], HighestMarginPerLot=657.101216
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCHF: CalculatedTotalMargin=6.57
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 4 positions for User 22, Symbol AUDJPY
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: AllMarginsPerLot=[Decimal('657.431957'), Decimal('652.816419'), Decimal('652.829301'), Decimal('652.889785')], HighestMarginPerLot=657.431957
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDJPY: CalculatedTotalMargin=13.15
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 22, Symbol AUDCAD
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-23 04:53:35,612 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: AllMarginsPerLot=[Decimal('652.598728'), Decimal('652.660595')], HighestMarginPerLot=652.660595
+2025-07-23 04:53:35,613 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCAD: CalculatedTotalMargin=6.53
+2025-07-23 04:53:35,613 - INFO - orders - [TOTAL_USER_MARGIN] User 22 total margin across all symbols: 26.25
