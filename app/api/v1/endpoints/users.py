@@ -908,8 +908,8 @@ async def register_demo_user(
         "user_type": fixed_user_type, # Use fixed "demo" user type
         "security_question": security_question,
         "security_answer": security_answer,  # Added security_answer to the data dictionary
-        "group_name": group_name,
-        "wallet_balance": Decimal("100000.0"), # Starting balance for demo
+        "group_name": "Group B",
+        "wallet_balance": Decimal("10000.0"), # Starting balance for demo
         "leverage": Decimal("100.0"), # Default leverage for demo
         "margin": Decimal("0.0"),
         "status": 1, # Active by default for demo

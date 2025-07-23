@@ -583,3 +583,249 @@
 2025-07-22 22:31:13,614 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
 2025-07-22 22:31:13,615 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
 2025-07-22 22:31:13,646 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:32:44,590 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.693686501310209816331267285% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:32:44,595 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:32:44,598 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:32:44,598 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:32:44,600 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:32:44,601 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:32:44,602 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:32:44,602 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:32:44,624 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:32:45,471 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 4.038745953084415037512928232% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:32:45,477 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:32:45,483 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:32:45,483 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:32:45,486 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:32:45,486 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:32:45,515 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:33:19,323 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.569807520594290065779140110% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:33:19,328 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:33:19,331 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:33:19,331 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:33:19,333 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:33:19,335 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:33:19,336 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:33:19,336 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:33:19,362 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:33:19,949 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 3.997139786612584265120556815% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:33:19,993 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:33:19,996 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:33:19,997 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:33:20,002 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:33:20,002 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:33:20,036 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:37:49,172 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.794079566792197526355140108% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:37:49,176 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:37:49,179 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:37:49,179 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:37:49,180 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:37:49,181 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:37:49,182 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:37:49,182 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:37:49,202 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:37:50,205 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 4.081362795664873278060579926% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:37:50,207 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:37:50,209 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:37:50,209 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:37:50,209 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:37:50,209 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:37:50,219 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:38:24,217 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.903952356646674209125319486% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:38:24,223 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:38:24,227 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:38:24,227 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:38:24,229 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:38:24,233 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:38:24,234 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:38:24,234 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:38:24,259 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:38:25,070 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 4.105113684217618779709666443% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:38:25,077 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:38:25,080 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:38:25,081 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:38:25,083 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:38:25,084 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:38:25,111 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:38:58,915 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.973270798797661267034645662% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:38:58,920 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:38:58,923 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:38:58,923 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:38:58,924 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:38:58,925 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:38:58,926 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:38:58,926 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:38:58,939 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:38:59,478 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 4.124316530281540674659991712% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:38:59,480 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:38:59,482 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:38:59,482 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:38:59,483 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:38:59,483 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:38:59,496 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:39:32,711 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.899297608953810456136834768% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:39:32,716 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:39:32,718 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:39:32,718 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:39:32,720 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:39:32,721 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:39:32,722 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:39:32,722 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:39:32,739 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:39:33,686 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 4.095680707203762410260383855% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:39:33,692 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:39:33,697 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:39:33,697 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:39:33,698 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:39:33,698 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:39:33,722 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:40:07,293 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.774904608513891716658692207% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:40:07,296 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:40:07,297 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:40:07,297 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:40:07,298 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:40:07,299 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:40:07,299 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:40:07,299 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:40:07,309 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:40:07,984 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 4.045315347790493580522250035% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:40:08,012 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:40:08,017 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:40:08,017 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:40:08,022 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:40:08,022 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:40:08,085 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:42:58,903 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.997400613896595031918661874% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:42:58,906 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:42:58,908 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:42:58,908 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:42:59,248 - WARNING - autocutoff - [AUTO-CUTOFF] SUCCESSFULLY SENT TO FIREBASE: User 14, Order 1000330-001, Close ID 1212-003
+2025-07-22 22:42:59,282 - WARNING - autocutoff - [AUTO-CUTOFF] ORDER STATUS UPDATED: User 14, Order 1000330-001, Status: AUTO_CUTOFF_REQUESTED, Close ID: 1212-003
+2025-07-22 22:42:59,652 - WARNING - autocutoff - [AUTO-CUTOFF] SUCCESSFULLY SENT TO FIREBASE: User 14, Order 1000332-001, Close ID 1213-003
+2025-07-22 22:42:59,669 - WARNING - autocutoff - [AUTO-CUTOFF] ORDER STATUS UPDATED: User 14, Order 1000332-001, Status: AUTO_CUTOFF_REQUESTED, Close ID: 1213-003
+2025-07-22 22:42:59,990 - WARNING - autocutoff - [AUTO-CUTOFF] SUCCESSFULLY SENT TO FIREBASE: User 14, Order 1000333-001, Close ID 1214-003
+2025-07-22 22:43:00,023 - WARNING - autocutoff - [AUTO-CUTOFF] ORDER STATUS UPDATED: User 14, Order 1000333-001, Status: AUTO_CUTOFF_REQUESTED, Close ID: 1214-003
+2025-07-22 22:43:00,023 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:43:00,063 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:43:01,250 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 4.041777981410297441978769064% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:43:01,554 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:43:01,556 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:43:01,556 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:43:01,577 - INFO - autocutoff - [FIREBASE_SL_CANCEL] Sending stop loss cancellation: {'action': 'cancel_stoploss', 'status': 'TP/SL-CLOSED', 'stop_loss': Decimal('118576.15000000'), 'order_id': '1031-001', 'user_id': 25, 'stoploss_id': '1032-005', 'stoploss_cancel_id': '1216-007', 'order_company_name': 'BTCUSD', 'order_type': 'BUY'}
+2025-07-22 22:43:01,883 - INFO - autocutoff - [FIREBASE_TP_CANCEL] Sending take profit cancellation: {'action': 'cancel_takeprofit', 'status': 'TP/SL-CLOSED', 'take_profit': Decimal('118976.15000000'), 'order_id': '1031-001', 'user_id': 25, 'takeprofit_id': '1033-006', 'takeprofit_cancel_id': '1217-008', 'order_company_name': 'BTCUSD', 'order_type': 'BUY'}
+2025-07-22 22:43:02,480 - WARNING - autocutoff - [AUTO-CUTOFF] SUCCESSFULLY SENT TO FIREBASE: User 25, Order 1031-001, Close ID 1215-003
+2025-07-22 22:43:02,518 - WARNING - autocutoff - [AUTO-CUTOFF] ORDER STATUS UPDATED: User 25, Order 1031-001, Status: AUTO_CUTOFF_REQUESTED, Close ID: 1215-003
+2025-07-22 22:43:02,518 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:43:02,593 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:43:37,456 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.514820387839448345960707812% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:43:37,468 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:43:37,474 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:43:37,474 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:43:37,478 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:43:37,482 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:43:37,484 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:43:37,484 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:43:37,658 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:43:38,535 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 3.942900168782910140787181932% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:43:38,541 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:43:38,544 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:43:38,544 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:43:38,546 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:43:38,547 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:43:38,571 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:44:12,567 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.521211039031645027299768465% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:44:12,570 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:44:12,573 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:44:12,573 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:44:12,577 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:44:12,578 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:44:12,579 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:44:12,580 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:44:12,604 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:44:13,446 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 3.945426859054478811175382625% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:44:13,449 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:44:13,451 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:44:13,451 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:44:13,453 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:44:13,453 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:44:13,478 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:44:47,278 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.721629305047705956460482038% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:44:47,281 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:44:47,283 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:44:47,283 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:44:47,285 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:44:47,287 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:44:47,289 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:44:47,289 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:44:47,302 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:44:47,899 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 4.029649868106767824115405736% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:44:47,918 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:44:47,927 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:44:47,927 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:44:47,932 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:44:47,932 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:44:47,972 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:45:13,037 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.514945624994675319081460840% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:45:13,041 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:45:13,044 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:45:13,044 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:45:13,046 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:45:13,047 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:45:13,049 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:45:13,049 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:45:13,071 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:45:13,898 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 3.945426859054478811175382625% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:45:13,901 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:45:13,903 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:45:13,904 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:45:13,905 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:45:13,905 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:45:13,928 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:45:48,003 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.324768801689893851521140411% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:45:48,010 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:45:48,023 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:45:48,023 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:45:48,029 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:45:48,032 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:45:48,035 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:45:48,035 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:45:48,061 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:45:48,817 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 3.870636827016046167684642103% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:45:48,820 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:45:48,824 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:45:48,824 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:45:48,826 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:45:48,826 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:45:48,851 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:46:31,228 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.224475861255656484714739822% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:46:31,231 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:46:31,233 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:46:31,233 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:46:31,234 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:46:31,235 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:46:31,236 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:46:31,236 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:46:31,252 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:46:32,007 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 3.858677159730621127847158821% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:46:32,012 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:46:32,016 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:46:32,016 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:46:32,017 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:46:32,017 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:46:32,041 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:47:25,151 - WARNING - autocutoff - [AUTO-CUTOFF] User 14 margin level 3.398665839021043250535711382% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:47:25,155 - INFO - autocutoff - [AUTO-CUTOFF] User 14 identified as Barclays live user
+2025-07-22 22:47:25,157 - WARNING - autocutoff - [AUTO-CUTOFF] Found 3 open orders for user 14
+2025-07-22 22:47:25,157 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 14 - sending close requests to Firebase
+2025-07-22 22:47:25,159 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000330-001, skipping.
+2025-07-22 22:47:25,160 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000332-001, skipping.
+2025-07-22 22:47:25,162 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1000333-001, skipping.
+2025-07-22 22:47:25,162 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 14, publishing updates
+2025-07-22 22:47:25,182 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 14 auto-cutoff process finished, waiting for Firebase confirmation
+2025-07-22 22:47:25,865 - WARNING - autocutoff - [AUTO-CUTOFF] User 25 margin level 3.901125556292974790368930469% below cutoff threshold 10.0%. Initiating auto-cutoff.
+2025-07-22 22:47:25,869 - INFO - autocutoff - [AUTO-CUTOFF] User 25 identified as Barclays live user
+2025-07-22 22:47:25,870 - WARNING - autocutoff - [AUTO-CUTOFF] Found 1 open orders for user 25
+2025-07-22 22:47:25,870 - WARNING - autocutoff - [AUTO-CUTOFF] Processing Barclays live user 25 - sending close requests to Firebase
+2025-07-22 22:47:25,872 - INFO - autocutoff - [AUTO-CUTOFF] Close request already sent for order 1031-001, skipping.
+2025-07-22 22:47:25,872 - WARNING - autocutoff - [AUTO-CUTOFF] Completed Firebase requests for user 25, publishing updates
+2025-07-22 22:47:25,893 - WARNING - autocutoff - [AUTO-CUTOFF] COMPLETED: User 25 auto-cutoff process finished, waiting for Firebase confirmation

@@ -211,3 +211,57 @@ Traceback (most recent call last):
     ...<2 lines>...
     )
 RuntimeError: Expected ASGI message "websocket.accept", "websocket.close" or "websocket.http.response.start", but got 'websocket.send'
+2025-07-22 22:43:47,658 - ERROR - database - Error in database session: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'message'), 'msg': 'Field required', 'input': OrderResponse(order_id='1000333-001', order_user_id=14, order_company_name='AUDJPY', order_type='BUY', order_quantity=Decimal('0.01000000'), order_price=Decimal('97.09700000'), status='CLOSED', stop_loss=None, take_profit=None, order_status='OPEN', contract_value=Decimal('1000.00000000'), margin=Decimal('6.52134765'), created_at=datetime.datetime(2025, 7, 16, 1, 51, 54), updated_at=datetime.datetime(2025, 7, 22, 22, 43, 47), net_profit=None, close_price=Decimal('96.62400000'), commission=Decimal('0.10000000'), swap=None, cancel_message=None, close_message='CLOSED', stoploss_id=None, takeprofit_id=None, close_id='1223-003')}
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 327, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 176, in serialize_response
+    raise ResponseValidationError(
+        errors=_normalize_errors(errors), body=response_content
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'message'), 'msg': 'Field required', 'input': OrderResponse(order_id='1000333-001', order_user_id=14, order_company_name='AUDJPY', order_type='BUY', order_quantity=Decimal('0.01000000'), order_price=Decimal('97.09700000'), status='CLOSED', stop_loss=None, take_profit=None, order_status='OPEN', contract_value=Decimal('1000.00000000'), margin=Decimal('6.52134765'), created_at=datetime.datetime(2025, 7, 16, 1, 51, 54), updated_at=datetime.datetime(2025, 7, 22, 22, 43, 47), net_profit=None, close_price=Decimal('96.62400000'), commission=Decimal('0.10000000'), swap=None, cancel_message=None, close_message='CLOSED', stoploss_id=None, takeprofit_id=None, close_id='1223-003')}
+
+2025-07-22 22:45:16,023 - ERROR - database - Error in database session: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'message'), 'msg': 'Field required', 'input': OrderResponse(order_id='1000330-001', order_user_id=14, order_company_name='BTCUSD', order_type='BUY', order_quantity=Decimal('0.40000000'), order_price=Decimal('141908.50000000'), status='CLOSED', stop_loss=None, take_profit=None, order_status='OPEN', contract_value=Decimal('0.40000000'), margin=Decimal('9422.73000000'), created_at=datetime.datetime(2025, 7, 15, 23, 0, 9), updated_at=datetime.datetime(2025, 7, 22, 22, 45, 16), net_profit=None, close_price=Decimal('118669.70000000'), commission=Decimal('235.57000000'), swap=None, cancel_message=None, close_message='CLOSED', stoploss_id=None, takeprofit_id=None, close_id='1224-003')}
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 327, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 176, in serialize_response
+    raise ResponseValidationError(
+        errors=_normalize_errors(errors), body=response_content
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'message'), 'msg': 'Field required', 'input': OrderResponse(order_id='1000330-001', order_user_id=14, order_company_name='BTCUSD', order_type='BUY', order_quantity=Decimal('0.40000000'), order_price=Decimal('141908.50000000'), status='CLOSED', stop_loss=None, take_profit=None, order_status='OPEN', contract_value=Decimal('0.40000000'), margin=Decimal('9422.73000000'), created_at=datetime.datetime(2025, 7, 15, 23, 0, 9), updated_at=datetime.datetime(2025, 7, 22, 22, 45, 16), net_profit=None, close_price=Decimal('118669.70000000'), commission=Decimal('235.57000000'), swap=None, cancel_message=None, close_message='CLOSED', stoploss_id=None, takeprofit_id=None, close_id='1224-003')}
+
+2025-07-22 22:45:23,428 - ERROR - database - Error in database session: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'message'), 'msg': 'Field required', 'input': OrderResponse(order_id='1000330-001', order_user_id=14, order_company_name='BTCUSD', order_type='BUY', order_quantity=Decimal('0.40000000'), order_price=Decimal('141908.50000000'), status='CLOSED', stop_loss=None, take_profit=None, order_status='OPEN', contract_value=Decimal('0.40000000'), margin=Decimal('9422.73000000'), created_at=datetime.datetime(2025, 7, 15, 23, 0, 9), updated_at=datetime.datetime(2025, 7, 22, 22, 45, 23), net_profit=None, close_price=Decimal('118669.70000000'), commission=Decimal('235.57000000'), swap=None, cancel_message=None, close_message='CLOSED', stoploss_id=None, takeprofit_id=None, close_id='1225-003')}
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 327, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 176, in serialize_response
+    raise ResponseValidationError(
+        errors=_normalize_errors(errors), body=response_content
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'message'), 'msg': 'Field required', 'input': OrderResponse(order_id='1000330-001', order_user_id=14, order_company_name='BTCUSD', order_type='BUY', order_quantity=Decimal('0.40000000'), order_price=Decimal('141908.50000000'), status='CLOSED', stop_loss=None, take_profit=None, order_status='OPEN', contract_value=Decimal('0.40000000'), margin=Decimal('9422.73000000'), created_at=datetime.datetime(2025, 7, 15, 23, 0, 9), updated_at=datetime.datetime(2025, 7, 22, 22, 45, 23), net_profit=None, close_price=Decimal('118669.70000000'), commission=Decimal('235.57000000'), swap=None, cancel_message=None, close_message='CLOSED', stoploss_id=None, takeprofit_id=None, close_id='1225-003')}
+

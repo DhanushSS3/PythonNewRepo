@@ -29,7 +29,7 @@ from app.schemas.order import (
     ServiceProviderUpdateRequest, OrderPlacementRequest, OrderResponse, CloseOrderRequest, 
     UpdateStopLossTakeProfitRequest, PendingOrderPlacementRequest, PendingOrderCancelRequest, 
     AddStopLossRequest, AddTakeProfitRequest, CancelStopLossRequest, CancelTakeProfitRequest, 
-    HalfSpreadRequest, HalfSpreadResponse, OrderStatusResponse, ClosedOrderSummaryResponse
+    HalfSpreadRequest, HalfSpreadResponse, OrderStatusResponse, ClosedOrderSummaryResponse, OrderSuccessMessage
 )
 from app.schemas.user import StatusResponse
 from app.schemas.wallet import WalletCreate
@@ -538,7 +538,7 @@ class OrderPlacementRequest(BaseModel):
             Decimal: lambda v: str(v),
         }
 
-@router.post("/", response_model=OrderResponse)
+@router.post("/", response_model=OrderSuccessMessage)
 async def place_order(
     order_request: OrderPlacementRequest,
     background_tasks: BackgroundTasks,
@@ -772,36 +772,7 @@ async def place_order(
             "commission": str(getattr(new_order, 'commission', '')),
             "timestamp": datetime.datetime.utcnow().isoformat()
         }).decode())
-        return OrderResponse(
-            id=new_order.id,
-            order_id=new_order.order_id,
-            order_status=new_order.order_status,
-            order_user_id=new_order.order_user_id,
-            order_company_name=new_order.order_company_name,
-            order_type=new_order.order_type,
-            order_price=new_order.order_price,
-            order_quantity=new_order.order_quantity,
-            contract_value=new_order.contract_value,
-            margin=new_order.margin,
-            commission=new_order.commission,
-            stop_loss=new_order.stop_loss,
-            take_profit=new_order.take_profit,
-            close_price=new_order.close_price,
-            net_profit=new_order.net_profit,
-            swap=new_order.swap,
-            cancel_message=new_order.cancel_message,
-            close_message=new_order.close_message,
-            cancel_id=new_order.cancel_id,
-            close_id=new_order.close_id,
-            modify_id=new_order.modify_id,
-            stoploss_id=new_order.stoploss_id,
-            takeprofit_id=new_order.takeprofit_id,
-            stoploss_cancel_id=new_order.stoploss_cancel_id,
-            takeprofit_cancel_id=new_order.takeprofit_cancel_id,
-            status=new_order.status,
-            created_at=new_order.created_at,
-            updated_at=new_order.updated_at
-        )
+        return {"message": "Order placed successfully!"}
         
     except HTTPException:
         raise
@@ -1269,7 +1240,7 @@ async def place_pending_order(
         orders_logger.error(f"Unexpected error in place_order: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Failed to process order: {str(e)}")
 
-@router.post("/close", response_model=OrderResponse)
+@router.post("/close", response_model=OrderSuccessMessage)
 async def close_order(
     close_request: CloseOrderRequest,
     background_tasks: BackgroundTasks,
@@ -1507,7 +1478,7 @@ async def close_order(
                             "commission": str(getattr(db_order_for_response, 'commission', '')),
                             "timestamp": datetime.datetime.utcnow().isoformat()
                         }).decode())
-                        return OrderResponse.model_validate(db_order_for_response, from_attributes=True)
+                        return {"message": "Order modification request sent to external service (Barclays)."}
                     else:
                         raise HTTPException(status_code=404, detail="Order not found for external closure processing.")
                 else:
@@ -1711,7 +1682,7 @@ async def close_order(
                     orders_logger.info(f"Publishing market data trigger")
                     await publish_market_data_trigger(redis_client)
                     
-                    return OrderResponse.model_validate(db_order, from_attributes=True)
+                    return {"message": "Order close request sent to external service (Barclays)."}
             else:
                 # Always fetch user_group before logging
                 user_group = await crud_group.get_group_by_name(db, getattr(user_to_operate_on, 'group_name', None))
@@ -1925,7 +1896,7 @@ async def close_order(
                     asyncio.create_task(add_user_to_symbol_cache(redis_client, order_symbol, user_id, user_type_str))
                     asyncio.create_task(push_websocket_updates())
 
-                return OrderResponse.model_validate(db_order, from_attributes=True)
+                return {"message": "Order closed successfully!"}
 
         except Exception as e:
             orders_logger.error(f"Error processing close order: {str(e)}", exc_info=True)

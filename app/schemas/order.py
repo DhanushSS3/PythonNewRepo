@@ -335,3 +335,6 @@ class ClosedOrderSummaryResponse(BaseModel):
             Decimal: lambda v: str(v),
         }
 
+
+class OrderSuccessMessage(BaseModel):
+    message: str
