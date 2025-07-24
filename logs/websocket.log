@@ -568,3 +568,106 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-24 02:20:05,019 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
 2025-07-24 02:21:54,908 - INFO - websocket - Redis publisher task cancelled.
 2025-07-24 02:21:54,908 - INFO - websocket - Redis publisher task finished.
+2025-07-24 04:01:24,817 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 04:05:12,651 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 04:05:12,651 - INFO - websocket - Redis publisher task finished.
+2025-07-24 04:10:32,048 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 04:12:33,479 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:60297
+2025-07-24 04:12:33,480 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:60297
+2025-07-24 04:12:33,485 - INFO - websocket - WebSocket auth: Authenticating user PF5CZ (live)
+2025-07-24 04:12:33,529 - INFO - websocket - User 9: WebSocket initialized with balance=8436.59000000, margin=8271.68000000
+2025-07-24 04:12:34,928 - INFO - websocket - User 9: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-24 04:12:35,125 - INFO - websocket - User PF5CZ: WebSocket connection established successfully
+2025-07-24 04:13:12,439 - INFO - websocket - User PF5CZ: WebSocket disconnected
+2025-07-24 04:13:13,369 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 04:13:13,370 - INFO - websocket - Redis publisher task finished.
+2025-07-24 04:14:49,868 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 04:14:53,895 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:60469
+2025-07-24 04:14:53,896 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:60469
+2025-07-24 04:14:53,899 - INFO - websocket - WebSocket auth: Authenticating user PF5CZ (live)
+2025-07-24 04:14:53,911 - INFO - websocket - User 9: WebSocket initialized with balance=8436.59000000, margin=8271.68000000
+2025-07-24 04:14:54,468 - INFO - websocket - User 9: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-24 04:14:54,962 - INFO - websocket - User PF5CZ: WebSocket connection established successfully
+2025-07-24 04:15:08,794 - INFO - websocket - User PF5CZ: WebSocket disconnected
+2025-07-24 04:15:09,737 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 04:15:09,737 - INFO - websocket - Redis publisher task finished.
+2025-07-24 04:15:18,031 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 04:15:22,610 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:60527
+2025-07-24 04:15:22,611 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:60527
+2025-07-24 04:15:22,613 - INFO - websocket - WebSocket auth: Authenticating user PF5CZ (live)
+2025-07-24 04:15:22,733 - INFO - websocket - User 9: WebSocket initialized with balance=5.75000000, margin=0
+2025-07-24 04:15:30,498 - INFO - websocket - User 9: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-24 04:15:30,717 - INFO - websocket - User PF5CZ: WebSocket connection established successfully
+2025-07-24 04:16:08,877 - INFO - websocket - User 9: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-24 04:16:10,072 - INFO - websocket - [WEBSOCKET_DEBUG] User 9: Received ORDER_UPDATE message
+2025-07-24 04:16:10,139 - INFO - websocket - [WEBSOCKET_DEBUG] User 9: Received USER_DATA_UPDATE message
+2025-07-24 04:16:12,366 - INFO - websocket - User PF5CZ: WebSocket disconnected
+2025-07-24 04:16:14,553 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 04:16:14,554 - INFO - websocket - Redis publisher task finished.
+2025-07-24 04:27:26,654 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 04:27:31,457 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:61557
+2025-07-24 04:27:31,459 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:61557
+2025-07-24 04:27:31,465 - INFO - websocket - WebSocket auth: Authenticating user PF5CZ (live)
+2025-07-24 04:27:31,488 - INFO - websocket - User 9: WebSocket initialized with balance=8436.59000000, margin=8271.68000000
+2025-07-24 04:27:32,462 - INFO - websocket - User 9: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-24 04:27:32,925 - INFO - websocket - User PF5CZ: WebSocket connection established successfully
+2025-07-24 04:27:39,939 - INFO - websocket - User PF5CZ: WebSocket disconnected
+2025-07-24 04:27:47,746 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:61607
+2025-07-24 04:27:47,747 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:61607
+2025-07-24 04:27:47,750 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-24 04:27:47,764 - INFO - websocket - User 31: WebSocket initialized with balance=0E-8, margin=0
+2025-07-24 04:27:48,393 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-24 04:27:48,526 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-24 04:30:18,348 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-24 04:30:19,375 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:61799
+2025-07-24 04:30:19,377 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:61799
+2025-07-24 04:30:19,380 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-24 04:30:19,404 - INFO - websocket - User 31: WebSocket initialized with balance=5000.00000000, margin=0
+2025-07-24 04:30:19,832 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-24 04:30:19,933 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-24 04:30:25,535 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-24 04:30:25,912 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-24 04:30:25,936 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-24 04:32:38,346 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-24 04:32:39,726 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 04:32:39,726 - INFO - websocket - Redis publisher task finished.
+2025-07-24 04:36:48,009 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 04:36:53,573 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:62102
+2025-07-24 04:36:53,574 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:62102
+2025-07-24 04:36:53,578 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-24 04:36:53,590 - INFO - websocket - User 31: WebSocket initialized with balance=5000.00000000, margin=0
+2025-07-24 04:36:53,898 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-24 04:36:53,939 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-24 04:38:07,615 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-24 04:38:09,258 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 04:38:09,258 - INFO - websocket - Redis publisher task finished.
+2025-07-24 04:38:31,458 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 04:38:37,542 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:62182
+2025-07-24 04:38:37,543 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:62182
+2025-07-24 04:38:37,545 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-24 04:38:37,559 - INFO - websocket - User 31: WebSocket initialized with balance=5000.00000000, margin=0
+2025-07-24 04:38:37,751 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-24 04:38:37,791 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-24 04:39:16,637 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-24 04:39:39,742 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:62245
+2025-07-24 04:39:39,743 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:62245
+2025-07-24 04:39:39,744 - INFO - websocket - WebSocket auth: Authenticating user PF5CZ (live)
+2025-07-24 04:39:39,751 - INFO - websocket - User 9: WebSocket initialized with balance=8436.59000000, margin=8271.68000000
+2025-07-24 04:39:40,081 - INFO - websocket - User 9: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-24 04:39:40,128 - INFO - websocket - User PF5CZ: WebSocket connection established successfully
+2025-07-24 04:41:42,849 - INFO - websocket - User PF5CZ: WebSocket disconnected
+2025-07-24 04:41:44,267 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 04:41:44,268 - INFO - websocket - Redis publisher task finished.
+2025-07-24 04:41:48,078 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 04:41:48,892 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 04:41:48,892 - INFO - websocket - Redis publisher task finished.
+2025-07-24 04:45:54,342 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 04:45:58,728 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:62524
+2025-07-24 04:45:58,729 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:62524
+2025-07-24 04:45:58,732 - INFO - websocket - WebSocket auth: Authenticating user PF5CZ (live)
+2025-07-24 04:45:58,749 - INFO - websocket - User 9: WebSocket initialized with balance=8436.59000000, margin=8271.68000000
+2025-07-24 04:45:59,360 - INFO - websocket - User 9: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-24 04:45:59,482 - INFO - websocket - User PF5CZ: WebSocket connection established successfully
+2025-07-24 04:47:22,681 - INFO - websocket - User PF5CZ: WebSocket disconnected
+2025-07-24 04:47:23,426 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 04:47:23,426 - INFO - websocket - Redis publisher task finished.

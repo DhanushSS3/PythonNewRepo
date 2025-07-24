@@ -90,3 +90,35 @@ jose.exceptions.JWTError: Could not validate credentials
 2025-07-24 02:20:01,683 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
 2025-07-24 02:20:01,687 - INFO - app.core.security - [Redis] AOF persistence already enabled.
 2025-07-24 02:21:54,923 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-24 04:01:22,749 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-24 04:01:22,764 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-24 04:05:12,655 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-24 04:10:30,490 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-24 04:10:30,491 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-24 04:12:30,754 - INFO - app.core.security - LOGIN: user_id=9, email=kodideladinesh123@gmail.com, user_type=live, time=2025-07-24T11:12:30.753955
+2025-07-24 04:13:13,373 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-24 04:14:48,402 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-24 04:14:48,403 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-24 04:15:09,743 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-24 04:15:15,496 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-24 04:15:15,499 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-24 04:16:14,568 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-24 04:27:24,875 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-24 04:27:24,877 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-24 04:27:39,921 - INFO - app.core.security - LOGOUT: user_id=9, email=kodideladinesh123@gmail.com, user_type=live, time=2025-07-24T11:27:39.921144
+2025-07-24 04:27:45,904 - INFO - app.core.security - LOGIN: user_id=31, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-24T11:27:45.904583
+2025-07-24 04:32:39,731 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-24 04:36:46,312 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-24 04:36:46,316 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-24 04:38:09,266 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-24 04:38:30,177 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-24 04:38:30,178 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-24 04:39:16,620 - INFO - app.core.security - LOGOUT: user_id=31, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-24T11:39:16.620798
+2025-07-24 04:39:38,056 - INFO - app.core.security - LOGIN: user_id=9, email=kodideladinesh123@gmail.com, user_type=live, time=2025-07-24T11:39:38.055981
+2025-07-24 04:41:44,276 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-24 04:41:46,567 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-24 04:41:46,568 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-24 04:41:48,900 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-24 04:45:52,909 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-24 04:45:52,912 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-24 04:47:23,432 - INFO - app.core.security - [Redis] Connection closed successfully.

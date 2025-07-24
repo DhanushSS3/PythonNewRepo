@@ -1,0 +1,39 @@
+2025-07-24 04:31:00,010 - INFO - swap - [SWAP] Starting daily swap charge application process.
+2025-07-24 04:31:00,046 - INFO - swap - [SWAP] Number of open orders fetched: 7
+2025-07-24 04:31:00,057 - INFO - swap - [SWAP] Calculating daily swap charge for order 7987141755: ((order_quantity=0.01000000 * pips=50.0000) * (order_quantity=0.01000000 * swap_rate_to_use=-5.6760))/10
+2025-07-24 04:31:00,057 - INFO - swap - [SWAP] Raw daily swap charge for order 7987141755: -0.2838000000000000
+2025-07-24 04:31:00,057 - INFO - swap - [SWAP] Quantized daily swap charge for order 7987141755: -0.28380000
+2025-07-24 04:31:00,057 - INFO - swap - [SWAP] Swap charge already in USD: -0.28380000
+2025-07-24 04:31:00,057 - INFO - swap - Order 7987141755: Applied daily swap charge: -0.28380000. Old Swap: -0.57043800, New Swap: -0.85423800.
+2025-07-24 04:31:00,091 - INFO - swap - [SWAP] Calculating daily swap charge for order 1116628265: ((order_quantity=6.00000000 * pips=1.0000) * (order_quantity=6.00000000 * swap_rate_to_use=-2672.6600))/10
+2025-07-24 04:31:00,091 - INFO - swap - [SWAP] Raw daily swap charge for order 1116628265: -1603.5960000000000000
+2025-07-24 04:31:00,091 - INFO - swap - [SWAP] Quantized daily swap charge for order 1116628265: -1603.59600000
+2025-07-24 04:31:00,091 - INFO - swap - [SWAP] Swap charge already in USD: -1603.59600000
+2025-07-24 04:31:00,092 - INFO - swap - Order 1116628265: Applied daily swap charge: -1603.59600000. Old Swap: -12828.76800000, New Swap: -14432.36400000.
+2025-07-24 04:31:00,099 - INFO - swap - [SWAP] Calculating daily swap charge for order 1000330-001: ((order_quantity=0.40000000 * pips=1.0000) * (order_quantity=0.40000000 * swap_rate_to_use=-2672.6600))/10
+2025-07-24 04:31:00,099 - INFO - swap - [SWAP] Raw daily swap charge for order 1000330-001: -106.9064000000000000
+2025-07-24 04:31:00,100 - INFO - swap - [SWAP] Quantized daily swap charge for order 1000330-001: -106.90640000
+2025-07-24 04:31:00,100 - INFO - swap - [SWAP] Swap charge already in USD: -106.90640000
+2025-07-24 04:31:00,100 - INFO - swap - Order 1000330-001: Applied daily swap charge: -106.90640000. Old Swap: -213.81280000, New Swap: -320.71920000.
+2025-07-24 04:31:00,107 - INFO - swap - [SWAP] Calculating daily swap charge for order 1000332-001: ((order_quantity=0.10000000 * pips=1000.0000) * (order_quantity=0.10000000 * swap_rate_to_use=8.4580))/10
+2025-07-24 04:31:00,108 - INFO - swap - [SWAP] Raw daily swap charge for order 1000332-001: 84.5800000000000000
+2025-07-24 04:31:00,108 - INFO - swap - [SWAP] Quantized daily swap charge for order 1000332-001: 84.58000000
+2025-07-24 04:31:00,108 - INFO - swap - [SWAP] Swap charge already in USD: 84.58000000
+2025-07-24 04:31:00,108 - INFO - swap - Order 1000332-001: Applied daily swap charge: 84.58000000. Old Swap: 169.16000000, New Swap: 253.74000000.
+2025-07-24 04:31:00,117 - INFO - swap - [SWAP] Calculating daily swap charge for order 1000333-001: ((order_quantity=0.01000000 * pips=1000.0000) * (order_quantity=0.01000000 * swap_rate_to_use=8.4580))/10
+2025-07-24 04:31:00,117 - INFO - swap - [SWAP] Raw daily swap charge for order 1000333-001: 8.4580000000000000
+2025-07-24 04:31:00,117 - INFO - swap - [SWAP] Quantized daily swap charge for order 1000333-001: 8.45800000
+2025-07-24 04:31:00,117 - INFO - swap - [SWAP] Swap charge already in USD: 8.45800000
+2025-07-24 04:31:00,117 - INFO - swap - Order 1000333-001: Applied daily swap charge: 8.45800000. Old Swap: 16.91600000, New Swap: 25.37400000.
+2025-07-24 04:31:00,125 - INFO - swap - [SWAP] Calculating daily swap charge for order 1000347-001: ((order_quantity=0.35000000 * pips=1.0000) * (order_quantity=0.35000000 * swap_rate_to_use=-2672.6600))/10
+2025-07-24 04:31:00,125 - INFO - swap - [SWAP] Raw daily swap charge for order 1000347-001: -93.5431000000000000
+2025-07-24 04:31:00,125 - INFO - swap - [SWAP] Quantized daily swap charge for order 1000347-001: -93.54310000
+2025-07-24 04:31:00,125 - INFO - swap - [SWAP] Swap charge already in USD: -93.54310000
+2025-07-24 04:31:00,125 - INFO - swap - Order 1000347-001: Applied daily swap charge: -93.54310000. Old Swap: -187.08620000, New Swap: -280.62930000.
+2025-07-24 04:31:00,132 - INFO - swap - [SWAP] Calculating daily swap charge for order 1031-001: ((order_quantity=0.10000000 * pips=1.0000) * (order_quantity=0.10000000 * swap_rate_to_use=-2672.6580))/10
+2025-07-24 04:31:00,132 - INFO - swap - [SWAP] Raw daily swap charge for order 1031-001: -26.7265800000000000
+2025-07-24 04:31:00,132 - INFO - swap - [SWAP] Quantized daily swap charge for order 1031-001: -26.72658000
+2025-07-24 04:31:00,133 - INFO - swap - [SWAP] Swap charge already in USD: -26.72658000
+2025-07-24 04:31:00,133 - INFO - swap - Order 1031-001: Applied daily swap charge: -26.72658000. Old Swap: -53.45316000, New Swap: -80.17974000.
+2025-07-24 04:31:00,140 - INFO - swap - [SWAP] Daily swap charges committed to DB. Processed: 7, Failed: 0.
+2025-07-24 04:31:00,140 - INFO - swap - [SWAP] Daily swap charge application process completed.

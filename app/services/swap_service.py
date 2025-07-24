@@ -12,6 +12,7 @@ from app.crud.crud_order import get_all_system_open_orders
 from app.core.cache import get_group_symbol_settings_cache
 from app.core.firebase import get_latest_market_data
 from app.crud import group as crud_group  # Add this import to fetch group info
+from app.services.portfolio_calculator import _convert_to_usd
 
 # logger = logging.getLogger(__name__)
 from app.core.logging_config import swap_logger as logger
@@ -73,7 +74,7 @@ async def apply_daily_swap_charges_for_all_open_orders(db: AsyncSession, redis_c
 
             swap_rate_to_use = swap_buy_rate if order_type == "BUY" else swap_sell_rate
 
-            # --- Fetch pips from Group table for this group_name and symbol ---
+            # --- Fetch pips and pip_currency from Group table for this group_name and symbol ---
             group_obj = await crud_group.get_group_by_symbol_and_name(db, symbol=order_symbol, name=user_group_name)
             if not group_obj or group_obj.pips is None:
                 logger.warning(f"Pips not found for group '{user_group_name}', symbol '{order_symbol}'. Skipping swap for order {order.order_id}.")
@@ -85,6 +86,8 @@ async def apply_daily_swap_charges_for_all_open_orders(db: AsyncSession, redis_c
                 logger.error(f"Error converting pips for group '{user_group_name}', symbol '{order_symbol}': {e}. Skipping swap for order {order.order_id}.")
                 failed_count += 1
                 continue
+
+            pip_currency = getattr(group_obj, 'pip_currency', 'USD') or 'USD'
 
             # --- New Swap Formula ---
             # ((order_quantity * pips) * (order_quantity * swap_rate))/10
@@ -100,11 +103,37 @@ async def apply_daily_swap_charges_for_all_open_orders(db: AsyncSession, redis_c
             daily_swap_charge = daily_swap_charge.quantize(Decimal('0.00000001'), rounding=ROUND_HALF_UP)
             logger.info(f"[SWAP] Quantized daily swap charge for order {order.order_id}: {daily_swap_charge}")
 
+            # --- Convert to USD if needed ---
+            swap_charge_usd = daily_swap_charge
+            if pip_currency.upper() != 'USD':
+                # For JP225, divide by 100 before conversion
+                swap_to_convert = daily_swap_charge
+                if order_symbol == 'JP225':
+                    swap_to_convert = swap_to_convert / Decimal('100')
+                    logger.info(f"[SWAP] JP225 detected, divided swap charge by 100: {swap_to_convert}")
+                try:
+                    swap_charge_usd = await _convert_to_usd(
+                        swap_to_convert,
+                        pip_currency.upper(),
+                        user.id,
+                        order.order_id,
+                        "Swap Charge",
+                        db,
+                        redis_client
+                    )
+                    logger.info(f"[SWAP] Converted swap charge to USD: {swap_charge_usd}")
+                except Exception as e:
+                    logger.error(f"[SWAP] Failed to convert swap charge to USD for order {order.order_id}: {e}")
+                    failed_count += 1
+                    continue
+            else:
+                logger.info(f"[SWAP] Swap charge already in USD: {swap_charge_usd}")
+
             # 4. Update Order's Swap Field
             current_swap_value = order.swap if order.swap is not None else Decimal("0.0")
-            order.swap = current_swap_value + daily_swap_charge
+            order.swap = current_swap_value + swap_charge_usd
 
-            logger.info(f"Order {order.order_id}: Applied daily swap charge: {daily_swap_charge}. Old Swap: {current_swap_value}, New Swap: {order.swap}.")
+            logger.info(f"Order {order.order_id}: Applied daily swap charge: {swap_charge_usd}. Old Swap: {current_swap_value}, New Swap: {order.swap}.")
             processed_count += 1
 
         except Exception as e:
