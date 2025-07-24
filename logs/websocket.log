@@ -549,3 +549,19 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-23 23:48:21,724 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
 2025-07-23 23:48:43,269 - INFO - websocket - Redis publisher task cancelled.
 2025-07-23 23:48:43,274 - INFO - websocket - Redis publisher task finished.
+2025-07-24 01:45:16,433 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 01:46:23,448 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:51620
+2025-07-24 01:46:23,451 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:51620
+2025-07-24 01:46:23,459 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-24 01:46:23,492 - INFO - websocket - User 30: WebSocket initialized with balance=10000.00000000, margin=0
+2025-07-24 01:46:24,172 - INFO - websocket - User 30: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-24 01:46:24,457 - INFO - websocket - User 5B0HV: WebSocket connection established successfully
+2025-07-24 01:46:29,960 - INFO - websocket - User 5B0HV: WebSocket disconnected
+2025-07-24 01:54:51,280 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 01:54:51,280 - INFO - websocket - Redis publisher task finished.
+2025-07-24 01:55:47,810 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 01:56:51,381 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 01:56:51,381 - INFO - websocket - Redis publisher task finished.
+2025-07-24 02:06:45,911 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 02:08:15,225 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 02:08:15,225 - INFO - websocket - Redis publisher task finished.

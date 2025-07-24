@@ -119,6 +119,7 @@ settings = get_settings()
 
 IS_PRODUCTION = os.getenv("ENVIRONMENT", "development").lower() == "production"
 
+
 app = FastAPI(
     title=settings.PROJECT_NAME,
     openapi_url=f"{settings.API_V1_STR}/openapi.json", # Keep this as it is for now, as it just exposes the JSON schema
@@ -126,6 +127,9 @@ app = FastAPI(
     # redoc_url=None if IS_PRODUCTION else "/redoc"      # Disables ReDoc in production
 )
 
+from fastapi.staticfiles import StaticFiles
+
+app.mount("/static", StaticFiles(directory="uploads"), name="static")
 
 origins = [
     "http://localhost",

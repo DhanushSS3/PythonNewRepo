@@ -200,6 +200,9 @@ async def register_user_with_proofs(
         "reffered_code": referral_code,  # Store what user gave
         "referred_by_id": referred_by_id,  # Store user_id if valid, else None
         "referral_code": user_referral_code,  # Store generated code
+        # Store image static paths in DB fields
+        "id_proof_image": id_proof_image_path,
+        "address_proof_image": address_proof_image_path,
     }
 
     hashed_password = get_password_hash(password)

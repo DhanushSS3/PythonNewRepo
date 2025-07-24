@@ -100,9 +100,9 @@ async def admin_raw_market_data_websocket(
         new_prices = {}
         for k, v in prices.items():
             if k == 'b':
-                new_prices['buy'] = v
-            elif k == 'o':
                 new_prices['sell'] = v
+            elif k == 'o':
+                new_prices['buy'] = v
             else:
                 new_prices[k] = v
         return new_prices
