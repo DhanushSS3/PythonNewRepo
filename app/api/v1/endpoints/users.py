@@ -1336,6 +1336,8 @@ async def get_user_wallet_transactions(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_admin_user)
 ):
+    wallet_transactions = []
+    transaction_types = ["withdraw", "deposit"]
     # Check if user exists
     user = await crud_user.get_user_by_id(db, user_id=user_id, user_type="live")
     if not user:
@@ -1352,8 +1354,14 @@ async def get_user_wallet_transactions(
         db=db,
         user_id=user_id,
         skip=skip,
-        limit=limit
+        limit=limit,
+        transaction_types=transaction_types
     )
     
+    if not wallet_transactions:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No withdraw or deposit wallet records found for this user."
+        )
     # Convert to response schema
     return [WalletResponse.model_validate(transaction.__dict__) for transaction in wallet_transactions]

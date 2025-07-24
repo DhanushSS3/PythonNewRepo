@@ -1,0 +1,125 @@
+2025-07-23 23:35:00,016 - ERROR - database - Error in database session: name 'wallet_records' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 1358, in get_user_wallet_transactions
+    if not wallet_records:
+           ^^^^^^^^^^^^^^
+NameError: name 'wallet_records' is not defined
+2025-07-23 23:35:22,865 - ERROR - database - Error in database session: 404: No withdraw or deposit wallet records found for this user.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 1360, in get_user_wallet_transactions
+    raise HTTPException(
+    ...<2 lines>...
+    )
+fastapi.exceptions.HTTPException: 404: No withdraw or deposit wallet records found for this user.
+2025-07-23 23:35:37,995 - ERROR - database - Error in database session: 404: No withdraw or deposit wallet records found for this user.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 1360, in get_user_wallet_transactions
+    raise HTTPException(
+    ...<2 lines>...
+    )
+fastapi.exceptions.HTTPException: 404: No withdraw or deposit wallet records found for this user.
+2025-07-23 23:35:46,002 - ERROR - database - Error in database session: 404: No withdraw or deposit wallet records found for this user.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 1360, in get_user_wallet_transactions
+    raise HTTPException(
+    ...<2 lines>...
+    )
+fastapi.exceptions.HTTPException: 404: No withdraw or deposit wallet records found for this user.
+2025-07-23 23:35:51,802 - ERROR - database - Error in database session: 404: No withdraw or deposit wallet records found for this user.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 1360, in get_user_wallet_transactions
+    raise HTTPException(
+    ...<2 lines>...
+    )
+fastapi.exceptions.HTTPException: 404: No withdraw or deposit wallet records found for this user.
+2025-07-23 23:36:24,897 - ERROR - database - Error in database session: 404: No withdraw or deposit wallet records found for this user.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 1360, in get_user_wallet_transactions
+    raise HTTPException(
+    ...<2 lines>...
+    )
+fastapi.exceptions.HTTPException: 404: No withdraw or deposit wallet records found for this user.
+2025-07-23 23:37:48,006 - ERROR - database - Error in database session: 404: No withdraw or deposit wallet records found for this user.
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\users.py", line 1362, in get_user_wallet_transactions
+    raise HTTPException(
+    ...<2 lines>...
+    )
+fastapi.exceptions.HTTPException: 404: No withdraw or deposit wallet records found for this user.

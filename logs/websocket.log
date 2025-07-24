@@ -25,3 +25,524 @@
 2025-07-23 23:22:30,923 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
 2025-07-23 23:22:31,773 - INFO - websocket - Redis publisher task cancelled.
 2025-07-23 23:22:31,773 - INFO - websocket - Redis publisher task finished.
+2025-07-23 23:34:36,899 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 23:34:40,846 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55282
+2025-07-23 23:34:40,846 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55282
+2025-07-23 23:34:40,848 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:34:41,201 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:34:46,839 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55298
+2025-07-23 23:34:46,839 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55298
+2025-07-23 23:34:46,842 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:34:46,909 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:34:52,843 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55309
+2025-07-23 23:34:52,844 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55309
+2025-07-23 23:34:52,847 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:34:52,912 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:34:58,846 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55327
+2025-07-23 23:34:58,848 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55327
+2025-07-23 23:34:58,851 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:34:58,924 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:35:04,846 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55341
+2025-07-23 23:35:04,847 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55341
+2025-07-23 23:35:04,850 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:35:04,927 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:35:10,839 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55353
+2025-07-23 23:35:10,840 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55353
+2025-07-23 23:35:10,842 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:35:10,905 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:35:17,111 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 23:35:17,111 - INFO - websocket - Redis publisher task finished.
+2025-07-23 23:35:21,975 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 23:35:22,643 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55361
+2025-07-23 23:35:22,644 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55361
+2025-07-23 23:35:22,646 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:35:22,747 - ERROR - websocket - Unexpected WS auth error for 127.0.0.1:55361: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\market_data_ws.py", line 930, in websocket_endpoint
+    db_user_instance = await get_user_by_account_number(db, account_number, user_type)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\crud\user.py", line 39, in get_user_by_account_number
+    result = await db.execute(
+             ^^^^^^^^^^^^^^^^^
+        select(User).filter(User.account_number == account_number, User.user_type == user_type)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 463, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3273, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-23 23:35:28,851 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55404
+2025-07-23 23:35:28,852 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55404
+2025-07-23 23:35:28,857 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:35:28,970 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:35:34,870 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55417
+2025-07-23 23:35:34,877 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55417
+2025-07-23 23:35:34,882 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:35:34,953 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:35:40,839 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55429
+2025-07-23 23:35:40,840 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55429
+2025-07-23 23:35:40,844 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:35:40,916 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:35:46,839 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55444
+2025-07-23 23:35:46,839 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55444
+2025-07-23 23:35:46,841 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:35:46,911 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:35:52,870 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55456
+2025-07-23 23:35:52,872 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55456
+2025-07-23 23:35:52,876 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:35:52,945 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:35:59,611 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55473
+2025-07-23 23:35:59,708 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55473
+2025-07-23 23:35:59,727 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:36:00,002 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:36:01,151 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 23:36:01,151 - INFO - websocket - Redis publisher task finished.
+2025-07-23 23:36:20,970 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 23:36:23,864 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55532
+2025-07-23 23:36:23,864 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55532
+2025-07-23 23:36:23,867 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:36:23,950 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:36:30,145 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55547
+2025-07-23 23:36:30,146 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55547
+2025-07-23 23:36:30,155 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:36:30,253 - ERROR - websocket - Unexpected WS auth error for 127.0.0.1:55547: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\market_data_ws.py", line 930, in websocket_endpoint
+    db_user_instance = await get_user_by_account_number(db, account_number, user_type)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\crud\user.py", line 39, in get_user_by_account_number
+    result = await db.execute(
+             ^^^^^^^^^^^^^^^^^
+        select(User).filter(User.account_number == account_number, User.user_type == user_type)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 463, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3273, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-23 23:36:35,851 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55559
+2025-07-23 23:36:35,861 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55559
+2025-07-23 23:36:35,890 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:36:35,964 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:36:41,845 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55565
+2025-07-23 23:36:41,846 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55565
+2025-07-23 23:36:41,847 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:36:41,918 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:36:47,840 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55574
+2025-07-23 23:36:47,840 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55574
+2025-07-23 23:36:47,843 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:36:47,910 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:36:53,865 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55584
+2025-07-23 23:36:53,866 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55584
+2025-07-23 23:36:53,867 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:36:53,922 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:36:59,878 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55594
+2025-07-23 23:36:59,879 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55594
+2025-07-23 23:36:59,881 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:36:59,955 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:37:05,992 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55603
+2025-07-23 23:37:05,992 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55603
+2025-07-23 23:37:05,993 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:37:06,078 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:37:11,880 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55613
+2025-07-23 23:37:11,881 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55613
+2025-07-23 23:37:11,883 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:37:11,949 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:37:17,831 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55620
+2025-07-23 23:37:17,831 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55620
+2025-07-23 23:37:17,833 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:37:17,894 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:37:23,839 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55630
+2025-07-23 23:37:23,839 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55630
+2025-07-23 23:37:23,841 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:37:23,905 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:37:29,841 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55637
+2025-07-23 23:37:29,842 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55637
+2025-07-23 23:37:29,842 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:37:29,932 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:37:35,892 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55650
+2025-07-23 23:37:35,893 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55650
+2025-07-23 23:37:35,895 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:37:35,954 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:37:38,523 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 23:37:38,523 - INFO - websocket - Redis publisher task finished.
+2025-07-23 23:37:44,390 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 23:37:45,094 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55665
+2025-07-23 23:37:45,095 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55665
+2025-07-23 23:37:45,097 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:37:45,405 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:37:50,845 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55702
+2025-07-23 23:37:50,845 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55702
+2025-07-23 23:37:50,847 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:37:50,916 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:37:56,846 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55714
+2025-07-23 23:37:56,847 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55714
+2025-07-23 23:37:56,850 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:37:56,924 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:38:02,852 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55731
+2025-07-23 23:38:02,853 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55731
+2025-07-23 23:38:02,855 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:38:02,929 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:38:09,102 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55741
+2025-07-23 23:38:09,103 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55741
+2025-07-23 23:38:09,109 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:38:09,197 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:38:14,857 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55750
+2025-07-23 23:38:14,858 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55750
+2025-07-23 23:38:14,860 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:38:14,930 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:38:20,859 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:55758
+2025-07-23 23:38:20,860 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:55758
+2025-07-23 23:38:20,863 - INFO - websocket - WebSocket auth: Authenticating user 5B0HV (live)
+2025-07-23 23:38:20,929 - WARNING - websocket - Authentication failed for account_number 5B0HV (type live): User not found in correct table.
+2025-07-23 23:39:44,016 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 23:39:44,016 - INFO - websocket - Redis publisher task finished.
+2025-07-23 23:44:29,499 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 23:44:44,896 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 23:44:44,896 - INFO - websocket - Redis publisher task finished.

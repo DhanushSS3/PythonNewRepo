@@ -1,2 +1,142 @@
 2025-07-23 23:22:01,185 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
 2025-07-23 23:22:01,223 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:34:37,770 - INFO - cache - Refreshing balance/margin cache for user 4 from database
+2025-07-23 23:34:37,841 - INFO - cache - Successfully refreshed balance/margin cache for user 4: balance=237.20000000, margin=58.12
+2025-07-23 23:34:37,844 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-23 23:34:37,876 - ERROR - cache - User 5 not found in database
+2025-07-23 23:34:37,879 - INFO - cache - Refreshing balance/margin cache for user 8 from database
+2025-07-23 23:34:37,961 - INFO - cache - Successfully refreshed balance/margin cache for user 8: balance=0E-8, margin=0.0
+2025-07-23 23:34:37,965 - INFO - cache - Refreshing balance/margin cache for user 9 from database
+2025-07-23 23:34:38,042 - INFO - cache - Successfully refreshed balance/margin cache for user 9: balance=5.75000000, margin=0.0
+2025-07-23 23:34:38,046 - INFO - cache - Refreshing balance/margin cache for user 10 from database
+2025-07-23 23:34:38,372 - INFO - cache - Successfully refreshed balance/margin cache for user 10: balance=9675.53000000, margin=6.62
+2025-07-23 23:34:38,376 - INFO - cache - Refreshing balance/margin cache for user 11 from database
+2025-07-23 23:34:38,380 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:34:38,417 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:34:38,453 - INFO - cache - Successfully refreshed balance/margin cache for user 11: balance=495.06000000, margin=967.17
+2025-07-23 23:34:38,457 - INFO - cache - Refreshing balance/margin cache for user 12 from database
+2025-07-23 23:34:38,528 - INFO - cache - Successfully refreshed balance/margin cache for user 12: balance=0E-8, margin=0.0
+2025-07-23 23:34:38,532 - INFO - cache - Refreshing balance/margin cache for user 13 from database
+2025-07-23 23:34:38,606 - INFO - cache - Successfully refreshed balance/margin cache for user 13: balance=59.65000000, margin=0.0
+2025-07-23 23:34:38,610 - INFO - cache - Refreshing balance/margin cache for user 14 from database
+2025-07-23 23:34:38,680 - INFO - cache - Successfully refreshed balance/margin cache for user 14: balance=10000.00000000, margin=0.0
+2025-07-23 23:34:38,684 - INFO - cache - Refreshing balance/margin cache for user 16 from database
+2025-07-23 23:34:38,754 - INFO - cache - Successfully refreshed balance/margin cache for user 16: balance=0E-8, margin=0.0
+2025-07-23 23:34:38,758 - INFO - cache - Refreshing balance/margin cache for user 17 from database
+2025-07-23 23:34:38,828 - INFO - cache - Successfully refreshed balance/margin cache for user 17: balance=26010.23000000, margin=0.0
+2025-07-23 23:34:38,833 - INFO - cache - Refreshing balance/margin cache for user 18 from database
+2025-07-23 23:34:38,908 - INFO - cache - Successfully refreshed balance/margin cache for user 18: balance=17323.75000000, margin=0.0
+2025-07-23 23:34:38,911 - INFO - cache - Refreshing balance/margin cache for user 19 from database
+2025-07-23 23:34:38,985 - INFO - cache - Successfully refreshed balance/margin cache for user 19: balance=9607.43000000, margin=0.0
+2025-07-23 23:34:38,988 - INFO - cache - Refreshing balance/margin cache for user 20 from database
+2025-07-23 23:34:39,388 - INFO - cache - Successfully refreshed balance/margin cache for user 20: balance=8712.00000000, margin=18.38
+2025-07-23 23:34:39,391 - INFO - cache - Refreshing balance/margin cache for user 21 from database
+2025-07-23 23:34:39,468 - INFO - cache - Successfully refreshed balance/margin cache for user 21: balance=0E-8, margin=0.0
+2025-07-23 23:34:39,471 - INFO - cache - Refreshing balance/margin cache for user 22 from database
+2025-07-23 23:34:39,548 - INFO - cache - Successfully refreshed balance/margin cache for user 22: balance=5960.41000000, margin=26.25
+2025-07-23 23:34:39,552 - INFO - cache - Refreshing balance/margin cache for user 23 from database
+2025-07-23 23:34:39,623 - INFO - cache - Successfully refreshed balance/margin cache for user 23: balance=1000000.00000000, margin=0.0
+2025-07-23 23:34:39,913 - INFO - cache - Refreshing balance/margin cache for user 24 from database
+2025-07-23 23:34:40,001 - INFO - cache - Successfully refreshed balance/margin cache for user 24: balance=500000.00000000, margin=0.0
+2025-07-23 23:34:40,008 - INFO - cache - Refreshing balance/margin cache for user 25 from database
+2025-07-23 23:34:40,088 - INFO - cache - Successfully refreshed balance/margin cache for user 25: balance=250000.00000000, margin=0.0
+2025-07-23 23:34:40,092 - INFO - cache - Refreshing balance/margin cache for user 26 from database
+2025-07-23 23:34:40,164 - INFO - cache - Successfully refreshed balance/margin cache for user 26: balance=9657.68000000, margin=0.0
+2025-07-23 23:34:40,168 - INFO - cache - Refreshing balance/margin cache for user 27 from database
+2025-07-23 23:34:40,248 - INFO - cache - Successfully refreshed balance/margin cache for user 27: balance=6672.64000000, margin=19.55
+2025-07-23 23:34:40,252 - INFO - cache - Refreshing balance/margin cache for user 28 from database
+2025-07-23 23:34:40,333 - INFO - cache - Successfully refreshed balance/margin cache for user 28: balance=10023.20000000, margin=9705.52
+2025-07-23 23:34:40,339 - INFO - cache - Refreshing balance/margin cache for user 29 from database
+2025-07-23 23:34:40,413 - INFO - cache - Successfully refreshed balance/margin cache for user 29: balance=0E-8, margin=0.0
+2025-07-23 23:34:40,418 - INFO - cache - Refreshing balance/margin cache for user 30 from database
+2025-07-23 23:34:40,483 - INFO - cache - Successfully refreshed balance/margin cache for user 30: balance=0E-8, margin=0.0
+2025-07-23 23:34:40,485 - INFO - cache - Refreshing balance/margin cache for user 31 from database
+2025-07-23 23:34:40,552 - INFO - cache - Successfully refreshed balance/margin cache for user 31: balance=0E-8, margin=0.0
+2025-07-23 23:34:40,553 - INFO - cache - Refreshing balance/margin cache for user 1 from database
+2025-07-23 23:34:40,624 - INFO - cache - Successfully refreshed balance/margin cache for user 1: balance=16226.94000000, margin=0.0
+2025-07-23 23:34:40,625 - INFO - cache - Refreshing balance/margin cache for user 2 from database
+2025-07-23 23:34:40,691 - INFO - cache - Successfully refreshed balance/margin cache for user 2: balance=100000.00000000, margin=0.0
+2025-07-23 23:34:40,692 - INFO - cache - Refreshing balance/margin cache for user 3 from database
+2025-07-23 23:34:40,762 - INFO - cache - Successfully refreshed balance/margin cache for user 3: balance=100000.00000000, margin=0.0
+2025-07-23 23:34:40,772 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-23 23:34:40,843 - INFO - cache - Successfully refreshed balance/margin cache for user 5: balance=100000.00000000, margin=0.0
+2025-07-23 23:34:40,850 - INFO - cache - Refreshing balance/margin cache for user 6 from database
+2025-07-23 23:34:41,204 - INFO - cache - Successfully refreshed balance/margin cache for user 6: balance=100000.00000000, margin=0.0
+2025-07-23 23:35:16,812 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:35:16,853 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:35:23,410 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:35:23,453 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:36:22,995 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:36:23,033 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:37:02,270 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:37:02,309 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:37:45,975 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:37:46,012 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:38:24,124 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:38:24,176 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:39:02,101 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:39:02,139 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:39:39,683 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:39:39,714 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:39:41,483 - INFO - cache - Published order update for user 4 to order_updates, received by 0 subscribers
+2025-07-23 23:39:41,483 - INFO - cache - Published user data update for user 4 to user_data_updates, received by 0 subscribers
+2025-07-23 23:44:30,477 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-23 23:44:30,525 - ERROR - cache - User 5 not found in database
+2025-07-23 23:44:30,532 - INFO - cache - Refreshing balance/margin cache for user 8 from database
+2025-07-23 23:44:30,625 - INFO - cache - Successfully refreshed balance/margin cache for user 8: balance=0E-8, margin=0.0
+2025-07-23 23:44:30,633 - INFO - cache - Refreshing balance/margin cache for user 9 from database
+2025-07-23 23:44:30,757 - INFO - cache - Successfully refreshed balance/margin cache for user 9: balance=5.75000000, margin=0.0
+2025-07-23 23:44:30,766 - INFO - cache - Refreshing balance/margin cache for user 10 from database
+2025-07-23 23:44:30,868 - INFO - cache - Successfully refreshed balance/margin cache for user 10: balance=9675.53000000, margin=6.62
+2025-07-23 23:44:30,872 - INFO - cache - Refreshing balance/margin cache for user 11 from database
+2025-07-23 23:44:31,233 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-23 23:44:31,270 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-23 23:44:31,273 - INFO - cache - Successfully refreshed balance/margin cache for user 11: balance=495.06000000, margin=967.17
+2025-07-23 23:44:31,277 - INFO - cache - Refreshing balance/margin cache for user 12 from database
+2025-07-23 23:44:31,401 - INFO - cache - Successfully refreshed balance/margin cache for user 12: balance=0E-8, margin=0.0
+2025-07-23 23:44:31,409 - INFO - cache - Refreshing balance/margin cache for user 13 from database
+2025-07-23 23:44:31,521 - INFO - cache - Successfully refreshed balance/margin cache for user 13: balance=59.65000000, margin=0.0
+2025-07-23 23:44:31,526 - INFO - cache - Refreshing balance/margin cache for user 14 from database
+2025-07-23 23:44:31,611 - INFO - cache - Successfully refreshed balance/margin cache for user 14: balance=10000.00000000, margin=0.0
+2025-07-23 23:44:31,614 - INFO - cache - Refreshing balance/margin cache for user 16 from database
+2025-07-23 23:44:31,761 - INFO - cache - Successfully refreshed balance/margin cache for user 16: balance=0E-8, margin=0.0
+2025-07-23 23:44:31,765 - INFO - cache - Refreshing balance/margin cache for user 17 from database
+2025-07-23 23:44:31,863 - INFO - cache - Successfully refreshed balance/margin cache for user 17: balance=26010.23000000, margin=0.0
+2025-07-23 23:44:31,869 - INFO - cache - Refreshing balance/margin cache for user 18 from database
+2025-07-23 23:44:31,959 - INFO - cache - Successfully refreshed balance/margin cache for user 18: balance=17323.75000000, margin=0.0
+2025-07-23 23:44:31,968 - INFO - cache - Refreshing balance/margin cache for user 19 from database
+2025-07-23 23:44:32,304 - INFO - cache - Successfully refreshed balance/margin cache for user 19: balance=9607.43000000, margin=0.0
+2025-07-23 23:44:32,308 - INFO - cache - Refreshing balance/margin cache for user 20 from database
+2025-07-23 23:44:32,402 - INFO - cache - Successfully refreshed balance/margin cache for user 20: balance=8712.00000000, margin=18.38
+2025-07-23 23:44:32,409 - INFO - cache - Refreshing balance/margin cache for user 21 from database
+2025-07-23 23:44:32,499 - INFO - cache - Successfully refreshed balance/margin cache for user 21: balance=0E-8, margin=0.0
+2025-07-23 23:44:32,502 - INFO - cache - Refreshing balance/margin cache for user 22 from database
+2025-07-23 23:44:32,604 - INFO - cache - Successfully refreshed balance/margin cache for user 22: balance=5960.41000000, margin=26.25
+2025-07-23 23:44:32,607 - INFO - cache - Refreshing balance/margin cache for user 23 from database
+2025-07-23 23:44:32,994 - INFO - cache - Successfully refreshed balance/margin cache for user 23: balance=1000000.00000000, margin=0.0
+2025-07-23 23:44:33,006 - INFO - cache - Refreshing balance/margin cache for user 24 from database
+2025-07-23 23:44:33,095 - INFO - cache - Successfully refreshed balance/margin cache for user 24: balance=500000.00000000, margin=0.0
+2025-07-23 23:44:33,098 - INFO - cache - Refreshing balance/margin cache for user 25 from database
+2025-07-23 23:44:33,190 - INFO - cache - Successfully refreshed balance/margin cache for user 25: balance=250000.00000000, margin=0.0
+2025-07-23 23:44:33,195 - INFO - cache - Refreshing balance/margin cache for user 26 from database
+2025-07-23 23:44:33,280 - INFO - cache - Successfully refreshed balance/margin cache for user 26: balance=9657.68000000, margin=0.0
+2025-07-23 23:44:33,283 - INFO - cache - Refreshing balance/margin cache for user 27 from database
+2025-07-23 23:44:33,381 - INFO - cache - Successfully refreshed balance/margin cache for user 27: balance=6672.64000000, margin=19.55
+2025-07-23 23:44:33,387 - INFO - cache - Refreshing balance/margin cache for user 28 from database
+2025-07-23 23:44:33,476 - INFO - cache - Successfully refreshed balance/margin cache for user 28: balance=10023.20000000, margin=9705.52
+2025-07-23 23:44:33,482 - INFO - cache - Refreshing balance/margin cache for user 29 from database
+2025-07-23 23:44:33,570 - INFO - cache - Successfully refreshed balance/margin cache for user 29: balance=0E-8, margin=0.0
+2025-07-23 23:44:33,578 - INFO - cache - Refreshing balance/margin cache for user 30 from database
+2025-07-23 23:44:33,666 - INFO - cache - Successfully refreshed balance/margin cache for user 30: balance=0E-8, margin=0.0
+2025-07-23 23:44:33,670 - INFO - cache - Refreshing balance/margin cache for user 31 from database
+2025-07-23 23:44:33,768 - INFO - cache - Successfully refreshed balance/margin cache for user 31: balance=0E-8, margin=0.0
+2025-07-23 23:44:33,774 - INFO - cache - Refreshing balance/margin cache for user 1 from database
+2025-07-23 23:44:33,878 - INFO - cache - Successfully refreshed balance/margin cache for user 1: balance=16226.94000000, margin=0.0
+2025-07-23 23:44:33,881 - INFO - cache - Refreshing balance/margin cache for user 2 from database
+2025-07-23 23:44:34,259 - INFO - cache - Successfully refreshed balance/margin cache for user 2: balance=100000.00000000, margin=0.0
+2025-07-23 23:44:34,267 - INFO - cache - Refreshing balance/margin cache for user 3 from database
+2025-07-23 23:44:34,353 - INFO - cache - Successfully refreshed balance/margin cache for user 3: balance=100000.00000000, margin=0.0
+2025-07-23 23:44:34,356 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-23 23:44:34,458 - INFO - cache - Successfully refreshed balance/margin cache for user 5: balance=100000.00000000, margin=0.0
+2025-07-23 23:44:34,462 - INFO - cache - Refreshing balance/margin cache for user 6 from database
+2025-07-23 23:44:34,820 - INFO - cache - Successfully refreshed balance/margin cache for user 6: balance=100000.00000000, margin=0.0

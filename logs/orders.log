@@ -7,3 +7,181 @@
 2025-07-23 23:21:59,514 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
 2025-07-23 23:22:04,635 - INFO - orders - Starting the simplified pending order checker background task.
 2025-07-23 23:22:09,468 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 23:34:35,841 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 23:34:36,908 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 23:34:36,908 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 23:34:36,908 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 23:34:36,908 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 23:34:36,940 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 23:34:36,940 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 23:34:37,837 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 3 positions for User 4, Symbol AUDJPY
+2025-07-23 23:34:37,837 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 23:34:37,837 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDJPY: AllMarginsPerLot=[Decimal('661.217113'), Decimal('661.197136'), Decimal('661.11035')], HighestMarginPerLot=661.217113
+2025-07-23 23:34:37,837 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol AUDJPY: CalculatedTotalMargin=13.22
+2025-07-23 23:34:37,837 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol US30
+2025-07-23 23:34:37,837 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol US30: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 23:34:37,837 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol US30: AllMarginsPerLot=[Decimal('449')], HighestMarginPerLot=449
+2025-07-23 23:34:37,837 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol US30: CalculatedTotalMargin=44.90
+2025-07-23 23:34:37,838 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 58.12
+2025-07-23 23:34:38,369 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 10, Symbol AUDJPY
+2025-07-23 23:34:38,369 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-23 23:34:38,369 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDJPY: AllMarginsPerLot=[Decimal('661.980415'), Decimal('662.192516')], HighestMarginPerLot=662.192516
+2025-07-23 23:34:38,369 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 10, Symbol AUDJPY: CalculatedTotalMargin=6.62
+2025-07-23 23:34:38,369 - INFO - orders - [TOTAL_USER_MARGIN] User 10 total margin across all symbols: 6.62
+2025-07-23 23:34:38,449 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 11, Symbol AUDJPY
+2025-07-23 23:34:38,449 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:34:38,449 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: AllMarginsPerLot=[Decimal('96717')], HighestMarginPerLot=96717
+2025-07-23 23:34:38,450 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 11, Symbol AUDJPY: CalculatedTotalMargin=967.17
+2025-07-23 23:34:38,450 - INFO - orders - [TOTAL_USER_MARGIN] User 11 total margin across all symbols: 967.17
+2025-07-23 23:34:39,385 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol AUDCAD
+2025-07-23 23:34:39,385 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:34:39,385 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: AllMarginsPerLot=[Decimal('657.55194')], HighestMarginPerLot=657.55194
+2025-07-23 23:34:39,385 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol AUDCAD: CalculatedTotalMargin=6.58
+2025-07-23 23:34:39,385 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol EURUSD
+2025-07-23 23:34:39,386 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:34:39,386 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: AllMarginsPerLot=[Decimal('1180')], HighestMarginPerLot=1180
+2025-07-23 23:34:39,386 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol EURUSD: CalculatedTotalMargin=11.80
+2025-07-23 23:34:39,386 - INFO - orders - [TOTAL_USER_MARGIN] User 20 total margin across all symbols: 18.38
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 22, Symbol AUDCHF
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: AllMarginsPerLot=[Decimal('657.101216')], HighestMarginPerLot=657.101216
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCHF: CalculatedTotalMargin=6.57
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 4 positions for User 22, Symbol AUDJPY
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: AllMarginsPerLot=[Decimal('657.431957'), Decimal('652.816419'), Decimal('652.829301'), Decimal('652.889785')], HighestMarginPerLot=657.431957
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDJPY: CalculatedTotalMargin=13.15
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 22, Symbol AUDCAD
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: AllMarginsPerLot=[Decimal('652.598728'), Decimal('652.660595')], HighestMarginPerLot=652.660595
+2025-07-23 23:34:39,545 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCAD: CalculatedTotalMargin=6.53
+2025-07-23 23:34:39,545 - INFO - orders - [TOTAL_USER_MARGIN] User 22 total margin across all symbols: 26.25
+2025-07-23 23:34:40,239 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 27, Symbol AUDJPY
+2025-07-23 23:34:40,240 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 23:34:40,240 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: AllMarginsPerLot=[Decimal('648.460213'), Decimal('651.498922')], HighestMarginPerLot=651.498922
+2025-07-23 23:34:40,240 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDJPY: CalculatedTotalMargin=13.03
+2025-07-23 23:34:40,241 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 27, Symbol AUDUSD
+2025-07-23 23:34:40,241 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:34:40,241 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: AllMarginsPerLot=[Decimal('652')], HighestMarginPerLot=652
+2025-07-23 23:34:40,241 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDUSD: CalculatedTotalMargin=6.52
+2025-07-23 23:34:40,241 - INFO - orders - [TOTAL_USER_MARGIN] User 27 total margin across all symbols: 19.55
+2025-07-23 23:34:40,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 28, Symbol EURPLN
+2025-07-23 23:34:40,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 23:34:40,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: AllMarginsPerLot=[Decimal('4257'), Decimal('4257')], HighestMarginPerLot=4257
+2025-07-23 23:34:40,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol EURPLN: CalculatedTotalMargin=85.14
+2025-07-23 23:34:40,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 28, Symbol BTCUSD
+2025-07-23 23:34:40,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 23:34:40,329 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24050.95')], HighestMarginPerLot=24050.95
+2025-07-23 23:34:40,330 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol BTCUSD: CalculatedTotalMargin=9620.38
+2025-07-23 23:34:40,330 - INFO - orders - [TOTAL_USER_MARGIN] User 28 total margin across all symbols: 9705.52
+2025-07-23 23:34:41,907 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 23:34:46,910 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 23:35:21,171 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 23:35:21,976 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 23:35:21,976 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 23:35:21,977 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 23:35:21,977 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 23:35:22,009 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 23:35:22,009 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 23:35:26,988 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 23:35:31,983 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 23:36:20,043 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 23:36:20,971 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 23:36:20,971 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 23:36:20,971 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 23:36:20,971 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 23:36:20,997 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 23:36:20,997 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 23:36:25,971 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 23:36:30,971 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 23:37:43,424 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 23:37:44,402 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 23:37:44,402 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 23:37:44,402 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 23:37:44,402 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 23:37:44,432 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 23:37:44,432 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 23:37:49,402 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 23:37:54,411 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-23 23:39:41,246 - INFO - orders - Starting update_user_static_orders for user 4, user_type live
+2025-07-23 23:39:41,246 - INFO - orders - Using order model: UserOrder
+2025-07-23 23:39:41,320 - INFO - orders - Fetched 4 open orders for user 4
+2025-07-23 23:39:41,356 - INFO - orders - Fetched 0 pending orders for user 4
+2025-07-23 23:39:41,357 - INFO - orders - Updated static orders cache for user 4 with 4 open orders and 0 pending orders
+2025-07-23 23:39:41,397 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 3 positions for User 4, Symbol AUDJPY
+2025-07-23 23:39:41,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 23:39:41,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDJPY: AllMarginsPerLot=[Decimal('661.217113'), Decimal('661.197136'), Decimal('661.11035')], HighestMarginPerLot=661.217113
+2025-07-23 23:39:41,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol AUDJPY: CalculatedTotalMargin=13.22
+2025-07-23 23:39:41,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol US30
+2025-07-23 23:39:41,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol US30: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 23:39:41,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol US30: AllMarginsPerLot=[Decimal('449')], HighestMarginPerLot=449
+2025-07-23 23:39:41,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol US30: CalculatedTotalMargin=44.90
+2025-07-23 23:39:41,398 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 58.12
+2025-07-23 23:39:41,400 - INFO - orders - User 4: Updated balance/margin cache after static orders update - balance=237.20000000, margin=58.12
+2025-07-23 23:39:41,476 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 3 positions for User 4, Symbol AUDJPY
+2025-07-23 23:39:41,476 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 23:39:41,477 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol AUDJPY: AllMarginsPerLot=[Decimal('661.217113'), Decimal('661.197136'), Decimal('661.11035')], HighestMarginPerLot=661.217113
+2025-07-23 23:39:41,477 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol AUDJPY: CalculatedTotalMargin=13.22
+2025-07-23 23:39:41,477 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 4, Symbol US30
+2025-07-23 23:39:41,477 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol US30: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-23 23:39:41,477 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 4, Symbol US30: AllMarginsPerLot=[Decimal('449')], HighestMarginPerLot=449
+2025-07-23 23:39:41,477 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 4, Symbol US30: CalculatedTotalMargin=44.90
+2025-07-23 23:39:41,477 - INFO - orders - [TOTAL_USER_MARGIN] User 4 total margin across all symbols: 58.12
+2025-07-23 23:44:28,463 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-23 23:44:29,501 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-23 23:44:29,501 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-23 23:44:29,501 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-23 23:44:29,502 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-23 23:44:29,530 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-23 23:44:29,530 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-23 23:44:30,863 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 10, Symbol AUDJPY
+2025-07-23 23:44:30,863 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-23 23:44:30,863 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 10, Symbol AUDJPY: AllMarginsPerLot=[Decimal('661.980415'), Decimal('662.192516')], HighestMarginPerLot=662.192516
+2025-07-23 23:44:30,864 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 10, Symbol AUDJPY: CalculatedTotalMargin=6.62
+2025-07-23 23:44:30,864 - INFO - orders - [TOTAL_USER_MARGIN] User 10 total margin across all symbols: 6.62
+2025-07-23 23:44:31,267 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 11, Symbol AUDJPY
+2025-07-23 23:44:31,268 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:44:31,268 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDJPY: AllMarginsPerLot=[Decimal('96717')], HighestMarginPerLot=96717
+2025-07-23 23:44:31,268 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 11, Symbol AUDJPY: CalculatedTotalMargin=967.17
+2025-07-23 23:44:31,268 - INFO - orders - [TOTAL_USER_MARGIN] User 11 total margin across all symbols: 967.17
+2025-07-23 23:44:32,397 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol AUDCAD
+2025-07-23 23:44:32,397 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:44:32,397 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol AUDCAD: AllMarginsPerLot=[Decimal('657.55194')], HighestMarginPerLot=657.55194
+2025-07-23 23:44:32,397 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol AUDCAD: CalculatedTotalMargin=6.58
+2025-07-23 23:44:32,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 20, Symbol EURUSD
+2025-07-23 23:44:32,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:44:32,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 20, Symbol EURUSD: AllMarginsPerLot=[Decimal('1180')], HighestMarginPerLot=1180
+2025-07-23 23:44:32,398 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 20, Symbol EURUSD: CalculatedTotalMargin=11.80
+2025-07-23 23:44:32,398 - INFO - orders - [TOTAL_USER_MARGIN] User 20 total margin across all symbols: 18.38
+2025-07-23 23:44:32,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 22, Symbol AUDCHF
+2025-07-23 23:44:32,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:44:32,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCHF: AllMarginsPerLot=[Decimal('657.101216')], HighestMarginPerLot=657.101216
+2025-07-23 23:44:32,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCHF: CalculatedTotalMargin=6.57
+2025-07-23 23:44:32,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 4 positions for User 22, Symbol AUDJPY
+2025-07-23 23:44:32,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0.02000000, NetQty=0.02000000, IsHedged=True
+2025-07-23 23:44:32,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDJPY: AllMarginsPerLot=[Decimal('657.431957'), Decimal('652.816419'), Decimal('652.829301'), Decimal('652.889785')], HighestMarginPerLot=657.431957
+2025-07-23 23:44:32,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDJPY: CalculatedTotalMargin=13.15
+2025-07-23 23:44:32,600 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 22, Symbol AUDCAD
+2025-07-23 23:44:32,600 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-23 23:44:32,600 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 22, Symbol AUDCAD: AllMarginsPerLot=[Decimal('652.598728'), Decimal('652.660595')], HighestMarginPerLot=652.660595
+2025-07-23 23:44:32,600 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 22, Symbol AUDCAD: CalculatedTotalMargin=6.53
+2025-07-23 23:44:32,600 - INFO - orders - [TOTAL_USER_MARGIN] User 22 total margin across all symbols: 26.25
+2025-07-23 23:44:33,376 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 27, Symbol AUDJPY
+2025-07-23 23:44:33,377 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 23:44:33,377 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDJPY: AllMarginsPerLot=[Decimal('648.460213'), Decimal('651.498922')], HighestMarginPerLot=651.498922
+2025-07-23 23:44:33,377 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDJPY: CalculatedTotalMargin=13.03
+2025-07-23 23:44:33,377 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 27, Symbol AUDUSD
+2025-07-23 23:44:33,377 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-23 23:44:33,377 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 27, Symbol AUDUSD: AllMarginsPerLot=[Decimal('652')], HighestMarginPerLot=652
+2025-07-23 23:44:33,377 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 27, Symbol AUDUSD: CalculatedTotalMargin=6.52
+2025-07-23 23:44:33,377 - INFO - orders - [TOTAL_USER_MARGIN] User 27 total margin across all symbols: 19.55
+2025-07-23 23:44:33,471 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 28, Symbol EURPLN
+2025-07-23 23:44:33,471 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: TotalBuyQty=0.02000000, TotalSellQty=0, NetQty=0.02000000, IsHedged=False
+2025-07-23 23:44:33,471 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol EURPLN: AllMarginsPerLot=[Decimal('4257'), Decimal('4257')], HighestMarginPerLot=4257
+2025-07-23 23:44:33,472 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol EURPLN: CalculatedTotalMargin=85.14
+2025-07-23 23:44:33,472 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 28, Symbol BTCUSD
+2025-07-23 23:44:33,472 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-23 23:44:33,472 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 28, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24050.95')], HighestMarginPerLot=24050.95
+2025-07-23 23:44:33,472 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 28, Symbol BTCUSD: CalculatedTotalMargin=9620.38
+2025-07-23 23:44:33,472 - INFO - orders - [TOTAL_USER_MARGIN] User 28 total margin across all symbols: 9705.52
+2025-07-23 23:44:34,501 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-23 23:44:39,605 - INFO - orders - Starting the users with orders cache updater task.
