@@ -546,3 +546,6 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-23 23:44:29,499 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
 2025-07-23 23:44:44,896 - INFO - websocket - Redis publisher task cancelled.
 2025-07-23 23:44:44,896 - INFO - websocket - Redis publisher task finished.
+2025-07-23 23:48:21,724 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-23 23:48:43,269 - INFO - websocket - Redis publisher task cancelled.
+2025-07-23 23:48:43,274 - INFO - websocket - Redis publisher task finished.

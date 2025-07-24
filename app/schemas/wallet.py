@@ -255,8 +255,12 @@ class WalletInDBBase(WalletBase):
 
 # Full schema for reading wallet transaction data (what you'd typically return from an API)
 # Renamed from Wallet to WalletResponse to match the import in wallets.py endpoint
-class WalletResponse(WalletInDBBase):
-    pass
+class WalletResponse(BaseModel):
+    transaction_id: str
+    is_approved: int
+    transaction_amount: Decimal
+    updated_at: datetime
+    transaction_type: str
 
 # Assuming these schemas are needed elsewhere for API requests/responses
 class WalletTransactionRequest(BaseModel):

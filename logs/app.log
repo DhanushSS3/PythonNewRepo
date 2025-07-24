@@ -1714,3 +1714,349 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-23 23:44:44,891 - INFO - app.firebase_stream - Firebase Admin event processing task finished.
 2025-07-23 23:44:45,084 - INFO - app - Redis connection closed
 2025-07-23 23:44:45,084 - INFO - app - Application shutdown completed
+2025-07-23 23:48:18,921 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-23 23:48:18,955 - INFO - app.core.config - .env file loaded successfully.
+2025-07-23 23:48:18,974 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-23 23:48:18,974 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://u43...
+2025-07-23 23:48:19,367 - INFO - app - Application starting up - Trading system initialized
+2025-07-23 23:48:19,367 - INFO - app - SL/TP Epsilon accuracy configured: 0.00001
+2025-07-23 23:48:19,367 - INFO - app - Environment: PRODUCTION
+2025-07-23 23:48:19,479 - INFO - app - Application startup initiated
+2025-07-23 23:48:19,479 - INFO - app - Initializing core services...
+2025-07-23 23:48:19,547 - INFO - app - Firebase initialized
+2025-07-23 23:48:19,547 - WARNING - app.dependencies.redis_client - [Redis] Client not initialized, attempting late connection.
+2025-07-23 23:48:19,572 - INFO - app - Redis initialized
+2025-07-23 23:48:20,935 - INFO - app - All group settings, group-symbol settings, and external symbol info cached in Redis at startup.
+2025-07-23 23:48:20,940 - INFO - app - [SCHEDULER] Initializing APScheduler...
+2025-07-23 23:48:20,942 - INFO - app - [SWAP] daily_swap_charge_job triggered
+2025-07-23 23:48:20,942 - INFO - app - [SCHEDULER] About to start scheduler...
+2025-07-23 23:48:20,943 - INFO - app - [SCHEDULER] Scheduler started successfully.
+2025-07-23 23:48:20,944 - INFO - app - Scheduler initialized
+2025-07-23 23:48:20,946 - INFO - app.firebase_stream - Starting Firebase Admin event processing task for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-23 23:48:20,947 - INFO - app.firebase_stream - Attempting to start Firebase Admin listener for path: 'datafeeds'.
+2025-07-23 23:48:21,718 - INFO - app.firebase_stream - Firebase Admin listener started successfully for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-23 23:48:21,737 - INFO - app - Starting stale cache cleanup task
+2025-07-23 23:48:21,764 - INFO - app - Cleaned up pending order stream for new trigger price format
+2025-07-23 23:48:21,764 - INFO - app - Background tasks initialized
+2025-07-23 23:48:21,764 - INFO - app - [SCHEDULER] Starting rotate_service_account_jwt job...
+2025-07-23 23:48:22,355 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-23 23:48:22,355 - INFO - app - Application startup completed successfully
+2025-07-23 23:48:22,356 - INFO - app - Starting cache validation task
+2025-07-23 23:48:22,360 - INFO - app - Starting Barclays pending order margin checker task.
+2025-07-23 23:48:22,366 - INFO - app - Starting auto-cutoff order monitoring task.
+2025-07-23 23:48:22,370 - INFO - app - [SCHEDULER] Starting update_all_users_dynamic_portfolio job...
+2025-07-23 23:48:22,394 - INFO - app - Found 30 static orders cache entries to check
+2025-07-23 23:48:22,398 - WARNING - app - Found stale cache entry for user live:17, will be refreshed on next access
+2025-07-23 23:48:22,400 - WARNING - app - Found stale cache entry for user live:16, will be refreshed on next access
+2025-07-23 23:48:22,405 - WARNING - app - Found stale cache entry for user live:24, will be refreshed on next access
+2025-07-23 23:48:22,407 - WARNING - app - Found stale cache entry for user live:21, will be refreshed on next access
+2025-07-23 23:48:22,411 - WARNING - app - Found stale cache entry for user live:5, will be refreshed on next access
+2025-07-23 23:48:22,413 - WARNING - app - Found stale cache entry for user live:8, will be refreshed on next access
+2025-07-23 23:48:22,414 - WARNING - app - Found stale cache entry for user live:18, will be refreshed on next access
+2025-07-23 23:48:22,416 - WARNING - app - Found stale cache entry for user live:29, will be refreshed on next access
+2025-07-23 23:48:22,434 - WARNING - app - Found stale cache entry for user live:2, will be refreshed on next access
+2025-07-23 23:48:22,436 - WARNING - app - Found stale cache entry for user live:31, will be refreshed on next access
+2025-07-23 23:48:22,439 - WARNING - app - Found stale cache entry for user live:6, will be refreshed on next access
+2025-07-23 23:48:22,441 - WARNING - app - Found stale cache entry for user live:23, will be refreshed on next access
+2025-07-23 23:48:22,441 - WARNING - app - Found stale cache entry for user live:12, will be refreshed on next access
+2025-07-23 23:48:22,442 - WARNING - app - Found stale cache entry for user live:20, will be refreshed on next access
+2025-07-23 23:48:22,442 - WARNING - app - Found stale cache entry for user live:30, will be refreshed on next access
+2025-07-23 23:48:22,443 - WARNING - app - Found stale cache entry for user live:3, will be refreshed on next access
+2025-07-23 23:48:22,443 - WARNING - app - Found stale cache entry for user live:19, will be refreshed on next access
+2025-07-23 23:48:22,444 - WARNING - app - Found stale cache entry for user live:13, will be refreshed on next access
+2025-07-23 23:48:22,445 - WARNING - app - Found stale cache entry for user live:22, will be refreshed on next access
+2025-07-23 23:48:22,445 - INFO - app - Completed stale cache cleanup task
+2025-07-23 23:48:22,596 - INFO - app - Validating cache for 37 users
+2025-07-23 23:48:22,598 - WARNING - app - User 4: Missing balance/margin cache, refreshing...
+2025-07-23 23:48:22,619 - INFO - app - [AUTO-CUTOFF] Found 25 live users and 12 demo users.
+2025-07-23 23:48:22,790 - INFO - app - Cache validation completed
+2025-07-23 23:48:23,331 - INFO - app - [AUTO-CUTOFF] User 4 margin_level: 400.4984082085671244119422495
+2025-07-23 23:48:23,445 - WARNING - app - [AUTO-CUTOFF] No user data found for user 5 (live). Skipping portfolio update.
+2025-07-23 23:48:23,461 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-23 23:48:23,526 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 8.
+2025-07-23 23:48:23,639 - WARNING - app - [AUTO-CUTOFF] User 9 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:24,232 - INFO - app - [AUTO-CUTOFF] User 10 margin_level: 146156.0422960725075528700906
+2025-07-23 23:48:24,624 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-23 23:48:24,655 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-23 23:48:24,656 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-23 23:48:24,678 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-23 23:48:24,705 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-23 23:48:24,812 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-23 23:48:24,853 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-23 23:48:24,911 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 51.35163602988472794414313990% which is below threshold 100.0%
+2025-07-23 23:48:24,914 - INFO - app - [AUTO-CUTOFF] User 11 margin_level: 51.35163602988472794414313990
+2025-07-23 23:48:25,038 - WARNING - app - [AUTO-CUTOFF] User 12 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:25,099 - INFO - app.core.config - .env file loaded successfully.
+2025-07-23 23:48:25,104 - INFO - app.core.config - .env file loaded successfully.
+2025-07-23 23:48:25,119 - INFO - app.core.config - .env file loaded successfully.
+2025-07-23 23:48:25,123 - INFO - app.core.config - .env file loaded successfully.
+2025-07-23 23:48:25,129 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-23 23:48:25,129 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://u43...
+2025-07-23 23:48:25,133 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-23 23:48:25,133 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://u43...
+2025-07-23 23:48:25,140 - INFO - app.core.config - .env file loaded successfully.
+2025-07-23 23:48:25,148 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-23 23:48:25,148 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://u43...
+2025-07-23 23:48:25,153 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-23 23:48:25,153 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://u43...
+2025-07-23 23:48:25,158 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-23 23:48:25,158 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://u43...
+2025-07-23 23:48:25,185 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:25,192 - INFO - app.core.config - .env file loaded successfully.
+2025-07-23 23:48:25,212 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-23 23:48:25,213 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://u43...
+2025-07-23 23:48:25,232 - INFO - app.core.config - .env file loaded successfully.
+2025-07-23 23:48:25,246 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-23 23:48:25,246 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://u43...
+2025-07-23 23:48:25,287 - WARNING - app - [AUTO-CUTOFF] User 14 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:25,379 - WARNING - app - [AUTO-CUTOFF] User 16 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:25,468 - WARNING - app - [AUTO-CUTOFF] User 17 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:25,558 - WARNING - app - [AUTO-CUTOFF] User 18 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:25,644 - WARNING - app - [AUTO-CUTOFF] User 19 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:26,085 - INFO - app - [AUTO-CUTOFF] User 20 margin_level: 47399.34711643090315560391730
+2025-07-23 23:48:26,198 - WARNING - app - [AUTO-CUTOFF] User 21 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:26,660 - INFO - app - [AUTO-CUTOFF] User 22 margin_level: 22706.32380952380952380952381
+2025-07-23 23:48:26,750 - WARNING - app - [AUTO-CUTOFF] User 23 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:26,852 - WARNING - app - [AUTO-CUTOFF] User 24 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:26,940 - WARNING - app - [AUTO-CUTOFF] User 25 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:27,041 - WARNING - app - [AUTO-CUTOFF] User 26 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:27,348 - ERROR - app - Error in barclays_pending_order_margin_checker loop: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\main.py", line 1467, in barclays_pending_order_margin_checker
+    live_users = await crud_user.get_all_users_with_pending_orders(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\crud\user.py", line 473, in get_all_users_with_pending_orders
+    result = await db.execute(
+             ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 463, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3273, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2436, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3297, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 901, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\dialects\mysql\aiomysql.py", line 270, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 75, in _connect
+    await conn._connect()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 540, in _connect
+    await self._request_authentication()
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 844, in _request_authentication
+    auth_packet = await self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u436589492_testingserver' has exceeded the 'max_user_connections' resource (current value: 50)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-23 23:48:27,729 - INFO - app - [AUTO-CUTOFF] User 27 margin_level: 34214.42623065452517599509119
+2025-07-23 23:48:28,200 - ERROR - app.services.portfolio_calculator - Could not convert PnL from PLN to USD
+2025-07-23 23:48:28,203 - ERROR - app.services.portfolio_calculator - Could not convert PnL from PLN to USD
+2025-07-23 23:48:28,203 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 88.34566308657341389230046407% which is below threshold 100.0%
+2025-07-23 23:48:28,207 - INFO - app - [AUTO-CUTOFF] User 28 margin_level: 88.34566308657341389230046407
+2025-07-23 23:48:28,330 - WARNING - app - [AUTO-CUTOFF] User 29 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:28,446 - WARNING - app - [AUTO-CUTOFF] User 30 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:28,589 - WARNING - app - [AUTO-CUTOFF] User 31 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:28,736 - WARNING - app - [AUTO-CUTOFF] User 1 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:28,739 - WARNING - app - [AUTO-CUTOFF] User 2 has no group_name set. Skipping portfolio update.
+2025-07-23 23:48:28,772 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-23 23:48:28,804 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 3.
+2025-07-23 23:48:28,936 - WARNING - app - [AUTO-CUTOFF] User 4 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:28,939 - WARNING - app - [AUTO-CUTOFF] User 5 has no group_name set. Skipping portfolio update.
+2025-07-23 23:48:28,942 - WARNING - app - [AUTO-CUTOFF] User 6 has no group_name set. Skipping portfolio update.
+2025-07-23 23:48:29,159 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 9, falling back to DB and updating cache.
+2025-07-23 23:48:29,959 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 0.0
+2025-07-23 23:48:30,348 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 10, falling back to DB and updating cache.
+2025-07-23 23:48:30,652 - INFO - app - [AUTO-CUTOFF] User 10 margin_level: 146156.0422960725075528700906
+2025-07-23 23:48:30,759 - WARNING - app - [AUTO-CUTOFF] User 11 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:30,861 - WARNING - app - [AUTO-CUTOFF] User 12 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:30,979 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-23 23:48:31,169 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 14, falling back to DB and updating cache.
+2025-07-23 23:48:31,460 - INFO - app - [AUTO-CUTOFF] User 14 margin_level: 0.0
+2025-07-23 23:48:37,367 - INFO - app - Starting stale cache cleanup task
+2025-07-23 23:48:37,370 - INFO - app - Found 30 static orders cache entries to check
+2025-07-23 23:48:37,372 - WARNING - app - Found stale cache entry for user live:17, will be refreshed on next access
+2025-07-23 23:48:37,373 - WARNING - app - Found stale cache entry for user live:16, will be refreshed on next access
+2025-07-23 23:48:37,375 - WARNING - app - Found stale cache entry for user live:24, will be refreshed on next access
+2025-07-23 23:48:37,376 - WARNING - app - Found stale cache entry for user live:21, will be refreshed on next access
+2025-07-23 23:48:37,377 - WARNING - app - Found stale cache entry for user live:5, will be refreshed on next access
+2025-07-23 23:48:37,378 - WARNING - app - Found stale cache entry for user live:8, will be refreshed on next access
+2025-07-23 23:48:37,379 - WARNING - app - Found stale cache entry for user live:18, will be refreshed on next access
+2025-07-23 23:48:37,380 - WARNING - app - Found stale cache entry for user live:29, will be refreshed on next access
+2025-07-23 23:48:37,381 - WARNING - app - Found stale cache entry for user live:2, will be refreshed on next access
+2025-07-23 23:48:37,382 - WARNING - app - Found stale cache entry for user live:31, will be refreshed on next access
+2025-07-23 23:48:37,385 - WARNING - app - Found stale cache entry for user live:6, will be refreshed on next access
+2025-07-23 23:48:37,388 - WARNING - app - Found stale cache entry for user live:23, will be refreshed on next access
+2025-07-23 23:48:37,389 - WARNING - app - Found stale cache entry for user live:12, will be refreshed on next access
+2025-07-23 23:48:37,389 - WARNING - app - Found stale cache entry for user live:20, will be refreshed on next access
+2025-07-23 23:48:37,391 - WARNING - app - Found stale cache entry for user live:30, will be refreshed on next access
+2025-07-23 23:48:37,392 - WARNING - app - Found stale cache entry for user live:3, will be refreshed on next access
+2025-07-23 23:48:37,393 - WARNING - app - Found stale cache entry for user live:19, will be refreshed on next access
+2025-07-23 23:48:37,393 - WARNING - app - Found stale cache entry for user live:13, will be refreshed on next access
+2025-07-23 23:48:37,394 - WARNING - app - Found stale cache entry for user live:22, will be refreshed on next access
+2025-07-23 23:48:37,396 - INFO - app - Completed stale cache cleanup task
+2025-07-23 23:48:43,213 - INFO - app - Application shutdown initiated
+2025-07-23 23:48:43,214 - INFO - app - Scheduler shutdown completed
+2025-07-23 23:48:43,215 - INFO - app.firebase_stream - Firebase event processing task cancelled.
+2025-07-23 23:48:43,259 - INFO - app.firebase_stream - Firebase listener closed.
+2025-07-23 23:48:43,259 - INFO - app.firebase_stream - Firebase Admin event processing task finished.
+2025-07-23 23:48:44,428 - INFO - app - Redis connection closed
+2025-07-23 23:48:44,428 - INFO - app - Application shutdown completed
