@@ -86,6 +86,14 @@ class OrderResponse(BaseModel):
     close_id: Optional[str] = None # Added for tracking closed orders
 
 
+class PendingOrderResponse(BaseModel):
+    order_id: str
+    order_company_name: str
+    order_type: str
+    order_quantity: Decimal
+    order_price: Decimal
+    created_at: Optional[Any] = None # datetime will be serialized by FastAPI/Pydantic
+
 # --- Close Order Request Schema ---
 class CloseOrderRequest(BaseModel):
     order_id: str

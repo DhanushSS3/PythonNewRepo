@@ -386,8 +386,8 @@ async def process_new_order_ultra_optimized(
             raise OrderProcessingError("Margin calculation failed")
 
         # Step 6: ULTRA-OPTIMIZED hedged margin calculation
-        logger.info(f"[HEDGING_MARGIN_DEBUG] Starting hedging calculation for User: {user_id}, Symbol: {symbol}, OrderType: {order_type}, Quantity: {quantity}, FullMargin: {full_margin_usd}")
-        logger.info(f"[HEDGING_MARGIN_DEBUG] Existing open orders count: {len(open_orders_for_symbol)}")
+        logger.debug(f"[HEDGING_MARGIN_DEBUG] Starting hedging calculation for User: {user_id}, Symbol: {symbol}, OrderType: {order_type}, Quantity: {quantity}, FullMargin: {full_margin_usd}")
+        logger.debug(f"[HEDGING_MARGIN_DEBUG] Existing open orders count: {len(open_orders_for_symbol)}")
         
         # Create simulated order object for margin calculation
         simulated_order = type('Obj', (object,), {
@@ -398,10 +398,10 @@ async def process_new_order_ultra_optimized(
             'order_id': 'NEW_ORDER_SIMULATED'
         })()
         
-        logger.info(f"[HEDGING_MARGIN_DEBUG] Created simulated order: Type={simulated_order.order_type}, Qty={simulated_order.order_quantity}, Margin={simulated_order.margin}")
+        logger.debug(f"[HEDGING_MARGIN_DEBUG] Created simulated order: Type={simulated_order.order_type}, Qty={simulated_order.order_quantity}, Margin={simulated_order.margin}")
         
         # Calculate margin before and after in parallel
-        logger.info(f"[HEDGING_MARGIN_DEBUG] About to calculate margin before and after for {len(open_orders_for_symbol)} existing orders + 1 new order")
+        logger.debug(f"[HEDGING_MARGIN_DEBUG] About to calculate margin before and after for {len(open_orders_for_symbol)} existing orders + 1 new order")
         
         margin_tasks = [
             calculate_total_symbol_margin_contribution(
@@ -412,9 +412,9 @@ async def process_new_order_ultra_optimized(
             )
         ]
         
-        logger.info(f"[HEDGING_MARGIN_DEBUG] Executing margin calculation tasks...")
+        logger.debug(f"[HEDGING_MARGIN_DEBUG] Executing margin calculation tasks...")
         margin_before_data, margin_after_data = await asyncio.gather(*margin_tasks)
-        logger.info(f"[HEDGING_MARGIN_DEBUG] Margin calculation tasks completed")
+        logger.debug(f"[HEDGING_MARGIN_DEBUG] Margin calculation tasks completed")
         margin_before = margin_before_data["total_margin"]
         margin_after = margin_after_data["total_margin"]
         additional_margin = max(Decimal("0.0"), margin_after - margin_before)

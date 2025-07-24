@@ -190,7 +190,7 @@ async def update_all_users_dynamic_portfolio():
     """
     from app.services.email import send_email
     from app.core.cache import get_user_data_cache, get_group_symbol_settings_cache, get_adjusted_market_price_cache, get_last_known_price, set_user_dynamic_portfolio_cache, set_group_symbol_settings_cache
-    logger.info("[AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio job...")
+    logger.debug("[AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio job...")
     try:
         async with AsyncSessionLocal() as db:
             if not global_redis_client_instance:
@@ -198,10 +198,10 @@ async def update_all_users_dynamic_portfolio():
                 return
             
             # Heartbeat log to ensure this task is still running
-            logger.info("[AUTO-CUTOFF] update_all_users_dynamic_portfolio heartbeat: task is alive and running.")
+            logger.debug("[AUTO-CUTOFF] update_all_users_dynamic_portfolio heartbeat: task is alive and running.")
             
             # Get all active users (both live and demo) using the new unified function
-            logger.info("[AUTO-CUTOFF] Fetching all active users (live and demo)...")
+            logger.debug("[AUTO-CUTOFF] Fetching all active users (live and demo)...")
             live_users, demo_users = await crud_user.get_all_active_users_both(db)
             logger.info(f"[AUTO-CUTOFF] Found {len(live_users)} live users and {len(demo_users)} demo users.")
             
@@ -211,13 +211,13 @@ async def update_all_users_dynamic_portfolio():
             for user in demo_users:
                 all_users.append({"id": user.id, "user_type": "demo", "group_name": user.group_name})
             
-            logger.info(f"[AUTO-CUTOFF] Processing {len(all_users)} users for dynamic portfolio update...")
+            logger.debug(f"[AUTO-CUTOFF] Processing {len(all_users)} users for dynamic portfolio update...")
             # Process each user
             for user_info in all_users:
                 user_id = user_info["id"]
                 user_type = user_info["user_type"]
                 group_name = user_info["group_name"]
-                logger.info(f"[AUTO-CUTOFF] Processing user {user_id} ({user_type}), group: {group_name}")
+                logger.debug(f"[AUTO-CUTOFF] Processing user {user_id} ({user_type}), group: {group_name}")
                 
                 try:
                     # Get user data from cache or DB
@@ -235,26 +235,7 @@ async def update_all_users_dynamic_portfolio():
                     group_symbol_settings = await get_group_symbol_settings_cache(global_redis_client_instance, group_name, "ALL")
                     # print(f"Group Symbol Settings {group_symbol_settings}")
                     logger.debug(f"[AUTO-CUTOFF] Group symbol settings for group '{group_name}' from cache: {group_symbol_settings}")
-                    # Robust fallback: If cache is missing or sending_orders is None, fetch from DB and update cache
-                    # if group_symbol_settings is None or group_symbol_settings.get('sending_orders') is None:
-                    #     logger.warning(f"[AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for '{group_name}', fetching from DB.")
-                    #     from app.crud.group import get_group_by_name
-                    #     db_group = await get_group_by_name(db, group_name)
-                    #     logger.debug(f"[AUTO-CUTOFF] DB group fetch result for '{group_name}': {db_group}")
-                    #     if db_group:
-                    #         settings = {
-                    #             "sending_orders": getattr(db_group[0] if isinstance(db_group, list) else db_group, 'sending_orders', None),
-                    #             # Add more group-level settings here if needed
-                    #         }
-                    #         await set_group_settings_cache(global_redis_client_instance, group_name, settings)
-                    #         group_symbol_settings = settings
-                    #         logger.info(f"[AUTO-CUTOFF] Group symbol settings fetched from DB and cached for group '{group_name}': {settings}")
-                    #     else:
-                    #         logger.error(f"[AUTO-CUTOFF] Group symbol settings not found in DB for group '{group_name}'. Skipping portfolio update for user {user_id}.")
-                    #         continue
-                    # if not group_symbol_settings:
-                    #     logger.warning(f"[AUTO-CUTOFF] No group settings found for group {group_name}. Skipping portfolio update for user {user_id}.")
-                    #     continue
+
 
                     if group_symbol_settings is None or not any(isinstance(v, dict) and ('margin' in v or 'spread' in v) for v in group_symbol_settings.values()):
                         logger.warning(f"[AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for '{group_name}', fetching from DB.")
@@ -266,7 +247,7 @@ async def update_all_users_dynamic_portfolio():
                             # Now reload the cache
                             group_symbol_settings = await get_group_symbol_settings_cache(global_redis_client_instance, group_name, "ALL")
                             # print(f"Group Symbol Settings {group_symbol_settings}")
-                            logger.info(f"[AUTO-CUTOFF] Group symbol settings fetched from DB and cached for group '{group_name}'")
+                            logger.debug(f"[AUTO-CUTOFF] Group symbol settings fetched from DB and cached for group '{group_name}'")
                         else:
                             logger.error(f"[AUTO-CUTOFF] Group symbol settings not found in DB for group '{group_name}'. Skipping portfolio update for user {user_id}.")
                             continue
@@ -355,7 +336,7 @@ async def update_all_users_dynamic_portfolio():
                     logger.debug(f"[AUTO-CUTOFF] User {user_id} margin thresholds: call={margin_call_threshold}, cutoff={margin_cutoff_threshold}")
                     
                     # Calculate portfolio metrics with margin call detection
-                    logger.info(f"[AUTO-CUTOFF] Calculating portfolio metrics for user {user_id}...")
+                    logger.debug(f"[AUTO-CUTOFF] Calculating portfolio metrics for user {user_id}...")
                     portfolio_metrics = await calculate_user_portfolio(
                         user_data=user_data,
                         open_positions=open_positions,
@@ -365,7 +346,7 @@ async def update_all_users_dynamic_portfolio():
                         db=db,
                         margin_call_threshold=margin_call_threshold
                     )
-                    logger.info(f"[AUTO-CUTOFF] Portfolio metrics for user {user_id}: {portfolio_metrics}")
+                    logger.debug(f"[AUTO-CUTOFF] Portfolio metrics for user {user_id}: {portfolio_metrics}")
                     
                     # Cache the dynamic portfolio data
                     dynamic_portfolio_data = {
@@ -416,7 +397,7 @@ async def update_all_users_dynamic_portfolio():
                     elif portfolio_metrics.get("margin_call", False):
                         autocutoff_logger.warning(f"[AUTO-CUTOFF] User {user_id} has margin call condition: margin level {margin_level}%")
                     
-                    logger.info(f"[AUTO-CUTOFF] Portfolio update completed for user {user_id}")
+                    logger.debug(f"[AUTO-CUTOFF] Portfolio update completed for user {user_id}")
                     
                 except Exception as user_error:
                     logger.error(f"[AUTO-CUTOFF] Error updating portfolio for user {user_id}: {user_error}", exc_info=True)
@@ -457,13 +438,13 @@ async def handle_margin_cutoff(db: AsyncSession, redis_client: Redis, user_id: i
                         }
                         await set_group_settings_cache(redis_client, user_for_cutoff.group_name, settings)
                         group_settings = settings
-                        autocutoff_logger.info(f"[AUTO-CUTOFF] Group settings fetched from DB and cached for group '{user_for_cutoff.group_name}'")
+                        autocutoff_logger.debug(f"[AUTO-CUTOFF] Group settings fetched from DB and cached for group '{user_for_cutoff.group_name}'")
                     else:
                         autocutoff_logger.error(f"[AUTO-CUTOFF] Group settings not found in DB for group '{user_for_cutoff.group_name}'. Cannot proceed with auto-cutoff for user {user_id}.")
                         return
                 if group_settings.get('sending_orders', '').lower() == 'barclays':
                     is_barclays_live_user = True
-                    autocutoff_logger.info(f"[AUTO-CUTOFF] User {user_id} identified as Barclays live user")
+                    autocutoff_logger.debug(f"[AUTO-CUTOFF] User {user_id} identified as Barclays live user")
                 else:
                     autocutoff_logger.debug(f"[AUTO-CUTOFF] User {user_id} is not a Barclays live user (sending_orders={group_settings.get('sending_orders')})")
             else:
@@ -494,7 +475,7 @@ async def handle_margin_cutoff(db: AsyncSession, redis_client: Redis, user_id: i
                     autocutoff_flag_key = f"autocutoff_close_sent:{order.order_id}"
                     was_set = await redis_client.set(autocutoff_flag_key, "1", ex=48*60*60, nx=True)
                     if not was_set:
-                        autocutoff_logger.info(f"[AUTO-CUTOFF] Close request already sent for order {order.order_id}, skipping.")
+                        autocutoff_logger.debug(f"[AUTO-CUTOFF] Close request already sent for order {order.order_id}, skipping.")
                         continue
                     autocutoff_logger.debug(f"[AUTO-CUTOFF] Preparing to close order {order.order_id} for user {user_id}")
                     close_id = await generate_unique_10_digit_id(db, UserOrder, 'close_id')
@@ -878,7 +859,7 @@ async def startup_event():
         #     id='update_all_users_dynamic_portfolio',
         #     replace_existing=True
         # )
-        logger.info("[AUTO-CUTOFF] update_all_users_dynamic_portfolio will run as a background asyncio task, not via APScheduler.")
+        logger.debug("[AUTO-CUTOFF] update_all_users_dynamic_portfolio will run as a background asyncio task, not via APScheduler.")
         
         scheduler.add_job(
             rotate_service_account_jwt,
@@ -1530,7 +1511,7 @@ async def barclays_pending_order_margin_checker():
                             continue
                         pending_orders_sorted = sorted(active_pending_orders, key=lambda o: float(getattr(o, 'margin', 0.0) or 0.0))
                         total_pending_margin = sum([float(getattr(o, 'margin', 0.0) or 0.0) for o in pending_orders_sorted])
-                        logger.info(f"[BarclaysMarginChecker] User {user_id}: free_margin={free_margin}, total_pending_margin={total_pending_margin}, num_pending_orders={len(pending_orders_sorted)}")
+                        logger.debug(f"[BarclaysMarginChecker] User {user_id}: free_margin={free_margin}, total_pending_margin={total_pending_margin}, num_pending_orders={len(pending_orders_sorted)}")
                         logger.debug(f"User {user_id} total_pending_margin: {total_pending_margin}")
                         idx = 0
                         cancelled_any = False
@@ -1660,7 +1641,7 @@ async def barclays_pending_order_margin_checker():
 
 
 async def run_update_all_users_dynamic_portfolio_loop():
-    logger.info("[AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio background loop")
+    logger.debug("[AUTO-CUTOFF] Starting update_all_users_dynamic_portfolio background loop")
     while True:
         try:
             await update_all_users_dynamic_portfolio()

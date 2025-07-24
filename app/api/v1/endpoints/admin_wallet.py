@@ -94,17 +94,29 @@ async def admin_raw_market_data_websocket(
     # --- Initial snapshot: last_known_price cache ---
     snapshot = {}
     firebase_snapshot = get_latest_market_data()
+    def convert_bo_to_buy_sell(prices):
+        if not isinstance(prices, dict):
+            return prices
+        new_prices = {}
+        for k, v in prices.items():
+            if k == 'b':
+                new_prices['buy'] = v
+            elif k == 'o':
+                new_prices['sell'] = v
+            else:
+                new_prices[k] = v
+        return new_prices
     if firebase_snapshot:
         for symbol, prices in firebase_snapshot.items():
             last_price = await get_last_known_price(redis_client, symbol)
             if last_price:
-                snapshot[symbol] = last_price
+                snapshot[symbol] = convert_bo_to_buy_sell(last_price)
             else:
-                snapshot[symbol] = prices
+                snapshot[symbol] = convert_bo_to_buy_sell(prices)
     # No 'else: pass' needed here, it's implicitly handled if firebase_snapshot is empty
     # Send initial snapshot
     await websocket.send_text(json.dumps({
-        "type": "snapshot",
+        "type": "update",
         "data": snapshot
     }, cls=DecimalEncoder))
 
@@ -118,9 +130,11 @@ async def admin_raw_market_data_websocket(
                 if message and message.get("type") == "message":
                     try:
                         market_data = json.loads(message['data'])
+                        # Convert all price dicts in market_data
+                        converted_market_data = {symbol: convert_bo_to_buy_sell(prices) for symbol, prices in market_data.items()}
                         await websocket.send_text(json.dumps({
                             "type": "update",
-                            "data": market_data
+                            "data": converted_market_data
                         }, cls=DecimalEncoder))
                     except (WebSocketDisconnect, RuntimeError):
                         logger.info("Admin disconnected from raw market data websocket (send).")

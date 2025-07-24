@@ -885,7 +885,7 @@ async def process_order_stoploss_takeprofit(
         sending_orders = group_settings.get('sending_orders', '').lower() if group_settings else ''
         user_type = user.get('user_type') if isinstance(user, dict) else getattr(user, 'user_type', None)
         if sending_orders == 'barclays' and user_type == 'live':
-            logger.info(f"[SLTP_CHECK] Skipping SL/TP execution for Barclays live user {order_user_id} order {order_id} (handled by service provider)")
+            logger.debug(f"[SLTP_CHECK] Skipping SL/TP execution for Barclays live user {order_user_id} order {order_id} (handled by service provider)")
             return
         # Get adjusted market price
         adjusted_price = await get_adjusted_market_price_cache(redis_client, group_name, symbol)

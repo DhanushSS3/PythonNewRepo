@@ -273,7 +273,9 @@ async def set_user_balance_margin_cache(redis_client: Redis, user_id: int, walle
                 verify_parsed = json.loads(verify_data, object_hook=decode_decimal)
                 cached_margin = verify_parsed.get("margin", "0.0")
                 cached_balance = verify_parsed.get("wallet_balance", "0.0")
-                if cached_margin != str(margin) or cached_balance != str(wallet_balance):
+                cached_margin_decimal = Decimal(cached_margin)
+                cached_balance_decimal = Decimal(cached_balance)
+                if cached_margin_decimal != margin or cached_balance_decimal != wallet_balance:
                     cache_logger.error(f"Cache verification failed for user {user_id}: expected balance={wallet_balance}, margin={margin}, cached balance={cached_balance}, margin={cached_margin}")
                     # Retry once
                     await redis_client.set(key, data_serializable, ex=USER_BALANCE_MARGIN_CACHE_EXPIRY_SECONDS)

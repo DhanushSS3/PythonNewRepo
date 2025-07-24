@@ -1231,8 +1231,8 @@ async def get_user_pending_orders(
     )
     
     # Convert to response format
-    from app.schemas.order import OrderResponse
-    return [OrderResponse.model_validate(order.__dict__) for order in pending_orders]
+    from app.schemas.order import PendingOrderResponse
+    return [PendingOrderResponse.model_validate(order.__dict__) for order in pending_orders]
 
 @router.get(
     "/{user_id}/closed-orders",
