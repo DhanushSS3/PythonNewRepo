@@ -866,3 +866,137 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-24 05:51:29,328 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
 2025-07-24 05:52:41,333 - INFO - websocket - Redis publisher task cancelled.
 2025-07-24 05:52:41,333 - INFO - websocket - Redis publisher task finished.
+2025-07-25 02:13:14,120 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-25 02:13:17,492 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59897
+2025-07-25 02:13:17,493 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59897
+2025-07-25 02:13:17,496 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-25 02:13:17,579 - WARNING - websocket - Authentication failed for account_number ME4CA (type live): User not found in correct table.
+2025-07-25 02:13:29,691 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59954
+2025-07-25 02:13:29,692 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59954
+2025-07-25 02:13:29,694 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-25 02:13:29,811 - WARNING - websocket - Authentication failed for account_number ME4CA (type live): User not found in correct table.
+2025-07-25 02:13:35,157 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59975
+2025-07-25 02:13:35,157 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59975
+2025-07-25 02:13:35,161 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-25 02:13:35,247 - WARNING - websocket - Authentication failed for account_number ME4CA (type live): User not found in correct table.
+2025-07-25 02:13:40,583 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59986
+2025-07-25 02:13:40,584 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59986
+2025-07-25 02:13:40,587 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-25 02:13:40,664 - WARNING - websocket - Authentication failed for account_number ME4CA (type live): User not found in correct table.
+2025-07-25 02:13:45,995 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59995
+2025-07-25 02:13:45,996 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59995
+2025-07-25 02:13:45,998 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-25 02:13:46,070 - WARNING - websocket - Authentication failed for account_number ME4CA (type live): User not found in correct table.
+2025-07-25 02:13:56,720 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:60035
+2025-07-25 02:13:56,721 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:60035
+2025-07-25 02:13:56,727 - INFO - websocket - WebSocket auth: Authenticating user DYY5A (live)
+2025-07-25 02:13:56,853 - INFO - websocket - User 4: WebSocket initialized with balance=237.20000000, margin=64.73524599
+2025-07-25 02:14:05,948 - INFO - websocket - User 4: Successfully updated static orders cache with 4 open orders and 0 pending orders
+2025-07-25 02:14:06,291 - INFO - websocket - User DYY5A: WebSocket connection established successfully
+2025-07-25 02:14:35,867 - INFO - websocket - User 4: Successfully updated static orders cache with 3 open orders and 0 pending orders
+2025-07-25 02:14:37,645 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:14:37,654 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:14:48,089 - INFO - websocket - User DYY5A: WebSocket disconnected
+2025-07-25 02:14:50,068 - INFO - websocket - Redis publisher task cancelled.
+2025-07-25 02:14:50,068 - INFO - websocket - Redis publisher task finished.
+2025-07-25 02:19:15,184 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-25 02:19:25,787 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:60899
+2025-07-25 02:19:25,789 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:60899
+2025-07-25 02:19:25,792 - INFO - websocket - WebSocket auth: Authenticating user DYY5A (live)
+2025-07-25 02:19:25,931 - INFO - websocket - User 4: WebSocket initialized with balance=222.84000000, margin=27.14707935
+2025-07-25 02:19:34,519 - INFO - websocket - User 4: Successfully updated static orders cache with 4 open orders and 0 pending orders
+2025-07-25 02:19:34,952 - INFO - websocket - User DYY5A: WebSocket connection established successfully
+2025-07-25 02:19:46,865 - INFO - websocket - User 4: Successfully updated static orders cache with 4 open orders and 0 pending orders
+2025-07-25 02:19:48,358 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:19:48,364 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:19:49,758 - INFO - websocket - User 4: Successfully updated static orders cache with 4 open orders and 0 pending orders
+2025-07-25 02:19:51,548 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:19:51,559 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:19:52,448 - INFO - websocket - User 4: Successfully updated static orders cache with 4 open orders and 0 pending orders
+2025-07-25 02:19:54,295 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:19:54,300 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:19:55,780 - INFO - websocket - User 4: Successfully updated static orders cache with 6 open orders and 0 pending orders
+2025-07-25 02:19:56,886 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:19:56,897 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:20:26,431 - INFO - websocket - User 4: Successfully updated static orders cache with 8 open orders and 0 pending orders
+2025-07-25 02:20:28,098 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:20:28,178 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:20:28,929 - INFO - websocket - User 4: Successfully updated static orders cache with 8 open orders and 0 pending orders
+2025-07-25 02:20:31,055 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:20:31,059 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:20:31,647 - INFO - websocket - User 4: Successfully updated static orders cache with 8 open orders and 0 pending orders
+2025-07-25 02:20:33,308 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:20:33,313 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:20:34,808 - INFO - websocket - User DYY5A: WebSocket disconnected
+2025-07-25 02:20:35,360 - INFO - websocket - Redis publisher task cancelled.
+2025-07-25 02:20:35,360 - INFO - websocket - Redis publisher task finished.
+2025-07-25 02:22:52,161 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-25 02:22:57,057 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:61430
+2025-07-25 02:22:57,057 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:61430
+2025-07-25 02:22:57,062 - INFO - websocket - WebSocket auth: Authenticating user DYY5A (live)
+2025-07-25 02:22:57,607 - INFO - websocket - User 4: WebSocket initialized with balance=222.84000000, margin=73.14127508
+2025-07-25 02:23:09,340 - INFO - websocket - User 4: Successfully updated static orders cache with 11 open orders and 0 pending orders
+2025-07-25 02:23:10,160 - INFO - websocket - User 4: Successfully updated static orders cache with 11 open orders and 0 pending orders
+2025-07-25 02:23:10,899 - INFO - websocket - User DYY5A: WebSocket connection established successfully
+2025-07-25 02:23:12,218 - INFO - websocket - User 4: Successfully updated static orders cache with 11 open orders and 0 pending orders
+2025-07-25 02:23:13,551 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:23:13,554 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:24:26,572 - INFO - websocket - User DYY5A: WebSocket disconnected
+2025-07-25 02:24:29,118 - INFO - websocket - Redis publisher task cancelled.
+2025-07-25 02:24:29,118 - INFO - websocket - Redis publisher task finished.
+2025-07-25 02:26:29,562 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-25 02:26:33,170 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:61981
+2025-07-25 02:26:33,171 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:61981
+2025-07-25 02:26:33,175 - INFO - websocket - WebSocket auth: Authenticating user DYY5A (live)
+2025-07-25 02:26:33,614 - INFO - websocket - User 4: WebSocket initialized with balance=222.84000000, margin=86.28247386
+2025-07-25 02:26:42,019 - INFO - websocket - User 4: Successfully updated static orders cache with 13 open orders and 0 pending orders
+2025-07-25 02:26:45,724 - INFO - websocket - User 4: Successfully updated static orders cache with 14 open orders and 0 pending orders
+2025-07-25 02:26:46,036 - INFO - websocket - User 4: Successfully updated static orders cache with 14 open orders and 0 pending orders
+2025-07-25 02:26:46,401 - INFO - websocket - User DYY5A: WebSocket connection established successfully
+2025-07-25 02:26:47,590 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received ORDER_UPDATE message
+2025-07-25 02:26:47,598 - INFO - websocket - [WEBSOCKET_DEBUG] User 4: Received USER_DATA_UPDATE message
+2025-07-25 02:28:52,690 - INFO - websocket - User DYY5A: WebSocket disconnected
+2025-07-25 02:28:53,283 - INFO - websocket - Redis publisher task cancelled.
+2025-07-25 02:28:53,283 - INFO - websocket - Redis publisher task finished.
+2025-07-25 02:29:56,501 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-25 02:30:03,141 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:62541
+2025-07-25 02:30:03,142 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:62541
+2025-07-25 02:30:03,145 - INFO - websocket - WebSocket auth: Authenticating user DYY5A (live)
+2025-07-25 02:30:03,384 - INFO - websocket - User 4: WebSocket initialized with balance=222.84000000, margin=99.42367264
+2025-07-25 02:30:14,113 - INFO - websocket - User 4: Successfully updated static orders cache with 15 open orders and 0 pending orders
+2025-07-25 02:30:21,660 - INFO - websocket - User 4: Successfully updated static orders cache with 16 open orders and 0 pending orders
+2025-07-25 02:30:21,884 - INFO - websocket - User DYY5A: WebSocket connection established successfully
+2025-07-25 02:30:51,003 - INFO - websocket - User DYY5A: WebSocket disconnected
+2025-07-25 02:30:51,088 - INFO - websocket - Redis publisher task cancelled.
+2025-07-25 02:30:51,089 - INFO - websocket - Redis publisher task finished.
+2025-07-25 02:32:13,424 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-25 02:32:17,077 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:62864
+2025-07-25 02:32:17,078 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:62864
+2025-07-25 02:32:17,086 - INFO - websocket - WebSocket auth: Authenticating user DYY5A (live)
+2025-07-25 02:32:17,591 - INFO - websocket - User 4: WebSocket initialized with balance=222.84000000, margin=105.99427203
+2025-07-25 02:32:25,451 - INFO - websocket - User 4: Successfully updated static orders cache with 16 open orders and 0 pending orders
+2025-07-25 02:32:29,043 - INFO - websocket - User 4: Successfully updated static orders cache with 16 open orders and 0 pending orders
+2025-07-25 02:32:29,492 - INFO - websocket - User DYY5A: WebSocket connection established successfully
+2025-07-25 02:32:38,762 - INFO - websocket - User DYY5A: WebSocket disconnected
+2025-07-25 02:32:38,866 - INFO - websocket - Redis publisher task cancelled.
+2025-07-25 02:32:38,866 - INFO - websocket - Redis publisher task finished.
+2025-07-25 02:34:56,646 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-25 02:34:59,508 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:63284
+2025-07-25 02:34:59,510 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:63284
+2025-07-25 02:34:59,518 - INFO - websocket - WebSocket auth: Authenticating user DYY5A (live)
+2025-07-25 02:34:59,528 - WARNING - websocket - Authentication failed for account_number DYY5A (type live): User not found in correct table.
+2025-07-25 02:35:14,991 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:63336
+2025-07-25 02:35:14,991 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:63336
+2025-07-25 02:35:14,996 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-25 02:35:15,047 - INFO - websocket - User 31: WebSocket initialized with balance=5000.00000000, margin=0
+2025-07-25 02:35:15,820 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:35:16,102 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-25 02:35:24,563 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:35:25,031 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-25 02:35:25,067 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-25 02:35:26,489 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:35:26,875 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-25 02:35:26,889 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-25 02:35:30,954 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-25 02:35:31,074 - INFO - websocket - Redis publisher task cancelled.
+2025-07-25 02:35:31,074 - INFO - websocket - Redis publisher task finished.

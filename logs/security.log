@@ -407,3 +407,27 @@ Traceback (most recent call last):
   File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\redis\asyncio\connection.py", line 310, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6380, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 6380) connecting to localhost:6380.
+2025-07-25 02:13:11,001 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-25 02:13:11,004 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-25 02:13:46,227 - INFO - app.core.security - LOGOUT: user_id=31, email=cocexej852@dariolo.com, user_type=live, time=2025-07-25T09:13:46.227419
+2025-07-25 02:13:49,089 - INFO - app.core.security - LOGIN: user_id=4, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-25T09:13:49.089197
+2025-07-25 02:14:50,094 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-25 02:19:11,738 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-25 02:19:11,740 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-25 02:20:36,945 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-25 02:22:49,323 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-25 02:22:49,327 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-25 02:24:29,185 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-25 02:26:26,149 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-25 02:26:26,152 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-25 02:28:53,287 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-25 02:29:52,578 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-25 02:29:52,580 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-25 02:30:52,716 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-25 02:32:09,949 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-25 02:32:09,951 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-25 02:32:39,879 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-25 02:34:54,619 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-25 02:34:54,621 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-25 02:35:12,978 - INFO - app.core.security - LOGIN: user_id=31, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-25T09:35:12.977932
+2025-07-25 02:35:31,829 - INFO - app.core.security - [Redis] Connection closed successfully.

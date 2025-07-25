@@ -88,6 +88,7 @@ class OrderResponse(BaseModel):
 
 class PendingOrderResponse(BaseModel):
     order_id: str
+    order_user_id: int
     order_company_name: str
     order_type: str
     order_quantity: Decimal
