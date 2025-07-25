@@ -8857,3 +8857,295 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-25 02:35:31,822 - INFO - app.firebase_stream - Firebase Admin event processing task finished.
 2025-07-25 02:35:31,829 - INFO - app - Redis connection closed
 2025-07-25 02:35:31,830 - INFO - app - Application shutdown completed
+2025-07-25 02:37:12,270 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-25 02:37:12,302 - INFO - app.core.config - .env file loaded successfully.
+2025-07-25 02:37:12,318 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-25 02:37:12,318 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-25 02:37:12,618 - INFO - app - Application starting up - Trading system initialized
+2025-07-25 02:37:12,618 - INFO - app - SL/TP Epsilon accuracy configured: 0.00001
+2025-07-25 02:37:12,618 - INFO - app - Environment: PRODUCTION
+2025-07-25 02:37:12,743 - INFO - app - Application startup initiated
+2025-07-25 02:37:12,743 - INFO - app - Initializing core services...
+2025-07-25 02:37:12,784 - INFO - app - Firebase initialized
+2025-07-25 02:37:12,785 - WARNING - app.dependencies.redis_client - [Redis] Client not initialized, attempting late connection.
+2025-07-25 02:37:12,826 - INFO - app - Redis initialized
+2025-07-25 02:37:13,685 - INFO - app - All group settings, group-symbol settings, and external symbol info cached in Redis at startup.
+2025-07-25 02:37:13,688 - INFO - app - [SCHEDULER] Initializing APScheduler...
+2025-07-25 02:37:13,690 - INFO - app - [SWAP] daily_swap_charge_job triggered
+2025-07-25 02:37:13,691 - INFO - app - [SCHEDULER] About to start scheduler...
+2025-07-25 02:37:13,692 - INFO - app - [SCHEDULER] Scheduler started successfully.
+2025-07-25 02:37:13,692 - INFO - app - Scheduler initialized
+2025-07-25 02:37:13,693 - INFO - app.firebase_stream - Starting Firebase Admin event processing task for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-25 02:37:13,694 - INFO - app.firebase_stream - Attempting to start Firebase Admin listener for path: 'datafeeds'.
+2025-07-25 02:37:14,846 - INFO - app.firebase_stream - Firebase Admin listener started successfully for path: 'datafeeds'. Queuing data for Redis publishing.
+2025-07-25 02:37:14,860 - INFO - app - Starting stale cache cleanup task
+2025-07-25 02:37:14,922 - INFO - app - Cleaned up pending order stream for new trigger price format
+2025-07-25 02:37:14,922 - INFO - app - Background tasks initialized
+2025-07-25 02:37:14,922 - INFO - app - [SCHEDULER] Starting rotate_service_account_jwt job...
+2025-07-25 02:37:15,664 - INFO - app - Service account JWT for 'barclays_service_provider' was generated and pushed to Firebase.
+2025-07-25 02:37:15,665 - INFO - app - Application startup completed successfully
+2025-07-25 02:37:15,665 - INFO - app - Starting cache validation task
+2025-07-25 02:37:15,670 - INFO - app - Starting Barclays pending order margin checker task.
+2025-07-25 02:37:15,673 - INFO - app - Starting auto-cutoff order monitoring task.
+2025-07-25 02:37:15,677 - INFO - app - [SCHEDULER] Starting update_all_users_dynamic_portfolio job...
+2025-07-25 02:37:15,742 - INFO - app - [AUTO-CUTOFF] Found 19 live users and 11 demo users.
+2025-07-25 02:37:15,742 - INFO - app - Found 29 static orders cache entries to check
+2025-07-25 02:37:15,750 - INFO - app - Validating cache for 30 users
+2025-07-25 02:37:15,761 - WARNING - app - [AUTO-CUTOFF] No user data found for user 5 (live). Skipping portfolio update.
+2025-07-25 02:37:15,777 - WARNING - app - Found stale cache entry for user live:21, will be refreshed on next access
+2025-07-25 02:37:15,778 - WARNING - app - User 8: Missing balance/margin cache, refreshing...
+2025-07-25 02:37:15,781 - WARNING - app - Found stale cache entry for user live:29, will be refreshed on next access
+2025-07-25 02:37:15,788 - WARNING - app - Found stale cache entry for user live:24, will be refreshed on next access
+2025-07-25 02:37:15,790 - WARNING - app - User 9: Missing balance/margin cache, refreshing...
+2025-07-25 02:37:15,791 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-25 02:37:15,791 - WARNING - app - Found stale cache entry for user live:19, will be refreshed on next access
+2025-07-25 02:37:15,796 - WARNING - app - Found stale cache entry for user live:17, will be refreshed on next access
+2025-07-25 02:37:15,798 - WARNING - app - Found stale cache entry for user live:5, will be refreshed on next access
+2025-07-25 02:37:15,799 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 8.
+2025-07-25 02:37:15,800 - WARNING - app - Found stale cache entry for user live:6, will be refreshed on next access
+2025-07-25 02:37:15,803 - WARNING - app - Found stale cache entry for user live:23, will be refreshed on next access
+2025-07-25 02:37:15,806 - WARNING - app - Found stale cache entry for user live:20, will be refreshed on next access
+2025-07-25 02:37:15,807 - WARNING - app - Found stale cache entry for user live:8, will be refreshed on next access
+2025-07-25 02:37:15,808 - WARNING - app - User 10: Missing balance/margin cache, refreshing...
+2025-07-25 02:37:15,811 - WARNING - app - Found stale cache entry for user live:16, will be refreshed on next access
+2025-07-25 02:37:15,814 - WARNING - app - Found stale cache entry for user live:31, will be refreshed on next access
+2025-07-25 02:37:15,819 - WARNING - app - Found stale cache entry for user live:3, will be refreshed on next access
+2025-07-25 02:37:15,821 - WARNING - app - User 11: Missing balance/margin cache, refreshing...
+2025-07-25 02:37:15,821 - WARNING - app - Found stale cache entry for user live:2, will be refreshed on next access
+2025-07-25 02:37:15,825 - WARNING - app - Found stale cache entry for user live:12, will be refreshed on next access
+2025-07-25 02:37:15,827 - WARNING - app - Found stale cache entry for user live:13, will be refreshed on next access
+2025-07-25 02:37:15,829 - WARNING - app - Found stale cache entry for user live:18, will be refreshed on next access
+2025-07-25 02:37:15,831 - WARNING - app - Found stale cache entry for user live:30, will be refreshed on next access
+2025-07-25 02:37:15,832 - WARNING - app - Found stale cache entry for user live:22, will be refreshed on next access
+2025-07-25 02:37:15,832 - INFO - app - Completed stale cache cleanup task
+2025-07-25 02:37:15,884 - WARNING - app - User 12: Missing balance/margin cache, refreshing...
+2025-07-25 02:37:15,895 - WARNING - app - User 13: Missing balance/margin cache, refreshing...
+2025-07-25 02:37:15,903 - INFO - app - Cache validation completed
+2025-07-25 02:37:16,518 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 0.5647280842585786684204417966% which is below threshold 100.0%
+2025-07-25 02:37:16,521 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 0.5647280842585786684204417966
+2025-07-25 02:37:16,977 - WARNING - app - [AUTO-CUTOFF] User 10 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:17,010 - WARNING - app - [AUTO-CUTOFF] User 11 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:17,044 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:17,196 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 14, falling back to DB and updating cache.
+2025-07-25 02:37:17,679 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-25 02:37:17,715 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-25 02:37:17,727 - INFO - app - [AUTO-CUTOFF] User 14 margin_level: 0.0
+2025-07-25 02:37:17,761 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-25 02:37:17,782 - WARNING - app - [AUTO-CUTOFF] User 16 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:17,855 - WARNING - app - [AUTO-CUTOFF] User 17 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:17,921 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-25 02:37:17,959 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-25 02:37:17,982 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-25 02:37:17,994 - INFO - app.shared_state - Initialized redis_publish_queue in shared_state with maxsize=500.
+2025-07-25 02:37:18,159 - INFO - app.core.config - .env file loaded successfully.
+2025-07-25 02:37:18,183 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-25 02:37:18,183 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-25 02:37:18,208 - INFO - app.core.config - .env file loaded successfully.
+2025-07-25 02:37:18,226 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-25 02:37:18,226 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-25 02:37:18,227 - INFO - app.core.config - .env file loaded successfully.
+2025-07-25 02:37:18,233 - WARNING - app - [AUTO-CUTOFF] User 18 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:18,240 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-25 02:37:18,241 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-25 02:37:18,279 - WARNING - app - [AUTO-CUTOFF] User 19 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:18,283 - INFO - app.core.config - .env file loaded successfully.
+2025-07-25 02:37:18,303 - INFO - app.core.config - .env file loaded successfully.
+2025-07-25 02:37:18,305 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-25 02:37:18,306 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-25 02:37:18,311 - INFO - app.core.config - .env file loaded successfully.
+2025-07-25 02:37:18,313 - INFO - app.core.config - .env file loaded successfully.
+2025-07-25 02:37:18,320 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-25 02:37:18,320 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-25 02:37:18,323 - WARNING - app - [AUTO-CUTOFF] User 20 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:18,325 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-25 02:37:18,325 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-25 02:37:18,326 - INFO - app.core.config - Settings instance loaded. Project: Trading App, API Prefix: /api/v1
+2025-07-25 02:37:18,326 - INFO - app.database.session - Attempting to connect to database using URL: mysql+aiomysql://roo...
+2025-07-25 02:37:18,347 - WARNING - app - [AUTO-CUTOFF] User 21 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:18,365 - WARNING - app - [AUTO-CUTOFF] User 22 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:18,379 - WARNING - app - [AUTO-CUTOFF] User 23 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:18,480 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 25, falling back to DB and updating cache.
+2025-07-25 02:37:18,805 - INFO - app - [AUTO-CUTOFF] User 25 margin_level: 0.0
+2025-07-25 02:37:18,934 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 26, falling back to DB and updating cache.
+2025-07-25 02:37:19,249 - INFO - app - [AUTO-CUTOFF] User 26 margin_level: 0.0
+2025-07-25 02:37:19,280 - WARNING - app - [AUTO-CUTOFF] User 29 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:19,307 - WARNING - app - [AUTO-CUTOFF] User 31 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:19,451 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 1, falling back to DB and updating cache.
+2025-07-25 02:37:19,762 - INFO - app - [AUTO-CUTOFF] User 1 margin_level: 0.0
+2025-07-25 02:37:19,764 - WARNING - app - [AUTO-CUTOFF] User 2 has no group_name set. Skipping portfolio update.
+2025-07-25 02:37:19,778 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-25 02:37:19,780 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 3.
+2025-07-25 02:37:19,814 - WARNING - app - [AUTO-CUTOFF] User 4 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:19,815 - WARNING - app - [AUTO-CUTOFF] User 5 has no group_name set. Skipping portfolio update.
+2025-07-25 02:37:19,817 - WARNING - app - [AUTO-CUTOFF] User 6 has no group_name set. Skipping portfolio update.
+2025-07-25 02:37:19,954 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 9, falling back to DB and updating cache.
+2025-07-25 02:37:20,278 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 101.9936699678904406360013927
+2025-07-25 02:37:20,365 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 10, falling back to DB and updating cache.
+2025-07-25 02:37:20,684 - INFO - app - [AUTO-CUTOFF] User 10 margin_level: 0.0
+2025-07-25 02:37:20,796 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 11, falling back to DB and updating cache.
+2025-07-25 02:37:21,098 - INFO - app - [AUTO-CUTOFF] User 11 margin_level: 0.0
+2025-07-25 02:37:21,159 - WARNING - app - [AUTO-CUTOFF] User 12 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:21,278 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:30,669 - INFO - app - Starting stale cache cleanup task
+2025-07-25 02:37:30,672 - INFO - app - Found 29 static orders cache entries to check
+2025-07-25 02:37:30,678 - WARNING - app - Found stale cache entry for user live:21, will be refreshed on next access
+2025-07-25 02:37:30,682 - WARNING - app - Found stale cache entry for user live:29, will be refreshed on next access
+2025-07-25 02:37:30,687 - WARNING - app - Found stale cache entry for user live:24, will be refreshed on next access
+2025-07-25 02:37:30,692 - WARNING - app - Found stale cache entry for user live:19, will be refreshed on next access
+2025-07-25 02:37:30,693 - WARNING - app - Found stale cache entry for user live:17, will be refreshed on next access
+2025-07-25 02:37:30,695 - WARNING - app - Found stale cache entry for user live:5, will be refreshed on next access
+2025-07-25 02:37:30,698 - WARNING - app - Found stale cache entry for user live:6, will be refreshed on next access
+2025-07-25 02:37:30,701 - WARNING - app - Found stale cache entry for user live:23, will be refreshed on next access
+2025-07-25 02:37:30,706 - WARNING - app - Found stale cache entry for user live:20, will be refreshed on next access
+2025-07-25 02:37:30,708 - WARNING - app - Found stale cache entry for user live:8, will be refreshed on next access
+2025-07-25 02:37:30,713 - WARNING - app - Found stale cache entry for user live:16, will be refreshed on next access
+2025-07-25 02:37:30,715 - WARNING - app - Found stale cache entry for user live:31, will be refreshed on next access
+2025-07-25 02:37:30,720 - WARNING - app - Found stale cache entry for user live:3, will be refreshed on next access
+2025-07-25 02:37:30,722 - WARNING - app - Found stale cache entry for user live:2, will be refreshed on next access
+2025-07-25 02:37:30,725 - WARNING - app - Found stale cache entry for user live:12, will be refreshed on next access
+2025-07-25 02:37:30,727 - WARNING - app - Found stale cache entry for user live:13, will be refreshed on next access
+2025-07-25 02:37:30,730 - WARNING - app - Found stale cache entry for user live:18, will be refreshed on next access
+2025-07-25 02:37:30,734 - WARNING - app - Found stale cache entry for user live:30, will be refreshed on next access
+2025-07-25 02:37:30,736 - WARNING - app - Found stale cache entry for user live:22, will be refreshed on next access
+2025-07-25 02:37:30,737 - INFO - app - Completed stale cache cleanup task
+2025-07-25 02:37:51,299 - INFO - app - [SCHEDULER] Starting update_all_users_dynamic_portfolio job...
+2025-07-25 02:37:51,318 - INFO - app - [AUTO-CUTOFF] Found 19 live users and 11 demo users.
+2025-07-25 02:37:51,322 - WARNING - app - [AUTO-CUTOFF] No user data found for user 5 (live). Skipping portfolio update.
+2025-07-25 02:37:51,336 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-25 02:37:51,338 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 8.
+2025-07-25 02:37:51,717 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 0.01355830979921853843475569655% which is below threshold 100.0%
+2025-07-25 02:37:51,726 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 0.01355830979921853843475569655
+2025-07-25 02:37:51,817 - WARNING - app - [AUTO-CUTOFF] User 10 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:51,840 - WARNING - app - [AUTO-CUTOFF] User 11 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:51,860 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:51,932 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 14, falling back to DB and updating cache.
+2025-07-25 02:37:52,263 - INFO - app - [AUTO-CUTOFF] User 14 margin_level: 0.0
+2025-07-25 02:37:52,300 - WARNING - app - [AUTO-CUTOFF] User 16 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:52,322 - WARNING - app - [AUTO-CUTOFF] User 17 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:52,345 - WARNING - app - [AUTO-CUTOFF] User 18 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:52,384 - WARNING - app - [AUTO-CUTOFF] User 19 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:52,411 - WARNING - app - [AUTO-CUTOFF] User 20 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:52,439 - WARNING - app - [AUTO-CUTOFF] User 21 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:52,466 - WARNING - app - [AUTO-CUTOFF] User 22 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:52,493 - WARNING - app - [AUTO-CUTOFF] User 23 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:52,592 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 25, falling back to DB and updating cache.
+2025-07-25 02:37:52,889 - INFO - app - [AUTO-CUTOFF] User 25 margin_level: 0.0
+2025-07-25 02:37:53,030 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 26, falling back to DB and updating cache.
+2025-07-25 02:37:53,327 - INFO - app - [AUTO-CUTOFF] User 26 margin_level: 0.0
+2025-07-25 02:37:53,383 - WARNING - app - [AUTO-CUTOFF] User 29 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:53,427 - WARNING - app - [AUTO-CUTOFF] User 31 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:53,515 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 1, falling back to DB and updating cache.
+2025-07-25 02:37:53,517 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 1, falling back to DB and updating cache.
+2025-07-25 02:37:53,863 - INFO - app - [AUTO-CUTOFF] User 1 margin_level: 0.0
+2025-07-25 02:37:53,864 - WARNING - app - [AUTO-CUTOFF] User 2 has no group_name set. Skipping portfolio update.
+2025-07-25 02:37:53,879 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-25 02:37:53,881 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 3.
+2025-07-25 02:37:53,908 - WARNING - app - [AUTO-CUTOFF] User 4 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:53,909 - WARNING - app - [AUTO-CUTOFF] User 5 has no group_name set. Skipping portfolio update.
+2025-07-25 02:37:53,909 - WARNING - app - [AUTO-CUTOFF] User 6 has no group_name set. Skipping portfolio update.
+2025-07-25 02:37:54,059 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 9, falling back to DB and updating cache.
+2025-07-25 02:37:54,384 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 101.9936699678904406360013927
+2025-07-25 02:37:54,491 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 10, falling back to DB and updating cache.
+2025-07-25 02:37:54,890 - INFO - app - [AUTO-CUTOFF] User 10 margin_level: 0.0
+2025-07-25 02:37:55,030 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 11, falling back to DB and updating cache.
+2025-07-25 02:37:55,424 - INFO - app - [AUTO-CUTOFF] User 11 margin_level: 0.0
+2025-07-25 02:37:55,453 - WARNING - app - [AUTO-CUTOFF] User 12 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:55,477 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:37:56,627 - INFO - app.api.v1.endpoints.users - Logout successful for user ID 31 by invalidating refresh token.
+2025-07-25 02:38:01,379 - INFO - app.api.v1.endpoints.favorites - Direct SQL query found 1 symbols for user 1
+2025-07-25 02:38:01,379 - INFO - app.api.v1.endpoints.favorites - Symbols: ['AUDCAD']
+2025-07-25 02:38:13,222 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user None, falling back to DB and updating cache.
+2025-07-25 02:38:13,239 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user None, falling back to DB and updating cache.
+2025-07-25 02:38:15,486 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user None, falling back to DB and updating cache.
+2025-07-25 02:38:15,491 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user None, falling back to DB and updating cache.
+2025-07-25 02:38:20,169 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user None, falling back to DB and updating cache.
+2025-07-25 02:38:20,172 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user None, falling back to DB and updating cache.
+2025-07-25 02:38:25,480 - INFO - app - [SCHEDULER] Starting update_all_users_dynamic_portfolio job...
+2025-07-25 02:38:25,490 - INFO - app - [AUTO-CUTOFF] Found 19 live users and 11 demo users.
+2025-07-25 02:38:25,498 - WARNING - app - [AUTO-CUTOFF] No user data found for user 5 (live). Skipping portfolio update.
+2025-07-25 02:38:25,517 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-25 02:38:25,520 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 8.
+2025-07-25 02:38:25,913 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 0.009115439668845990173701110294% which is below threshold 100.0%
+2025-07-25 02:38:25,947 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 0.009115439668845990173701110294
+2025-07-25 02:38:26,018 - WARNING - app - [AUTO-CUTOFF] User 10 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,043 - WARNING - app - [AUTO-CUTOFF] User 11 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,068 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,132 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 14, falling back to DB and updating cache.
+2025-07-25 02:38:26,533 - INFO - app - [AUTO-CUTOFF] User 14 margin_level: 0.0
+2025-07-25 02:38:26,593 - WARNING - app - [AUTO-CUTOFF] User 16 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,630 - WARNING - app - [AUTO-CUTOFF] User 17 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,656 - WARNING - app - [AUTO-CUTOFF] User 18 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,669 - WARNING - app - [AUTO-CUTOFF] User 19 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,684 - WARNING - app - [AUTO-CUTOFF] User 20 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,701 - WARNING - app - [AUTO-CUTOFF] User 21 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,714 - WARNING - app - [AUTO-CUTOFF] User 22 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,748 - WARNING - app - [AUTO-CUTOFF] User 23 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:26,874 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 25, falling back to DB and updating cache.
+2025-07-25 02:38:27,244 - INFO - app - [AUTO-CUTOFF] User 25 margin_level: 0.0
+2025-07-25 02:38:27,330 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 26, falling back to DB and updating cache.
+2025-07-25 02:38:27,656 - INFO - app - [AUTO-CUTOFF] User 26 margin_level: 0.0
+2025-07-25 02:38:27,689 - WARNING - app - [AUTO-CUTOFF] User 29 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:27,704 - WARNING - app - [AUTO-CUTOFF] User 31 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:27,720 - WARNING - app - [AUTO-CUTOFF] User 1 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:27,721 - WARNING - app - [AUTO-CUTOFF] User 2 has no group_name set. Skipping portfolio update.
+2025-07-25 02:38:27,725 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-25 02:38:27,727 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 3.
+2025-07-25 02:38:27,744 - WARNING - app - [AUTO-CUTOFF] User 4 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:27,744 - WARNING - app - [AUTO-CUTOFF] User 5 has no group_name set. Skipping portfolio update.
+2025-07-25 02:38:27,745 - WARNING - app - [AUTO-CUTOFF] User 6 has no group_name set. Skipping portfolio update.
+2025-07-25 02:38:27,811 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 9, falling back to DB and updating cache.
+2025-07-25 02:38:28,170 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 101.9936699678904406360013927
+2025-07-25 02:38:28,307 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 10, falling back to DB and updating cache.
+2025-07-25 02:38:28,707 - INFO - app - [AUTO-CUTOFF] User 10 margin_level: 0.0
+2025-07-25 02:38:28,813 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 11, falling back to DB and updating cache.
+2025-07-25 02:38:29,109 - INFO - app - [AUTO-CUTOFF] User 11 margin_level: 0.0
+2025-07-25 02:38:29,151 - WARNING - app - [AUTO-CUTOFF] User 12 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:29,167 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:59,176 - INFO - app - [SCHEDULER] Starting update_all_users_dynamic_portfolio job...
+2025-07-25 02:38:59,185 - INFO - app - [AUTO-CUTOFF] Found 19 live users and 11 demo users.
+2025-07-25 02:38:59,190 - WARNING - app - [AUTO-CUTOFF] No user data found for user 5 (live). Skipping portfolio update.
+2025-07-25 02:38:59,209 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-25 02:38:59,211 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 8.
+2025-07-25 02:38:59,600 - WARNING - app.services.portfolio_calculator - MARGIN CALL ALERT: User has margin level 0.2576622886765445471778405354% which is below threshold 100.0%
+2025-07-25 02:38:59,614 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 0.2576622886765445471778405354
+2025-07-25 02:38:59,690 - WARNING - app - [AUTO-CUTOFF] User 10 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:59,709 - WARNING - app - [AUTO-CUTOFF] User 11 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:59,733 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:38:59,810 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 14, falling back to DB and updating cache.
+2025-07-25 02:39:00,225 - INFO - app - [AUTO-CUTOFF] User 14 margin_level: 0.0
+2025-07-25 02:39:00,258 - WARNING - app - [AUTO-CUTOFF] User 16 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:00,279 - WARNING - app - [AUTO-CUTOFF] User 17 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:00,296 - WARNING - app - [AUTO-CUTOFF] User 18 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:00,317 - WARNING - app - [AUTO-CUTOFF] User 19 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:00,335 - WARNING - app - [AUTO-CUTOFF] User 20 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:00,356 - WARNING - app - [AUTO-CUTOFF] User 21 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:00,372 - WARNING - app - [AUTO-CUTOFF] User 22 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:00,387 - WARNING - app - [AUTO-CUTOFF] User 23 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:00,455 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 25, falling back to DB and updating cache.
+2025-07-25 02:39:00,773 - INFO - app - [AUTO-CUTOFF] User 25 margin_level: 0.0
+2025-07-25 02:39:00,868 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_balance_margin cache miss for user 26, falling back to DB and updating cache.
+2025-07-25 02:39:01,176 - INFO - app - [AUTO-CUTOFF] User 26 margin_level: 0.0
+2025-07-25 02:39:01,215 - WARNING - app - [AUTO-CUTOFF] User 29 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:01,236 - WARNING - app - [AUTO-CUTOFF] User 31 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:01,258 - WARNING - app - [AUTO-CUTOFF] User 1 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:01,259 - WARNING - app - [AUTO-CUTOFF] User 2 has no group_name set. Skipping portfolio update.
+2025-07-25 02:39:01,266 - WARNING - app - [AUTO-CUTOFF] Group symbol settings missing or incomplete in cache for 'string', fetching from DB.
+2025-07-25 02:39:01,268 - ERROR - app - [AUTO-CUTOFF] Group symbol settings not found in DB for group 'string'. Skipping portfolio update for user 3.
+2025-07-25 02:39:01,286 - WARNING - app - [AUTO-CUTOFF] User 4 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:01,287 - WARNING - app - [AUTO-CUTOFF] User 5 has no group_name set. Skipping portfolio update.
+2025-07-25 02:39:01,288 - WARNING - app - [AUTO-CUTOFF] User 6 has no group_name set. Skipping portfolio update.
+2025-07-25 02:39:01,359 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 9, falling back to DB and updating cache.
+2025-07-25 02:39:01,664 - INFO - app - [AUTO-CUTOFF] User 9 margin_level: 101.9936699678904406360013927
+2025-07-25 02:39:01,756 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 10, falling back to DB and updating cache.
+2025-07-25 02:39:02,055 - INFO - app - [AUTO-CUTOFF] User 10 margin_level: 0.0
+2025-07-25 02:39:02,236 - WARNING - app.services.portfolio_calculator - [PORTFOLIO] user_static_orders cache miss for user 11, falling back to DB and updating cache.
+2025-07-25 02:39:02,545 - INFO - app - [AUTO-CUTOFF] User 11 margin_level: 0.0
+2025-07-25 02:39:02,585 - WARNING - app - [AUTO-CUTOFF] User 12 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:02,620 - WARNING - app - [AUTO-CUTOFF] User 13 has no open or pending orders. Skipping portfolio update.
+2025-07-25 02:39:03,822 - INFO - app - Application shutdown initiated
+2025-07-25 02:39:03,823 - INFO - app - Scheduler shutdown completed
+2025-07-25 02:39:04,222 - INFO - app.firebase_stream - Firebase event processing task cancelled.
+2025-07-25 02:39:06,521 - INFO - app.firebase_stream - Firebase listener closed.
+2025-07-25 02:39:06,521 - INFO - app.firebase_stream - Firebase Admin event processing task finished.
+2025-07-25 02:39:06,525 - INFO - app - Redis connection closed
+2025-07-25 02:39:06,525 - INFO - app - Application shutdown completed

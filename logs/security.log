@@ -431,3 +431,8 @@ redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 10061] Conne
 2025-07-25 02:34:54,621 - INFO - app.core.security - [Redis] AOF persistence already enabled.
 2025-07-25 02:35:12,978 - INFO - app.core.security - LOGIN: user_id=31, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-25T09:35:12.977932
 2025-07-25 02:35:31,829 - INFO - app.core.security - [Redis] Connection closed successfully.
+2025-07-25 02:37:12,822 - INFO - app.core.security - [Redis] Connected to localhost (127.0.0.1):6380
+2025-07-25 02:37:12,825 - INFO - app.core.security - [Redis] AOF persistence already enabled.
+2025-07-25 02:37:56,627 - INFO - app.core.security - LOGOUT: user_id=31, email=dhanush777ss@gmail.com, user_type=live, time=2025-07-25T09:37:56.627422
+2025-07-25 02:37:59,582 - INFO - app.core.security - LOGIN: user_id=1, email=dhanush777ss@gmail.com, user_type=demo, time=2025-07-25T09:37:59.582267
+2025-07-25 02:39:06,525 - INFO - app.core.security - [Redis] Connection closed successfully.

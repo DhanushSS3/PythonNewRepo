@@ -1000,3 +1000,56 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-25 02:35:30,954 - INFO - websocket - User ME4CA: WebSocket disconnected
 2025-07-25 02:35:31,074 - INFO - websocket - Redis publisher task cancelled.
 2025-07-25 02:35:31,074 - INFO - websocket - Redis publisher task finished.
+2025-07-25 02:37:14,846 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-25 02:37:21,097 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:63633
+2025-07-25 02:37:21,098 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:63633
+2025-07-25 02:37:21,100 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-25 02:37:21,110 - INFO - websocket - User 31: WebSocket initialized with balance=5000.00000000, margin=0
+2025-07-25 02:37:21,608 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:37:21,710 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-25 02:37:23,651 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:37:24,021 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-25 02:37:24,038 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-25 02:37:26,217 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:37:26,733 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-25 02:37:26,746 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-25 02:37:28,668 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:37:29,082 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-25 02:37:29,101 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-25 02:37:35,028 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:37:35,371 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-25 02:37:35,412 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-25 02:37:37,240 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:37:37,724 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-25 02:37:37,742 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-25 02:37:41,961 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:37:42,337 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-25 02:37:42,364 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-25 02:37:45,733 - INFO - websocket - User 31: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:37:46,189 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received ORDER_UPDATE message
+2025-07-25 02:37:46,206 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Received USER_DATA_UPDATE message
+2025-07-25 02:37:56,633 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-25 02:38:01,904 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:63722
+2025-07-25 02:38:01,905 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:63722
+2025-07-25 02:38:01,907 - INFO - websocket - WebSocket auth: Authenticating user 5O42G (demo)
+2025-07-25 02:38:01,918 - INFO - websocket - User 1: WebSocket initialized with balance=16446.24000000, margin=6.57314831
+2025-07-25 02:38:02,309 - INFO - websocket - User 1: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-25 02:38:02,404 - INFO - websocket - User 5O42G: WebSocket connection established successfully
+2025-07-25 02:38:10,048 - INFO - websocket - User 1: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:38:10,087 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received ORDER_UPDATE message
+2025-07-25 02:38:10,105 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received USER_DATA_UPDATE message
+2025-07-25 02:38:13,012 - INFO - websocket - User 1: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-25 02:38:13,628 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received ORDER_UPDATE message
+2025-07-25 02:38:13,632 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received USER_DATA_UPDATE message
+2025-07-25 02:38:15,312 - INFO - websocket - User 1: Successfully updated static orders cache with 2 open orders and 0 pending orders
+2025-07-25 02:38:15,877 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received ORDER_UPDATE message
+2025-07-25 02:38:15,881 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received USER_DATA_UPDATE message
+2025-07-25 02:38:20,003 - INFO - websocket - User 1: Successfully updated static orders cache with 1 open orders and 0 pending orders
+2025-07-25 02:38:20,497 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received ORDER_UPDATE message
+2025-07-25 02:38:20,503 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received USER_DATA_UPDATE message
+2025-07-25 02:38:20,667 - INFO - websocket - User 1: Successfully updated static orders cache with 0 open orders and 0 pending orders
+2025-07-25 02:38:20,713 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received ORDER_UPDATE message
+2025-07-25 02:38:20,727 - INFO - websocket - [WEBSOCKET_DEBUG] User 1: Received USER_DATA_UPDATE message
+2025-07-25 02:39:03,714 - INFO - websocket - User 5O42G: WebSocket disconnected
+2025-07-25 02:39:03,823 - INFO - websocket - Redis publisher task cancelled.
+2025-07-25 02:39:03,823 - INFO - websocket - Redis publisher task finished.
