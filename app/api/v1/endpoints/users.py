@@ -1202,7 +1202,11 @@ async def get_user_open_orders(
     
     # Convert to response format
     from app.schemas.order import OrderResponse
-    return [OrderResponse.model_validate(order.__dict__) for order in open_orders]
+    return {
+        "wallet_balance": user.wallet_balance,
+        "margin": user.margin,
+        "orders": [OrderResponse.model_validate(order.__dict__) for order in open_orders]
+    }
 
 @router.get(
     "/{user_id}/pending-orders",

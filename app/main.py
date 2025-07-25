@@ -123,8 +123,8 @@ IS_PRODUCTION = os.getenv("ENVIRONMENT", "development").lower() == "production"
 app = FastAPI(
     title=settings.PROJECT_NAME,
     openapi_url=f"{settings.API_V1_STR}/openapi.json", # Keep this as it is for now, as it just exposes the JSON schema
-    # docs_url=None if IS_PRODUCTION else "/docs",        # Disables Swagger UI in production
-    # redoc_url=None if IS_PRODUCTION else "/redoc"      # Disables ReDoc in production
+    docs_url=None if IS_PRODUCTION else "/docs",        # Disables Swagger UI in production
+    redoc_url=None if IS_PRODUCTION else "/redoc"      # Disables ReDoc in production
 )
 
 from fastapi.staticfiles import StaticFiles
@@ -132,16 +132,7 @@ from fastapi.staticfiles import StaticFiles
 app.mount("/static", StaticFiles(directory="uploads"), name="static")
 
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
-    "http://localhost:5500",
     "http://localhost:8000",
-    "http://localhost:8080",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:5500",
-    "http://127.0.0.1:8000",
-    "http://127.0.0.1:8080",
-    # Add your production domains here
     "https://livefxhub.com"
 ]
 

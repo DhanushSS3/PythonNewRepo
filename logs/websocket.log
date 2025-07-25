@@ -671,3 +671,198 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1226, "User 'u4
 2025-07-24 04:47:22,681 - INFO - websocket - User PF5CZ: WebSocket disconnected
 2025-07-24 04:47:23,426 - INFO - websocket - Redis publisher task cancelled.
 2025-07-24 04:47:23,426 - INFO - websocket - Redis publisher task finished.
+2025-07-24 05:38:52,896 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 05:38:58,829 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64515
+2025-07-24 05:38:58,830 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64515
+2025-07-24 05:38:58,836 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64515: Could not validate credentials
+2025-07-24 05:39:04,546 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64522
+2025-07-24 05:39:04,547 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64522
+2025-07-24 05:39:04,549 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64522: Could not validate credentials
+2025-07-24 05:39:10,575 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64526
+2025-07-24 05:39:10,575 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64526
+2025-07-24 05:39:10,577 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64526: Could not validate credentials
+2025-07-24 05:39:16,543 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64534
+2025-07-24 05:39:16,544 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64534
+2025-07-24 05:39:16,546 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64534: Could not validate credentials
+2025-07-24 05:39:22,539 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64545
+2025-07-24 05:39:22,540 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64545
+2025-07-24 05:39:22,541 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64545: Could not validate credentials
+2025-07-24 05:39:28,564 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64557
+2025-07-24 05:39:28,565 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64557
+2025-07-24 05:39:28,567 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64557: Could not validate credentials
+2025-07-24 05:39:35,054 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64570
+2025-07-24 05:39:35,054 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64570
+2025-07-24 05:39:35,058 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64570: Could not validate credentials
+2025-07-24 05:39:40,572 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64598
+2025-07-24 05:39:40,573 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64598
+2025-07-24 05:39:40,576 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64598: Could not validate credentials
+2025-07-24 05:39:46,557 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64608
+2025-07-24 05:39:46,558 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64608
+2025-07-24 05:39:46,560 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64608: Could not validate credentials
+2025-07-24 05:39:52,564 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64623
+2025-07-24 05:39:52,564 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64623
+2025-07-24 05:39:52,567 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64623: Could not validate credentials
+2025-07-24 05:39:58,559 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64639
+2025-07-24 05:39:58,561 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64639
+2025-07-24 05:39:58,564 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64639: Could not validate credentials
+2025-07-24 05:40:04,554 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64642
+2025-07-24 05:40:04,555 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64642
+2025-07-24 05:40:04,557 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64642: Could not validate credentials
+2025-07-24 05:40:12,623 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64646
+2025-07-24 05:40:12,625 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64646
+2025-07-24 05:40:12,630 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64646: Could not validate credentials
+2025-07-24 05:40:18,538 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64656
+2025-07-24 05:40:18,540 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64656
+2025-07-24 05:40:18,543 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64656: Could not validate credentials
+2025-07-24 05:40:24,553 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64659
+2025-07-24 05:40:24,554 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64659
+2025-07-24 05:40:24,557 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64659: Could not validate credentials
+2025-07-24 05:40:30,554 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64662
+2025-07-24 05:40:30,556 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64662
+2025-07-24 05:40:30,559 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64662: Could not validate credentials
+2025-07-24 05:40:36,567 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64665
+2025-07-24 05:40:36,568 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64665
+2025-07-24 05:40:36,571 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64665: Could not validate credentials
+2025-07-24 05:40:42,548 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64671
+2025-07-24 05:40:42,549 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64671
+2025-07-24 05:40:42,551 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64671: Could not validate credentials
+2025-07-24 05:40:50,275 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64676
+2025-07-24 05:40:50,281 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64676
+2025-07-24 05:40:50,298 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64676: Could not validate credentials
+2025-07-24 05:40:56,556 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64681
+2025-07-24 05:40:56,558 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64681
+2025-07-24 05:40:56,560 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64681: Could not validate credentials
+2025-07-24 05:41:02,557 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64684
+2025-07-24 05:41:02,559 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64684
+2025-07-24 05:41:02,562 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64684: Could not validate credentials
+2025-07-24 05:41:08,552 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64687
+2025-07-24 05:41:08,553 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64687
+2025-07-24 05:41:08,555 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64687: Could not validate credentials
+2025-07-24 05:41:14,551 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64693
+2025-07-24 05:41:14,552 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64693
+2025-07-24 05:41:14,555 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64693: Could not validate credentials
+2025-07-24 05:41:20,567 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64702
+2025-07-24 05:41:20,568 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64702
+2025-07-24 05:41:20,570 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64702: Could not validate credentials
+2025-07-24 05:41:28,126 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64706
+2025-07-24 05:41:28,135 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64706
+2025-07-24 05:41:28,149 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64706: Could not validate credentials
+2025-07-24 05:41:33,550 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64709
+2025-07-24 05:41:33,550 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64709
+2025-07-24 05:41:33,551 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64709: Could not validate credentials
+2025-07-24 05:41:39,564 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64711
+2025-07-24 05:41:39,566 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64711
+2025-07-24 05:41:39,569 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64711: Could not validate credentials
+2025-07-24 05:41:45,560 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64714
+2025-07-24 05:41:45,561 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64714
+2025-07-24 05:41:45,565 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64714: Could not validate credentials
+2025-07-24 05:41:51,552 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64720
+2025-07-24 05:41:51,554 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64720
+2025-07-24 05:41:51,556 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64720: Could not validate credentials
+2025-07-24 05:41:57,509 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 05:41:57,510 - INFO - websocket - Redis publisher task finished.
+2025-07-24 05:43:54,559 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 05:43:55,888 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64911
+2025-07-24 05:43:55,888 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64911
+2025-07-24 05:43:55,891 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64911: Could not validate credentials
+2025-07-24 05:44:03,764 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64930
+2025-07-24 05:44:03,765 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64930
+2025-07-24 05:44:03,769 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64930: Could not validate credentials
+2025-07-24 05:44:09,556 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64937
+2025-07-24 05:44:09,557 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64937
+2025-07-24 05:44:09,560 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64937: Could not validate credentials
+2025-07-24 05:44:15,555 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64943
+2025-07-24 05:44:15,560 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64943
+2025-07-24 05:44:15,566 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64943: Could not validate credentials
+2025-07-24 05:44:21,550 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64945
+2025-07-24 05:44:21,551 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64945
+2025-07-24 05:44:21,552 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64945: Could not validate credentials
+2025-07-24 05:44:27,539 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64948
+2025-07-24 05:44:27,540 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64948
+2025-07-24 05:44:27,541 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64948: Could not validate credentials
+2025-07-24 05:44:33,552 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64951
+2025-07-24 05:44:33,553 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64951
+2025-07-24 05:44:33,555 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64951: Could not validate credentials
+2025-07-24 05:44:39,557 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64956
+2025-07-24 05:44:39,557 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64956
+2025-07-24 05:44:39,558 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64956: Could not validate credentials
+2025-07-24 05:44:45,551 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64961
+2025-07-24 05:44:45,552 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64961
+2025-07-24 05:44:45,553 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64961: Could not validate credentials
+2025-07-24 05:44:51,548 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:64974
+2025-07-24 05:44:51,548 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:64974
+2025-07-24 05:44:51,550 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:64974: Could not validate credentials
+2025-07-24 05:44:57,560 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65007
+2025-07-24 05:44:57,560 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65007
+2025-07-24 05:44:57,561 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65007: Could not validate credentials
+2025-07-24 05:45:03,599 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65014
+2025-07-24 05:45:03,600 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65014
+2025-07-24 05:45:03,602 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65014: Could not validate credentials
+2025-07-24 05:45:09,552 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65021
+2025-07-24 05:45:09,552 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65021
+2025-07-24 05:45:09,554 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65021: Could not validate credentials
+2025-07-24 05:45:16,085 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65028
+2025-07-24 05:45:16,086 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65028
+2025-07-24 05:45:16,087 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65028: Could not validate credentials
+2025-07-24 05:45:21,591 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65032
+2025-07-24 05:45:21,591 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65032
+2025-07-24 05:45:21,592 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65032: Could not validate credentials
+2025-07-24 05:45:27,544 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65037
+2025-07-24 05:45:27,544 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65037
+2025-07-24 05:45:27,545 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65037: Could not validate credentials
+2025-07-24 05:45:33,562 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65039
+2025-07-24 05:45:33,563 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65039
+2025-07-24 05:45:33,565 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65039: Could not validate credentials
+2025-07-24 05:45:39,567 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65045
+2025-07-24 05:45:39,568 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65045
+2025-07-24 05:45:39,569 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65045: Could not validate credentials
+2025-07-24 05:45:45,567 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65048
+2025-07-24 05:45:45,568 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65048
+2025-07-24 05:45:45,569 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65048: Could not validate credentials
+2025-07-24 05:45:53,301 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65055
+2025-07-24 05:45:53,301 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65055
+2025-07-24 05:45:53,303 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65055: Could not validate credentials
+2025-07-24 05:45:59,558 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65060
+2025-07-24 05:45:59,559 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65060
+2025-07-24 05:45:59,560 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65060: Could not validate credentials
+2025-07-24 05:46:05,555 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65063
+2025-07-24 05:46:05,556 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65063
+2025-07-24 05:46:05,558 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65063: Could not validate credentials
+2025-07-24 05:46:09,244 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 05:46:09,245 - INFO - websocket - Redis publisher task finished.
+2025-07-24 05:48:26,663 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 05:48:27,605 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65186
+2025-07-24 05:48:27,606 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65186
+2025-07-24 05:48:27,609 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65186: Could not validate credentials
+2025-07-24 05:48:34,416 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65213
+2025-07-24 05:48:34,417 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65213
+2025-07-24 05:48:34,422 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65213: Could not validate credentials
+2025-07-24 05:48:40,553 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65219
+2025-07-24 05:48:40,554 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65219
+2025-07-24 05:48:40,556 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65219: Could not validate credentials
+2025-07-24 05:48:46,551 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65224
+2025-07-24 05:48:46,552 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65224
+2025-07-24 05:48:46,556 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65224: Could not validate credentials
+2025-07-24 05:48:52,591 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65228
+2025-07-24 05:48:52,593 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65228
+2025-07-24 05:48:52,599 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65228: Could not validate credentials
+2025-07-24 05:48:58,561 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65233
+2025-07-24 05:48:58,561 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65233
+2025-07-24 05:48:58,567 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65233: Could not validate credentials
+2025-07-24 05:49:04,569 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65238
+2025-07-24 05:49:04,570 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65238
+2025-07-24 05:49:04,572 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65238: Could not validate credentials
+2025-07-24 05:49:10,592 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65242
+2025-07-24 05:49:10,593 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65242
+2025-07-24 05:49:10,596 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65242: Could not validate credentials
+2025-07-24 05:49:16,581 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65245
+2025-07-24 05:49:16,583 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65245
+2025-07-24 05:49:16,586 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65245: Could not validate credentials
+2025-07-24 05:49:22,565 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:65250
+2025-07-24 05:49:22,567 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:65250
+2025-07-24 05:49:22,568 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:65250: Could not validate credentials
+2025-07-24 05:49:54,093 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 05:49:54,093 - INFO - websocket - Redis publisher task finished.
+2025-07-24 05:51:29,328 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-24 05:52:41,333 - INFO - websocket - Redis publisher task cancelled.
+2025-07-24 05:52:41,333 - INFO - websocket - Redis publisher task finished.

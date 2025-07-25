@@ -289,3 +289,69 @@ async def get_group_symbols_and_external_info(db: AsyncSession, group_name: str)
             "updated_at": first_group_record.updated_at.isoformat()
         }
     }
+
+# Function to copy all group settings from an existing group name to a new group name
+async def copy_group_settings_to_new_group_name(db: AsyncSession, existing_group_name: str, new_group_name: str) -> list:
+    """
+    Copies all group records (all symbols) from existing_group_name to new_group_name.
+    For each group record with the existing name, creates a new group with the same settings but with the new name.
+    Raises IntegrityError if any (symbol, new_group_name) already exists.
+    Returns a list of the newly created Group objects.
+    """
+    # Fetch all group records with the existing group name
+    existing_groups = await get_groups_by_name(db, existing_group_name)
+    if not existing_groups:
+        raise ValueError(f"No groups found with name '{existing_group_name}'")
+
+    created_groups = []
+    for group in existing_groups:
+        # Check if a group with the same symbol and new name already exists
+        existing = await get_group_by_symbol_and_name(db, symbol=group.symbol, name=new_group_name)
+        if existing:
+            raise IntegrityError(
+                f"Group with symbol '{group.symbol}' and name '{new_group_name}' already exists.", {}, {}
+            )
+        # Prepare data for the new group
+        group_data = {
+            'symbol': group.symbol,
+            'name': new_group_name,
+            'commision_type': group.commision_type,
+            'commision_value_type': group.commision_value_type,
+            'type': group.type,
+            'pip_currency': group.pip_currency,
+            'show_points': group.show_points,
+            'swap_buy': group.swap_buy,
+            'swap_sell': group.swap_sell,
+            'commision': group.commision,
+            'margin': group.margin,
+            'spread': group.spread,
+            'deviation': group.deviation,
+            'min_lot': group.min_lot,
+            'max_lot': group.max_lot,
+            'pips': group.pips,
+            'spread_pip': group.spread_pip,
+            'sending_orders': group.sending_orders,
+            'book': group.book,
+        }
+        # Use GroupCreate schema for validation
+        group_create = GroupCreate(**group_data)
+        new_group = await create_group(db, group_create)
+        created_groups.append(new_group)
+    return created_groups
+
+# Function to delete all group records for a given group name (all symbols)
+async def delete_all_groups_by_name(db: AsyncSession, group_name: str) -> int:
+    """
+    Deletes all group records (all symbols) for the given group name.
+    Returns the number of deleted groups.
+    Raises ValueError if no groups found.
+    """
+    groups = await get_groups_by_name(db, group_name)
+    if not groups:
+        raise ValueError(f"No groups found with name '{group_name}'")
+    count = 0
+    for group in groups:
+        await db.delete(group)
+        count += 1
+    await db.commit()
+    return count

@@ -24,6 +24,7 @@ from app.core.cache import (
     set_group_settings_cache, set_group_symbol_settings_cache,
     delete_group_settings_cache, delete_all_group_symbol_settings_cache
 )
+from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
 
@@ -302,6 +303,48 @@ async def update_existing_group(
             detail="An error occurred while updating the group."
         )
 
+
+
+class GroupDeleteRequest(BaseModel):
+    group_name: str
+
+@router.delete(
+    "/delete-group-settings",
+    response_model=StatusResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Delete all group settings for a group name (Admin Only)",
+    description="Deletes all group records (all symbols) for a given group name. Requires admin authentication."
+)
+async def delete_all_group_settings_by_name_endpoint(
+    request: GroupDeleteRequest,
+    db: AsyncSession = Depends(get_db),
+    redis_client: Redis = Depends(get_redis_client),
+    current_user: User = Depends(get_current_admin_user)
+):
+    """
+    Admin endpoint to delete all group settings for a given group name (all symbols).
+    """
+    try:
+        deleted_count = await crud_group.delete_all_groups_by_name(db=db, group_name=request.group_name)
+        # Invalidate group settings and all group-symbol settings cache for this group
+        await delete_group_settings_cache(redis_client, request.group_name)
+        await delete_all_group_symbol_settings_cache(redis_client, request.group_name)
+        return StatusResponse(message=f"Deleted {deleted_count} group records for group name '{request.group_name}'.")
+    except ValueError as e:
+        await db.rollback()
+        logger.warning(f"Delete group settings failed: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(e)
+        )
+    except Exception as e:
+        await db.rollback()
+        logger.error(f"Error deleting group settings: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="An error occurred while deleting group settings."
+        )
+
 # Endpoint to delete a group by ID (Admin Only)
 @router.delete(
     "/{group_id}",
@@ -338,4 +381,62 @@ async def delete_existing_group(
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="An error occurred while deleting the group."
+        )
+
+class GroupCopyRequest(BaseModel):
+    existing_group_name: str
+    new_group_name: str
+
+@router.post(
+    "/copy-group-settings",
+    response_model=List[GroupResponse],
+    status_code=status.HTTP_201_CREATED,
+    summary="Copy all group settings to a new group name (Admin Only)",
+    description="Copies all group records (all symbols) from an existing group name to a new group name. Requires admin authentication."
+)
+async def copy_group_settings_to_new_group_name_endpoint(
+    request: GroupCopyRequest,
+    db: AsyncSession = Depends(get_db),
+    redis_client: Redis = Depends(get_redis_client),
+    current_user: User = Depends(get_current_admin_user)
+):
+    """
+    Admin endpoint to copy all group settings from an existing group name to a new group name.
+    """
+    try:
+        created_groups = await crud_group.copy_group_settings_to_new_group_name(
+            db=db,
+            existing_group_name=request.existing_group_name,
+            new_group_name=request.new_group_name
+        )
+        # Optionally update cache for new group name
+        for group in created_groups:
+            settings = {
+                "sending_orders": getattr(group, 'sending_orders', None),
+            }
+            await set_group_settings_cache(redis_client, group.name, settings)
+            if group.symbol:
+                symbol_settings = {k: getattr(group, k) for k in group.__table__.columns.keys()}
+                await set_group_symbol_settings_cache(redis_client, group.name, group.symbol, symbol_settings)
+        return created_groups
+    except IntegrityError as e:
+        await db.rollback()
+        logger.warning(f"Attempted to copy group settings to a name that already exists. Error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(e)
+        )
+    except ValueError as e:
+        await db.rollback()
+        logger.warning(f"Copy group settings failed: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(e)
+        )
+    except Exception as e:
+        await db.rollback()
+        logger.error(f"Error copying group settings: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="An error occurred while copying group settings."
         )
