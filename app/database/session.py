@@ -39,8 +39,8 @@ logger.info(f"Attempting to connect to database using URL: {DATABASE_URL[:20]}..
 engine = create_async_engine(
     DATABASE_URL, 
     echo=settings.ECHO_SQL,
-    pool_size=10,  # Reduced from 20 to 10
-    max_overflow=5,  # Reduced from 10 to 5
+    pool_size=30,  # Increased for higher concurrency. Tune as needed.
+    max_overflow=20,  # Increased for burst handling. Tune as needed.
     pool_recycle=1800,  # Recycle connections every 30 minutes
     pool_pre_ping=True,
     pool_timeout=30,  # Add timeout for connection acquisition

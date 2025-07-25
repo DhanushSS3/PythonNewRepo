@@ -597,6 +597,8 @@ async def get_group_symbol_settings_cache(redis_client: Redis, group_name: str, 
                 cursor, keys = await redis_client.scan(cursor=cursor, match=f"{prefix}*", count=100) # Adjust count as needed
 
                 if keys:
+                    # Redis may return keys as bytes, so decode if needed
+                    keys = [k.decode() if isinstance(k, bytes) else k for k in keys]
                     # Retrieve all found keys in a pipeline for efficiency
                     pipe = redis_client.pipeline()
                     for key in keys:
@@ -609,25 +611,21 @@ async def get_group_symbol_settings_cache(redis_client: Redis, group_name: str, 
                             try:
                                 settings = json.loads(settings_json, object_hook=decode_decimal)
                                 # Extract symbol from the key (key format: prefix:group_name:symbol)
-                                # Key is already a string, no need to decode
+                                # Key is now always a string
                                 key_parts = key.split(':')
                                 if len(key_parts) == 3 and key_parts[0] == REDIS_GROUP_SYMBOL_SETTINGS_KEY_PREFIX.rstrip(':'):
                                      symbol_from_key = key_parts[2]
                                      all_settings[symbol_from_key] = settings
                                 else:
-                                     # Key is already a string, no need to decode for logging
                                      logger.warning(f"Skipping incorrectly formatted Redis key: {key}")
                             except json.JSONDecodeError:
-                                 # Key is already a string, no need to decode for logging
                                  logger.error(f"Failed to decode JSON for settings key: {key}. Data: {settings_json}", exc_info=True)
                             except Exception as e:
-                                # Key is already a string, no need to decode for logging
                                 logger.error(f"Unexpected error processing settings key {key}: {e}", exc_info=True)
 
             if all_settings:
                  return all_settings
             else:
-                 
                  return None # Return None if no settings were found for the group
 
         except Exception as e:

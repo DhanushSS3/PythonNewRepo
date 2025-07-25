@@ -75,6 +75,7 @@ async def get_user_by_id_with_lock(db: AsyncSession, user_id: int) -> User | Non
     Retrieves a user from the database by their ID with a row-level lock.
     Use this when updating sensitive fields like wallet balance or margin.
     Includes the user's margin and wallet_balance.
+    Only lock and update the user row; do not do any slow work while holding the lock.
     """
     result = await db.execute(
         select(User)
@@ -419,50 +420,6 @@ async def generate_unique_demo_account_number(db: AsyncSession) -> str:
         )
         if not existing.scalars().first():
             return account_number
-
-# --- CRUD Operations for Wallet and OTP (Modified for User/DemoUser) ---
-
-# Note: The actual `create_wallet_record` and `create_otp_record` functions
-# will likely reside in `app/crud/wallet.py` and `app/crud/otp.py` respectively.
-# These functions will need to be updated to accept either `user_id` or `demo_user_id`.
-
-# Example of how `create_wallet_record` in app/crud/wallet.py would need to be updated:
-# async def create_wallet_record(
-#     db: AsyncSession,
-#     wallet_data: WalletCreate,
-#     user_id: Optional[int] = None,
-#     demo_user_id: Optional[int] = None
-# ) -> Wallet:
-#     # ... logic to create wallet record ...
-#     # Ensure that either user_id or demo_user_id is provided, but not both.
-#     if user_id and demo_user_id:
-#         raise ValueError("Cannot associate wallet record with both a user and a demo user.")
-#     if user_id:
-#         db_wallet = Wallet(**wallet_data.model_dump(), user_id=user_id)
-#     elif demo_user_id:
-#         db_wallet = Wallet(**wallet_data.model_dump(), demo_user_id=demo_user_id)
-#     else:
-#         raise ValueError("Wallet record must be associated with either a user or a demo user.")
-#     # ... rest of the function ...
-
-
-# Example of how `create_otp_record` in app/crud/otp.py would need to be updated:
-# async def create_otp_record(
-#     db: AsyncSession,
-#     otp_data: OTPCreate,
-#     user_id: Optional[int] = None,
-#     demo_user_id: Optional[int] = None
-# ) -> OTP:
-#     # ... logic to create OTP record ...
-#     if user_id and demo_user_id:
-#         raise ValueError("Cannot associate OTP record with both a user and a demo user.")
-#     if user_id:
-#         db_otp = OTP(**otp_data.model_dump(), user_id=user_id)
-#     elif demo_user_id:
-#         db_otp = OTP(**otp_data.model_dump(), demo_user_id=demo_user_id)
-#     else:
-#         raise ValueError("OTP record must be associated with either a user or a demo user.")
-#     # ... rest of the function ...
 
 # You can add a function like this:
 from sqlalchemy.orm import selectinload
