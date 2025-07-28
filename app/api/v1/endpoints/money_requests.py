@@ -125,21 +125,20 @@ async def admin_update_money_request_status(
 @router.get(
     "/", # Lists all requests, path relative to router's prefix
     response_model=List[MoneyRequestResponse],
-    summary="List All Money Requests (Admin)",
-    description="Allows an admin to view all money requests, with optional filtering by status.",
+    summary="List All Pending Money Requests (Admin)",
+    description="Allows an admin to view all pending money requests (status 0) with optional filtering by user ID.",
     dependencies=[Depends(get_current_admin_user)] # Ensures only admins can access
 )
 async def admin_get_all_money_requests(
-    status_filter: Optional[int] = Query(None, alias="status", ge=0, le=2, description="Filter by status: 0 (requested), 1 (approved), 2 (rejected)"),
     user_id_filter: Optional[int] = Query(None, alias="user_id", description="Filter by User ID"), # Added User ID filter
     db: AsyncSession = Depends(get_db)
     # current_admin: User = Depends(get_current_admin_user) # Not strictly needed if only using for auth
 ):
     """
-    Admin endpoint to list all money requests with optional filters (no pagination).
+    Admin endpoint to list all pending money requests (status 0) with optional user ID filter.
     """
     requests = await crud_money_request.get_all_money_requests(
-        db=db, status=status_filter
+        db=db, status=0
     )
     if user_id_filter is not None: # Post-fetch filtering if not in CRUD
         requests = [req for req in requests if req.user_id == user_id_filter]

@@ -187,3 +187,9 @@
 2025-07-28 03:02:31,552 - WARNING - websocket - WebSocket auth failed: JWT error for 127.0.0.1:50849: Could not validate credentials
 2025-07-28 03:03:55,121 - INFO - websocket - Redis publisher task cancelled.
 2025-07-28 03:03:55,122 - INFO - websocket - Redis publisher task finished.
+2025-07-28 04:41:03,412 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-28 04:41:43,051 - INFO - websocket - Redis publisher task cancelled.
+2025-07-28 04:41:43,052 - INFO - websocket - Redis publisher task finished.
+2025-07-28 04:42:05,577 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-28 04:42:10,242 - INFO - websocket - Redis publisher task cancelled.
+2025-07-28 04:42:10,242 - INFO - websocket - Redis publisher task finished.
