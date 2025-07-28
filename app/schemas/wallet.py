@@ -280,7 +280,7 @@ from typing import Optional
 class AdminWalletActionRequest(BaseModel):
     user_id: int
     amount: Decimal
-    currency: str
+    currency: Optional[str] = None
     reason: Optional[str] = None
 
 class AdminWalletActionResponse(BaseModel):

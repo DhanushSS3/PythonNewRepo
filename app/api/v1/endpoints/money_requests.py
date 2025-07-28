@@ -130,30 +130,19 @@ async def admin_update_money_request_status(
     dependencies=[Depends(get_current_admin_user)] # Ensures only admins can access
 )
 async def admin_get_all_money_requests(
-    skip: int = Query(0, ge=0, description="Number of records to skip"),
-    limit: int = Query(100, ge=1, le=200, description="Maximum number of records to return"),
     status_filter: Optional[int] = Query(None, alias="status", ge=0, le=2, description="Filter by status: 0 (requested), 1 (approved), 2 (rejected)"),
     user_id_filter: Optional[int] = Query(None, alias="user_id", description="Filter by User ID"), # Added User ID filter
     db: AsyncSession = Depends(get_db)
     # current_admin: User = Depends(get_current_admin_user) # Not strictly needed if only using for auth
 ):
     """
-    Admin endpoint to list all money requests with pagination and optional filters.
+    Admin endpoint to list all money requests with optional filters (no pagination).
     """
-    # Modify crud_money_request.get_all_money_requests if user_id_filter is to be implemented at DB level
-    # For now, assuming get_all_money_requests might be enhanced or filtering done post-fetch if simple.
-    # If user_id_filter is added to CRUD:
-    # requests = await crud_money_request.get_all_money_requests(
-    #     db=db, skip=skip, limit=limit, status=status_filter, user_id=user_id_filter
-    # )
-    
-    # Assuming current get_all_money_requests only filters by status at DB level:
     requests = await crud_money_request.get_all_money_requests(
-        db=db, skip=skip, limit=limit, status=status_filter
+        db=db, status=status_filter
     )
     if user_id_filter is not None: # Post-fetch filtering if not in CRUD
         requests = [req for req in requests if req.user_id == user_id_filter]
-        
     return requests
 
 @router.get(

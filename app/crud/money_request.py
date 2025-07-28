@@ -82,15 +82,14 @@ async def get_money_requests_by_user_id(db: AsyncSession, user_id: int, skip: in
     )
     return result.scalars().all()
 
-async def get_all_money_requests(db: AsyncSession, skip: int = 0, limit: int = 100, status: Optional[int] = None) -> List[MoneyRequest]:
+async def get_all_money_requests(db: AsyncSession, status: Optional[int] = None) -> List[MoneyRequest]:
     """
-    Retrieves all money requests, optionally filtered by status, with pagination (for admins).
+    Retrieves all money requests, optionally filtered by status (for admins). No pagination.
     """
     query = select(MoneyRequest).order_by(MoneyRequest.created_at.desc())
     if status is not None:
         query = query.filter(MoneyRequest.status == status)
-    
-    result = await db.execute(query.offset(skip).limit(limit))
+    result = await db.execute(query)
     return result.scalars().all()
 
 async def update_money_request_status(
