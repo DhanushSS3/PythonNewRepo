@@ -619,12 +619,18 @@ async def signup_send_otp(
     email_body = f"Your One-Time Password (OTP) for email verification for your {request_data.user_type} account is: {otp_code}\n\nThis OTP is valid for {settings.OTP_EXPIRATION_MINUTES} minutes."
 
     if user and getattr(user, 'isActive', 0) == 0:
+        # For existing inactive users, create OTP in the main OTP table
         await crud_otp.create_otp(db, user_id=user.id, force_otp_code=otp_code)
         logger.info(f"Sent OTP to existing inactive user {request_data.email} (type: {request_data.user_type}) for activation.")
     else:
-        redis_key = f"signup_otp:{request_data.email}:{request_data.user_type}"
-        await redis_client.set(redis_key, otp_code, ex=int(settings.OTP_EXPIRATION_MINUTES * 60))
-        logger.info(f"Stored OTP in Redis for new email {request_data.email} (type: {request_data.user_type}).")
+        # For new email signups, create SignupOTP in the database (replaces Redis)
+        await crud_otp.create_signup_otp(
+            db, 
+            email=request_data.email, 
+            user_type=request_data.user_type, 
+            force_otp_code=otp_code
+        )
+        logger.info(f"Stored OTP in database for new email {request_data.email} (type: {request_data.user_type}).")
 
     try:
         await email_service.send_email(
@@ -653,40 +659,44 @@ async def signup_verify_otp(
     db: AsyncSession = Depends(get_db),
     redis_client: Redis = Depends(get_redis_client)
 ):
-    redis_key_signup_otp = f"signup_otp:{request_data.email}:{request_data.user_type}"
-    stored_otp_in_redis = await redis_client.get(redis_key_signup_otp)
+    # First, check for SignupOTP (new email signups)
+    signup_otp_record = await crud_otp.get_valid_signup_otp(
+        db, 
+        email=request_data.email, 
+        user_type=request_data.user_type, 
+        otp_code=request_data.otp_code
+    )
 
-    if stored_otp_in_redis:
-        if stored_otp_in_redis == request_data.otp_code:
-            await redis_client.delete(redis_key_signup_otp)
-            redis_key_preverified = f"preverified_email:{request_data.email}:{request_data.user_type}"
-            await redis_client.set(redis_key_preverified, "1", ex=15 * 60)
-            logger.info(f"OTP for new email {request_data.email} (type: {request_data.user_type}) verified via Redis.")
-            return StatusResponse(message="Email verified successfully. Please complete your registration.")
-        else:
-            logger.warning(f"Invalid Redis OTP for {request_data.email} (type: {request_data.user_type}).")
+    if signup_otp_record:
+        # OTP found in SignupOTP table (new email signup)
+        await crud_otp.verify_signup_otp(db, signup_otp_record)
+        await crud_otp.delete_signup_otp(db, signup_otp_record.id)
+        logger.info(f"OTP for new email {request_data.email} (type: {request_data.user_type}) verified via database.")
+        return StatusResponse(message="Email verified successfully. Please complete your registration.")
+    
+    # If no SignupOTP found, check for existing inactive users
+    user = await crud_user.get_user_by_email_and_type(db, email=request_data.email, user_type=request_data.user_type)
+    if user and getattr(user, 'isActive', 0) == 0:
+        otp_record = await crud_otp.get_valid_otp(db, user_id=user.id, otp_code=request_data.otp_code)
+        if not otp_record:
+            logger.warning(f"Invalid DB OTP for inactive user {request_data.email} (type: {request_data.user_type}).")
             raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired OTP.")
+        
+        # Activate the user
+        user.status = 1
+        user.isActive = 1
+        try:
+            await db.commit()
+            await crud_otp.delete_otp(db, otp_id=otp_record.id)
+            logger.info(f"Existing inactive user {request_data.email} (type: {request_data.user_type}, ID: {user.id}) activated.")
+            return StatusResponse(message="Account activated successfully. You can now login.")
+        except Exception as e:
+            await db.rollback()
+            logger.error(f"Error activating user ID {user.id} (type: {request_data.user_type}): {e}", exc_info=True)
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="An error occurred during account activation.")
     else:
-        user = await crud_user.get_user_by_email_and_type(db, email=request_data.email, user_type=request_data.user_type)
-        if user and getattr(user, 'isActive', 0) == 0:
-            otp_record = await crud_otp.get_valid_otp(db, user_id=user.id, otp_code=request_data.otp_code) # Pass user_id
-            if not otp_record:
-                logger.warning(f"Invalid DB OTP for inactive user {request_data.email} (type: {request_data.user_type}).")
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired OTP.")
-            user.status = 1
-            user.isActive = 1
-            try:
-                await db.commit()
-                await crud_otp.delete_otp(db, otp_id=otp_record.id)
-                logger.info(f"Existing inactive user {request_data.email} (type: {request_data.user_type}, ID: {user.id}) activated.")
-                return StatusResponse(message="Account activated successfully. You can now login.")
-            except Exception as e:
-                await db.rollback()
-                logger.error(f"Error activating user ID {user.id} (type: {request_data.user_type}): {e}", exc_info=True)
-                raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="An error occurred during account activation.")
-        else:
-            logger.warning(f"No OTP in Redis and no matching inactive user for {request_data.email} (type: {request_data.user_type}).")
-            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid OTP, or email not eligible for this verification process.")
+        logger.warning(f"No OTP found in database for {request_data.email} (type: {request_data.user_type}).")
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid OTP, or email not eligible for this verification process.")
 
 
 @router.post("/request-password-reset", response_model=StatusResponse)
@@ -1025,12 +1035,18 @@ async def demo_signup_send_otp(
     email_body = f"Your One-Time Password (OTP) for email verification for your demo account is: {otp_code}\n\nThis OTP is valid for {settings.OTP_EXPIRATION_MINUTES} minutes."
 
     if demo_user and getattr(demo_user, 'isActive', 0) == 0:
-        await crud_otp.create_otp(db, demo_user_id=demo_user.id, force_otp_code=otp_code) # Pass demo_user_id
+        # For existing inactive demo users, create OTP in the main OTP table
+        await crud_otp.create_otp(db, demo_user_id=demo_user.id, force_otp_code=otp_code)
         logger.info(f"Sent OTP to existing inactive demo user {request_data.email} for activation.")
     else:
-        redis_key = f"signup_otp:{request_data.email}:{fixed_user_type}" # Use fixed_user_type
-        await redis_client.set(redis_key, otp_code, ex=int(settings.OTP_EXPIRATION_MINUTES * 60))
-        logger.info(f"Stored OTP in Redis for new demo email {request_data.email}.")
+        # For new demo email signups, create SignupOTP in the database (replaces Redis)
+        await crud_otp.create_signup_otp(
+            db, 
+            email=request_data.email, 
+            user_type=fixed_user_type, 
+            force_otp_code=otp_code
+        )
+        logger.info(f"Stored OTP in database for new demo email {request_data.email}.")
 
     try:
         await email_service.send_email(
@@ -1062,40 +1078,44 @@ async def demo_signup_verify_otp(
     # Always use "demo" as user_type for this endpoint
     fixed_user_type = "demo"
     
-    redis_key_signup_otp = f"signup_otp:{request_data.email}:{fixed_user_type}"
-    stored_otp_in_redis = await redis_client.get(redis_key_signup_otp)
+    # First, check for SignupOTP (new demo email signups)
+    signup_otp_record = await crud_otp.get_valid_signup_otp(
+        db, 
+        email=request_data.email, 
+        user_type=fixed_user_type, 
+        otp_code=request_data.otp_code
+    )
 
-    if stored_otp_in_redis:
-        if stored_otp_in_redis == request_data.otp_code:
-            await redis_client.delete(redis_key_signup_otp)
-            redis_key_preverified = f"preverified_email:{request_data.email}:{fixed_user_type}"
-            await redis_client.set(redis_key_preverified, "1", ex=15 * 60)
-            logger.info(f"OTP for new demo email {request_data.email} verified via Redis.")
-            return StatusResponse(message="Email verified successfully. Please complete your registration.")
-        else:
-            logger.warning(f"Invalid Redis OTP for demo {request_data.email}.")
+    if signup_otp_record:
+        # OTP found in SignupOTP table (new demo email signup)
+        await crud_otp.verify_signup_otp(db, signup_otp_record)
+        await crud_otp.delete_signup_otp(db, signup_otp_record.id)
+        logger.info(f"OTP for new demo email {request_data.email} verified via database.")
+        return StatusResponse(message="Email verified successfully. Please complete your registration.")
+    
+    # If no SignupOTP found, check for existing inactive demo users
+    demo_user = await crud_user.get_demo_user_by_email(db, email=request_data.email)
+    if demo_user and getattr(demo_user, 'isActive', 0) == 0:
+        otp_record = await crud_otp.get_valid_otp(db, demo_user_id=demo_user.id, otp_code=request_data.otp_code)
+        if not otp_record:
+            logger.warning(f"Invalid DB OTP for inactive demo user {request_data.email}.")
             raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired OTP.")
+        
+        # Activate the demo user
+        demo_user.status = 1
+        demo_user.isActive = 1
+        try:
+            await db.commit()
+            await crud_otp.delete_otp(db, otp_id=otp_record.id)
+            logger.info(f"Existing inactive demo user {request_data.email} (ID: {demo_user.id}) activated.")
+            return StatusResponse(message="Demo account activated successfully. You can now login.")
+        except Exception as e:
+            await db.rollback()
+            logger.error(f"Error activating demo user ID {demo_user.id}: {e}", exc_info=True)
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="An error occurred during demo account activation.")
     else:
-        demo_user = await crud_user.get_demo_user_by_email(db, email=request_data.email)
-        if demo_user and getattr(demo_user, 'isActive', 0) == 0:
-            otp_record = await crud_otp.get_valid_otp(db, demo_user_id=demo_user.id, otp_code=request_data.otp_code) # Pass demo_user_id
-            if not otp_record:
-                logger.warning(f"Invalid DB OTP for inactive demo user {request_data.email}.")
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired OTP.")
-            demo_user.status = 1
-            demo_user.isActive = 1
-            try:
-                await db.commit()
-                await crud_otp.delete_otp(db, otp_id=otp_record.id)
-                logger.info(f"Existing inactive demo user {request_data.email} (ID: {demo_user.id}) activated.")
-                return StatusResponse(message="Demo account activated successfully. You can now login.")
-            except Exception as e:
-                await db.rollback()
-                logger.error(f"Error activating demo user ID {demo_user.id}: {e}", exc_info=True)
-                raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="An error occurred during demo account activation.")
-        else:
-            logger.warning(f"No OTP in Redis and no matching inactive demo user for {request_data.email}.")
-            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid OTP, or email not eligible for this verification process.")
+        logger.warning(f"No OTP found in database for demo {request_data.email}.")
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid OTP, or email not eligible for this verification process.")
 
 
 @router.post("/demo/request-password-reset", response_model=StatusResponse)

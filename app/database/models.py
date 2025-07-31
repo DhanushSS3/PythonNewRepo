@@ -114,6 +114,7 @@ class User(Base):
     orders = relationship("UserOrder", back_populates="user")
     wallet_transactions = relationship("Wallet", back_populates="user")
     otps = relationship("OTP", back_populates="user")
+    signup_otps = relationship("SignupOTP", back_populates="user")
     money_requests = relationship("MoneyRequest", back_populates="user")
     rock_orders = relationship("RockUserOrder", back_populates="user")
     rejected_orders = relationship("RejectedOrder", back_populates="user")
@@ -191,6 +192,7 @@ class DemoUser(Base):
     orders = relationship("DemoUserOrder", back_populates="user")
     wallet_transactions = relationship("Wallet", back_populates="demo_user") # Relationship to Wallet
     otps = relationship("OTP", back_populates="demo_user") # Relationship to OTP
+    signup_otps = relationship("SignupOTP", back_populates="demo_user") # Relationship to SignupOTP
     # Add back simple relationship without complex conditions 
     demo_user_favorites = relationship("UserFavoriteSymbol", 
                                      foreign_keys="[UserFavoriteSymbol.user_id]",
@@ -503,7 +505,7 @@ class OrderActionHistory(Base):
 class OTP(Base):
     """
     SQLAlchemy model for the 'otps' table.
-    Stores One-Time Passwords for user verification.
+    Stores One-Time Passwords for existing user verification (password reset, etc.).
     """
     __tablename__ = "otps"
 
@@ -519,6 +521,42 @@ class OTP(Base):
     # Relationships back to User and DemoUser
     user = relationship("User", back_populates="otps")
     demo_user = relationship("DemoUser", back_populates="otps")
+
+
+class SignupOTP(Base):
+    """
+    SQLAlchemy model for the 'signup_otps' table.
+    Stores One-Time Passwords for new email signups (replaces Redis storage).
+    """
+    __tablename__ = "signup_otps"
+
+    id = Column(Integer, primary_key=True, index=True)
+    
+    # Email and user type for new signups (no user exists yet)
+    email = Column(String(255), index=True, nullable=False)
+    user_type = Column(String(20), nullable=False) # 'live' or 'demo'
+    
+    # OTP details
+    otp_code = Column(String(10), nullable=False) # Store the OTP code (e.g., 6 digits)
+    created_at = Column(DateTime, server_default=func.now(), nullable=False)
+    expires_at = Column(DateTime, nullable=False) # When the OTP expires
+    
+    # Status tracking
+    is_verified = Column(Boolean, default=False, nullable=False) # Track if OTP was verified
+    verified_at = Column(DateTime, nullable=True) # When OTP was verified
+    
+    # Optional: Link to existing user if they exist but are inactive
+    user_id = Column(Integer, ForeignKey("users.id"), index=True, nullable=True)
+    demo_user_id = Column(Integer, ForeignKey("demo_users.id"), index=True, nullable=True)
+    
+    # Relationships back to User and DemoUser (for inactive users)
+    user = relationship("User", back_populates="signup_otps")
+    demo_user = relationship("DemoUser", back_populates="signup_otps")
+    
+    # Add unique constraint to prevent multiple active OTPs for same email+user_type
+    __table_args__ = (
+        UniqueConstraint('email', 'user_type', name='_signup_otp_email_user_type_uc'),
+    )
 
 
 class ExternalSymbolInfo(Base):
