@@ -51,3 +51,26 @@ Traceback (most recent call last):
   File "C:\Users\Dhanush\FASTAPI\app\core\security.py", line 332, in get_current_user
     raise credentials_exception
 fastapi.exceptions.HTTPException: 401: Could not validate credentials
+2025-07-30 21:38:28,684 - ERROR - database - Error in database session: 500: Error in service_provider_order_execution: 400: Invalid status transition from OPEN to OPEN
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\orders.py", line 4074, in service_provider_order_execution
+    raise HTTPException(status_code=400, detail=error_msg)
+fastapi.exceptions.HTTPException: 400: Invalid status transition from OPEN to OPEN
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dhanush\FASTAPI\app\database\session.py", line 70, in get_db
+    yield session
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Dhanush\FASTAPI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dhanush\FASTAPI\app\api\v1\endpoints\orders.py", line 4079, in service_provider_order_execution
+    raise HTTPException(status_code=500, detail=error_msg)
+fastapi.exceptions.HTTPException: 500: Error in service_provider_order_execution: 400: Invalid status transition from OPEN to OPEN

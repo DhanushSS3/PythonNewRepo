@@ -1345,8 +1345,17 @@ async def close_order(
                     
                     # Fetch the order from DB to get all necessary details for Firebase
                     db_order_for_firebase = await crud_order.get_order_by_id(db, order_id=order_id, order_model=order_model_class)
+                    orders_logger.debug(f"db_order_for_firebase: {db_order_for_firebase.updated_at}")
                     if not db_order_for_firebase:
                         raise HTTPException(status_code=404, detail="Order to be closed not found in database for Firebase operation.")
+
+                    # Barclays-specific validation: Check if order status is "CLOSED" and updated_at is less than 1 minute
+                    if db_order_for_firebase.status == "CLOSED" and db_order_for_firebase.updated_at:
+                        current_time = datetime.datetime.now(datetime.timezone.utc)
+                        time_diff = current_time - db_order_for_firebase.updated_at.replace(tzinfo=datetime.timezone.utc)
+                        if time_diff.total_seconds() < 60:  # Less than 1 minute
+                            orders_logger.info(f"Barclays user {user_to_operate_on.id}: Order {order_id} is already CLOSED and was updated less than 1 minute ago. Returning 'Processing' response.")
+                            return {"message": "Processing"}
 
                     # Check for existing stop loss and take profit before closing the order
                     # Generate cancel IDs if SL/TP exist and send individual cancellation messages
@@ -1831,45 +1840,6 @@ async def close_order(
                 await db.commit()
                 await db.refresh(db_order)
                 
-                # Log the user's wallet balance and margin after commit
-                # orders_logger.info(f"AFTER COMMIT: User {db_user_locked.id} wallet_balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
-                
-                # # Define variables needed for WebSocket updates
-                # user_id = db_user_locked.id  # Changed from db_order.order_user_id to db_user_locked.id
-                # user_type_str = 'demo' if isinstance(db_user_locked, DemoUser) else 'live'
-                
-                # # Update user data cache with the latest values from db_user_locked
-                # user_data_to_cache = {
-                #     "id": db_user_locked.id,
-                #     "email": getattr(db_user_locked, 'email', None),
-                #     "group_name": db_user_locked.group_name,
-                #     "leverage": db_user_locked.leverage,
-                #     "user_type": user_type_str,
-                #     "account_number": getattr(db_user_locked, 'account_number', None),
-                #     "wallet_balance": db_user_locked.wallet_balance,
-                #     "margin": db_user_locked.margin,
-                #     "first_name": getattr(db_user_locked, 'first_name', None),
-                #     "last_name": getattr(db_user_locked, 'last_name', None),
-                #     "country": getattr(db_user_locked, 'country', None),
-                #     "phone_number": getattr(db_user_locked, 'phone_number', None)
-                # }
-                # orders_logger.info(f"Setting user data cache for user {user_id} with wallet_balance={user_data_to_cache['wallet_balance']}, margin={user_data_to_cache['margin']}")
-                # await set_user_data_cache(redis_client, user_id, user_data_to_cache, user_type_str)
-                # orders_logger.info(f"User data cache updated for user {user_id}")
-                
-                # # Update balance/margin cache for websocket
-                # await set_user_balance_margin_cache(redis_client, user_id, db_user_locked.wallet_balance, db_user_locked.margin)
-                # orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
-                
-                # # Update static orders cache and publish websocket updates after commit
-                # await update_user_static_orders(user_id, db, redis_client, user_type_str)
-                # orders_logger.info(f"Publishing order update for user {user_id}")
-                # await publish_order_update(redis_client, user_id)
-                # orders_logger.info(f"Publishing user data update for user {user_id}")
-                # await publish_user_data_update(redis_client, user_id)
-                # orders_logger.info(f"Publishing market data trigger")
-                # await publish_market_data_trigger(redis_client)
-                # return OrderResponse.model_validate(db_order, from_attributes=True)
                 orders_logger.info(f"AFTER COMMIT: User {db_user_locked.id} wallet_balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
 
                 user_id = db_user_locked.id

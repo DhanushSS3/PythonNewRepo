@@ -193,3 +193,66 @@
 2025-07-28 04:42:05,577 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
 2025-07-28 04:42:10,242 - INFO - websocket - Redis publisher task cancelled.
 2025-07-28 04:42:10,242 - INFO - websocket - Redis publisher task finished.
+2025-07-30 21:38:17,716 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-30 21:38:18,748 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59114
+2025-07-30 21:38:18,748 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59114
+2025-07-30 21:38:18,751 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-30 21:38:19,041 - INFO - websocket - User 31: WebSocket initialized with balance=10000.00000000, margin=20.76171554
+2025-07-30 21:38:19,709 - INFO - websocket - User 31: Successfully updated static orders cache with 3 open orders and 0 pending orders
+2025-07-30 21:38:19,887 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-30 21:38:23,368 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59140
+2025-07-30 21:38:23,368 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59140
+2025-07-30 21:38:23,370 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-30 21:38:23,379 - INFO - websocket - User 31: WebSocket initialized with balance=10000.00000000, margin=20.76171554
+2025-07-30 21:38:23,672 - INFO - websocket - User 31: Successfully updated static orders cache with 3 open orders and 0 pending orders
+2025-07-30 21:38:23,720 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-30 21:43:23,493 - WARNING - websocket - [WEBSOCKET_DEBUG] User 31: Stale/missing balance_margin_cache, attempting refresh
+2025-07-30 21:43:23,493 - WARNING - websocket - [WEBSOCKET_DEBUG] User 31: Stale/missing balance_margin_cache, attempting refresh
+2025-07-30 21:43:23,506 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Strategy 1 successful - balance=10000.00000000, margin=14.24
+2025-07-30 21:43:23,506 - INFO - websocket - [WEBSOCKET_DEBUG] User 31: Strategy 1 successful - balance=10000.00000000, margin=14.24
+2025-07-30 21:45:41,879 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-30 21:45:41,881 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-30 21:45:42,932 - INFO - websocket - Redis publisher task cancelled.
+2025-07-30 21:45:42,932 - INFO - websocket - Redis publisher task finished.
+2025-07-30 21:45:47,903 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-30 21:45:48,599 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59811
+2025-07-30 21:45:48,599 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59811
+2025-07-30 21:45:48,601 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-30 21:45:48,651 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59827
+2025-07-30 21:45:48,651 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59827
+2025-07-30 21:45:48,657 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-30 21:45:48,717 - INFO - websocket - User 31: WebSocket initialized with balance=10000.00000000, margin=20.76171554
+2025-07-30 21:45:48,720 - INFO - websocket - User 31: WebSocket initialized with balance=10000.00000000, margin=20.76171554
+2025-07-30 21:45:49,570 - INFO - websocket - User 31: Successfully updated static orders cache with 3 open orders and 0 pending orders
+2025-07-30 21:45:49,875 - INFO - websocket - User 31: Successfully updated static orders cache with 3 open orders and 0 pending orders
+2025-07-30 21:45:49,981 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-30 21:45:50,501 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-30 21:46:25,074 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-30 21:46:25,075 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-30 21:46:26,764 - INFO - websocket - Redis publisher task cancelled.
+2025-07-30 21:46:26,764 - INFO - websocket - Redis publisher task finished.
+2025-07-30 21:46:30,561 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-30 21:46:31,271 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59952
+2025-07-30 21:46:31,272 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59952
+2025-07-30 21:46:31,275 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-30 21:46:31,310 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:59955
+2025-07-30 21:46:31,311 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:59955
+2025-07-30 21:46:31,314 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-30 21:46:31,361 - INFO - websocket - User 31: WebSocket initialized with balance=10000.00000000, margin=20.76171554
+2025-07-30 21:46:31,368 - INFO - websocket - User 31: WebSocket initialized with balance=10000.00000000, margin=20.76171554
+2025-07-30 21:46:32,100 - INFO - websocket - User 31: Successfully updated static orders cache with 3 open orders and 0 pending orders
+2025-07-30 21:46:32,194 - INFO - websocket - User 31: Successfully updated static orders cache with 3 open orders and 0 pending orders
+2025-07-30 21:46:32,324 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-30 21:46:32,358 - INFO - websocket - User ME4CA: WebSocket connection established successfully
+2025-07-30 21:47:13,910 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-30 21:47:13,912 - INFO - websocket - User ME4CA: WebSocket disconnected
+2025-07-30 21:47:15,285 - INFO - websocket - Redis publisher task cancelled.
+2025-07-30 21:47:15,286 - INFO - websocket - Redis publisher task finished.
+2025-07-30 21:47:19,307 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-30 21:47:22,208 - INFO - websocket - Redis publisher task cancelled.
+2025-07-30 21:47:22,208 - INFO - websocket - Redis publisher task finished.
+2025-07-30 21:47:22,226 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:60072
+2025-07-30 21:47:22,226 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:60072
+2025-07-30 21:47:22,228 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
+2025-07-30 21:47:22,255 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:60084
+2025-07-30 21:47:22,256 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:60084
