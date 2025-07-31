@@ -2728,3 +2728,143 @@ redis.exceptions.ConnectionError: Error Multiple exceptions: [Errno 10061] Conne
 2025-07-30 23:02:28,481 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
 2025-07-30 23:02:46,474 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
 2025-07-30 23:02:46,477 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 01:58:34,184 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-31 01:58:34,189 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 01:58:34,194 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-31 01:58:34,199 - ERROR - cache - User 5 not found in database
+2025-07-31 01:58:34,203 - INFO - cache - Refreshing balance/margin cache for user 8 from database
+2025-07-31 01:58:34,221 - INFO - cache - Successfully refreshed balance/margin cache for user 8: balance=0E-8, margin=0.0
+2025-07-31 01:58:34,228 - INFO - cache - Refreshing balance/margin cache for user 9 from database
+2025-07-31 01:58:34,242 - INFO - cache - Successfully refreshed balance/margin cache for user 9: balance=8436.59000000, margin=8271.68
+2025-07-31 01:58:34,246 - INFO - cache - Refreshing balance/margin cache for user 10 from database
+2025-07-31 01:58:34,257 - INFO - cache - Successfully refreshed balance/margin cache for user 10: balance=9607.74000000, margin=0.0
+2025-07-31 01:58:34,261 - INFO - cache - Refreshing balance/margin cache for user 11 from database
+2025-07-31 01:58:34,272 - INFO - cache - Successfully refreshed balance/margin cache for user 11: balance=14420.38000000, margin=0.0
+2025-07-31 01:58:34,276 - INFO - cache - Refreshing balance/margin cache for user 13 from database
+2025-07-31 01:58:34,283 - INFO - cache - Successfully refreshed balance/margin cache for user 13: balance=94.25000000, margin=0.0
+2025-07-31 01:58:34,286 - INFO - cache - Refreshing balance/margin cache for user 14 from database
+2025-07-31 01:58:34,295 - INFO - cache - Successfully refreshed balance/margin cache for user 14: balance=9902.02000000, margin=9494.47
+2025-07-31 01:58:34,298 - INFO - cache - Refreshing balance/margin cache for user 16 from database
+2025-07-31 01:58:34,305 - INFO - cache - Successfully refreshed balance/margin cache for user 16: balance=0E-8, margin=0.0
+2025-07-31 01:58:34,309 - INFO - cache - Refreshing balance/margin cache for user 17 from database
+2025-07-31 01:58:34,318 - INFO - cache - Successfully refreshed balance/margin cache for user 17: balance=26302.98000000, margin=0.0
+2025-07-31 01:58:34,324 - INFO - cache - Refreshing balance/margin cache for user 18 from database
+2025-07-31 01:58:34,332 - INFO - cache - Successfully refreshed balance/margin cache for user 18: balance=17323.75000000, margin=0.0
+2025-07-31 01:58:34,337 - INFO - cache - Refreshing balance/margin cache for user 19 from database
+2025-07-31 01:58:34,344 - INFO - cache - Successfully refreshed balance/margin cache for user 19: balance=9610.04000000, margin=0.0
+2025-07-31 01:58:34,348 - INFO - cache - Refreshing balance/margin cache for user 20 from database
+2025-07-31 01:58:34,354 - INFO - cache - Successfully refreshed balance/margin cache for user 20: balance=8712.00000000, margin=0.0
+2025-07-31 01:58:34,359 - INFO - cache - Refreshing balance/margin cache for user 21 from database
+2025-07-31 01:58:34,367 - INFO - cache - Successfully refreshed balance/margin cache for user 21: balance=0E-8, margin=0.0
+2025-07-31 01:58:34,371 - INFO - cache - Refreshing balance/margin cache for user 22 from database
+2025-07-31 01:58:34,378 - INFO - cache - Successfully refreshed balance/margin cache for user 22: balance=5961.56000000, margin=0.0
+2025-07-31 01:58:34,380 - INFO - cache - Refreshing balance/margin cache for user 23 from database
+2025-07-31 01:58:34,387 - INFO - cache - Successfully refreshed balance/margin cache for user 23: balance=1000000.00000000, margin=0.0
+2025-07-31 01:58:34,389 - INFO - cache - Refreshing balance/margin cache for user 25 from database
+2025-07-31 01:58:34,396 - INFO - cache - Successfully refreshed balance/margin cache for user 25: balance=6389.62000000, margin=5936.62
+2025-07-31 01:58:34,399 - INFO - cache - Refreshing balance/margin cache for user 26 from database
+2025-07-31 01:58:34,406 - INFO - cache - Successfully refreshed balance/margin cache for user 26: balance=184345.81000000, margin=146484.47
+2025-07-31 01:58:34,410 - INFO - cache - Refreshing balance/margin cache for user 29 from database
+2025-07-31 01:58:34,416 - INFO - cache - Successfully refreshed balance/margin cache for user 29: balance=0E-8, margin=0.0
+2025-07-31 01:58:34,418 - INFO - cache - Refreshing balance/margin cache for user 31 from database
+2025-07-31 01:58:34,486 - INFO - cache - Successfully refreshed balance/margin cache for user 31: balance=10000.00000000, margin=14.24
+2025-07-31 01:58:34,491 - INFO - cache - Refreshing balance/margin cache for user 1 from database
+2025-07-31 01:58:34,510 - INFO - cache - Successfully refreshed balance/margin cache for user 1: balance=16441.04000000, margin=0.0
+2025-07-31 01:58:34,513 - INFO - cache - Refreshing balance/margin cache for user 2 from database
+2025-07-31 01:58:34,520 - INFO - cache - Successfully refreshed balance/margin cache for user 2: balance=100000.00000000, margin=0.0
+2025-07-31 01:58:34,524 - INFO - cache - Refreshing balance/margin cache for user 3 from database
+2025-07-31 01:58:34,531 - INFO - cache - Successfully refreshed balance/margin cache for user 3: balance=100000.00000000, margin=0.0
+2025-07-31 01:58:34,534 - INFO - cache - Refreshing balance/margin cache for user 4 from database
+2025-07-31 01:58:34,542 - INFO - cache - Successfully refreshed balance/margin cache for user 4: balance=100000.00000000, margin=0.0
+2025-07-31 01:58:34,546 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-31 01:58:34,552 - INFO - cache - Successfully refreshed balance/margin cache for user 5: balance=100000.00000000, margin=0.0
+2025-07-31 01:58:34,555 - INFO - cache - Refreshing balance/margin cache for user 6 from database
+2025-07-31 01:58:34,933 - INFO - cache - Successfully refreshed balance/margin cache for user 6: balance=100000.00000000, margin=0.0
+2025-07-31 01:58:34,936 - INFO - cache - Refreshing balance/margin cache for user 9 from database
+2025-07-31 01:58:34,947 - INFO - cache - Successfully refreshed balance/margin cache for user 9: balance=98386.02000000, margin=0.00
+2025-07-31 01:58:34,951 - INFO - cache - Refreshing balance/margin cache for user 10 from database
+2025-07-31 01:58:34,960 - INFO - cache - Successfully refreshed balance/margin cache for user 10: balance=9958.40000000, margin=0.0
+2025-07-31 01:58:34,964 - INFO - cache - Refreshing balance/margin cache for user 11 from database
+2025-07-31 01:58:34,972 - INFO - cache - Successfully refreshed balance/margin cache for user 11: balance=99998.61000000, margin=6.55
+2025-07-31 01:58:34,976 - INFO - cache - Refreshing balance/margin cache for user 12 from database
+2025-07-31 01:58:34,983 - INFO - cache - Successfully refreshed balance/margin cache for user 12: balance=99984.34000000, margin=0.0
+2025-07-31 01:58:34,987 - INFO - cache - Refreshing balance/margin cache for user 13 from database
+2025-07-31 01:58:34,992 - INFO - cache - Successfully refreshed balance/margin cache for user 13: balance=10000.00000000, margin=0.0
+2025-07-31 01:58:35,557 - INFO - cache - Published order update for user 14 to order_updates, received by 0 subscribers
+2025-07-31 01:58:35,571 - INFO - cache - Published user data update for user 14 to user_data_updates, received by 0 subscribers
+2025-07-31 01:58:35,572 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-31 01:58:36,238 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-31 01:58:36,254 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-31 01:58:36,255 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-31 01:59:09,487 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-31 01:59:09,490 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 01:59:10,588 - INFO - cache - Published order update for user 14 to order_updates, received by 0 subscribers
+2025-07-31 01:59:10,603 - INFO - cache - Published user data update for user 14 to user_data_updates, received by 0 subscribers
+2025-07-31 01:59:10,605 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-31 01:59:11,113 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-31 01:59:11,131 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-31 01:59:11,133 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-31 01:59:43,617 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-31 01:59:43,619 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 01:59:44,680 - INFO - cache - Published order update for user 14 to order_updates, received by 0 subscribers
+2025-07-31 01:59:44,706 - INFO - cache - Published user data update for user 14 to user_data_updates, received by 0 subscribers
+2025-07-31 01:59:44,708 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-31 01:59:45,403 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-31 01:59:45,426 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-31 01:59:45,429 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-31 02:00:17,910 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-31 02:00:17,912 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 02:00:18,989 - INFO - cache - Published order update for user 14 to order_updates, received by 0 subscribers
+2025-07-31 02:00:19,003 - INFO - cache - Published user data update for user 14 to user_data_updates, received by 0 subscribers
+2025-07-31 02:00:19,003 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-31 02:00:19,590 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-31 02:00:19,604 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-31 02:00:19,606 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-31 02:00:52,464 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-31 02:00:52,466 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 02:00:53,609 - INFO - cache - Published order update for user 14 to order_updates, received by 0 subscribers
+2025-07-31 02:00:53,628 - INFO - cache - Published user data update for user 14 to user_data_updates, received by 0 subscribers
+2025-07-31 02:00:53,629 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-31 02:00:54,209 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-31 02:00:54,224 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-31 02:00:54,225 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 2 subscribers
+2025-07-31 02:01:08,425 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-31 02:01:08,446 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 02:01:08,455 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-31 02:01:08,458 - ERROR - cache - User 5 not found in database
+2025-07-31 02:01:09,791 - INFO - cache - Published order update for user 14 to order_updates, received by 0 subscribers
+2025-07-31 02:01:09,811 - INFO - cache - Published user data update for user 14 to user_data_updates, received by 0 subscribers
+2025-07-31 02:01:09,813 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-31 02:01:10,684 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-31 02:01:10,701 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-31 02:01:10,703 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-31 02:01:19,140 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-31 02:01:19,144 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 02:01:19,153 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-31 02:01:19,156 - ERROR - cache - User 5 not found in database
+2025-07-31 02:01:20,274 - INFO - cache - Published order update for user 14 to order_updates, received by 0 subscribers
+2025-07-31 02:01:20,294 - INFO - cache - Published user data update for user 14 to user_data_updates, received by 0 subscribers
+2025-07-31 02:01:20,295 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-31 02:01:21,024 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-31 02:01:21,039 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-31 02:01:21,040 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-31 02:01:31,144 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-31 02:01:31,154 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 02:01:31,163 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-31 02:01:31,169 - ERROR - cache - User 5 not found in database
+2025-07-31 02:01:32,405 - INFO - cache - Published order update for user 14 to order_updates, received by 0 subscribers
+2025-07-31 02:01:32,427 - INFO - cache - Published user data update for user 14 to user_data_updates, received by 0 subscribers
+2025-07-31 02:01:32,429 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-31 02:01:33,211 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-31 02:01:33,221 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-31 02:01:33,221 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-31 02:02:29,281 - INFO - cache - User data for user 5 (type: live) not in cache. Fetching from DB.
+2025-07-31 02:02:29,286 - WARNING - cache - User 5 (type: live) not found in DB. Cannot cache.
+2025-07-31 02:02:29,299 - INFO - cache - Refreshing balance/margin cache for user 5 from database
+2025-07-31 02:02:29,302 - ERROR - cache - User 5 not found in database
+2025-07-31 02:02:30,565 - INFO - cache - Published order update for user 14 to order_updates, received by 0 subscribers
+2025-07-31 02:02:30,578 - INFO - cache - Published user data update for user 14 to user_data_updates, received by 0 subscribers
+2025-07-31 02:02:30,579 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers
+2025-07-31 02:02:31,304 - INFO - cache - Published order update for user 25 to order_updates, received by 0 subscribers
+2025-07-31 02:02:31,328 - INFO - cache - Published user data update for user 25 to user_data_updates, received by 0 subscribers
+2025-07-31 02:02:31,330 - INFO - cache - Published market data trigger for symbol TRIGGER to market_data_updates, received by 1 subscribers

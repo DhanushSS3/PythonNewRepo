@@ -262,3 +262,21 @@
 2025-07-30 23:02:45,694 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
 2025-07-30 23:02:49,530 - INFO - websocket - Redis publisher task cancelled.
 2025-07-30 23:02:49,530 - INFO - websocket - Redis publisher task finished.
+2025-07-31 01:58:33,408 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-31 02:01:02,798 - INFO - websocket - Redis publisher task cancelled.
+2025-07-31 02:01:02,798 - INFO - websocket - Redis publisher task finished.
+2025-07-31 02:01:07,608 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-31 02:01:14,367 - INFO - websocket - Redis publisher task cancelled.
+2025-07-31 02:01:14,367 - INFO - websocket - Redis publisher task finished.
+2025-07-31 02:01:18,284 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-31 02:01:25,925 - INFO - websocket - Redis publisher task cancelled.
+2025-07-31 02:01:25,925 - INFO - websocket - Redis publisher task finished.
+2025-07-31 02:01:30,348 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-31 02:01:51,398 - INFO - websocket - Redis publisher task cancelled.
+2025-07-31 02:01:51,398 - INFO - websocket - Redis publisher task finished.
+2025-07-31 02:01:55,412 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-31 02:01:58,395 - INFO - websocket - Redis publisher task cancelled.
+2025-07-31 02:01:58,395 - INFO - websocket - Redis publisher task finished.
+2025-07-31 02:02:28,197 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-31 02:03:03,316 - INFO - websocket - Redis publisher task cancelled.
+2025-07-31 02:03:03,316 - INFO - websocket - Redis publisher task finished.

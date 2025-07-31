@@ -529,3 +529,334 @@
 2025-07-30 23:02:45,696 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
 2025-07-30 23:02:45,725 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
 2025-07-30 23:02:45,726 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-31 01:58:32,269 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-31 01:58:33,411 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-31 01:58:33,411 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-31 01:58:33,411 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-31 01:58:33,411 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-31 01:58:33,481 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-31 01:58:33,482 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-31 01:58:34,236 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 9, Symbol BTCUSD
+2025-07-31 01:58:34,237 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: TotalBuyQty=0.35000000, TotalSellQty=0, NetQty=0.35000000, IsHedged=False
+2025-07-31 01:58:34,237 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23633.37142857142857142857143')], HighestMarginPerLot=23633.37142857142857142857143
+2025-07-31 01:58:34,237 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 9, Symbol BTCUSD: CalculatedTotalMargin=8271.68
+2025-07-31 01:58:34,237 - INFO - orders - [TOTAL_USER_MARGIN] User 9 total margin across all symbols: 8271.68
+2025-07-31 01:58:34,291 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 01:58:34,291 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 01:58:34,291 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 01:58:34,291 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 01:58:34,291 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 01:58:34,291 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 01:58:34,291 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 01:58:34,292 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 01:58:34,292 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 01:58:34,393 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 01:58:34,393 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 01:58:34,393 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 01:58:34,393 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 01:58:34,393 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 01:58:34,403 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol XAGUSD
+2025-07-31 01:58:34,403 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-31 01:58:34,403 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol XAGUSD: AllMarginsPerLot=[Decimal('1954')], HighestMarginPerLot=1954
+2025-07-31 01:58:34,403 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol XAGUSD: CalculatedTotalMargin=19.54
+2025-07-31 01:58:34,404 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 26, Symbol BTCUSD
+2025-07-31 01:58:34,404 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: TotalBuyQty=6.00000000, TotalSellQty=0, NetQty=6.00000000, IsHedged=False
+2025-07-31 01:58:34,404 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 26, Symbol BTCUSD: AllMarginsPerLot=[Decimal('24410.82166666666666666666667')], HighestMarginPerLot=24410.82166666666666666666667
+2025-07-31 01:58:34,404 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 26, Symbol BTCUSD: CalculatedTotalMargin=146464.93
+2025-07-31 01:58:34,404 - INFO - orders - [TOTAL_USER_MARGIN] User 26 total margin across all symbols: 146484.47
+2025-07-31 01:58:34,483 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 31, Symbol AUDJPY
+2025-07-31 01:58:34,483 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 31, Symbol AUDJPY: TotalBuyQty=0.01000000, TotalSellQty=0.01000000, NetQty=0.01000000, IsHedged=True
+2025-07-31 01:58:34,483 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 31, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.046488'), Decimal('651.977957')], HighestMarginPerLot=652.046488
+2025-07-31 01:58:34,483 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 31, Symbol AUDJPY: CalculatedTotalMargin=6.52
+2025-07-31 01:58:34,483 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 31, Symbol AUDSGD
+2025-07-31 01:58:34,484 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 31, Symbol AUDSGD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-31 01:58:34,484 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 31, Symbol AUDSGD: AllMarginsPerLot=[Decimal('772.147109')], HighestMarginPerLot=772.147109
+2025-07-31 01:58:34,484 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 31, Symbol AUDSGD: CalculatedTotalMargin=7.72
+2025-07-31 01:58:34,484 - INFO - orders - [TOTAL_USER_MARGIN] User 31 total margin across all symbols: 14.24
+2025-07-31 01:58:34,943 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 4 positions for User 9, Symbol GBPUSD
+2025-07-31 01:58:34,943 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol GBPUSD: TotalBuyQty=0.50000000, TotalSellQty=0.50000000, NetQty=0.50000000, IsHedged=True
+2025-07-31 01:58:34,943 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 9, Symbol GBPUSD: AllMarginsPerLot=[Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0')], HighestMarginPerLot=0
+2025-07-31 01:58:34,943 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 9, Symbol GBPUSD: CalculatedTotalMargin=0.00
+2025-07-31 01:58:34,943 - INFO - orders - [TOTAL_USER_MARGIN] User 9 total margin across all symbols: 0.00
+2025-07-31 01:58:34,969 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 11, Symbol AUDCAD
+2025-07-31 01:58:34,969 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDCAD: TotalBuyQty=0.01000000, TotalSellQty=0, NetQty=0.01000000, IsHedged=False
+2025-07-31 01:58:34,969 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 11, Symbol AUDCAD: AllMarginsPerLot=[Decimal('655.364428')], HighestMarginPerLot=655.364428
+2025-07-31 01:58:34,969 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 11, Symbol AUDCAD: CalculatedTotalMargin=6.55
+2025-07-31 01:58:34,969 - INFO - orders - [TOTAL_USER_MARGIN] User 11 total margin across all symbols: 6.55
+2025-07-31 01:58:35,558 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-31 01:58:35,558 - INFO - orders - Using order model: UserOrder
+2025-07-31 01:58:35,561 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-31 01:58:35,563 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-31 01:58:35,564 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-31 01:58:35,568 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 01:58:35,568 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 01:58:35,568 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 01:58:35,568 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 01:58:35,568 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 01:58:35,568 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 01:58:35,568 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 01:58:35,568 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 01:58:35,568 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 01:58:35,570 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-31 01:58:36,240 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-31 01:58:36,240 - INFO - orders - Using order model: UserOrder
+2025-07-31 01:58:36,242 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-31 01:58:36,244 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-31 01:58:36,246 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-31 01:58:36,249 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 01:58:36,249 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 01:58:36,249 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 01:58:36,249 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 01:58:36,249 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 01:58:36,252 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-31 01:58:38,506 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-31 01:58:43,424 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-31 01:59:10,590 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-31 01:59:10,590 - INFO - orders - Using order model: UserOrder
+2025-07-31 01:59:10,592 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-31 01:59:10,595 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-31 01:59:10,596 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-31 01:59:10,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 01:59:10,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 01:59:10,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 01:59:10,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 01:59:10,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 01:59:10,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 01:59:10,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 01:59:10,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 01:59:10,599 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 01:59:10,602 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-31 01:59:11,115 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-31 01:59:11,115 - INFO - orders - Using order model: UserOrder
+2025-07-31 01:59:11,117 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-31 01:59:11,120 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-31 01:59:11,122 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-31 01:59:11,126 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 01:59:11,126 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 01:59:11,126 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 01:59:11,126 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 01:59:11,126 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 01:59:11,130 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-31 01:59:44,681 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-31 01:59:44,681 - INFO - orders - Using order model: UserOrder
+2025-07-31 01:59:44,685 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-31 01:59:44,690 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-31 01:59:44,692 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-31 01:59:44,698 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 01:59:44,698 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 01:59:44,699 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 01:59:44,699 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 01:59:44,700 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 01:59:44,700 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 01:59:44,700 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 01:59:44,700 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 01:59:44,700 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 01:59:44,705 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-31 01:59:45,406 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-31 01:59:45,407 - INFO - orders - Using order model: UserOrder
+2025-07-31 01:59:45,410 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-31 01:59:45,413 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-31 01:59:45,415 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-31 01:59:45,419 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 01:59:45,419 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 01:59:45,419 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 01:59:45,419 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 01:59:45,419 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 01:59:45,424 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-31 02:00:18,991 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-31 02:00:18,991 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:00:18,992 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-31 02:00:18,994 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-31 02:00:18,995 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-31 02:00:18,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 02:00:18,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 02:00:18,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 02:00:18,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 02:00:18,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 02:00:18,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 02:00:18,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 02:00:18,999 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 02:00:18,999 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 02:00:19,002 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-31 02:00:19,592 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-31 02:00:19,592 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:00:19,593 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-31 02:00:19,595 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-31 02:00:19,597 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-31 02:00:19,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 02:00:19,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 02:00:19,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 02:00:19,599 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 02:00:19,599 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 02:00:19,602 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-31 02:00:53,611 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-31 02:00:53,612 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:00:53,615 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-31 02:00:53,618 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-31 02:00:53,620 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-31 02:00:53,623 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 02:00:53,623 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 02:00:53,623 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 02:00:53,623 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 02:00:53,623 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 02:00:53,623 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 02:00:53,623 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 02:00:53,623 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 02:00:53,623 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 02:00:53,626 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-31 02:00:54,209 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-31 02:00:54,209 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:00:54,211 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-31 02:00:54,214 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-31 02:00:54,217 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-31 02:00:54,221 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 02:00:54,221 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 02:00:54,221 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 02:00:54,221 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 02:00:54,221 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 02:00:54,223 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-31 02:01:06,680 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-31 02:01:07,618 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-31 02:01:07,618 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-31 02:01:07,618 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-31 02:01:07,618 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-31 02:01:07,657 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-31 02:01:07,657 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-31 02:01:09,793 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-31 02:01:09,793 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:01:09,797 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-31 02:01:09,800 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-31 02:01:09,802 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-31 02:01:09,806 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 02:01:09,806 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 02:01:09,806 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 02:01:09,806 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 02:01:09,806 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 02:01:09,806 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 02:01:09,806 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 02:01:09,806 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 02:01:09,807 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 02:01:09,810 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-31 02:01:10,685 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-31 02:01:10,686 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:01:10,688 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-31 02:01:10,690 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-31 02:01:10,692 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-31 02:01:10,696 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 02:01:10,696 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 02:01:10,696 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 02:01:10,696 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 02:01:10,696 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 02:01:10,699 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-31 02:01:14,363 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-31 02:01:17,138 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-31 02:01:18,285 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-31 02:01:18,285 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-31 02:01:18,285 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-31 02:01:18,285 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-31 02:01:18,359 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-31 02:01:18,359 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-31 02:01:20,276 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-31 02:01:20,276 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:01:20,279 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-31 02:01:20,282 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-31 02:01:20,283 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-31 02:01:20,288 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 02:01:20,288 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 02:01:20,288 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 02:01:20,288 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 02:01:20,288 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 02:01:20,288 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 02:01:20,289 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 02:01:20,289 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 02:01:20,289 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 02:01:20,292 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-31 02:01:21,026 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-31 02:01:21,026 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:01:21,028 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-31 02:01:21,030 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-31 02:01:21,032 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-31 02:01:21,035 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 02:01:21,035 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 02:01:21,035 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 02:01:21,035 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 02:01:21,035 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 02:01:21,038 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-31 02:01:23,368 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-31 02:01:29,253 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-31 02:01:30,349 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-31 02:01:30,350 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-31 02:01:30,350 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-31 02:01:30,350 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-31 02:01:30,396 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-31 02:01:30,396 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-31 02:01:32,408 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-31 02:01:32,408 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:01:32,410 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-31 02:01:32,413 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-31 02:01:32,415 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-31 02:01:32,420 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 02:01:32,420 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 02:01:32,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 02:01:32,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 02:01:32,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 02:01:32,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 02:01:32,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 02:01:32,421 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 02:01:32,421 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 02:01:32,426 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-31 02:01:33,212 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-31 02:01:33,212 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:01:33,213 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-31 02:01:33,214 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-31 02:01:33,215 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-31 02:01:33,218 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 02:01:33,218 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 02:01:33,218 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 02:01:33,218 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 02:01:33,218 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 02:01:33,220 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-31 02:01:35,461 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-31 02:01:40,355 - INFO - orders - Starting the users with orders cache updater task.
+2025-07-31 02:01:54,475 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-31 02:01:55,426 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-31 02:01:55,426 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-31 02:01:55,426 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-31 02:01:55,427 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-31 02:01:55,495 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-31 02:01:55,495 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-31 02:02:27,093 - INFO - orders - [CLEANUP] Starting pending order stream cleanup
+2025-07-31 02:02:28,205 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream
+2025-07-31 02:02:28,205 - INFO - orders - [CLEANUP] Pending order stream cleanup completed
+2025-07-31 02:02:28,206 - INFO - orders - [CLEANUP] Starting pending order stream cleanup with trigger price validation
+2025-07-31 02:02:28,206 - INFO - orders - [PENDING_TRIGGER_WORKER] Starting pending order trigger worker
+2025-07-31 02:02:28,253 - INFO - orders - [CLEANUP] Cleared pending_trigger_queue stream to remove old format entries
+2025-07-31 02:02:28,253 - INFO - orders - [CLEANUP] Pending order stream cleanup with trigger price validation completed
+2025-07-31 02:02:30,566 - INFO - orders - Starting update_user_static_orders for user 14, user_type live
+2025-07-31 02:02:30,567 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:02:30,569 - INFO - orders - Fetched 3 open orders for user 14
+2025-07-31 02:02:30,570 - INFO - orders - Fetched 0 pending orders for user 14
+2025-07-31 02:02:30,572 - INFO - orders - Updated static orders cache for user 14 with 3 open orders and 0 pending orders
+2025-07-31 02:02:30,575 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 14, Symbol BTCUSD
+2025-07-31 02:02:30,575 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: TotalBuyQty=0.40000000, TotalSellQty=0, NetQty=0.40000000, IsHedged=False
+2025-07-31 02:02:30,575 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol BTCUSD: AllMarginsPerLot=[Decimal('23556.825')], HighestMarginPerLot=23556.825
+2025-07-31 02:02:30,575 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol BTCUSD: CalculatedTotalMargin=9422.73
+2025-07-31 02:02:30,575 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 2 positions for User 14, Symbol AUDJPY
+2025-07-31 02:02:30,575 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: TotalBuyQty=0.11000000, TotalSellQty=0, NetQty=0.11000000, IsHedged=False
+2025-07-31 02:02:30,575 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 14, Symbol AUDJPY: AllMarginsPerLot=[Decimal('652.1517371'), Decimal('652.134765')], HighestMarginPerLot=652.1517371
+2025-07-31 02:02:30,575 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 14, Symbol AUDJPY: CalculatedTotalMargin=71.74
+2025-07-31 02:02:30,575 - INFO - orders - [TOTAL_USER_MARGIN] User 14 total margin across all symbols: 9494.47
+2025-07-31 02:02:30,577 - INFO - orders - User 14: Updated balance/margin cache after static orders update - balance=9902.02000000, margin=9494.47
+2025-07-31 02:02:31,306 - INFO - orders - Starting update_user_static_orders for user 25, user_type live
+2025-07-31 02:02:31,306 - INFO - orders - Using order model: UserOrder
+2025-07-31 02:02:31,309 - INFO - orders - Fetched 1 open orders for user 25
+2025-07-31 02:02:31,314 - INFO - orders - Fetched 0 pending orders for user 25
+2025-07-31 02:02:31,316 - INFO - orders - Updated static orders cache for user 25 with 1 open orders and 0 pending orders
+2025-07-31 02:02:31,319 - INFO - orders - [MARGIN_TOTAL_CONTRIB] Calculating margin for 1 positions for User 25, Symbol BTCUSD
+2025-07-31 02:02:31,320 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: TotalBuyQty=0.10000000, TotalSellQty=0, NetQty=0.10000000, IsHedged=False
+2025-07-31 02:02:31,320 - INFO - orders - [MARGIN_TOTAL_CONTRIB_CALC] User 25, Symbol BTCUSD: AllMarginsPerLot=[Decimal('59366.2')], HighestMarginPerLot=59366.2
+2025-07-31 02:02:31,320 - INFO - orders - [MARGIN_TOTAL_CONTRIB_EXIT] User 25, Symbol BTCUSD: CalculatedTotalMargin=5936.62
+2025-07-31 02:02:31,320 - INFO - orders - [TOTAL_USER_MARGIN] User 25 total margin across all symbols: 5936.62
+2025-07-31 02:02:31,325 - INFO - orders - User 25: Updated balance/margin cache after static orders update - balance=6389.62000000, margin=5936.62
+2025-07-31 02:02:33,417 - INFO - orders - Starting the simplified pending order checker background task.
+2025-07-31 02:02:38,201 - INFO - orders - Starting the users with orders cache updater task.

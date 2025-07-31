@@ -10,9 +10,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.firebase import get_latest_market_data
 from app.core.cache import get_adjusted_market_price_cache, get_last_known_price, get_user_static_orders_cache, get_user_balance_margin_cache, refresh_balance_margin_cache_with_fallback, get_external_symbol_info_cache
 from redis import Redis
-from app.core.logging_config import orders_logger
+from app.core.logging_config import orders_logger, portfolio_logger
 
-logger = logging.getLogger(__name__)
+logger = portfolio_logger
 
 class CurrencyConversionError(Exception):
     pass
@@ -171,7 +171,7 @@ async def calculate_user_portfolio(
         else:
             logger.debug(f"[PORTFOLIO] user_static_orders cache hit for user {user_id}.")
         open_positions = static_orders.get('open_orders', []) if static_orders else []
-        logger.debug(f"[PORTFOLIO] user {user_id} open_positions count: {len(open_positions)}")
+        logger.info(f"[PORTFOLIO] user {user_id} open_positions count: {len(open_positions)}")
 
         # 2. Get margin/balance from balance/margin cache, fallback to DB if missing
         balance_margin = await get_user_balance_margin_cache(redis_client, user_id, user_type)
@@ -380,7 +380,7 @@ async def calculate_user_portfolio(
             # Accumulate totals
             total_pnl_usd += final_pnl  # Using final PnL (after commission)
 
-            logger.debug(
+            logger.info(
                 f"Position calculation for {symbol}: Type={order_type}, "
                 f"Entry={entry_price}, Current={current_sell if order_type == 'BUY' else current_buy}, "
                 f"Quantity={quantity}, Contract Size={contract_size}, "
