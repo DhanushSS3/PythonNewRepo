@@ -630,7 +630,8 @@ async def signup_send_otp(
         await email_service.send_email(
             to_email=request_data.email,
             subject=email_subject,
-            body=email_body
+            body=email_body,
+            email_type="signup_otp"
         )
         logger.info(f"Signup OTP sent successfully to {request_data.email} for account type {request_data.user_type}.")
     except Exception as e:
@@ -701,7 +702,8 @@ async def request_password_reset(
     await email_service.send_email(
         user.email,
         "OTP Verification",
-        f"Your OTP is: {otp.otp_code}"
+        f"Your OTP is: {otp.otp_code}",
+        email_type="password_reset_otp"
     )
     return StatusResponse(message="OTP sent successfully.")
 
@@ -1034,7 +1036,8 @@ async def demo_signup_send_otp(
         await email_service.send_email(
             to_email=request_data.email,
             subject=email_subject,
-            body=email_body
+            body=email_body,
+            email_type="demo_signup_otp"
         )
         logger.info(f"Signup OTP sent successfully to {request_data.email} for demo account.")
     except Exception as e:
@@ -1111,7 +1114,8 @@ async def demo_request_password_reset(
     await email_service.send_email(
         demo_user.email,
         "Demo Account Password Reset OTP",
-        f"Your OTP is: {otp.otp_code}"
+        f"Your OTP is: {otp.otp_code}",
+        email_type="demo_password_reset_otp"
     )
     return StatusResponse(message="Demo account password reset OTP sent successfully.")
 

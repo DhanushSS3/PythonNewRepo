@@ -4,6 +4,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 import os
 import sys
+from datetime import datetime
 
 # Constants
 MAX_LOG_SIZE_MB = 10  # 10MB per log file
@@ -12,6 +13,12 @@ BACKUP_COUNT = 5      # Keep 5 backup files
 # Define log directory
 LOG_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'logs')
 os.makedirs(LOG_DIR, exist_ok=True)
+
+# Create specialized log directories
+OTP_LOG_DIR = os.path.join(LOG_DIR, 'otps')
+EMAIL_LOG_DIR = os.path.join(LOG_DIR, 'emails')
+os.makedirs(OTP_LOG_DIR, exist_ok=True)
+os.makedirs(EMAIL_LOG_DIR, exist_ok=True)
 
 # Production environment detection
 IS_PRODUCTION = os.getenv("ENVIRONMENT", "development").lower() == "production"
@@ -36,6 +43,31 @@ def setup_file_logger(name: str, filename: str, level=logging.INFO) -> logging.L
     logger.propagate = False
     return logger
 
+def setup_specialized_logger(name: str, log_dir: str, filename: str, level=logging.INFO) -> logging.Logger:
+    """
+    Creates a specialized logger for OTPs and emails with detailed formatting.
+    """
+    log_path = os.path.join(log_dir, filename)
+    handler = RotatingFileHandler(
+        log_path, 
+        maxBytes=MAX_LOG_SIZE_MB * 1024 * 1024, 
+        backupCount=BACKUP_COUNT,
+        delay=True
+    )
+    
+    # Enhanced formatter for specialized logs
+    formatter = logging.Formatter(
+        '%(asctime)s - %(levelname)s - %(name)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+    logger.propagate = False
+    return logger
+
 def setup_stream_logger(name: str, level=logging.ERROR) -> logging.Logger:
     """
     Creates a logger that outputs to the console (stdout).
@@ -52,6 +84,18 @@ def setup_stream_logger(name: str, level=logging.ERROR) -> logging.Logger:
     logger.addHandler(handler)
     logger.propagate = False
     return logger
+
+# --- Specialized Loggers for OTPs and Emails ---
+
+# OTP Loggers
+otp_generation_logger = setup_specialized_logger("otp_generation", OTP_LOG_DIR, "otp_generation.log", logging.INFO)
+otp_verification_logger = setup_specialized_logger("otp_verification", OTP_LOG_DIR, "otp_verification.log", logging.INFO)
+otp_failed_attempts_logger = setup_specialized_logger("otp_failed_attempts", OTP_LOG_DIR, "otp_failed_attempts.log", logging.WARNING)
+
+# Email Loggers
+email_sent_logger = setup_specialized_logger("email_sent", EMAIL_LOG_DIR, "email_sent.log", logging.INFO)
+email_failed_logger = setup_specialized_logger("email_failed", EMAIL_LOG_DIR, "email_failed.log", logging.ERROR)
+email_margin_call_logger = setup_specialized_logger("email_margin_call", EMAIL_LOG_DIR, "email_margin_call.log", logging.INFO)
 
 # --- Production-Optimized Loggers ---
 
@@ -166,12 +210,14 @@ if IS_PRODUCTION:
     print("✅ High-frequency logs: WARNING level")
     print("✅ Console output: ERROR level only")
     print("✅ Rotating file handlers: 10MB files, 5 backups")
+    print("✅ Specialized OTP/Email logging: INFO level")
     print("========================================")
 else:
     print("=== DEVELOPMENT LOGGING CONFIGURATION ===")
     print("✅ All logs: DEBUG level")
     print("✅ Console output: INFO level")
     print("✅ Full debugging enabled")
+    print("✅ Specialized OTP/Email logging: INFO level")
     print("=========================================")
 
 order_audit_logger = setup_file_logger("order_audit", "order_audit.log", logging.INFO)
