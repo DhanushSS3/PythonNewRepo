@@ -712,7 +712,7 @@ async def handle_margin_cutoff(db: AsyncSession, redis_client: Redis, user_id: i
                 try:
                     from app.services.order_processing import calculate_total_user_margin
                     total_user_margin = await calculate_total_user_margin(db, redis_client, user_id, user_type_str)
-                    await set_user_balance_margin_cache(redis_client, user_id, user_data_to_cache["wallet_balance"], total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id, user_data_to_cache["wallet_balance"], total_user_margin, user_type_str)
                     autocutoff_logger.info(f"[AUTO-CUTOFF] User {user_id}: Updated balance/margin cache - balance={user_data_to_cache['wallet_balance']}, margin={total_user_margin}")
                 except Exception as e:
                     autocutoff_logger.error(f"[AUTO-CUTOFF] User {user_id}: Error updating balance/margin cache: {e}", exc_info=True)
@@ -1314,7 +1314,7 @@ async def run_cache_validation():
                     
                     # Check balance/margin cache
                     from app.core.cache import get_user_balance_margin_cache, get_user_static_orders_cache
-                    balance_margin_cache = await get_user_balance_margin_cache(global_redis_client_instance, user_id)
+                    balance_margin_cache = await get_user_balance_margin_cache(global_redis_client_instance, user_id, user_type)
                     
                     if not balance_margin_cache:
                         logger.warning(f"User {user_id}: Missing balance/margin cache, refreshing...")
@@ -1600,7 +1600,7 @@ async def barclays_pending_order_margin_checker():
                                         "phone_number": getattr(db_user, 'phone_number', None),
                                     }
                                     await set_user_data_cache(global_redis_client_instance, user_id, user_data_to_cache, user_type)
-                                    await set_user_balance_margin_cache(global_redis_client_instance, user_id, db_user.wallet_balance, total_user_margin)
+                                    await set_user_balance_margin_cache(global_redis_client_instance, user_id, db_user.wallet_balance, total_user_margin, user_type)
                                 await publish_order_update(global_redis_client_instance, user_id)
                                 await publish_user_data_update(global_redis_client_instance, user_id)
                                 cancelled_any = True

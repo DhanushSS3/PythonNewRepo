@@ -136,7 +136,7 @@ async def update_user_cache(user_id, db, redis_client, user_type):
                     total_user_margin = await calculate_total_user_margin(background_db, redis_client, user_id, user_type)
                     
                     # Update balance/margin cache for websocket
-                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
                     orders_logger.info(f"Background balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={total_user_margin}")
                     
             except Exception as e:
@@ -316,7 +316,7 @@ async def update_user_static_orders(user_id: int, db: AsyncSession, redis_client
                 total_user_margin = await calculate_total_user_margin(db, redis_client, user_id, user_type)
                 
                 # Update the balance/margin cache
-                await set_user_balance_margin_cache(redis_client, user_id, balance, total_user_margin)
+                await set_user_balance_margin_cache(redis_client, user_id, balance, total_user_margin, user_type)
                 orders_logger.info(f"User {user_id}: Updated balance/margin cache after static orders update - balance={balance}, margin={total_user_margin}")
             else:
                 orders_logger.warning(f"User {user_id}: Could not get user data for balance/margin cache update")
@@ -1143,7 +1143,7 @@ async def place_pending_order(
                 await set_user_data_cache(redis_client, user_id_for_order, user_data_to_cache, user_type)
                 
                 # Update balance/margin cache for websocket
-                await set_user_balance_margin_cache(redis_client, user_id_for_order, db_user.wallet_balance, total_user_margin)
+                await set_user_balance_margin_cache(redis_client, user_id_for_order, db_user.wallet_balance, total_user_margin, user_type)
                 orders_logger.debug(f"Balance/margin cache updated for user {user_id_for_order}: balance={db_user.wallet_balance}, margin={total_user_margin}")
                 
                 await update_static_orders_cache(user_id_for_order, db, redis_client, user_type)
@@ -1658,7 +1658,7 @@ async def close_order(
                     orders_logger.info(f"User data cache updated for user {db_user_locked.id}")
                     
                     # Update balance/margin cache for websocket
-                    await set_user_balance_margin_cache(redis_client, db_user_locked.id, db_user_locked.wallet_balance, db_user_locked.margin)
+                    await set_user_balance_margin_cache(redis_client, db_user_locked.id, db_user_locked.wallet_balance, db_user_locked.margin, user_type)
                     orders_logger.info(f"Balance/margin cache updated for user {db_user_locked.id}: balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
                     
                     await update_user_static_orders(db_user_locked.id, db, redis_client, user_type)
@@ -2077,7 +2077,7 @@ async def modify_pending_order(
                 await set_user_data_cache(redis_client, modify_request.user_id, user_data_to_cache, modify_request.user_type)
                 
                 # Update balance/margin cache for websocket
-                await set_user_balance_margin_cache(redis_client, modify_request.user_id, db_user.wallet_balance, total_user_margin)
+                await set_user_balance_margin_cache(redis_client, modify_request.user_id, db_user.wallet_balance, total_user_margin, modify_request.user_type)
                 orders_logger.info(f"Balance/margin cache updated for user {modify_request.user_id}: balance={db_user.wallet_balance}, margin={total_user_margin}")
                 
                 orders_logger.info(f"User data cache updated for user {modify_request.user_id} after modifying pending order")
@@ -2291,7 +2291,7 @@ async def cancel_pending_order(
                     await set_user_data_cache(redis_client, user_id_for_operation, user_data_to_cache, cancel_request.user_type)
                     
                     # Update balance/margin cache for websocket
-                    await set_user_balance_margin_cache(redis_client, user_id_for_operation, db_user.wallet_balance, total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id_for_operation, db_user.wallet_balance, total_user_margin, cancel_request.user_type)
                     orders_logger.info(f"Balance/margin cache updated for user {user_id_for_operation}: balance={db_user.wallet_balance}, margin={total_user_margin}")
                     
             except Exception as e:
@@ -3209,7 +3209,7 @@ async def update_order_by_service_provider(
             await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
             
             # Update balance/margin cache for websocket
-            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin)
+            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin, 'live')
             orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={db_user.margin}")
             
             # Update static orders cache
@@ -3416,7 +3416,7 @@ async def update_order_by_service_provider(
             await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
             
             # Update balance/margin cache for websocket
-            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin)
+            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin, 'live')
             orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={db_user.margin}")
             
             # Update static orders cache
@@ -3577,7 +3577,7 @@ async def update_order_by_service_provider(
             await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
             
             # Update balance/margin cache for websocket
-            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin)
+            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin, 'live')
             orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={db_user.margin}")
             
             # Update static orders cache
@@ -3644,7 +3644,7 @@ async def update_order_by_service_provider(
                     await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
                     
                     # Update balance/margin cache for websocket
-                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, 'live')
                     orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={total_user_margin}")
                     
             except Exception as e:
@@ -3701,7 +3701,7 @@ async def update_order_by_service_provider(
                     await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
                     
                     # Update balance/margin cache for websocket
-                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, 'live')
                     orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={total_user_margin}")
                     
             except Exception as e:
@@ -4308,7 +4308,7 @@ async def service_provider_order_update(
             await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
             
             # Update balance/margin cache for websocket
-            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin)
+            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin, 'live')
             orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={db_user.margin}")
             
             # Update static orders cache
@@ -4515,7 +4515,7 @@ async def service_provider_order_update(
             await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
             
             # Update balance/margin cache for websocket
-            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin)
+            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin, 'live')
             orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={db_user.margin}")
             
             # Update static orders cache
@@ -4676,7 +4676,7 @@ async def service_provider_order_update(
             await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
             
             # Update balance/margin cache for websocket
-            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin)
+            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin, 'live')
             orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={db_user.margin}")
             
             # Update static orders cache
@@ -4743,7 +4743,7 @@ async def service_provider_order_update(
                     await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
                     
                     # Update balance/margin cache for websocket
-                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, 'live')
                     orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={total_user_margin}")
                     
             except Exception as e:
@@ -4800,7 +4800,7 @@ async def service_provider_order_update(
                     await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
                     
                     # Update balance/margin cache for websocket
-                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, 'live')
                     orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={total_user_margin}")
                     
             except Exception as e:
@@ -5020,7 +5020,7 @@ async def _handle_order_close_transition(
     await set_user_data_cache(redis_client, user_id, user_data_to_cache, 'live')
     
     # Update balance/margin cache for websocket
-    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin)
+    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, db_user.margin, 'live')
     orders_logger.info(f"Balance/margin cache updated for user {user_id}: balance={db_user.wallet_balance}, margin={db_user.margin}")
     
     await update_user_static_orders(user_id, db, redis_client, 'live')

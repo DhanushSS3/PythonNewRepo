@@ -214,7 +214,7 @@ async def get_user_positions_from_cache(redis_client: Redis, user_id: int) -> Li
     return []
 
 # --- New Minimal Balance and Margin Cache ---
-async def set_user_balance_margin_cache(redis_client: Redis, user_id: int, wallet_balance: Decimal, margin: Decimal):
+async def set_user_balance_margin_cache(redis_client: Redis, user_id: int, wallet_balance: Decimal, margin: Decimal, user_type: str = 'live'):
     """
     Stores only user balance and margin in Redis.
     This is the minimal cache for websocket balance/margin updates.
@@ -251,7 +251,7 @@ async def set_user_balance_margin_cache(redis_client: Redis, user_id: int, walle
         cache_logger.error(f"Invalid balance/margin values for user {user_id}: balance={wallet_balance}, margin={margin}, error={e}")
         return
 
-    key = f"{REDIS_USER_BALANCE_MARGIN_KEY_PREFIX}{user_id}"
+    key = f"{REDIS_USER_BALANCE_MARGIN_KEY_PREFIX}{user_type}:{user_id}"
     try:
         data = {
             "wallet_balance": str(wallet_balance),
@@ -289,7 +289,7 @@ async def set_user_balance_margin_cache(redis_client: Redis, user_id: int, walle
     except Exception as e:
         cache_logger.error(f"Error setting balance/margin cache for user {user_id}: {e}", exc_info=True)
 
-async def get_user_balance_margin_cache(redis_client: Redis, user_id: int) -> Optional[Dict[str, str]]:
+async def get_user_balance_margin_cache(redis_client: Redis, user_id: int, user_type: str = 'live') -> Optional[Dict[str, str]]:
     """
     Retrieves only user balance and margin from Redis cache.
     Returns None if data is not found.
@@ -298,7 +298,7 @@ async def get_user_balance_margin_cache(redis_client: Redis, user_id: int) -> Op
         cache_logger.warning(f"Redis client not available for getting balance/margin cache for user {user_id}.")
         return None
 
-    key = f"{REDIS_USER_BALANCE_MARGIN_KEY_PREFIX}{user_id}"
+    key = f"{REDIS_USER_BALANCE_MARGIN_KEY_PREFIX}{user_type}:{user_id}"
     try:
         data_json = await redis_client.get(key)
         if data_json:
@@ -332,7 +332,7 @@ async def get_user_balance_margin_cache(redis_client: Redis, user_id: int) -> Op
         cache_logger.error(f"Error getting balance/margin cache for user {user_id}: {e}", exc_info=True)
         return None
 
-async def is_balance_margin_cache_stale(redis_client: Redis, user_id: int) -> bool:
+async def is_balance_margin_cache_stale(redis_client: Redis, user_id: int, user_type: str = 'live') -> bool:
     """
     Check if the balance/margin cache is stale or contains 0 values.
     Returns True if cache should be refreshed.
@@ -341,7 +341,7 @@ async def is_balance_margin_cache_stale(redis_client: Redis, user_id: int) -> bo
         return True  # Consider stale if Redis is not available
     
     try:
-        data = await get_user_balance_margin_cache(redis_client, user_id)
+        data = await get_user_balance_margin_cache(redis_client, user_id, user_type)
         if not data:
             return True  # No cache data, consider stale
         
@@ -384,7 +384,7 @@ async def refresh_balance_margin_cache_with_fallback(redis_client: Redis, user_i
     """
     try:
         # Strategy 1: Check if current cache is valid
-        current_cache = await get_user_balance_margin_cache(redis_client, user_id)
+        current_cache = await get_user_balance_margin_cache(redis_client, user_id, user_type)
         if current_cache:
             balance = current_cache.get("wallet_balance", "0.0")
             margin = current_cache.get("margin", "0.0")
@@ -431,16 +431,16 @@ async def refresh_balance_margin_cache_with_fallback(redis_client: Redis, user_i
             total_user_margin = Decimal("0.0")
         
         # Update the cache with fresh data
-        await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+        await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
         
         cache_logger.info(f"Successfully refreshed balance/margin cache for user {user_id}: balance={db_user.wallet_balance}, margin={total_user_margin}")
         
         # Strategy 3: Verify the cache was set correctly
-        verify_cache = await get_user_balance_margin_cache(redis_client, user_id)
+        verify_cache = await get_user_balance_margin_cache(redis_client, user_id, user_type)
         if not verify_cache:
             cache_logger.warning(f"Cache verification failed for user {user_id}, retrying...")
             # Retry once
-            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+            await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
         
         return {
             "wallet_balance": str(db_user.wallet_balance),

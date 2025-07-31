@@ -639,7 +639,7 @@ async def trigger_pending_order(
         # Update margin in DB with the total user margin
         await update_user_margin(db, user_id, user_type, total_user_margin)
         # await db.commit()
-        await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+        await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
         logger.info(f"[PENDING_ORDER] Updated user {user_id} total margin to {total_user_margin} (includes all symbols)")
 
         # 10. Update order in database (status, margin, commission, price, etc.)
@@ -671,7 +671,7 @@ async def trigger_pending_order(
 
         # 12. Update user data cache and balance/margin cache
         db_user = await (get_demo_user_by_id(db, user_id) if user_type == 'demo' else get_user_by_id(db, user_id))
-        await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+        await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
         user_data_to_cache = {
             "id": db_user.id,
             "email": getattr(db_user, 'email', None),
@@ -702,18 +702,18 @@ async def trigger_pending_order(
         # 16. FIXED: Ensure balance/margin cache is properly updated and verified
         try:
             # Verify the cache was set correctly
-            verify_cache = await get_user_balance_margin_cache(redis_client, user_id)
+            verify_cache = await get_user_balance_margin_cache(redis_client, user_id, user_type)
             if verify_cache:
                 cached_margin = verify_cache.get("margin", "0.0")
                 if cached_margin != str(total_user_margin):
                     logger.warning(f"[PENDING_ORDER] Cache verification failed for user {user_id}, retrying...")
-                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
                 else:
                     logger.info(f"[PENDING_ORDER] Cache verification successful for user {user_id}")
             else:
                 logger.error(f"[PENDING_ORDER] Cache verification failed for user {user_id}: cache not found")
                 # Retry setting the cache
-                await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
         except Exception as cache_error:
             logger.error(f"[PENDING_ORDER] Error during cache verification for user {user_id}: {cache_error}")
 
@@ -1451,7 +1451,7 @@ async def close_order(
         await set_user_data_cache(redis_client, order_user_id, user_data_to_cache, user_type)
         
         # Update balance/margin cache for websocket
-        await set_user_balance_margin_cache(redis_client, order_user_id, db_user_locked.wallet_balance, db_user_locked.margin)
+        await set_user_balance_margin_cache(redis_client, order_user_id, db_user_locked.wallet_balance, db_user_locked.margin, user_type)
         logger.info(f"Balance/margin cache updated for user {order_user_id}: balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin}")
         
         # Update users with orders cache for this symbol

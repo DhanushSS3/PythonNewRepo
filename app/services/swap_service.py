@@ -9,7 +9,7 @@ from redis.asyncio import Redis
 
 from app.database.models import UserOrder, User
 from app.crud.crud_order import get_all_system_open_orders
-from app.core.cache import get_group_symbol_settings_cache
+from app.core.cache import get_group_symbol_settings_cache, get_external_symbol_info_cache
 from app.core.firebase import get_latest_market_data
 from app.crud import group as crud_group  # Add this import to fetch group info
 from app.services.portfolio_calculator import _convert_to_usd
@@ -17,11 +17,29 @@ from app.services.portfolio_calculator import _convert_to_usd
 # logger = logging.getLogger(__name__)
 from app.core.logging_config import swap_logger as logger
 
+def convert_show_points_to_decimal(show_points: int) -> Decimal:
+    """
+    Convert show_points integer to decimal value.
+    show_points = 3 -> 0.001
+    show_points = 5 -> 0.00001
+    etc.
+    """
+    if show_points <= 0:
+        return Decimal("0.001")  # Default fallback
+    
+    # Calculate the decimal value based on show_points
+    # show_points = 3 -> 0.001 (3 decimal places)
+    # show_points = 5 -> 0.00001 (5 decimal places)
+    decimal_places = show_points
+    decimal_value = Decimal("1") / (Decimal("10") ** decimal_places)
+    return decimal_value
+
 async def apply_daily_swap_charges_for_all_open_orders(db: AsyncSession, redis_client: Redis):
     """
     Applies daily swap charges to all open orders.
     This function is intended to be called daily at UTC 00:00 by a scheduler.
-    Formula: (Lot * swap_rate * market_close_price) / 365
+    New Formula: swap_charge = swap_points * point_value * lots
+    Where: point_value = contract_size * show_points * conversion_rate
     """
     logger.info("[SWAP] Starting daily swap charge application process.")
     open_orders: List[UserOrder] = await get_all_system_open_orders(db)
@@ -72,68 +90,100 @@ async def apply_daily_swap_charges_for_all_open_orders(db: AsyncSession, redis_c
                 failed_count +=1
                 continue
 
-            swap_rate_to_use = swap_buy_rate if order_type == "BUY" else swap_sell_rate
+            # Choose swap points based on order type
+            swap_points = swap_buy_rate if order_type == "BUY" else swap_sell_rate
+            logger.info(f"[SWAP] Order {order.order_id}: Using swap_points={swap_points} for order_type={order_type}")
 
-            # --- Fetch pips and pip_currency from Group table for this group_name and symbol ---
+            # 2. Get contract_size from external_symbol_info cache
+            external_symbol_info = await get_external_symbol_info_cache(redis_client, order_symbol)
+            if not external_symbol_info:
+                logger.warning(f"External symbol info not found for symbol '{order_symbol}'. Skipping swap for order {order.order_id}.")
+                failed_count += 1
+                continue
+
+            contract_size = external_symbol_info.get('contract_size')
+            if not contract_size:
+                logger.warning(f"Contract size not found in external symbol info for symbol '{order_symbol}'. Skipping swap for order {order.order_id}.")
+                failed_count += 1
+                continue
+
+            try:
+                contract_size = Decimal(str(contract_size))
+            except (InvalidOperation, TypeError) as e:
+                logger.error(f"Error converting contract_size to Decimal for order {order.order_id}: {e}. Contract size: {contract_size}. Skipping.")
+                failed_count += 1
+                continue
+
+            logger.info(f"[SWAP] Order {order.order_id}: Contract size from external symbol info: {contract_size}")
+
+            # 3. Get show_points from groups table
             group_obj = await crud_group.get_group_by_symbol_and_name(db, symbol=order_symbol, name=user_group_name)
-            if not group_obj or group_obj.pips is None:
-                logger.warning(f"Pips not found for group '{user_group_name}', symbol '{order_symbol}'. Skipping swap for order {order.order_id}.")
+            if not group_obj:
+                logger.warning(f"Group not found for group '{user_group_name}', symbol '{order_symbol}'. Skipping swap for order {order.order_id}.")
                 failed_count += 1
                 continue
+
+            show_points = getattr(group_obj, 'show_points', None)
+            if show_points is None:
+                logger.warning(f"Show points not found for group '{user_group_name}', symbol '{order_symbol}'. Skipping swap for order {order.order_id}.")
+                failed_count += 1
+                continue
+
             try:
-                pips = Decimal(str(group_obj.pips))
-            except Exception as e:
-                logger.error(f"Error converting pips for group '{user_group_name}', symbol '{order_symbol}': {e}. Skipping swap for order {order.order_id}.")
+                show_points = int(show_points)
+            except (ValueError, TypeError) as e:
+                logger.error(f"Error converting show_points to int for order {order.order_id}: {e}. Show points: {show_points}. Skipping.")
                 failed_count += 1
                 continue
 
-            pip_currency = getattr(group_obj, 'pip_currency', 'USD') or 'USD'
+            # Convert show_points to decimal value
+            show_points_decimal = convert_show_points_to_decimal(show_points)
+            logger.info(f"[SWAP] Order {order.order_id}: Show points={show_points} -> decimal value={show_points_decimal}")
 
-            # --- New Swap Formula ---
-            # ((order_quantity * pips) * (order_quantity * swap_rate))/10
-            logger.info(f"[SWAP] Calculating daily swap charge for order {order.order_id}: ((order_quantity={order_quantity} * pips={pips}) * (order_quantity={order_quantity} * swap_rate_to_use={swap_rate_to_use}))/10")
-            try:
-                daily_swap_charge = ((order_quantity * pips) * (swap_rate_to_use)) / Decimal('10')
-            except Exception as e:
-                logger.error(f"Error calculating new swap formula for order {order.order_id}: {e}")
-                failed_count += 1
-                continue
-            logger.info(f"[SWAP] Raw daily swap charge for order {order.order_id}: {daily_swap_charge}")
-            # Quantize to match UserOrder.swap field's precision
-            daily_swap_charge = daily_swap_charge.quantize(Decimal('0.00000001'), rounding=ROUND_HALF_UP)
-            logger.info(f"[SWAP] Quantized daily swap charge for order {order.order_id}: {daily_swap_charge}")
+            # 4. Calculate point_value = contract_size * show_points * conversion_rate
+            # First calculate: contract_size * show_points
+            point_value_raw = contract_size * show_points_decimal
+            logger.info(f"[SWAP] Order {order.order_id}: Point value raw (contract_size * show_points) = {contract_size} * {show_points_decimal} = {point_value_raw}")
 
-            # --- Convert to USD if needed ---
-            swap_charge_usd = daily_swap_charge
-            if pip_currency.upper() != 'USD':
-                # For JP225, divide by 100 before conversion
-                swap_to_convert = daily_swap_charge
-                if order_symbol == 'JP225':
-                    swap_to_convert = swap_to_convert / Decimal('100')
-                    logger.info(f"[SWAP] JP225 detected, divided swap charge by 100: {swap_to_convert}")
+            # 5. Convert point_value to USD if needed using profit currency from external_symbol_info
+            profit_currency = external_symbol_info.get('profit', 'USD')
+            if not profit_currency:
+                profit_currency = 'USD'  # Default fallback
+            
+            point_value_usd = point_value_raw
+
+            if profit_currency.upper() != 'USD':
                 try:
-                    swap_charge_usd = await _convert_to_usd(
-                        swap_to_convert,
-                        pip_currency.upper(),
+                    point_value_usd = await _convert_to_usd(
+                        point_value_raw,
+                        profit_currency.upper(),
                         user.id,
                         order.order_id,
-                        "Swap Charge",
+                        "Point Value",
                         db,
                         redis_client
                     )
-                    logger.info(f"[SWAP] Converted swap charge to USD: {swap_charge_usd}")
+                    logger.info(f"[SWAP] Order {order.order_id}: Converted point value to USD: {point_value_raw} {profit_currency} -> {point_value_usd} USD")
                 except Exception as e:
-                    logger.error(f"[SWAP] Failed to convert swap charge to USD for order {order.order_id}: {e}")
+                    logger.error(f"[SWAP] Failed to convert point value to USD for order {order.order_id}: {e}")
                     failed_count += 1
                     continue
             else:
-                logger.info(f"[SWAP] Swap charge already in USD: {swap_charge_usd}")
+                logger.info(f"[SWAP] Order {order.order_id}: Point value already in USD: {point_value_usd}")
 
-            # 4. Update Order's Swap Field
+            # 6. Calculate final swap charge: swap_charge = swap_points * point_value * lots
+            swap_charge = swap_points * point_value_usd * order_quantity
+            logger.info(f"[SWAP] Order {order.order_id}: Final swap charge calculation: {swap_points} * {point_value_usd} * {order_quantity} = {swap_charge}")
+
+            # Quantize to match UserOrder.swap field's precision
+            swap_charge = swap_charge.quantize(Decimal('0.00000001'), rounding=ROUND_HALF_UP)
+            logger.info(f"[SWAP] Order {order.order_id}: Quantized swap charge: {swap_charge}")
+
+            # 7. Update Order's Swap Field
             current_swap_value = order.swap if order.swap is not None else Decimal("0.0")
-            order.swap = current_swap_value + swap_charge_usd
+            order.swap = current_swap_value + swap_charge
 
-            logger.info(f"Order {order.order_id}: Applied daily swap charge: {swap_charge_usd}. Old Swap: {current_swap_value}, New Swap: {order.swap}.")
+            logger.info(f"Order {order.order_id}: Applied daily swap charge: {swap_charge}. Old Swap: {current_swap_value}, New Swap: {order.swap}.")
             processed_count += 1
 
         except Exception as e:

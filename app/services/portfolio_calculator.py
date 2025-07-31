@@ -174,7 +174,7 @@ async def calculate_user_portfolio(
         logger.debug(f"[PORTFOLIO] user {user_id} open_positions count: {len(open_positions)}")
 
         # 2. Get margin/balance from balance/margin cache, fallback to DB if missing
-        balance_margin = await get_user_balance_margin_cache(redis_client, user_id)
+        balance_margin = await get_user_balance_margin_cache(redis_client, user_id, user_type)
         if not balance_margin:
             logger.warning(f"[PORTFOLIO] user_balance_margin cache miss for user {user_id}, falling back to DB and updating cache.")
             db = None

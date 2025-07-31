@@ -256,3 +256,9 @@
 2025-07-30 21:47:22,228 - INFO - websocket - WebSocket auth: Authenticating user ME4CA (live)
 2025-07-30 21:47:22,255 - INFO - websocket - WebSocket connection attempt from 127.0.0.1:60084
 2025-07-30 21:47:22,256 - INFO - websocket - WebSocket connection accepted from 127.0.0.1:60084
+2025-07-30 22:53:54,346 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-30 23:02:40,266 - INFO - websocket - Redis publisher task cancelled.
+2025-07-30 23:02:40,267 - INFO - websocket - Redis publisher task finished.
+2025-07-30 23:02:45,694 - INFO - websocket - Redis publisher task started. Publishing to channel 'market_data_updates'.
+2025-07-30 23:02:49,530 - INFO - websocket - Redis publisher task cancelled.
+2025-07-30 23:02:49,530 - INFO - websocket - Redis publisher task finished.

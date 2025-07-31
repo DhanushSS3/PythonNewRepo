@@ -317,7 +317,7 @@ async def per_connection_redis_listener(
                     # FIXED: Use cache refresh function to prevent orders from disappearing
                     static_orders = await refresh_static_orders_cache_if_needed(user_id, redis_client, db, user_type)
                     # Get balance and margin from minimal cache (this is what order processing updates)
-                    balance_margin_data = await get_user_balance_margin_cache(redis_client, user_id)
+                    balance_margin_data = await get_user_balance_margin_cache(redis_client, user_id, user_type)
                     balance_value = balance_margin_data.get("wallet_balance", "0.0") if balance_margin_data else "0.0"
                     margin_value = balance_margin_data.get("margin", "0.0") if balance_margin_data else "0.0"
                     
@@ -354,7 +354,7 @@ async def per_connection_redis_listener(
                                     total_user_margin = await calculate_total_user_margin(db, redis_client, user_id, user_type)
                                     
                                     # Update the cache with fresh data
-                                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
                                     
                                     balance_value = str(db_user.wallet_balance)
                                     margin_value = str(total_user_margin)
@@ -405,7 +405,7 @@ async def per_connection_redis_listener(
                     # FIXED: Use cache refresh function to prevent orders from disappearing
                     static_orders = await refresh_static_orders_cache_if_needed(user_id, redis_client, db, user_type)
                     # Get balance and margin from minimal cache (this is what order processing updates)
-                    balance_margin_data = await get_user_balance_margin_cache(redis_client, user_id)
+                    balance_margin_data = await get_user_balance_margin_cache(redis_client, user_id, user_type)
                     balance_value = balance_margin_data.get("wallet_balance", "0.0") if balance_margin_data else "0.0"
                     margin_value = balance_margin_data.get("margin", "0.0") if balance_margin_data else "0.0"
                     
@@ -427,7 +427,7 @@ async def per_connection_redis_listener(
                                 total_user_margin = await calculate_total_user_margin(db, redis_client, user_id, user_type)
                                 
                                 # Update the cache with fresh data
-                                await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                                await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
                                 
                                 balance_value = str(db_user.wallet_balance)
                                 margin_value = str(total_user_margin)
@@ -462,7 +462,7 @@ async def per_connection_redis_listener(
                     # FIXED: Use cache refresh function to prevent orders from disappearing
                     static_orders = await refresh_static_orders_cache_if_needed(user_id, redis_client, db, user_type)
                     # Get balance and margin from minimal cache (this is what order processing updates)
-                    balance_margin_data = await get_user_balance_margin_cache(redis_client, user_id)
+                    balance_margin_data = await get_user_balance_margin_cache(redis_client, user_id, user_type)
                     balance_value = balance_margin_data.get("wallet_balance", "0.0") if balance_margin_data else "0.0"
                     margin_value = balance_margin_data.get("margin", "0.0") if balance_margin_data else "0.0"
                     
@@ -484,7 +484,7 @@ async def per_connection_redis_listener(
                                 total_user_margin = await calculate_total_user_margin(db, redis_client, user_id, user_type)
                                 
                                 # Update the cache with fresh data
-                                await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                                await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
                                 
                                 balance_value = str(db_user.wallet_balance)
                                 margin_value = str(total_user_margin)
@@ -612,7 +612,7 @@ async def update_static_orders_cache(user_id: int, db: AsyncSession, redis_clien
                 user_data = await get_user_data_cache(redis_client, user_id, db, user_type)
                 if user_data:
                     balance = user_data.get('wallet_balance', '0.0')
-                    await set_user_balance_margin_cache(redis_client, user_id, balance, total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id, balance, total_user_margin, user_type)
                     logger.debug(f"User {user_id}: Updated balance/margin cache: balance={balance}, margin={total_user_margin}")
                     
             except Exception as e:
@@ -793,7 +793,7 @@ async def process_portfolio_update(
                     total_user_margin = await calculate_total_user_margin(db, redis_client, user_id, user_type)
                     
                     # Update the cache with fresh data
-                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin)
+                    await set_user_balance_margin_cache(redis_client, user_id, db_user.wallet_balance, total_user_margin, user_type)
                     
                     balance_value = str(db_user.wallet_balance)
                     margin_value = str(total_user_margin)
@@ -998,7 +998,7 @@ async def websocket_endpoint(websocket: WebSocket, db: Session = Depends(get_db)
         )
         
         # Set minimal balance/margin cache for websocket
-        await set_user_balance_margin_cache(redis_client, db_user_id, user_data_to_cache["wallet_balance"], total_margin)
+        await set_user_balance_margin_cache(redis_client, db_user_id, user_data_to_cache["wallet_balance"], total_margin, user_type)
         
         # Initialize balance/margin cache for websocket
         logger.info(f"User {db_user_id}: WebSocket initialized with balance={user_data_to_cache['wallet_balance']}, margin={total_margin}")

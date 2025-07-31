@@ -456,7 +456,7 @@ async def process_new_order_ultra_optimized(
             db.add(db_user_locked)
             await db.commit()
             await db.refresh(db_user_locked)
-            await set_user_balance_margin_cache(redis_client, user_id, db_user_locked.wallet_balance, db_user_locked.margin)
+            await set_user_balance_margin_cache(redis_client, user_id, db_user_locked.wallet_balance, db_user_locked.margin, user_type)
             logger.info(f"[CACHE_UPDATE] Updating balance/margin cache for user {user_id}: balance={db_user_locked.wallet_balance}, margin={db_user_locked.margin} (was {original_user_margin})")
             logger.info(f"[CACHE_UPDATE] Balance/margin cache updated for user {user_id}")
             user_data_to_cache = {
