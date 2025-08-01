@@ -4846,13 +4846,13 @@ async def _handle_order_close_transition(
     Handles the logic for an order transitioning to CLOSED status by a service provider.
     Calculates P/L, updates user margin and wallet, and cancels any existing SL/TP.
     """
+    from app.core.logging_config import service_provider_logger
     user_id = db_order.order_user_id
     db_user = await get_user_by_id_with_lock(db, user_id)
     if not db_user:
         raise HTTPException(status_code=404, detail="User not found")
 
     order_model = UserOrder # Service provider actions are on live users
-    
     # Get the ID used to find this order
     id_to_find = update_fields.get('_id_used_for_lookup')
     
@@ -4966,7 +4966,9 @@ async def _handle_order_close_transition(
 
     db_user.margin = max(Decimal(0), (non_symbol_margin + margin_after).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
     
-    swap = Decimal(str(update_fields.get("swap", "0.0")))
+
+    service_provider_logger.info(f"Swap: {db_order.swap}")
+    swap = Decimal(str(db_order.swap))
 
     # --- Wallet Update ---
     db_user.wallet_balance = (Decimal(str(db_user.wallet_balance)) + net_profit - swap).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)

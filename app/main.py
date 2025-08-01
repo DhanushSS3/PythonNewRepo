@@ -359,7 +359,7 @@ async def update_all_users_dynamic_portfolio():
                     
                     # Check for margin call conditions
                     margin_level = Decimal(portfolio_metrics.get("margin_level", "0.0"))
-                    margin_call_email_key = f"margin_call_email_sent:{user_id}"
+                    margin_call_email_key = f"margin_call_email_sent:{user_type}:{user_id}"
                     logger.info(f"[AUTO-CUTOFF] User {user_id} margin_level: {margin_level}")
                     if margin_level > Decimal('0') and margin_level < margin_cutoff_threshold:
                         autocutoff_logger.warning(f"[AUTO-CUTOFF] User {user_id} margin level {margin_level}% below cutoff threshold {margin_cutoff_threshold}%. Initiating auto-cutoff.")
@@ -370,6 +370,7 @@ async def update_all_users_dynamic_portfolio():
                     elif margin_level > margin_cutoff_threshold and margin_level < margin_call_threshold:
                         # Only send margin call warning email once per event
                         already_sent = await global_redis_client_instance.get(margin_call_email_key)
+                        logger.info(f"[AUTO-CUTOFF] Already sent: {already_sent}")
                         if not already_sent:
                             from app.crud.user import get_user_email
                             user_email = await get_user_email(global_redis_client_instance, db, user_id, user_type)
@@ -467,7 +468,7 @@ async def handle_margin_cutoff(db: AsyncSession, redis_client: Redis, user_id: i
             for order in open_orders:
                 try:
                     # --- NEW: Check Redis flag before sending close request ---
-                    autocutoff_flag_key = f"autocutoff_close_sent:{order.order_id}"
+                    autocutoff_flag_key = f"autocutoff_close_sent:{user_type}:{order.order_id}"
                     was_set = await redis_client.set(autocutoff_flag_key, "1", ex=48*60*60, nx=True)
                     if not was_set:
                         autocutoff_logger.debug(f"[AUTO-CUTOFF] Close request already sent for order {order.order_id}, skipping.")
@@ -766,7 +767,12 @@ async def startup_event():
     logger.info("Initializing core services...")
     import redis.asyncio as redis
 
-    # r = redis.Redis(host="127.0.0.1", port=6379)
+    # r = redis.Redis(
+    #     host="127.0.0.1",
+    #     port=6380,
+    #     password="admin@livefxhub@123",  # Replace with actual password
+    #     decode_responses=True
+    # )
     # await r.flushall()
     # print("Redis flushed")
     # Print Redis connection info for debugging
@@ -840,7 +846,7 @@ async def startup_event():
         
         scheduler.add_job(
             daily_swap_charge_job,
-            CronTrigger(hour=0, minute=0, timezone='UTC'),
+            CronTrigger(hour=7, minute=50, timezone='UTC'),
             # IntervalTrigger(minutes=1),
             logger.info("[SWAP] daily_swap_charge_job triggered"),
             id='daily_swap_charge_job',

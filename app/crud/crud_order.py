@@ -127,8 +127,9 @@ async def get_all_open_orders(db: AsyncSession):
     orders_crud_logger.debug("[get_all_open_orders] Fetching all open orders for both live and demo users")
     
     try:
-        # Get live user orders
-        live_orders_stmt = select(UserOrder).filter(UserOrder.order_status == 'OPEN')
+        # Get live user orders with eager loading
+        from sqlalchemy.orm import selectinload
+        live_orders_stmt = select(UserOrder).options(selectinload(UserOrder.user)).filter(UserOrder.order_status == 'OPEN')
         live_orders_result = await db.execute(live_orders_stmt)
         live_orders = live_orders_result.scalars().all()
         orders_crud_logger.debug(f"[get_all_open_orders] Found {len(live_orders)} live open orders")
