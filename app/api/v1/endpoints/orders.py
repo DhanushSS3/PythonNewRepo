@@ -4950,7 +4950,8 @@ async def _handle_order_close_transition(
             exit_commission = (commission_rate / Decimal("100")) * (quantity * contract_size * close_price)
     
     total_commission = (existing_commission + exit_commission).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
-    net_profit = (profit_usd - total_commission + db_order.swap).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    swap_value = db_order.swap if db_order.swap is not None else Decimal(0)
+    net_profit = (profit_usd - total_commission + swap_value).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
     # --- Margin Recalculation ---
     all_open_orders = await crud_order.get_open_orders_by_user_id_and_symbol(db, user_id, symbol, order_model)
