@@ -4968,7 +4968,7 @@ async def _handle_order_close_transition(
     
 
     service_provider_logger.info(f"Swap: {db_order.swap}")
-    swap = Decimal(str(db_order.swap))
+    swap = Decimal(str(db_order.swap)) if db_order.swap is not None else Decimal(0)
 
     # --- Wallet Update ---
     db_user.wallet_balance = (Decimal(str(db_user.wallet_balance)) + net_profit).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
