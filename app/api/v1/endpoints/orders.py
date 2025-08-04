@@ -1599,14 +1599,14 @@ async def close_order(
 
                         db_order.order_status = "CLOSED"
                         db_order.close_price = close_price
-                        db_order.net_profit = (profit_usd - total_commission_for_trade).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+                        db_order.net_profit = (profit_usd - total_commission_for_trade + db_order.swap).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
                         db_order.swap = db_order.swap or Decimal("0.0")
                         db_order.commission = total_commission_for_trade
                         db_order.close_id = close_id # Save close_id in DB
 
                         original_wallet_balance = Decimal(str(db_user_locked.wallet_balance))
                         swap_amount = db_order.swap
-                        db_user_locked.wallet_balance = (original_wallet_balance + db_order.net_profit - swap_amount).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
+                        db_user_locked.wallet_balance = (original_wallet_balance + db_order.net_profit).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
 
                         transaction_time = datetime.datetime.now(datetime.timezone.utc)
                         wallet_common_data = {"symbol": order_symbol, "order_quantity": quantity, "is_approved": 1, "order_type": db_order.order_type, "transaction_time": transaction_time, "order_id": db_order.order_id}
@@ -1814,14 +1814,14 @@ async def close_order(
 
                 db_order.order_status = "CLOSED"
                 db_order.close_price = close_price
-                db_order.net_profit = (profit_usd - total_commission_for_trade).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+                db_order.net_profit = (profit_usd - total_commission_for_trade + db_order.swap).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
                 db_order.swap = db_order.swap or Decimal("0.0")
                 db_order.commission = total_commission_for_trade
                 db_order.close_id = close_id # Save close_id in DB
 
                 original_wallet_balance = Decimal(str(db_user_locked.wallet_balance))
                 swap_amount = db_order.swap
-                db_user_locked.wallet_balance = (original_wallet_balance + db_order.net_profit - swap_amount).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
+                db_user_locked.wallet_balance = (original_wallet_balance + db_order.net_profit).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
 
                 transaction_time = datetime.datetime.now(datetime.timezone.utc)
                 wallet_common_data = {"symbol": order_symbol, "order_quantity": quantity, "is_approved": 1, "order_type": db_order.order_type, "transaction_time": transaction_time, "order_id": db_order.order_id}
@@ -4428,8 +4428,7 @@ async def service_provider_order_update(
             swap_amount = Decimal(str(update_fields.get('swap', db_order.swap or "0.0")))
             db_user.wallet_balance = (
                 Decimal(str(db_user.wallet_balance)) + 
-                update_fields['net_profit'] - 
-                swap_amount
+                update_fields['net_profit']
             ).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
             
             # Create wallet transactions for profit/loss, commission, and swap
@@ -4951,7 +4950,7 @@ async def _handle_order_close_transition(
             exit_commission = (commission_rate / Decimal("100")) * (quantity * contract_size * close_price)
     
     total_commission = (existing_commission + exit_commission).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
-    net_profit = (profit_usd - total_commission).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    net_profit = (profit_usd - total_commission + db_order.swap).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
     # --- Margin Recalculation ---
     all_open_orders = await crud_order.get_open_orders_by_user_id_and_symbol(db, user_id, symbol, order_model)
@@ -4971,7 +4970,7 @@ async def _handle_order_close_transition(
     swap = Decimal(str(db_order.swap))
 
     # --- Wallet Update ---
-    db_user.wallet_balance = (Decimal(str(db_user.wallet_balance)) + net_profit - swap).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
+    db_user.wallet_balance = (Decimal(str(db_user.wallet_balance)) + net_profit).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
     
     # --- Create Wallet Transactions ---
     transaction_time = datetime.datetime.now(datetime.timezone.utc)

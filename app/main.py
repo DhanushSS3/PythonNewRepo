@@ -846,7 +846,7 @@ async def startup_event():
         
         scheduler.add_job(
             daily_swap_charge_job,
-            CronTrigger(hour=0, minute=0, timezone='UTC'),
+            CronTrigger(hour=6, minute=4, timezone='UTC'),
             # IntervalTrigger(minutes=1),
             logger.info("[SWAP] daily_swap_charge_job triggered"),
             id='daily_swap_charge_job',
