@@ -1820,7 +1820,7 @@ async def close_order(
                 db_order.close_id = close_id # Save close_id in DB
 
                 original_wallet_balance = Decimal(str(db_user_locked.wallet_balance))
-                swap_amount = db_order.swap
+                swap_amount = Decimal(str(db_order.swap)) if db_order.swap is not None else Decimal(0)
                 db_user_locked.wallet_balance = (original_wallet_balance + db_order.net_profit).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
 
                 transaction_time = datetime.datetime.now(datetime.timezone.utc)

@@ -1,5 +1,5 @@
 # app/main.py
-# Version 1.3.5
+# Version 1.3.9
 # --- Environment Variable Loading ---
 # This must be at the very top, before any other app modules are imported.
 from dotenv import load_dotenv
