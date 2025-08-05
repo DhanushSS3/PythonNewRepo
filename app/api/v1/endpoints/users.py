@@ -65,8 +65,9 @@ from app.schemas.user import SignupVerifyOTPRequest, SignupSendOTPRequest
 from app.schemas.money_request import MoneyRequestResponse, MoneyRequestCreate
 from app.crud import money_request as crud_money_request
 from app.schemas.wallet import WalletTransactionRequest, WalletBalanceResponse # Import WalletBalanceResponse
+from app.core.logging_config import app_logger
 
-logger = logging.getLogger(__name__)
+logger = app_logger
 
 router = APIRouter(
     tags=["users"]
@@ -737,8 +738,20 @@ async def verify_password_reset_otp(
 
     reset_token = str(uuid4())
     redis_key = f"reset_token:{user.email}:{user_type}"
+    
+    # Add debugging logs
+    logger.info(f"OTP verification - Email: {payload.email}, User Type: {user_type}")
+    logger.info(f"Generated reset token: {reset_token}")
+    logger.info(f"Redis key: {redis_key}")
+    
     await redis.setex(redis_key, settings.OTP_EXPIRATION_MINUTES * 60, reset_token)
     await redis.setex(crud_otp.get_otp_flag_key(user.email, user_type), settings.OTP_EXPIRATION_MINUTES * 60, "1")
+    
+    # Verify the token was stored correctly
+    stored_token = await redis.get(redis_key)
+    logger.info(f"Stored token verification: {stored_token}")
+    logger.info(f"Token storage successful: {stored_token == reset_token}")
+    
     return PasswordResetVerifyResponse(verified=True, message="OTP verified successfully.", reset_token=reset_token)
 
 
@@ -755,6 +768,16 @@ async def confirm_password_reset(
 
     redis_key = f"reset_token:{user.email}:{user_type}"
     stored_token = await redis.get(redis_key)
+
+    if stored_token:
+        stored_token = stored_token.decode('utf-8')
+    
+    # Add debugging logs
+    logger.info(f"Password reset confirmation - Email: {payload.email}, User Type: {user_type}")
+    logger.info(f"Redis key: {redis_key}")
+    logger.info(f"Stored token: {stored_token}")
+    logger.info(f"Provided token: {payload.reset_token}")
+    logger.info(f"Token match: {stored_token == payload.reset_token}")
     
     # Since we're using decode_responses=True in Redis config, stored_token is already a string
     if not stored_token or stored_token != payload.reset_token:
@@ -1161,8 +1184,20 @@ async def demo_verify_password_reset_otp(
 
     reset_token = str(uuid4())
     redis_key = f"reset_token:{demo_user.email}:{fixed_user_type}"
+    
+    # Add debugging logs
+    logger.info(f"Demo OTP verification - Email: {payload.email}, User Type: {fixed_user_type}")
+    logger.info(f"Generated reset token: {reset_token}")
+    logger.info(f"Redis key: {redis_key}")
+    
     await redis.setex(redis_key, settings.OTP_EXPIRATION_MINUTES * 60, reset_token)
     await redis.setex(crud_otp.get_otp_flag_key(demo_user.email, fixed_user_type), settings.OTP_EXPIRATION_MINUTES * 60, "1")
+    
+    # Verify the token was stored correctly
+    stored_token = await redis.get(redis_key)
+    logger.info(f"Stored token verification: {stored_token}")
+    logger.info(f"Token storage successful: {stored_token == reset_token}")
+    
     return PasswordResetVerifyResponse(verified=True, message="Demo OTP verified successfully.", reset_token=reset_token)
 
 
@@ -1181,6 +1216,13 @@ async def demo_confirm_password_reset(
 
     redis_key = f"reset_token:{demo_user.email}:{fixed_user_type}"
     stored_token = await redis.get(redis_key)
+    
+    # Add debugging logs
+    logger.info(f"Demo password reset confirmation - Email: {payload.email}, User Type: {fixed_user_type}")
+    logger.info(f"Redis key: {redis_key}")
+    logger.info(f"Stored token: {stored_token}")
+    logger.info(f"Provided token: {payload.reset_token}")
+    logger.info(f"Token match: {stored_token == payload.reset_token}")
     
     # Since we're using decode_responses=True in Redis config, stored_token is already a string
     if not stored_token or stored_token != payload.reset_token:

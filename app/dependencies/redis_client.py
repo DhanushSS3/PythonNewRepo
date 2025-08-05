@@ -26,8 +26,11 @@ async def get_redis_client() -> Redis:
     global global_redis_client_instance
     if global_redis_client_instance is None:
         logger.warning("[Redis] Client not initialized, attempting late connection.")
-        # Use the connection pool with password
-        global_redis_client_instance = Redis(connection_pool=redis_pool)
+        # Use the connection pool with password and decode_responses=True
+        global_redis_client_instance = Redis(
+            connection_pool=redis_pool,
+            decode_responses=True  # Added to match the configuration in core/security.py
+        )
         # If connect_to_redis is required for other setup, ensure it uses the same pool and password
         # global_redis_client_instance = await connect_to_redis()
         # If connect_to_redis does not use the pool/password, update it accordingly.
