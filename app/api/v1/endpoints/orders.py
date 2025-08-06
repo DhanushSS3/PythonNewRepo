@@ -1599,7 +1599,8 @@ async def close_order(
 
                         db_order.order_status = "CLOSED"
                         db_order.close_price = close_price
-                        db_order.net_profit = (profit_usd - total_commission_for_trade + db_order.swap).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+                        swap = db_order.swap or Decimal("0.0")
+                        db_order.net_profit = (profit_usd - total_commission_for_trade + swap).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
                         db_order.swap = db_order.swap or Decimal("0.0")
                         db_order.commission = total_commission_for_trade
                         db_order.close_id = close_id # Save close_id in DB
@@ -1814,7 +1815,8 @@ async def close_order(
 
                 db_order.order_status = "CLOSED"
                 db_order.close_price = close_price
-                db_order.net_profit = (profit_usd - total_commission_for_trade + db_order.swap).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+                swap = db_order.swap or Decimal("0.0")
+                db_order.net_profit = (profit_usd - total_commission_for_trade + swap).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
                 db_order.swap = db_order.swap or Decimal("0.0")
                 db_order.commission = total_commission_for_trade
                 db_order.close_id = close_id # Save close_id in DB

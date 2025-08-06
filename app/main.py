@@ -946,25 +946,25 @@ async def startup_event():
             except Exception as e:
                 logger.error(f"Error cleaning up pending order stream: {e}", exc_info=True)
             
-            # Start periodic cache cleanup task
-            cache_cleanup_task = asyncio.create_task(run_cache_cleanup())
-            background_tasks.add(cache_cleanup_task)
-            cache_cleanup_task.add_done_callback(background_tasks.discard)
+            # # Start periodic cache cleanup task
+            # cache_cleanup_task = asyncio.create_task(run_cache_cleanup())
+            # background_tasks.add(cache_cleanup_task)
+            # cache_cleanup_task.add_done_callback(background_tasks.discard)
             
-            # Start periodic cache validation task
-            cache_validation_task = asyncio.create_task(run_cache_validation())
-            background_tasks.add(cache_validation_task)
-            cache_validation_task.add_done_callback(background_tasks.discard)
+            # # Start periodic cache validation task
+            # cache_validation_task = asyncio.create_task(run_cache_validation())
+            # background_tasks.add(cache_validation_task)
+            # cache_validation_task.add_done_callback(background_tasks.discard)
             
             # Register Barclays pending order margin checker
             barclays_pending_task = asyncio.create_task(barclays_pending_order_margin_checker())
             background_tasks.add(barclays_pending_task)
             barclays_pending_task.add_done_callback(background_tasks.discard)
             
-            # Start auto-cutoff order monitoring task
-            auto_cutoff_monitor_task = asyncio.create_task(monitor_auto_cutoff_orders())
-            background_tasks.add(auto_cutoff_monitor_task)
-            auto_cutoff_monitor_task.add_done_callback(background_tasks.discard)
+            # # Start auto-cutoff order monitoring task
+            # auto_cutoff_monitor_task = asyncio.create_task(monitor_auto_cutoff_orders())
+            # background_tasks.add(auto_cutoff_monitor_task)
+            # auto_cutoff_monitor_task.add_done_callback(background_tasks.discard)
             
             # Start the new autocutoff/dynamic portfolio update background loop
             update_portfolio_task = asyncio.create_task(run_update_all_users_dynamic_portfolio_loop())
@@ -1139,301 +1139,301 @@ async def run_sltp_checker_on_market_update():
         await pubsub.unsubscribe(REDIS_MARKET_DATA_CHANNEL)
         await pubsub.close()
 
-# --- New Periodic Cache Update Task ---
-async def run_users_with_orders_cache_updater():
-    """
-    Periodic task to update the cache of users with open orders per symbol.
-    This keeps the cache fresh for efficient SL/TP processing.
-    """
-    logger = orders_logger
+# # --- New Periodic Cache Update Task ---
+# async def run_users_with_orders_cache_updater():
+#     """
+#     Periodic task to update the cache of users with open orders per symbol.
+#     This keeps the cache fresh for efficient SL/TP processing.
+#     """
+#     logger = orders_logger
     
-    # Give the application a moment to initialize everything else
-    await asyncio.sleep(10)  # Wait a bit longer to let other tasks start
-    logger.info("Starting the users with orders cache updater task.")
+#     # Give the application a moment to initialize everything else
+#     await asyncio.sleep(10)  # Wait a bit longer to let other tasks start
+#     logger.info("Starting the users with orders cache updater task.")
     
-    while True:
-        try:
-            if global_redis_client_instance:
-                from app.services.pending_orders import update_users_with_orders_cache_periodic
-                await update_users_with_orders_cache_periodic(global_redis_client_instance)
-                logger.debug("Updated users with orders cache for all symbols")
-            else:
-                await asyncio.sleep(60)
-                continue
+#     while True:
+#         try:
+#             if global_redis_client_instance:
+#                 from app.services.pending_orders import update_users_with_orders_cache_periodic
+#                 await update_users_with_orders_cache_periodic(global_redis_client_instance)
+#                 logger.debug("Updated users with orders cache for all symbols")
+#             else:
+#                 await asyncio.sleep(60)
+#                 continue
                 
-        except Exception as e:
-            logger.error(f"Error in users with orders cache updater: {e}", exc_info=True)
+#         except Exception as e:
+#             logger.error(f"Error in users with orders cache updater: {e}", exc_info=True)
         
-        # Update cache every 5 minutes
-        await asyncio.sleep(300)
+#         # Update cache every 5 minutes
+#         await asyncio.sleep(300)
 
-# --- Redis Cleanup Function ---
-async def cleanup_orphaned_redis_orders():
-    """
-    Periodically clean up orphaned orders in Redis that no longer exist in the database.
-    """
-    logger = redis_logger
+# # --- Redis Cleanup Function ---
+# async def cleanup_orphaned_redis_orders():
+#     """
+#     Periodically clean up orphaned orders in Redis that no longer exist in the database.
+#     """
+#     logger = redis_logger
     
-    while True:
-        try:
-            if not global_redis_client_instance:
-                await asyncio.sleep(60)
-                continue
+#     while True:
+#         try:
+#             if not global_redis_client_instance:
+#                 await asyncio.sleep(60)
+#                 continue
                 
-            async with AsyncSessionLocal() as db:
-                from app.services.pending_orders import get_all_pending_orders_from_redis
-                pending_orders = await get_all_pending_orders_from_redis(global_redis_client_instance)
+#             async with AsyncSessionLocal() as db:
+#                 from app.services.pending_orders import get_all_pending_orders_from_redis
+#                 pending_orders = await get_all_pending_orders_from_redis(global_redis_client_instance)
                 
-                if not pending_orders:
-                    await asyncio.sleep(600)  # Increased from 300 to 600 seconds (10 minutes)
-                    continue
+#                 if not pending_orders:
+#                     await asyncio.sleep(600)  # Increased from 300 to 600 seconds (10 minutes)
+#                     continue
                 
-                from app.crud.crud_order import get_order_model
-                cleaned_count = 0
+#                 from app.crud.crud_order import get_order_model
+#                 cleaned_count = 0
                 
-                for order_data in pending_orders:
-                    try:
-                        order_id = order_data.get('order_id')
-                        user_id = order_data.get('order_user_id')
-                        user_type = order_data.get('user_type', 'live')
-                        symbol = order_data.get('order_company_name')
-                        order_type = order_data.get('order_type')
+#                 for order_data in pending_orders:
+#                     try:
+#                         order_id = order_data.get('order_id')
+#                         user_id = order_data.get('order_user_id')
+#                         user_type = order_data.get('user_type', 'live')
+#                         symbol = order_data.get('order_company_name')
+#                         order_type = order_data.get('order_type')
                         
-                        if not all([order_id, user_id, symbol, order_type]):
-                            continue
+#                         if not all([order_id, user_id, symbol, order_type]):
+#                             continue
                         
-                        order_model = get_order_model(user_type)
+#                         order_model = get_order_model(user_type)
                         
-                        from app.crud.crud_order import get_order_by_id
-                        db_order = await get_order_by_id(db, order_id, order_model)
+#                         from app.crud.crud_order import get_order_by_id
+#                         db_order = await get_order_by_id(db, order_id, order_model)
                         
-                        if not db_order or db_order.order_status != 'PENDING':
-                            from app.services.pending_orders import remove_pending_order
-                            await remove_pending_order(
-                                global_redis_client_instance,
-                                str(order_id),
-                                symbol,
-                                order_type,
-                                str(user_id)
-                            )
-                            cleaned_count += 1
+#                         if not db_order or db_order.order_status != 'PENDING':
+#                             from app.services.pending_orders import remove_pending_order
+#                             await remove_pending_order(
+#                                 global_redis_client_instance,
+#                                 str(order_id),
+#                                 symbol,
+#                                 order_type,
+#                                 str(user_id)
+#                             )
+#                             cleaned_count += 1
                             
-                    except Exception:
-                        continue
+#                     except Exception:
+#                         continue
                     
-        except Exception as e:
-            logger.error("Error in cleanup process")
+#         except Exception as e:
+#             logger.error("Error in cleanup process")
         
-        await asyncio.sleep(300)
+#         await asyncio.sleep(300)
 
-# --- Periodic Cache Cleanup Task ---
-async def run_cache_cleanup():
-    """
-    Periodic task to clean up stale cache entries and ensure cache consistency.
-    This prevents orders from disappearing due to cache issues.
-    """
-    logger = redis_logger
+# # --- Periodic Cache Cleanup Task ---
+# async def run_cache_cleanup():
+#     """
+#     Periodic task to clean up stale cache entries and ensure cache consistency.
+#     This prevents orders from disappearing due to cache issues.
+#     """
+#     logger = redis_logger
     
-    # Give the application a moment to initialize everything else
-    await asyncio.sleep(15)  # Wait a bit longer to let other tasks start
-    logger.info("Starting the cache cleanup task.")
+#     # Give the application a moment to initialize everything else
+#     await asyncio.sleep(15)  # Wait a bit longer to let other tasks start
+#     logger.info("Starting the cache cleanup task.")
     
-    while True:
-        try:
-            if global_redis_client_instance:
-                await cleanup_stale_cache_entries(global_redis_client_instance)
-                logger.debug("Completed cache cleanup cycle")
-            else:
-                await asyncio.sleep(60)
-                continue
+#     while True:
+#         try:
+#             if global_redis_client_instance:
+#                 await cleanup_stale_cache_entries(global_redis_client_instance)
+#                 logger.debug("Completed cache cleanup cycle")
+#             else:
+#                 await asyncio.sleep(60)
+#                 continue
                 
-        except Exception as e:
-            logger.error(f"Error in cache cleanup task: {e}", exc_info=True)
+#         except Exception as e:
+#             logger.error(f"Error in cache cleanup task: {e}", exc_info=True)
         
-        # Run cleanup every 15 minutes (increased from 10 minutes)
-        await asyncio.sleep(900)
+#         # Run cleanup every 15 minutes (increased from 10 minutes)
+#         await asyncio.sleep(900)
 
-async def cleanup_stale_cache_entries(redis_client: Redis):
-    """
-    Periodically clean up stale cache entries and ensure cache consistency.
-    This prevents orders from disappearing due to cache issues.
-    """
-    try:
-        logger.info("Starting stale cache cleanup task")
+# async def cleanup_stale_cache_entries(redis_client: Redis):
+#     """
+#     Periodically clean up stale cache entries and ensure cache consistency.
+#     This prevents orders from disappearing due to cache issues.
+#     """
+#     try:
+#         logger.info("Starting stale cache cleanup task")
         
-        # Get all static orders cache keys
-        from app.core.cache import REDIS_USER_STATIC_ORDERS_KEY_PREFIX
-        pattern = f"{REDIS_USER_STATIC_ORDERS_KEY_PREFIX}*"
-        cache_keys = await redis_client.keys(pattern)
+#         # Get all static orders cache keys
+#         from app.core.cache import REDIS_USER_STATIC_ORDERS_KEY_PREFIX
+#         pattern = f"{REDIS_USER_STATIC_ORDERS_KEY_PREFIX}*"
+#         cache_keys = await redis_client.keys(pattern)
         
-        logger.info(f"Found {len(cache_keys)} static orders cache entries to check")
+#         logger.info(f"Found {len(cache_keys)} static orders cache entries to check")
         
-        for key in cache_keys:
-            try:
-                # Check if cache entry is valid
-                cache_data = await redis_client.get(key)
-                if cache_data:
-                    data = json.loads(cache_data)
+#         for key in cache_keys:
+#             try:
+#                 # Check if cache entry is valid
+#                 cache_data = await redis_client.get(key)
+#                 if cache_data:
+#                     data = json.loads(cache_data)
                     
-                    # If cache has error or is empty but shouldn't be, mark for refresh
-                    if data.get("error") or (not data.get("open_orders") and not data.get("pending_orders")):
-                        user_id = key.replace(REDIS_USER_STATIC_ORDERS_KEY_PREFIX, "")
-                        logger.warning(f"Found stale cache entry for user {user_id}, will be refreshed on next access")
+#                     # If cache has error or is empty but shouldn't be, mark for refresh
+#                     if data.get("error") or (not data.get("open_orders") and not data.get("pending_orders")):
+#                         user_id = key.replace(REDIS_USER_STATIC_ORDERS_KEY_PREFIX, "")
+#                         logger.warning(f"Found stale cache entry for user {user_id}, will be refreshed on next access")
                         
-            except Exception as e:
-                logger.error(f"Error checking cache key {key}: {e}")
-                continue
+#             except Exception as e:
+#                 logger.error(f"Error checking cache key {key}: {e}")
+#                 continue
         
-        logger.info("Completed stale cache cleanup task")
+#         logger.info("Completed stale cache cleanup task")
         
-    except Exception as e:
-        logger.error(f"Error in cleanup_stale_cache_entries: {e}", exc_info=True)
+#     except Exception as e:
+#         logger.error(f"Error in cleanup_stale_cache_entries: {e}", exc_info=True)
 
-async def run_cache_validation():
-    """
-    Periodic task to validate and fix cache inconsistencies.
-    This helps prevent the websocket account summary data from vanishing.
-    """
-    try:
-        logger.info("Starting cache validation task")
+# async def run_cache_validation():
+#     """
+#     Periodic task to validate and fix cache inconsistencies.
+#     This helps prevent the websocket account summary data from vanishing.
+#     """
+#     try:
+#         logger.info("Starting cache validation task")
         
-        if not global_redis_client_instance:
-            logger.error("Cannot run cache validation - Redis client not available")
-            return
+#         if not global_redis_client_instance:
+#             logger.error("Cannot run cache validation - Redis client not available")
+#             return
         
-        async with AsyncSessionLocal() as db:
-            # Get all active users
-            live_users, demo_users = await crud_user.get_all_active_users_both(db)
+#         async with AsyncSessionLocal() as db:
+#             # Get all active users
+#             live_users, demo_users = await crud_user.get_all_active_users_both(db)
             
-            all_users = []
-            for user in live_users:
-                all_users.append({"id": user.id, "user_type": "live"})
-            for user in demo_users:
-                all_users.append({"id": user.id, "user_type": "demo"})
+#             all_users = []
+#             for user in live_users:
+#                 all_users.append({"id": user.id, "user_type": "live"})
+#             for user in demo_users:
+#                 all_users.append({"id": user.id, "user_type": "demo"})
             
-            logger.info(f"Validating cache for {len(all_users)} users")
+#             logger.info(f"Validating cache for {len(all_users)} users")
             
-            for user_info in all_users:
-                try:
-                    user_id = user_info["id"]
-                    user_type = user_info["user_type"]
+#             for user_info in all_users:
+#                 try:
+#                     user_id = user_info["id"]
+#                     user_type = user_info["user_type"]
                     
-                    # Check balance/margin cache
-                    from app.core.cache import get_user_balance_margin_cache, get_user_static_orders_cache
-                    balance_margin_cache = await get_user_balance_margin_cache(global_redis_client_instance, user_id, user_type)
+#                     # Check balance/margin cache
+#                     from app.core.cache import get_user_balance_margin_cache, get_user_static_orders_cache
+#                     balance_margin_cache = await get_user_balance_margin_cache(global_redis_client_instance, user_id, user_type)
                     
-                    if not balance_margin_cache:
-                        logger.warning(f"User {user_id}: Missing balance/margin cache, refreshing...")
-                        from app.core.cache import refresh_balance_margin_cache_with_fallback
-                        await refresh_balance_margin_cache_with_fallback(global_redis_client_instance, user_id, user_type, db)
-                        continue
+#                     if not balance_margin_cache:
+#                         logger.warning(f"User {user_id}: Missing balance/margin cache, refreshing...")
+#                         from app.core.cache import refresh_balance_margin_cache_with_fallback
+#                         await refresh_balance_margin_cache_with_fallback(global_redis_client_instance, user_id, user_type, db)
+#                         continue
                     
-                    balance = balance_margin_cache.get("wallet_balance", "0.0")
-                    margin = balance_margin_cache.get("margin", "0.0")
+#                     balance = balance_margin_cache.get("wallet_balance", "0.0")
+#                     margin = balance_margin_cache.get("margin", "0.0")
                     
-                    # Check for suspicious values
-                    if balance == "0.0" and margin == "0.0":
-                        # Check if user actually has orders
-                        order_model = get_order_model(user_type)
-                        open_orders = await crud_order.get_all_open_orders_by_user_id(db, user_id, order_model)
+#                     # Check for suspicious values
+#                     if balance == "0.0" and margin == "0.0":
+#                         # Check if user actually has orders
+#                         order_model = get_order_model(user_type)
+#                         open_orders = await crud_order.get_all_open_orders_by_user_id(db, user_id, order_model)
                         
-                        if open_orders:
-                            logger.warning(f"User {user_id}: Cache shows 0 balance/margin but has {len(open_orders)} open orders, refreshing cache...")
-                            from app.core.cache import refresh_balance_margin_cache_with_fallback
-                            await refresh_balance_margin_cache_with_fallback(global_redis_client_instance, user_id, user_type, db)
+#                         if open_orders:
+#                             logger.warning(f"User {user_id}: Cache shows 0 balance/margin but has {len(open_orders)} open orders, refreshing cache...")
+#                             from app.core.cache import refresh_balance_margin_cache_with_fallback
+#                             await refresh_balance_margin_cache_with_fallback(global_redis_client_instance, user_id, user_type, db)
                     
-                    # Check static orders cache
-                    static_orders_cache = await get_user_static_orders_cache(global_redis_client_instance, user_id)
-                    if not static_orders_cache:
-                        logger.warning(f"User {user_id}: Missing static orders cache, refreshing...")
-                        from app.api.v1.endpoints.orders import update_user_static_orders
-                        await update_user_static_orders(user_id, db, global_redis_client_instance, user_type)
+#                     # Check static orders cache
+#                     static_orders_cache = await get_user_static_orders_cache(global_redis_client_instance, user_id)
+#                     if not static_orders_cache:
+#                         logger.warning(f"User {user_id}: Missing static orders cache, refreshing...")
+#                         from app.api.v1.endpoints.orders import update_user_static_orders
+#                         await update_user_static_orders(user_id, db, global_redis_client_instance, user_type)
                     
-                except Exception as e:
-                    logger.error(f"Error validating cache for user {user_info.get('id')}: {e}")
-                    continue
+#                 except Exception as e:
+#                     logger.error(f"Error validating cache for user {user_info.get('id')}: {e}")
+#                     continue
             
-            logger.info("Cache validation completed")
+#             logger.info("Cache validation completed")
             
-    except Exception as e:
-        logger.error(f"Error in cache validation task: {e}", exc_info=True)
+#     except Exception as e:
+#         logger.error(f"Error in cache validation task: {e}", exc_info=True)
     
-    # Schedule next validation in 5 minutes
-    await asyncio.sleep(300)
-    asyncio.create_task(run_cache_validation())
+#     # Schedule next validation in 5 minutes
+#     await asyncio.sleep(300)
+#     asyncio.create_task(run_cache_validation())
 
-# --- Auto-cutoff Order Monitoring Task ---
-async def monitor_auto_cutoff_orders():
-    """
-    Monitors auto-cutoff orders to identify any that might be stuck in AUTO_CUTOFF_REQUESTED status.
-    This helps identify orders that were sent to Firebase but never received confirmation.
-    """
-    logger.info("Starting auto-cutoff order monitoring task.")
+# # --- Auto-cutoff Order Monitoring Task ---
+# async def monitor_auto_cutoff_orders():
+#     """
+#     Monitors auto-cutoff orders to identify any that might be stuck in AUTO_CUTOFF_REQUESTED status.
+#     This helps identify orders that were sent to Firebase but never received confirmation.
+#     """
+#     logger.info("Starting auto-cutoff order monitoring task.")
     
-    try:
-        while True:
-            try:
-                if not global_redis_client_instance:
-                    await asyncio.sleep(60)
-                    continue
+#     try:
+#         while True:
+#             try:
+#                 if not global_redis_client_instance:
+#                     await asyncio.sleep(60)
+#                     continue
                     
-                async with AsyncSessionLocal() as db:
-                    # Find orders stuck in AUTO_CUTOFF_REQUESTED status for more than 5 minutes
-                    from sqlalchemy import select, and_
-                    from app.database.models import UserOrder
-                    from datetime import datetime, timedelta
+#                 async with AsyncSessionLocal() as db:
+#                     # Find orders stuck in AUTO_CUTOFF_REQUESTED status for more than 5 minutes
+#                     from sqlalchemy import select, and_
+#                     from app.database.models import UserOrder
+#                     from datetime import datetime, timedelta
                     
-                    # Get orders with AUTO_CUTOFF_REQUESTED status
-                    cutoff_time = datetime.utcnow() - timedelta(minutes=5)
+#                     # Get orders with AUTO_CUTOFF_REQUESTED status
+#                     cutoff_time = datetime.utcnow() - timedelta(minutes=5)
                     
-                    stuck_orders_query = select(UserOrder).where(
-                        and_(
-                            UserOrder.order_status == "AUTO_CUTOFF_REQUESTED",
-                            UserOrder.updated_at < cutoff_time
-                        )
-                    )
+#                     stuck_orders_query = select(UserOrder).where(
+#                         and_(
+#                             UserOrder.order_status == "AUTO_CUTOFF_REQUESTED",
+#                             UserOrder.updated_at < cutoff_time
+#                         )
+#                     )
                     
-                    result = await db.execute(stuck_orders_query)
-                    stuck_orders = result.scalars().all()
+#                     result = await db.execute(stuck_orders_query)
+#                     stuck_orders = result.scalars().all()
                     
-                    if stuck_orders:
-                        autocutoff_logger.error(f"[AUTO-CUTOFF] Found {len(stuck_orders)} stuck auto-cutoff orders:")
-                        for order in stuck_orders:
-                            autocutoff_logger.error(f"[AUTO-CUTOFF] STUCK ORDER: User {order.order_user_id}, Order {order.order_id}, Close ID {order.close_id}, Updated {order.updated_at}, Close Message: {order.close_message}")
+#                     if stuck_orders:
+#                         autocutoff_logger.error(f"[AUTO-CUTOFF] Found {len(stuck_orders)} stuck auto-cutoff orders:")
+#                         for order in stuck_orders:
+#                             autocutoff_logger.error(f"[AUTO-CUTOFF] STUCK ORDER: User {order.order_user_id}, Order {order.order_id}, Close ID {order.close_id}, Updated {order.updated_at}, Close Message: {order.close_message}")
                             
-                            # Check if we should retry sending to Firebase
-                            if order.updated_at < (datetime.utcnow() - timedelta(minutes=10)):
-                                autocutoff_logger.warning(f"[AUTO-CUTOFF] RETRYING FIREBASE SEND: User {order.order_user_id}, Order {order.order_id}, Close ID {order.close_id}")
+#                             # Check if we should retry sending to Firebase
+#                             if order.updated_at < (datetime.utcnow() - timedelta(minutes=10)):
+#                                 autocutoff_logger.warning(f"[AUTO-CUTOFF] RETRYING FIREBASE SEND: User {order.order_user_id}, Order {order.order_id}, Close ID {order.close_id}")
                                 
-                                try:
-                                    firebase_close_data = {
-                                        "action": "close_order",
-                                        "close_id": order.close_id,
-                                        "order_id": order.order_id,
-                                        "user_id": order.order_user_id,
-                                        "symbol": order.order_company_name,
-                                        "order_type": order.order_type,
-                                        "order_status": order.order_status,
-                                        "status": "close",
-                                        "order_quantity": str(order.order_quantity),
-                                        "contract_value": str(order.contract_value) if order.contract_value else None,
-                                        "timestamp": datetime.now(datetime.timezone.utc).isoformat(),
-                                    }
+#                                 try:
+#                                     firebase_close_data = {
+#                                         "action": "close_order",
+#                                         "close_id": order.close_id,
+#                                         "order_id": order.order_id,
+#                                         "user_id": order.order_user_id,
+#                                         "symbol": order.order_company_name,
+#                                         "order_type": order.order_type,
+#                                         "order_status": order.order_status,
+#                                         "status": "close",
+#                                         "order_quantity": str(order.order_quantity),
+#                                         "contract_value": str(order.contract_value) if order.contract_value else None,
+#                                         "timestamp": datetime.now(datetime.timezone.utc).isoformat(),
+#                                     }
                                     
-                                    await send_order_to_firebase(firebase_close_data, "live")
-                                    autocutoff_logger.warning(f"[AUTO-CUTOFF] RETRY SENT TO FIREBASE: User {order.order_user_id}, Order {order.order_id}, Close ID {order.close_id}")
+#                                     await send_order_to_firebase(firebase_close_data, "live")
+#                                     autocutoff_logger.warning(f"[AUTO-CUTOFF] RETRY SENT TO FIREBASE: User {order.order_user_id}, Order {order.order_id}, Close ID {order.close_id}")
                                     
-                                except Exception as retry_error:
-                                    autocutoff_logger.error(f"[AUTO-CUTOFF] RETRY FAILED: User {order.order_user_id}, Order {order.order_id}, Error: {retry_error}", exc_info=True)
+#                                 except Exception as retry_error:
+#                                     autocutoff_logger.error(f"[AUTO-CUTOFF] RETRY FAILED: User {order.order_user_id}, Order {order.order_id}, Error: {retry_error}", exc_info=True)
                     
-            except Exception as e:
-                logger.error(f"Error in auto-cutoff order monitoring: {e}", exc_info=True)
+#             except Exception as e:
+#                 logger.error(f"Error in auto-cutoff order monitoring: {e}", exc_info=True)
                 
-            # Check every 2 minutes
-            await asyncio.sleep(120)
+#             # Check every 2 minutes
+#             await asyncio.sleep(120)
             
-    except Exception as fatal:
-        logger.critical(f"FATAL ERROR in auto-cutoff order monitoring: {fatal}", exc_info=True)
+#     except Exception as fatal:
+#         logger.critical(f"FATAL ERROR in auto-cutoff order monitoring: {fatal}", exc_info=True)
 
 # --- Barclays Pending Order Margin Checker ---
 async def barclays_pending_order_margin_checker():

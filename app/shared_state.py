@@ -21,6 +21,9 @@ logger.info(f"Initialized redis_publish_queue in shared_state with maxsize={redi
 # In-memory adjusted prices: {group_name: {symbol: {'buy': float, 'sell': float, 'spread': float}}}
 adjusted_prices_in_memory = {}
 
+# In-memory store for last known prices: {symbol: price_data_dict}
+last_known_price_in_memory = {}
+
 
 # You can add other shared state variables here if needed later,
 # ensuring thread-safe access if modified from multiple threads/tasks.
