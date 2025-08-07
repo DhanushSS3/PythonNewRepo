@@ -3,7 +3,7 @@ import logging
 from typing import Dict, Any
 from redis.asyncio import Redis
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.core.cache import set_adjusted_market_price_cache, get_adjusted_market_price_cache, get_group_symbol_settings_cache, REDIS_MARKET_DATA_CHANNEL, get_last_known_price, set_last_known_price
+from app.core.cache import set_adjusted_market_price_cache, get_adjusted_market_price_cache, get_group_symbol_settings_cache, REDIS_MARKET_DATA_CHANNEL, get_last_known_price, set_last_known_price, REDIS_GROUP_SETTINGS_UPDATE_CHANNEL
 from app.crud import group as crud_group
 from app.database.session import AsyncSessionLocal
 import json
@@ -80,8 +80,8 @@ async def refresh_group_settings(redis_client: Redis):
 
 async def adjusted_price_worker(redis_client: Redis):
     pubsub = redis_client.pubsub()
-    await pubsub.subscribe(REDIS_MARKET_DATA_CHANNEL)
-    logger.info("Adjusted price worker started. Listening for market data updates.")
+    await pubsub.subscribe(REDIS_MARKET_DATA_CHANNEL, REDIS_GROUP_SETTINGS_UPDATE_CHANNEL)
+    logger.info("Adjusted price worker started. Listening for market data and group-symbol settings updates.")
     latest_market_data = None
     last_market_data_hash = None
     refresh_task = None
@@ -249,17 +249,24 @@ async def adjusted_price_worker(redis_client: Redis):
                 if not message:
                     await asyncio.sleep(0.01)
                     continue
+                channel = message.get('channel')
+                if isinstance(channel, bytes):
+                    channel = channel.decode()
                 try:
                     message_data = json.loads(message['data'])
                 except Exception:
                     continue
-                latest_market_data = message_data
-                try:
-                    await process_latest()
-                except Exception as bpe:
-                    logger.error(f"[adjusted_price_worker] BrokenProcessPool detected: {bpe}. Shutting down worker.", exc_info=True)
-                    process_pool.shutdown(wait=True)
-                    return  # Exit the worker cleanly
+                if channel == REDIS_MARKET_DATA_CHANNEL:
+                    latest_market_data = message_data
+                    try:
+                        await process_latest()
+                    except Exception as bpe:
+                        logger.error(f"[adjusted_price_worker] BrokenProcessPool detected: {bpe}. Shutting down worker.", exc_info=True)
+                        process_pool.shutdown(wait=True)
+                        return  # Exit the worker cleanly
+                elif channel == REDIS_GROUP_SETTINGS_UPDATE_CHANNEL:
+                    logger.info(f"Received group-symbol settings update event: {message_data}. Refreshing group settings cache now.")
+                    await refresh_group_settings(redis_client)
             except Exception as bpe:
                 logger.error(f"[adjusted_price_worker] BrokenProcessPool detected in main loop: {bpe}. Shutting down worker.", exc_info=True)
                 process_pool.shutdown(wait=True)

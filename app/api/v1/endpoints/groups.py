@@ -22,7 +22,8 @@ from typing import Any
 import logging
 from app.core.cache import (
     set_group_settings_cache, set_group_symbol_settings_cache,
-    delete_group_settings_cache, delete_all_group_symbol_settings_cache
+    delete_group_settings_cache, delete_all_group_symbol_settings_cache,
+    publish_group_settings_update
 )
 from pydantic import BaseModel
 
@@ -287,6 +288,8 @@ async def update_existing_group(
         if updated_group.symbol:
             symbol_settings = {k: getattr(updated_group, k) for k in updated_group.__table__.columns.keys()}
             await set_group_symbol_settings_cache(redis_client, updated_group.name, updated_group.symbol, symbol_settings)
+            # Publish group-symbol settings update event to notify workers
+            await publish_group_settings_update(redis_client, updated_group.name, updated_group.symbol)
         return updated_group
     except IntegrityError as e:
         await db.rollback()

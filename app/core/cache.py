@@ -36,6 +36,7 @@ LAST_KNOWN_PRICE_KEY_PREFIX = "last_price:"
 REDIS_MARKET_DATA_CHANNEL = 'market_data_updates'
 REDIS_ORDER_UPDATES_CHANNEL = 'order_updates'
 REDIS_USER_DATA_UPDATES_CHANNEL = 'user_data_updates'
+REDIS_GROUP_SETTINGS_UPDATE_CHANNEL = 'group_settings_update'  # NEW: Channel for group-symbol settings cache invalidation
 
 # Expiry times (adjust as needed)
 CACHE_EXPIRY = 60 * 60  # Default cache expiry: 1 hour
@@ -591,6 +592,26 @@ async def get_user_dynamic_portfolio_cache(redis_client: Redis, user_id: int, us
         return None
 
 # --- New Group Symbol Settings Cache ---
+
+async def publish_group_settings_update(redis_client: Redis, group_name: str, symbol: str = None):
+    """
+    Publishes an event to notify that a group's symbol settings have been updated.
+    All workers/websockets listening on REDIS_GROUP_SETTINGS_UPDATE_CHANNEL should refresh their cache.
+    """
+    if not redis_client:
+        logger.warning(f"Redis client not available for publishing group settings update for group '{group_name}', symbol '{symbol}'.")
+        return
+    try:
+        message = json.dumps({
+            "type": "GROUP_SETTINGS_UPDATE",
+            "group_name": group_name,
+            "symbol": symbol,
+            "timestamp": datetime.datetime.now().isoformat()
+        }, cls=DecimalEncoder)
+        result = await redis_client.publish(REDIS_GROUP_SETTINGS_UPDATE_CHANNEL, message)
+        cache_logger.info(f"Published group-symbol settings update for group '{group_name}', symbol '{symbol}' to {REDIS_GROUP_SETTINGS_UPDATE_CHANNEL}, received by {result} subscribers")
+    except Exception as e:
+        logger.error(f"Error publishing group-symbol settings update for group '{group_name}', symbol '{symbol}': {e}", exc_info=True)
 
 async def set_group_symbol_settings_cache(redis_client: Redis, group_name: str, symbol: str, settings: Dict[str, Any]):
     """
