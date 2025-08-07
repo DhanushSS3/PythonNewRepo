@@ -81,14 +81,13 @@ def decode_decimal(obj):
         return obj
 
 
-# --- LZ4 Compression Helpers ---
 LZ4_COMPRESSION_THRESHOLD = 512  # bytes
 
 def compress_lz4(data: str | bytes) -> bytes:
     if isinstance(data, str):
         data = data.encode('utf-8')
     if len(data) > LZ4_COMPRESSION_THRESHOLD:
-        return lz4.frame.compress(data)
+        return b"LZ4:" + lz4.frame.compress(data)
     return data
 
 # def decompress_lz4(data: bytes) -> str:
@@ -98,13 +97,19 @@ def compress_lz4(data: str | bytes) -> bytes:
 #     except lz4.frame.LZ4FrameError:
 #         return data.decode('utf-8')
 
-def decompress_lz4(data: bytes) -> str:
+def decompress_lz4(data: bytes, *, key: str = None, user_id: int = None) -> str:
     try:
         if data.startswith(b"LZ4:"):
-            return lz4.frame.decompress(data[4:]).decode('utf-8')
-        else:
+            decompressed = lz4.frame.decompress(data[4:]).decode('utf-8')
+            return decompressed
+        try:
             return data.decode('utf-8')
-    except Exception:
+        except UnicodeDecodeError:
+            logger.warning(f"[CACHE][DECOMPRESS][FALLBACK] No LZ4 prefix but decode failed, attempting decompress (key={key}, user_id={user_id})")
+            decompressed = lz4.frame.decompress(data).decode('utf-8')
+            return decompressed
+    except Exception as e:
+        logger.error(f"[CACHE][DECOMPRESS] Failed to decompress LZ4 data (key={key}, user_id={user_id}, bytes_len={len(data) if data else 0}): {e}", exc_info=True)
         return ""
 
 

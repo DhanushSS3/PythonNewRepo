@@ -910,14 +910,6 @@ async def startup_event():
             background_tasks.add(sltp_task)
             sltp_task.add_done_callback(background_tasks.discard)
             
-            # Start the cache updater task for users with orders
-            cache_updater_task = asyncio.create_task(run_users_with_orders_cache_updater())
-            background_tasks.add(cache_updater_task)
-            cache_updater_task.add_done_callback(background_tasks.discard)
-            
-            redis_cleanup_task = asyncio.create_task(cleanup_orphaned_redis_orders())
-            background_tasks.add(redis_cleanup_task)
-            redis_cleanup_task.add_done_callback(background_tasks.discard)
             
             # Start the pending order trigger worker (processes triggered orders from Redis stream)
             from app.services.pending_orders import pending_order_trigger_worker, cleanup_pending_order_stream
@@ -933,10 +925,6 @@ async def startup_event():
             background_tasks.add(pending_trigger_worker_task)
             pending_trigger_worker_task.add_done_callback(background_tasks.discard)
             
-            # Start the stale cache cleanup task
-            stale_cache_task = asyncio.create_task(cleanup_stale_cache_entries(global_redis_client_instance))
-            background_tasks.add(stale_cache_task)
-            stale_cache_task.add_done_callback(background_tasks.discard)
             
             # Clean up pending order stream to ensure new trigger price format
             try:
@@ -973,8 +961,8 @@ async def startup_event():
             
         logger.info("Background tasks initialized")
             
-    except Exception:
-        logger.error("Background tasks initialization error")
+    except Exception as e:
+        logger.error(f"Background tasks initialization error: {e}", exc_info=True)
     
     # Create initial service account token
     try:
