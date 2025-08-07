@@ -1428,12 +1428,26 @@ async def set_external_symbol_info_cache(redis_client: Redis, symbol: str, info:
     key = f"{EXTERNAL_SYMBOL_INFO_KEY_PREFIX}{symbol.upper()}"
     await redis_client.set(key, compress_lz4(json.dumps(info, cls=DecimalEncoder)), ex=30*24*60*60)  # 30 days
 
+# async def get_external_symbol_info_cache(redis_client: Redis, symbol: str) -> Optional[dict]:
+#     key = f"{EXTERNAL_SYMBOL_INFO_KEY_PREFIX}{symbol.upper()}"
+#     data = await redis_client.get(key)
+#     if data:
+#         return json.loads(decompress_lz4(data), object_hook=decode_decimal)
+#     return None
+
 async def get_external_symbol_info_cache(redis_client: Redis, symbol: str) -> Optional[dict]:
     key = f"{EXTERNAL_SYMBOL_INFO_KEY_PREFIX}{symbol.upper()}"
     data = await redis_client.get(key)
-    if data:
-        return json.loads(decompress_lz4(data), object_hook=decode_decimal)
-    return None
+    if not data:
+        return None
+    decompressed = decompress_lz4(data)
+    if not decompressed or not decompressed.strip():
+        return None
+    try:
+        return json.loads(decompressed, object_hook=decode_decimal)
+    except Exception as e:
+        logger.error(f"Error decoding external symbol info for {symbol}: {e}")
+        return None
 
 from app.crud.external_symbol_info import get_all_external_symbol_info
 
