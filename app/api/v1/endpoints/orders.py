@@ -1610,18 +1610,19 @@ async def close_order(
                         db_user_locked.wallet_balance = (original_wallet_balance + db_order.net_profit).quantize(Decimal("0.00000001"), rounding=ROUND_HALF_UP)
 
                         transaction_time = datetime.datetime.now(datetime.timezone.utc)
-                        wallet_common_data = {"symbol": order_symbol, "order_quantity": quantity, "is_approved": 1, "order_type": db_order.order_type, "transaction_time": transaction_time, "order_id": db_order.order_id}
-                        if isinstance(db_user_locked, DemoUser): wallet_common_data["demo_user_id"] = db_user_locked.id
-                        else: wallet_common_data["user_id"] = db_user_locked.id
-                        if db_order.net_profit != Decimal("0.0"):
-                            transaction_id_profit = await generate_unique_10_digit_id(db, Wallet, "transaction_id")
-                            db.add(Wallet(**WalletCreate(**wallet_common_data, transaction_type="Profit/Loss", transaction_amount=db_order.net_profit, description=f"P/L for closing order {db_order.order_id}").model_dump(exclude_none=True), transaction_id=transaction_id_profit))
-                        if total_commission_for_trade > Decimal("0.0"):
-                            transaction_id_commission = await generate_unique_10_digit_id(db, Wallet, "transaction_id")
-                            db.add(Wallet(**WalletCreate(**wallet_common_data, transaction_type="Commission", transaction_amount=-total_commission_for_trade, description=f"Commission for closing order {db_order.order_id}").model_dump(exclude_none=True), transaction_id=transaction_id_commission))
-                        if swap_amount != Decimal("0.0"):
-                            transaction_id_swap = await generate_unique_10_digit_id(db, Wallet, "transaction_id")
-                            db.add(Wallet(**WalletCreate(**wallet_common_data, transaction_type="Swap", transaction_amount=-swap_amount, description=f"Swap for closing order {db_order.order_id}").model_dump(exclude_none=True), transaction_id=transaction_id_swap))
+
+                    wallet_common_data = {"symbol": order_symbol, "order_quantity": quantity, "is_approved": 1, "order_type": db_order.order_type, "transaction_time": transaction_time, "order_id": db_order.order_id}
+                    if isinstance(db_user_locked, DemoUser): wallet_common_data["demo_user_id"] = db_user_locked.id
+                    else: wallet_common_data["user_id"] = db_user_locked.id
+                    if db_order.net_profit != Decimal("0.0"):
+                        transaction_id_profit = await generate_unique_10_digit_id(db, Wallet, "transaction_id")
+                        db.add(Wallet(**WalletCreate(**wallet_common_data, transaction_type="Profit/Loss", transaction_amount=db_order.net_profit, description=f"P/L for closing order {db_order.order_id}").model_dump(exclude_none=True), transaction_id=transaction_id_profit))
+                    if total_commission_for_trade > Decimal("0.0"):
+                        transaction_id_commission = await generate_unique_10_digit_id(db, Wallet, "transaction_id")
+                        db.add(Wallet(**WalletCreate(**wallet_common_data, transaction_type="Commission", transaction_amount=-total_commission_for_trade, description=f"Commission for closing order {db_order.order_id}").model_dump(exclude_none=True), transaction_id=transaction_id_commission))
+                    if swap_amount != Decimal("0.0"):
+                        transaction_id_swap = await generate_unique_10_digit_id(db, Wallet, "transaction_id")
+                        db.add(Wallet(**WalletCreate(**wallet_common_data, transaction_type="Swap", transaction_amount=-swap_amount, description=f"Swap for closing order {db_order.order_id}").model_dump(exclude_none=True), transaction_id=transaction_id_swap))
 
                     # End of async with db.begin_nested()
                     # Now, outside the context manager, refresh objects

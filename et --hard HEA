@@ -1,0 +1,1259 @@
+[33mcommit 37e20d8442eef360f09df2b8cfb71bb72aa4e884[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31mcomp/main[m[33m, [m[1;31mcomp/HEAD[m[33m)[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Aug 13 08:52:14 2025 -0700
+
+    corrected close_id changing issue
+
+[33mcommit 60292fd464a0a4a42e35fc3655c388da92ff7266[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Aug 7 01:35:39 2025 -0700
+
+    added group channel for update group function
+
+[33mcommit 868701648c8085b631fe145dd1fdfca125c27e77[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Aug 6 23:03:19 2025 -0700
+
+    removed background tasks
+
+[33mcommit 34ef2be75dfa019e87f13ee79f115e2fd742c0c0[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Aug 6 21:51:24 2025 -0700
+
+    swap decode error solved
+
+[33mcommit 933db443581711c45a468dd2b8598d44250335cf[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Aug 6 05:18:28 2025 -0700
+
+    added last_price to in-memory
+
+[33mcommit daddf2bf7a219ab8288bbe7f0d2cffe1690d3bec[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Aug 6 04:42:30 2025 -0700
+
+    added compression to older version
+
+[33mcommit efc67c865c7635f40bfc916170911c35fae5b693[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Aug 4 22:23:06 2025 -0700
+
+    Corrected decoding of reset token
+
+[33mcommit 35eb395f7592cfaa8473539c20cc39fa193aac58[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Aug 4 21:58:44 2025 -0700
+
+    swap corrected deploying again
+
+[33mcommit c12b8bd30624a258829f42651ad823f1f26b4ddd[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Aug 4 06:05:26 2025 -0700
+
+    Added validation for swap
+
+[33mcommit 16fa2cb253593619b71c42179bad5f726f1a8928[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Aug 4 06:00:02 2025 -0700
+
+    Added validation for swap
+
+[33mcommit 0014a3c8d54dfa6fae7a671e8b0be1d277303cf0[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Aug 3 23:09:17 2025 -0700
+
+    Added swap to net-profit
+
+[33mcommit b76eb7013feeb2fb0f3ab4e88381392342d2036a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Aug 3 23:06:56 2025 -0700
+
+    Added swap to net-profit
+
+[33mcommit cc8f485cf50ab71420c2914e68502a24836e46a4[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Aug 1 03:44:10 2025 -0700
+
+    Corrected swap charges and disabled swagger
+
+[33mcommit 92d52d930d0470cd29f91a58f8415d7af7e3f393[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Aug 1 01:47:35 2025 -0700
+
+    Corrected swap charges
+
+[33mcommit 94adf7f83d817ce407852efaafd8f42ae9e9f09e[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 31 03:56:45 2025 -0700
+
+    email signup otps storing in db
+
+[33mcommit 3fdec2993ad7f5d79e0b28da442ba2a791375186[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 31 02:54:59 2025 -0700
+
+    added email and otp logs
+
+[33mcommit 0d3898afa5a29b6f3193d978ec9bd9b80279f776[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 31 02:04:51 2025 -0700
+
+    added portfolio logs
+
+[33mcommit c4d2b8437f871faee9cc32d35878e23d6751722f[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 31 02:04:23 2025 -0700
+
+    added portfolio logs
+
+[33mcommit 5d34a5b6891c12e17068becd75aeb180591c70b9[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 31 02:03:19 2025 -0700
+
+    added portfolio logs
+
+[33mcommit 00936fb14c3fa8fa2ae0cd520344d76f18ce0260[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 31 01:58:00 2025 -0700
+
+    modified user_balance_margin_cache with user_type
+
+[33mcommit e3f8178fb7517b784dde1bc68738de1dcf52e396[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 30 21:47:39 2025 -0700
+
+    added time validation for close order
+
+[33mcommit aa9b46f09f95217c286efe27636b593e0059304c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 28 04:42:50 2025 -0700
+
+    modified money requests to fetch only pending requests
+
+[33mcommit 1d730c6427677f8f803969c6454e1771a4ceae96[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 28 03:04:13 2025 -0700
+
+    money-requests updates
+
+[33mcommit eeccd92a2f5accc4a5d99589925905242e385c14[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 25 03:32:46 2025 -0700
+
+    increased pool connections
+
+[33mcommit 5c8f8173e3d596eeea90c7bd26f94474df782577[m[33m ([m[1;31mpythonnew/main[m[33m, [m[1;31mpythonnew/HEAD[m[33m)[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 25 02:39:28 2025 -0700
+
+    reduced place_order latency
+
+[33mcommit 6d2a68be4bf7263be3a9fa329426c5fe942d02e8[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 25 02:35:48 2025 -0700
+
+    reduced place_order time
+
+[33mcommit e0faf937b1e6e41e79eafc0122dc5d0fa8d2a371[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 24 21:51:57 2025 -0700
+
+    Added wallet and margin to open-orders
+
+[33mcommit 11f2ba3c98b6a942acd0a7cab97ab247223ca10d[m[33m ([m[1;31madmin/main[m[33m, [m[1;31madmin/HEAD[m[33m)[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 24 04:58:26 2025 -0700
+
+    modified swap logic
+
+[33mcommit 9954061277a25ea9e81f7668eb7b5c6fca323ed1[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 24 02:22:10 2025 -0700
+
+    corrected buy sell
+
+[33mcommit 0ff01702c86a5d13c635d436e39cb2097518b864[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 24 02:13:15 2025 -0700
+
+    websocket data corrected
+
+[33mcommit d791c84d2e0c1bb796591268f10e1a77ca034a98[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 23 23:49:08 2025 -0700
+
+    modified wallet response
+
+[33mcommit 0284e25e734ac7f828df2a5df655bd7f701522dc[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 23 23:45:03 2025 -0700
+
+    Modified withdraw request response
+
+[33mcommit 3ef901032ccd7e8c8e36a94f49eba9e095ef29be[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 23 23:23:02 2025 -0700
+
+    modified websocket payload
+
+[33mcommit 2887eeba2db847948051a880599ed029fa66fafd[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 23 04:54:36 2025 -0700
+
+    solved import error
+
+[33mcommit b31e6d45b1dc6bdac97ff94fefac777530dd2d9c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 23 03:49:28 2025 -0700
+
+    added close_order feature for admin
+
+[33mcommit 1d07dbab276169dbac0e6432715de18ba5721ce2[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 23 02:50:09 2025 -0700
+
+    Added user get apis for admin
+
+[33mcommit d0252ae518f8688b2b8b0fc7e68286707fb58f6c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 22 22:48:58 2025 -0700
+
+    minimized response for orders
+
+[33mcommit f2eb191dd705cbede97b3b2c88d2187fd16a4872[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 22 22:32:00 2025 -0700
+
+    modified close response schema
+
+[33mcommit 2459022167c02608c709e12beb40565164e424e5[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 22 21:49:42 2025 -0700
+
+    Added admin websocket
+
+[33mcommit ffe872acc7f001bf924cfd818112a73f947fec04[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 22 03:46:08 2025 -0700
+
+    Added Rejected Orders
+
+[33mcommit 58840f0f2011760a958884a7207c94d810eb43a1[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 21 23:45:30 2025 -0700
+
+    added snapshot for public websocket-1
+
+[33mcommit 2637046c3e9ba59daf0246540c3d53a9f10ef608[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 21 23:34:42 2025 -0700
+
+    added snapshot for public websocket-1
+
+[33mcommit e3314902f1095d4b547412c3832cab59efb0ce0f[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 21 23:18:19 2025 -0700
+
+    added snapshot for public websocket
+
+[33mcommit 9edfd4a0ba171fb792bbb038528a338076471624[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 21 22:51:20 2025 -0700
+
+    Added public websocket
+
+[33mcommit 847a75ad3d144266e897d3bb82582f5246d91c15[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 21 05:50:05 2025 -0700
+
+    Chnaged email subject
+
+[33mcommit 0bb8e04fecc55bc83fb5e7a805d45660be82b7a9[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 21 05:17:04 2025 -0700
+
+    added referral_code in schemas
+
+[33mcommit 52b482cbec3f2a8d9156f6ccc7e0e384fe961a94[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 21 05:01:41 2025 -0700
+
+    added referral fields
+
+[33mcommit 2c5a1c6d7f19e3730c380e830c9c8b4b0c0c65bc[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 21 02:01:29 2025 -0700
+
+    Used last_price instead of latest price for order-execution
+
+[33mcommit 4ad958a701e496e52200ac4960a15ffc8d4a565a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jul 20 23:40:47 2025 -0700
+
+    Added automatic deletion of orders data in firebase
+
+[33mcommit 864eb685141f927e98e7a86a7fbabc29ca241ec7[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jul 20 22:34:31 2025 -0700
+
+    Added logs for scheduler
+
+[33mcommit d6c7cdaf22f9677010a639054212a98cb6033fdb[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jul 20 21:51:12 2025 -0700
+
+    New repo inital push
+
+[33mcommit 865499ac42c45919539b4c28d1bbc95eefb30544[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 18 05:53:27 2025 -0700
+
+    extended jwt expiry time
+
+[33mcommit e10fc10142b67dfd62534db955d50f543fd76dde[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 18 05:11:34 2025 -0700
+
+    added cancelled orders to rejected orders
+
+[33mcommit 842075999eeb4a1774d76b1efae0ddb271a6007f[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 18 04:45:10 2025 -0700
+
+    corrected demo accounts
+
+[33mcommit 3cb9de204e01de9ad50abdd40745be5362389bce[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 18 01:49:08 2025 -0700
+
+    corrected order_id update
+
+[33mcommit 0b3b5a3e77dcf505d29f34d073dc461b077ad703[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 17 23:38:32 2025 -0700
+
+    added sl/tp cancel to autocutoff
+
+[33mcommit bf4d6043f3f59bd03488b55c7c3445436aeff8d3[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 17 23:25:16 2025 -0700
+
+    correted autocutoff contract_size
+
+[33mcommit a8e9dcd8af49c808f990f57258e254435c63786a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 17 05:56:18 2025 -0700
+
+    corrected dynamic portfolio
+
+[33mcommit 97bedb64ce6b602257d33c3622ae16b4c0d31bc6[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 17 05:05:03 2025 -0700
+
+    corrected adjusted prices
+
+[33mcommit ead372a31703a7f528fdbe3b1f38e429210fea71[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 17 05:04:32 2025 -0700
+
+    corrected adjusted prices
+
+[33mcommit 5f68ad1ff2327e55ca98d69d63414806545f450e[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 17 01:57:08 2025 -0700
+
+    Added fallback logic
+
+[33mcommit b84f1b1f9ff1c1016f1b03150a43840b8dde07dc[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 23:31:56 2025 -0700
+
+    added async.sleep to autocutoff
+
+[33mcommit 718c4485176183101a0de6981679e7db76e004ab[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 23:13:33 2025 -0700
+
+    Removed cutoff logic from scheduler
+
+[33mcommit b6c8dadfc4c031ab8143dc5e27b8868c3ef82875[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 23:12:58 2025 -0700
+
+    Removed cutoff logic from scheduler
+
+[33mcommit 8c94991249aa882f2efa385b5e0f76ead84e56c7[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 21:42:17 2025 -0700
+
+    added print stmt
+
+[33mcommit 949f6b583259907229598eaa4df84526694ba670[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 06:14:50 2025 -0700
+
+    Added initial group cache
+
+[33mcommit c25d0fd9f4255a5e02e26f7c04271cc74dfbdde9[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 05:55:08 2025 -0700
+
+    redis
+
+[33mcommit d75819e6f1d755148da41618a5bb0c62a6990748[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 05:03:41 2025 -0700
+
+    added logs for sending_orders
+
+[33mcommit b80e9280487e7623803810791c35464caef9a3e9[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 04:29:23 2025 -0700
+
+    new version
+
+[33mcommit a35a5647142bf4752c079ff77961453c1833eaef[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 03:44:59 2025 -0700
+
+    Added extensive logs to autocutoff
+
+[33mcommit 90a11538df7eadcfb1637860b35ee319fad08e32[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 02:03:54 2025 -0700
+
+    corrected currency conversion
+
+[33mcommit 5e5b84a0bf75164f3d628a7643df18649df77580[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 00:26:56 2025 -0700
+
+    corrected user apis
+
+[33mcommit 56596fca9477b769dcb121464c78f11ec6666e68[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 16 00:00:10 2025 -0700
+
+    Added user apis
+
+[33mcommit 6860024c7784a25e87fe0501491024e234cc2864[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 15 23:40:23 2025 -0700
+
+    16-07-2025
+
+[33mcommit 8ff52fd43543d65bfad074cdd86e4c9555725e79[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 15 22:04:14 2025 -0700
+
+    Corrected pending cancel checker and added logs
+
+[33mcommit 1753dfb41b51368b6707f99d44da9783dea3f478[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 15 02:52:34 2025 -0700
+
+    added close message
+
+[33mcommit 4b2a872fe48da3c9e32ee19bd2169eec28675dc6[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 14 23:09:37 2025 -0700
+
+    corrected typo in main.py
+
+[33mcommit b97fbe0aa8cdebe4c09aa0d2b68fdd321832bc86[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 14 21:56:39 2025 -0700
+
+    ids generation modified
+
+[33mcommit a9888d7f6f14edce2b71256f141b9e29786d886c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 14 05:16:34 2025 -0700
+
+    added read groups
+
+[33mcommit 5b4c50fa17d06202b50f1f6089f6df6843804662[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 14 04:24:50 2025 -0700
+
+    added uniquenesss to ids
+
+[33mcommit ea40d747a9d0e8e6d78d0d119c9756a33b6d3bbe[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 14 03:50:13 2025 -0700
+
+    added autocutoff mail
+
+[33mcommit f407d3cb9ab26c814c1c4c1c56052affe3d93914[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 14 00:19:01 2025 -0700
+
+    corrected autocutoff error
+
+[33mcommit 2f3a3905d81fde4e73e5ae6de01686a920bc57ca[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jul 13 23:59:56 2025 -0700
+
+    autocutoff corrected
+
+[33mcommit aed12c03ce9c66fbb7fd30be281225927899b7d1[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jul 13 22:30:02 2025 -0700
+
+    Pending order checker modified
+
+[33mcommit df7a698cdd3d8e75e9b9171ea5e5eeeae6c9daf7[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 11 00:13:06 2025 -0700
+
+    resolvedd last known price
+
+[33mcommit 878ebe936d559fe67d27be4628258f797803b6f0[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 10 22:27:14 2025 -0700
+
+    Pending order cancel task added
+
+[33mcommit 2443e4a3551713ef481e7cba4ccc8cac66c61717[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 10 04:40:19 2025 -0700
+
+    logs removed
+
+[33mcommit 0f6eb8467face0341782bead6fc2d89ba050498d[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 9 23:08:33 2025 -0700
+
+    autocutoff checked
+
+[33mcommit 972ac4fd17b234a0177c0ae555ac915e0d727b70[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 9 22:34:46 2025 -0700
+
+    corrected pending order margin
+
+[33mcommit 06ad3779fd4338d1c9f803be6bc46ff1ef795db8[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 9 11:13:55 2025 -0700
+
+    Pending order working
+
+[33mcommit a7b52c6d592354574e81a65d05cfd69db17539f4[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 8 21:50:26 2025 -0700
+
+    SL/TP optimized
+
+[33mcommit 93589d7d19430b82f9aa06a7a82ea70c607eea98[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 8 09:45:45 2025 -0700
+
+    optimized websocket commit
+
+[33mcommit 85c1f7debaaf69171d6db8a593a9fcab499cdda5[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 8 05:34:54 2025 -0700
+
+    optimized speed
+
+[33mcommit 4681b4d62d68f5ae0bc91d42853080c5847f8526[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 8 05:12:50 2025 -0700
+
+    Websocket optimized
+
+[33mcommit e887ea02b51629b60684e78d8c26ea093c4770d1[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 8 02:56:48 2025 -0700
+
+    v1.2.7 publishing and caching
+
+[33mcommit 229bba3087729567347a590491a95fd7e247d7d5[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jul 8 02:53:01 2025 -0700
+
+    v1.2.7 added publishing and cache updating
+
+[33mcommit 046e26ddc780f4f991e3b9505693d6353fe05a20[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 7 03:37:27 2025 -0700
+
+    combined service provider apis
+
+[33mcommit 5719bbb70716a5732587aa5aa75c5fb6f6bb643a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 7 01:39:39 2025 -0700
+
+    Corrected centralized websocket worker
+
+[33mcommit 6d8b8874a187bd4e9ffa8f01bb67bd8c4b81ec19[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 7 00:13:57 2025 -0700
+
+    Corected logs
+
+[33mcommit f2e8f9b782f7e2700a6b73c695373984303fef4f[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jul 7 00:08:38 2025 -0700
+
+    Websocket Error Fixed
+
+[33mcommit 76f2f5e850849b4ffed5b5a1207c9e3c291f4376[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jul 6 23:55:06 2025 -0700
+
+    1.2.6
+
+[33mcommit d0d08f4923c9f716ee34d3db96d0b92b240048e5[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jul 6 21:32:43 2025 -0700
+
+    v1.2.5
+
+[33mcommit 8d883d0ada4cdb79f634f9c3831eafe5d3d76f4c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 4 06:51:42 2025 -0700
+
+    corrected order-execution
+
+[33mcommit 9631cfbca7fac198a89f5ce484c9552e2ba96df3[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 4 05:48:26 2025 -0700
+
+    margin calculation and status saving corrected
+
+[33mcommit e7b317055a6c0cb0f1e6cb164495cd8ca0201f06[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 4 04:25:27 2025 -0700
+
+    websocket snapshot corrected
+
+[33mcommit b906e27f01e0321ec2b509d41dcb77a53f3287de[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jul 4 03:11:29 2025 -0700
+
+    corrected firebase sending for barclays
+
+[33mcommit c97cbe7a668c8af19fe40106d0b6ddaf6e4dc284[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 3 23:14:58 2025 -0700
+
+    optimized place_order and solved connection issues
+
+[33mcommit df95b2cedef2a4d12237fe305a41d1bb45747a63[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 3 23:01:42 2025 -0700
+
+    optimized place_order function
+
+[33mcommit a90cb4ac1721d5ad09e5b3550116ee2e94adaea3[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 3 22:00:24 2025 -0700
+
+    connections issues solved
+
+[33mcommit f7ef823d97f38cf634e05db924391a1351efcf40[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 3 04:25:12 2025 -0700
+
+    Sl margin corrected for rock users
+
+[33mcommit a0d0b55b57c549a00d280d988884192c4cbe277c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 3 04:20:20 2025 -0700
+
+    SL margin corrected for rock users
+
+[33mcommit 82c2c83aa43bc28c21e919cfdb06f0a0aa70497b[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 3 03:50:48 2025 -0700
+
+    SL working for rock orders
+
+[33mcommit 348510b8deccdcc8c6805ef48495dc8f5727992b[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jul 3 01:18:34 2025 -0700
+
+    Working rock orders
+
+[33mcommit 25c4c280fe802290f8b0bba54b9d55db3306950e[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 2 05:00:46 2025 -0700
+
+    corrected errors
+
+[33mcommit 0e6d62eac8314b072ae18d6ca08b5da076d2e809[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 2 04:54:24 2025 -0700
+
+    corrected place_order barclays
+
+[33mcommit 32179e9de2a667aac151fe562c59632cde77ae01[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 2 04:37:23 2025 -0700
+
+    order placing optimized
+
+[33mcommit 2f2ee70974916b33c13f953d597465c17587136c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 2 04:16:40 2025 -0700
+
+    optimized websocket relay
+
+[33mcommit ffc4c50debe09e7e067941bb55917620afb5806f[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 2 03:48:35 2025 -0700
+
+    Added group based batching
+
+[33mcommit 2acf4fb0c179177a58a576561865e8f5dc45db8f[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 2 03:37:56 2025 -0700
+
+    Added group based pricing
+
+[33mcommit 83f453dba10bedba6a43bc371ef91206f94da4c6[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jul 2 03:15:32 2025 -0700
+
+    v1.1.7
+
+[33mcommit 2dc9fc1c1b0b5c6d4bdb90f1e37f9476916573d5[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 30 10:29:17 2025 -0700
+
+    Groups problem solved
+
+[33mcommit 0da9fe8d9abd976ee70ef93919094abcabcb2f23[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 30 10:13:20 2025 -0700
+
+    Added Deposit API
+
+[33mcommit 730d6e048f14d43831be8c3c18e45dfaa2b3cef0[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 30 05:50:17 2025 -0700
+
+    added tylt payment gateway
+
+[33mcommit 70315e37e1470276b118a72da030045d156fb72b[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 30 04:24:20 2025 -0700
+
+    Added pending margin
+
+[33mcommit 7c41859b8a80795f2a9f113dd21edc36c848215a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 30 04:07:43 2025 -0700
+
+    BTC margin added
+
+[33mcommit 1590b89087c57724b66c00292c871cb015c840ae[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 30 03:44:01 2025 -0700
+
+    removed extensive logs
+
+[33mcommit 20da39f7926ae4a5753a91abcb98cce03482f284[m[33m ([m[1;31msecondary/main[m[33m)[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jun 29 23:38:23 2025 -0700
+
+    v1.1.5
+
+[33mcommit 9b4fa8e690d3a8e5247b0b5335d3b5676a0b019c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jun 29 22:21:27 2025 -0700
+
+    Added updated_at field
+
+[33mcommit 740c3f6baf132429df0ea46f65755eda9fdc935a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jun 29 22:08:53 2025 -0700
+
+    removed main.py logs
+
+[33mcommit 7c3d93e1143e8a81768dba5706d9d77b4db11b9e[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jun 29 21:32:11 2025 -0700
+
+    30-06-2025
+
+[33mcommit e748891a7c5fa68cba87e045c3b2c30b3a9779f8[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 27 06:13:39 2025 -0700
+
+    v1.4
+
+[33mcommit 065b9f93789460ad607070feb503cbdb4b973893[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 27 05:08:31 2025 -0700
+
+    AFter correcting takeprofit
+
+[33mcommit 1f71b039cc821ecf2e8ad0a4e674d3379dec74db[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 27 04:19:19 2025 -0700
+
+    Triggering almost correctly
+
+[33mcommit 83d498952d8a446a828b67a34547f5a7270e17a9[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 27 03:19:38 2025 -0700
+
+    improved websocket speed
+
+[33mcommit 36f190229255a9f6162ba657ae529a3dffd84f3a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 26 04:53:32 2025 -0700
+
+    deploy v1.2 corrected
+
+[33mcommit 511a887bc58d5d1b43ce30fa8698bb418e61bf1b[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 26 03:57:39 2025 -0700
+
+    Logs are present
+
+[33mcommit 3689d93589e40cf83a6617db4a06705e4a873d4a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 26 03:50:36 2025 -0700
+
+    v1.2 corrected pending
+
+[33mcommit e0d5cdc113d242b7939f03b15bad96daf5a0df90[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jun 25 21:55:18 2025 -0700
+
+    websocket symbols added
+
+[33mcommit af14d8c54eb927072669dca3635f66e9d275873c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jun 25 21:41:51 2025 -0700
+
+    margin calculating correctly
+
+[33mcommit 84e90cdbd0f514d838d909b3d6fc4a74e90057c3[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 23 11:41:20 2025 -0700
+
+    SL TP Working
+
+[33mcommit a9f69f5a158c3edaf8051a78f9c8cc90aa3ebace[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jun 22 21:34:18 2025 -0700
+
+    23-06-25
+
+[33mcommit 0b0fefafd51dcead34da44cebc3a27f1d92f21b2[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 20 00:09:06 2025 -0700
+
+    added sl/tp validation
+
+[33mcommit 11a73d4532e96364ce329b7b72d9319e3a454f60[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 19 23:46:00 2025 -0700
+
+    margin calculating pending
+
+[33mcommit c4a01801bff0009e0db8568c4209d224dae410af[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 19 23:31:06 2025 -0700
+
+    pending order triggering but user margin pending
+
+[33mcommit 06176c4ba8015f4332581e59b2d811eaf924b154[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 19 04:18:48 2025 -0700
+
+    solved main.py errors
+
+[33mcommit cf14a232231623c2806fa78ab8f8741ad1136609[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jun 18 02:13:48 2025 -0700
+
+    added some logs
+
+[33mcommit f519e294e1aa8098428b2341c4614e5638814f16[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jun 18 01:49:24 2025 -0700
+
+    corrected live margin
+
+[33mcommit dad90112bb7e65dcd383c08ad16a06d651cf8b18[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 16 23:07:34 2025 -0700
+
+    17-06-25-v1
+
+[33mcommit 14008149b8efed85fccf837d1afdbc62c2e125b2[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 16 21:36:44 2025 -0700
+
+    17-06-25
+
+[33mcommit 5ef13a78171205e185f3e6d36fec9f345a12293d[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 16 05:43:45 2025 -0700
+
+    modified service apis
+
+[33mcommit 7fab0833b6b99ed6dafbe8840c1e6a44fea5ca09[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 16 05:07:12 2025 -0700
+
+    added status field
+
+[33mcommit 32cfde75f60757a23a3a6baf3f336e1765f0d949[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 16 00:13:43 2025 -0700
+
+    created service endpoints
+
+[33mcommit f8604277f28f06982f59aafc84b170d1c2e0feb7[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 13 05:51:57 2025 -0700
+
+    added commission deduction in netprofit
+
+[33mcommit 27d1a73daba48f8f11fca67268a560fec3ea1058[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 13 03:21:18 2025 -0700
+
+    stoploss working version
+
+[33mcommit ba488779e41fa83e7402f51674333107c8f60370[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 12 22:09:52 2025 -0700
+
+    corrected margin and contract_value
+
+[33mcommit e9ca9babbca135b1e45332126384292c230edb49[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 12 03:01:30 2025 -0700
+
+    added favorites endpoints
+
+[33mcommit ff3530b4a925246642b1b8179044e33031e20bab[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jun 11 23:02:57 2025 -0700
+
+    orders are working 12-06-25
+
+[33mcommit f2c49fb6b623ab7198dea5bce550073b676b4325[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jun 11 22:11:00 2025 -0700
+
+    Added dynamic portfolio
+
+[33mcommit 3fc1cd096663c1037281811801992641d6a0d0ea[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jun 11 04:58:12 2025 -0700
+
+    cancel order endpoint schema changed
+
+[33mcommit aae3772f5402f7336313bc732dcc1c6d9b97f3a4[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jun 11 00:35:09 2025 -0700
+
+    Added spread api
+
+[33mcommit d87e5c78c29dc7da6cbc36e40d43c8f14fb1ca8b[m[33m ([m[1;32mnew-branch[m[33m)[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jun 10 23:00:51 2025 -0700
+
+    added cancel order endpoint
+
+[33mcommit 387c66ad876916a7a38ae2bdfed89ecb88b21318[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jun 10 22:37:57 2025 -0700
+
+    Added news endpoint
+
+[33mcommit a64d4bbac036ee881a84a4d04463c7edc8d06b0c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jun 10 22:28:03 2025 -0700
+
+    Modified wallet to include order_id
+
+[33mcommit 553190ce8d10378510c9d5c14599d6da87b2b738[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jun 10 05:46:23 2025 -0700
+
+    websocket reflecting updates
+
+[33mcommit 3b2505b4d73380ad186715cd00b8fa3e94e8cfc2[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jun 10 04:46:06 2025 -0700
+
+    orders are updating but balance and margin are not
+
+[33mcommit a1ae9cf366bce684d94f08c101193030d90bf1f3[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 9 05:05:33 2025 -0700
+
+    Working on autocutoff
+
+[33mcommit afc96cb07b9b0e0c91818e914417d2d852329149[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 9 02:43:28 2025 -0700
+
+    Corrected demo register endpoint
+
+[33mcommit 2af10a0b9758646bcc6029cd9673d6e24693020a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 6 09:58:23 2025 -0700
+
+    websocket running for live users
+
+[33mcommit f3ff7d8ed9809a932c6ee9337dce0a885ee9c407[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 6 06:14:34 2025 -0700
+
+    Websocket modification added pending orders
+
+[33mcommit 090f2011303c1908962889b953cef03fe8fc5890[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 6 02:35:56 2025 -0700
+
+    Corrected Websocket
+
+[33mcommit 351171116a80c799f6a3b9c747a4582450a79f79[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri Jun 6 01:08:31 2025 -0700
+
+    Added 3 orders apis
+
+[33mcommit a64b5f97afaa963855b40aab5798dcb6ca550641[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 5 03:42:17 2025 -0700
+
+    Added modify order api
+
+[33mcommit 9ca292445adb193ce2efbdef1f42e7c12ca91712[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu Jun 5 00:06:17 2025 -0700
+
+    Working Close Order
+
+[33mcommit fa316c995d993bc5af6e989e0eef38fdfc65ba80[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed Jun 4 03:01:22 2025 -0700
+
+    Added hedgin margin
+
+[33mcommit ad610eefcbf0eeb3cb98266ec09f101bb80292b8[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jun 3 14:24:01 2025 -0700
+
+    correct margin
+
+[33mcommit 25ca92b8b023915733be9197375c84592e1aa37c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jun 3 13:35:10 2025 -0700
+
+    wrong margin
+
+[33mcommit b9a96b30544f1cfe61e6bcec3e71cf7e8ef8dfca[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue Jun 3 12:27:34 2025 -0700
+
+    03-06-2025
+
+[33mcommit 742ac5f1ed4a98b4a0a407c2f3873c58a0c1ff81[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon Jun 2 06:30:43 2025 -0700
+
+    Added Websocket And Place Order Api
+
+[33mcommit 102f8fb6c359bbd968769120c962b3dc87a4c3c2[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun Jun 1 22:12:04 2025 -0700
+
+    02-06-25
+
+[33mcommit c4aef815833f88ab085c581756271a69445aa655[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri May 30 03:45:23 2025 -0700
+
+    users endpoints
+
+[33mcommit bd2ea5c9db7fce6125b04491e3b9eaba042f4f89[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri May 30 02:51:17 2025 -0700
+
+    users endpoint
+
+[33mcommit d7049e10b6fbd96aa654508172956dc8ca9de50c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri May 30 02:29:58 2025 -0700
+
+    v-2
+
+[33mcommit b3e897af303d9fb1ffac29cf1a7d5e24a940310c[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu May 29 11:17:40 2025 -0700
+
+    Initial Push
+
+[33mcommit de3f11496e1cc0dba1f589eab0fb8f1f1157701d[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu May 29 04:32:02 2025 -0700
+
+    29-05-2025
+
+[33mcommit eb339297981f84d18cb74ed4caafde29ca0f60db[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed May 28 05:03:27 2025 -0700
+
+    28-05-2025
+
+[33mcommit f17077e206592e0c85a0fa396e309e3271ac0ce1[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu May 22 23:12:19 2025 -0700
+
+    22-05-2025
+
+[33mcommit 3ed246ecf18ab0691a62399e852cf9b3e9758d40[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu May 22 05:57:31 2025 -0700
+
+    added swap charges
+
+[33mcommit bffc58714bd2ad9428ef84bf125228c483f196f5[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu May 22 03:58:56 2025 -0700
+
+    Added all orders related apis
+
+[33mcommit f14d9546c537992b087482f9649ec885d0cb2fc6[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed May 21 03:31:05 2025 -0700
+
+    Margin only for open orders
+
+[33mcommit 888068288227f0e53983a0ff761083f246c471c4[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue May 20 05:49:35 2025 -0700
+
+    Spread values are correct -20-06-25
+
+[33mcommit 2bb2bcde100293d33a8a7b2d85ac810ad103ac90[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue May 20 02:17:42 2025 -0700
+
+    Added Wallet Transactions
+
+[33mcommit f902b87517ac32ca6bddb326774cc3f025149436[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue May 20 02:02:04 2025 -0700
+
+    Added Commission in the Orders Table
+
+[33mcommit 6777c1d64bb25e579ee210ab29862d53da433533[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue May 20 00:10:18 2025 -0700
+
+    Corrected Contract Value and Margin
+
+[33mcommit 6c88a22317a2a51eef67e2c52334a792a677e1fa[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon May 19 00:25:27 2025 -0700
+
+    Now getting Converted profit_loss price
+
+[33mcommit 7ce9080816a0399ccca5073a7d85f027566ebb5f[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu May 15 06:15:34 2025 -0700
+
+    Getting all symbols
+
+[33mcommit 38a49b57f4003c8820f5ae02d464e1828cafe0f4[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu May 15 03:02:16 2025 -0700
+
+    Added user portfolio to websocket
+
+[33mcommit 49fb16eac8bd3cef9906ada0174f46e26c6c64a3[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed May 14 06:32:03 2025 -0700
+
+    Till place order margin
+
+[33mcommit 166617c5745c5f2650f4c8d84ecee139c8ccb60d[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Wed May 14 05:11:39 2025 -0700
+
+    Getting closer to expoected user margin
+
+[33mcommit a928c4a932b40c763c2168590bbe107a706149e6[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue May 13 03:46:03 2025 -0700
+
+    Till User Overall Margin(Place)
+
+[33mcommit dc957d329d99b893fdc42d87078b617bea1dc125[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue May 13 02:16:14 2025 -0700
+
+    Till margin calculations
+
+[33mcommit aa8107b1693ed7fe39ad6ed7cf06f5bb76004315[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon May 12 05:37:05 2025 -0700
+
+    12-5-25
+
+[33mcommit 2c1740198c1d28f395ff05a9868184bb29e03aa1[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri May 9 00:38:46 2025 -0700
+
+    Resolved some spread errors
+
+[33mcommit 765b79dc9d40671059d9401899c17ed5e7293fde[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Fri May 9 00:30:32 2025 -0700
+
+    Till Spread Value
+
+[33mcommit bfb8224538f0a2a151d6fdc793156fe7be8de142[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu May 8 23:48:54 2025 -0700
+
+    Connections all are done
+
+[33mcommit be8e5a0e6eba63bbb659a9a917e8271e0a54c288[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Thu May 8 00:47:26 2025 -0700
+
+    Added till websocket auth still but not recieving data
+
+[33mcommit 13d5404ba572a83d6e8f4950182b294a036debcc[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Tue May 6 01:53:32 2025 -0700
+
+    To handle more users
+
+[33mcommit 5c2def1f833ca9774720bf01b4fd0acfcc80879a[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon May 5 23:20:23 2025 -0700
+
+    Till Basic Firebase and Websocket Configuration
+
+[33mcommit 4208e27d77f06340d6b5dd24a3a4920984b3792e[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Mon May 5 05:46:43 2025 -0700
+
+    Till Groups
+
+[33mcommit c98c8bb10d5667effa9734663e840be1245dfa7e[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun May 4 23:40:37 2025 -0700
+
+    Till Authentication Done
+
+[33mcommit 3360f39ab91a6e83af5f4fb6c1cd0c204b28accb[m
+Author: DhanushSS3 <support@livefxhub.com>
+Date:   Sun May 4 08:02:24 2025 -0700
+
+    Till User Registartion
