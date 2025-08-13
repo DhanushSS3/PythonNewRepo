@@ -5003,8 +5003,7 @@ async def _handle_order_close_transition(
         "order_status": "CLOSED", 
         "net_profit": net_profit,
         "swap": swap, 
-        "commission": total_commission,
-        "close_id": await generate_unique_10_digit_id(db, order_model, 'close_id')
+        "commission": total_commission
     })
 
     updated_order = await crud_order.update_order_with_tracking(db, db_order, update_fields, current_user.id, 'live', "SP_CLOSE")
