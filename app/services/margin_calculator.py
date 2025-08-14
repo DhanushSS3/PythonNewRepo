@@ -115,7 +115,7 @@ async def calculate_single_order_margin(
         # Step 1: Extract data from parameters (no additional calls needed)
         contract_size = Decimal(str(external_symbol_info.get('contract_size', '1')))
         profit_currency = external_symbol_info.get('profit_currency', 'USD')
-        digit = int(external_symbol_info.get('digit', '5'))
+        # digit = int(external_symbol_info.get('digit', '5'))
         
         # Step 2: Get adjusted prices from raw market data (no additional Firebase calls)
         if not raw_market_data or symbol not in raw_market_data:
@@ -281,11 +281,11 @@ async def get_external_symbol_info(db: AsyncSession, symbol: str) -> Optional[Di
         symbol_info = result.scalars().first()
         
         if symbol_info:
-            orders_logger.info(f"[SYMBOL_INFO] Retrieved external symbol info for {symbol}: contract_size={symbol_info.contract_size}, profit_currency={symbol_info.profit}, digit={symbol_info.digit}")
+            # orders_logger.info(f"[SYMBOL_INFO] Retrieved external symbol info for {symbol}: contract_size={symbol_info.contract_size}, profit_currency={symbol_info.profit}, digit={symbol_info.digit}")
             return {
                 'contract_size': symbol_info.contract_size,
-                'profit_currency': symbol_info.profit,
-                'digit': symbol_info.digit
+                'profit_currency': symbol_info.profit
+                # 'digit': symbol_info.digit
             }
         orders_logger.error(f"[SYMBOL_INFO] No external symbol info found for {symbol}")
         return None
