@@ -1,6 +1,0 @@
-connection_id,message_number,timestamp,message_type,message_size,time_since_connection,content_preview
-1,1,1751871991.685,loading,79,0.322,"{   ""type"": ""loading"",   ""message"": ""Initializing connection, please wait..."" }"
-2,1,1751871991.738,loading,79,0.271,"{   ""type"": ""loading"",   ""message"": ""Initializing connection, please wait..."" }"
-3,1,1751871991.837,loading,79,0.263,"{   ""type"": ""loading"",   ""message"": ""Initializing connection, please wait..."" }"
-4,1,1751871991.961,loading,79,0.273,"{   ""type"": ""loading"",   ""message"": ""Initializing connection, please wait..."" }"
-5,1,1751871992.060,loading,79,0.268,"{   ""type"": ""loading"",   ""message"": ""Initializing connection, please wait..."" }"

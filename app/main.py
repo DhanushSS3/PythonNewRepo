@@ -123,8 +123,8 @@ IS_PRODUCTION = os.getenv("ENVIRONMENT", "development").lower() == "production"
 app = FastAPI(
     title=settings.PROJECT_NAME,
     openapi_url=f"{settings.API_V1_STR}/openapi.json", # Keep this as it is for now, as it just exposes the JSON schema
-    docs_url=None if IS_PRODUCTION else "/docs",        # Disables Swagger UI in production
-    redoc_url=None if IS_PRODUCTION else "/redoc"      # Disables ReDoc in production
+    # docs_url=None if IS_PRODUCTION else "/docs",        # Disables Swagger UI in production
+    # redoc_url=None if IS_PRODUCTION else "/redoc"      # Disables ReDoc in production
 )
 
 from fastapi.staticfiles import StaticFiles

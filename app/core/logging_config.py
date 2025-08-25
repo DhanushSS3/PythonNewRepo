@@ -17,8 +17,10 @@ os.makedirs(LOG_DIR, exist_ok=True)
 # Create specialized log directories
 OTP_LOG_DIR = os.path.join(LOG_DIR, 'otps')
 EMAIL_LOG_DIR = os.path.join(LOG_DIR, 'emails')
+CRYPTO_PAYMENT_LOG_DIR = os.path.join(LOG_DIR, 'crypto_payments')
 os.makedirs(OTP_LOG_DIR, exist_ok=True)
 os.makedirs(EMAIL_LOG_DIR, exist_ok=True)
+os.makedirs(CRYPTO_PAYMENT_LOG_DIR, exist_ok=True)
 
 # Production environment detection
 IS_PRODUCTION = os.getenv("ENVIRONMENT", "development").lower() == "production"
@@ -96,6 +98,11 @@ otp_failed_attempts_logger = setup_specialized_logger("otp_failed_attempts", OTP
 email_sent_logger = setup_specialized_logger("email_sent", EMAIL_LOG_DIR, "email_sent.log", logging.INFO)
 email_failed_logger = setup_specialized_logger("email_failed", EMAIL_LOG_DIR, "email_failed.log", logging.ERROR)
 email_margin_call_logger = setup_specialized_logger("email_margin_call", EMAIL_LOG_DIR, "email_margin_call.log", logging.INFO)
+
+# Crypto Payment Loggers
+crypto_payment_requests_logger = setup_specialized_logger("crypto_payment_requests", CRYPTO_PAYMENT_LOG_DIR, "payment_requests.log", logging.INFO)
+crypto_payment_webhooks_logger = setup_specialized_logger("crypto_payment_webhooks", CRYPTO_PAYMENT_LOG_DIR, "payment_webhooks.log", logging.INFO)
+crypto_payment_errors_logger = setup_specialized_logger("crypto_payment_errors", CRYPTO_PAYMENT_LOG_DIR, "payment_errors.log", logging.ERROR)
 
 # --- Production-Optimized Loggers ---
 

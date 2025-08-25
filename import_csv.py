@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Load CSV
-csv_path = r'C:\Users\Dhanush\Downloads\groups.csv'
+csv_path = r'C:\Users\Dhanush\Downloads\groups1.csv'
 df = pd.read_csv(csv_path)
 
 # Drop auto-managed columns

@@ -22,10 +22,13 @@ async def get_payment_by_merchant_order_id(db: AsyncSession, merchant_order_id: 
     result = await db.execute(select(CryptoPayment).filter(CryptoPayment.merchant_order_id == merchant_order_id))
     return result.scalars().first()
 
-async def update_payment_status(db: AsyncSession, payment: CryptoPayment, status: str, details: Optional[Dict[str, Any]] = None) -> CryptoPayment:
+async def update_payment_status(db: AsyncSession, payment: CryptoPayment, status: str, webhook_data: Optional[Dict[str, Any]] = None) -> CryptoPayment:
     payment.status = status
-    if details:
-        payment.transaction_details = str(details)
+    if webhook_data:
+        # Store complete webhook data as JSON string
+        import json
+        payment.transaction_details = json.dumps(webhook_data, default=str)
+    
     await db.commit()
     await db.refresh(payment)
-    return payment 
+    return payment

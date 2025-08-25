@@ -1,2 +1,13 @@
 .env
 logs
+Tylt_signature.py
+check_redis_keys.py
+create_admin.py
+create_favorite_symbols_table.py
+get_test_token.py
+import_csv.pyimport_pdf.pyload-test.js
+merge_symbols.py
+new_groups.py
+quick_websocket_test.py
+run_swap_test.pysimulate_market_data.pytest_logging_system.pytest_margin_fix.py
+test_new_otp_system.py

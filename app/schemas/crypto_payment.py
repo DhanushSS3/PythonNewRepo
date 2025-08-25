@@ -34,4 +34,21 @@ class CallbackData(BaseModel):
     type: str
     merchantOrderId: str
     status: str
-    # Add other fields from the callback data as needed 
+    # Optional fields that Tylt might send
+    transactionId: Optional[str] = None
+    amount: Optional[str] = None
+    currency: Optional[str] = None
+    settledAmount: Optional[str] = None
+    settledCurrency: Optional[str] = None
+    networkSymbol: Optional[str] = None
+    transactionHash: Optional[str] = None
+    blockNumber: Optional[str] = None
+    confirmations: Optional[int] = None
+    createdAt: Optional[str] = None
+    updatedAt: Optional[str] = None
+    fee: Optional[str] = None
+    feeSymbol: Optional[str] = None
+    exchangeRate: Optional[str] = None
+    
+    class Config:
+        extra = "allow"  # Allow additional fields not defined in schema
