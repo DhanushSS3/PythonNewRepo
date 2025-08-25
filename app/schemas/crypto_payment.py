@@ -30,25 +30,29 @@ class CurrencyListResponse(BaseModel):
     message: str
     data: Optional[List[Currency]] = None
 
-class CallbackData(BaseModel):
-    type: str
+class TyltWebhookData(BaseModel):
+    """Schema for the data section of Tylt webhook payload"""
+    orderId: Optional[str] = None
     merchantOrderId: str
-    status: str
-    # Optional fields that Tylt might send
-    transactionId: Optional[str] = None
-    amount: Optional[str] = None
-    currency: Optional[str] = None
-    settledAmount: Optional[str] = None
+    baseAmount: Optional[Decimal] = None
+    baseCurrency: Optional[str] = None
+    baseAmountReceived: Optional[Decimal] = None
     settledCurrency: Optional[str] = None
-    networkSymbol: Optional[str] = None
-    transactionHash: Optional[str] = None
-    blockNumber: Optional[str] = None
-    confirmations: Optional[int] = None
-    createdAt: Optional[str] = None
-    updatedAt: Optional[str] = None
-    fee: Optional[str] = None
-    feeSymbol: Optional[str] = None
-    exchangeRate: Optional[str] = None
+    settledAmountRequested: Optional[Decimal] = None
+    settledAmountReceived: Optional[Decimal] = None
+    settledAmountCredited: Optional[Decimal] = None
+    commission: Optional[Decimal] = None
+    network: Optional[str] = None
+    depositAddress: Optional[str] = None
+    status: str  # Waiting, Confirming, Paid, Completed, Failed, Expired, UnderPayment, OverPayment
+    
+    class Config:
+        extra = "allow"  # Allow additional fields not defined in schema
+
+class CallbackData(BaseModel):
+    """Schema for complete Tylt webhook payload"""
+    type: str  # pay-in
+    data: TyltWebhookData
     
     class Config:
         extra = "allow"  # Allow additional fields not defined in schema

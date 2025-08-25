@@ -667,12 +667,18 @@ class CryptoPayment(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, nullable=False, index=True)
     merchant_order_id = Column(String(255), unique=True, index=True, nullable=False)
-    base_amount = Column(SQLDecimal(20, 8), nullable=False)
+    base_amount = Column(SQLDecimal(20, 8), nullable=False)  # Always updated with baseAmount from webhook
     base_currency = Column(String(50), nullable=False)
     settled_currency = Column(String(50), nullable=False)
     network_symbol = Column(String(50), nullable=False)
     status = Column(String(50), nullable=False, default='PENDING')  # e.g., PENDING, COMPLETED, FAILED
     transaction_details = Column(Text, nullable=True)  # Store callback data as JSON
+    # New optional fields from Tylt webhook data
+    base_amount_received = Column(SQLDecimal(20, 8), nullable=True)  # from baseAmountReceived
+    settled_amount_requested = Column(SQLDecimal(20, 8), nullable=True)  # from settledAmountRequested
+    settled_amount_received = Column(SQLDecimal(20, 8), nullable=True)  # from settledAmountReceived
+    settled_amount_credited = Column(SQLDecimal(20, 8), nullable=True)  # from settledAmountCredited
+    commission = Column(SQLDecimal(20, 8), nullable=True)  # from commission
     created_at = Column(DateTime(timezone=True), default=func.now())
     updated_at = Column(DateTime(timezone=True), default=func.now(), onupdate=func.now())
 

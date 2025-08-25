@@ -159,6 +159,20 @@ async def currency_list(current_user: User = Depends(get_current_user)):
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
+def map_tylt_status_to_internal(tylt_status: str) -> str:
+    """Map Tylt webhook status to internal payment status (case insensitive)"""
+    status_mapping = {
+        "waiting": "PENDING",
+        "confirming": "PROCESSING", 
+        "paid": "PROCESSING",
+        "completed": "COMPLETED",
+        "underpayment": "PARTIAL",
+        "overpayment": "PARTIAL",
+        "failed": "FAILED",
+        "expired": "EXPIRED"
+    }
+    return status_mapping.get(tylt_status.lower(), "UNKNOWN")
+
 @router.post("/crypto-callback")
 async def crypto_callback(request: Request, db: AsyncSession = Depends(get_db)):
     # Get request details for logging
@@ -175,6 +189,7 @@ async def crypto_callback(request: Request, db: AsyncSession = Depends(get_db)):
             f"Signature: {tlp_signature}, BodyLength: {len(raw_body)}"
         )
 
+        # Validate HMAC signature using raw POST body
         calculated_hmac = hmac.new(
             bytes(settings.TYLT_API_SECRET, 'utf-8'),
             msg=raw_body,
@@ -188,67 +203,79 @@ async def crypto_callback(request: Request, db: AsyncSession = Depends(get_db)):
             )
             raise HTTPException(status_code=400, detail="Invalid HMAC signature")
 
-        data = await request.json()
+        # Parse the payload - Tylt sends nested structure
+        payload = await request.json()
         
         # Log complete webhook data
         crypto_payment_webhooks_logger.info(
             f"WEBHOOK_DATA_RECEIVED - IP: {client_ip}, "
-            f"Data: {json.dumps(data, default=str)}"
+            f"Payload: {json.dumps(payload, default=str)}"
         )
         
-        merchant_order_id = data.get('merchantOrderId')
-        webhook_type = data.get('type')
-        webhook_status = data.get('status')
+        # Extract data from nested structure
+        webhook_type = payload.get('type')
+        data_section = payload.get('data', {})
         
-        # Process all webhook types, not just completed pay-in
-        if merchant_order_id:
-            payment = await get_payment_by_merchant_order_id(db, merchant_order_id)
-            
-            if payment:
-                crypto_payment_webhooks_logger.info(
-                    f"PAYMENT_FOUND - MerchantOrderId: {merchant_order_id}, "
-                    f"CurrentStatus: {payment.status}, WebhookType: {webhook_type}, "
-                    f"WebhookStatus: {webhook_status}"
-                )
-                
-                # Update payment with all webhook data
-                if webhook_type == 'pay-in' and webhook_status == 'completed':
-                    await update_payment_status(db, payment, 'COMPLETED', data)
-                    crypto_payment_webhooks_logger.info(
-                        f"PAYMENT_COMPLETED - MerchantOrderId: {merchant_order_id}, "
-                        f"User: {payment.user_id}, Amount: {payment.base_amount} {payment.base_currency}"
-                    )
-                    
-                    # TODO: Update user's wallet
-                    # await add_funds_to_wallet(db, payment.user_id, payment.base_amount)
-                    crypto_payment_webhooks_logger.info(
-                        f"WALLET_UPDATE_PENDING - User: {payment.user_id}, "
-                        f"Amount: {payment.base_amount} {payment.base_currency}"
-                    )
-                elif webhook_type == 'pay-in' and webhook_status == 'failed':
-                    await update_payment_status(db, payment, 'FAILED', data)
-                    crypto_payment_webhooks_logger.warning(
-                        f"PAYMENT_FAILED - MerchantOrderId: {merchant_order_id}, "
-                        f"User: {payment.user_id}"
-                    )
-                else:
-                    # Update with any other status
-                    await update_payment_status(db, payment, webhook_status.upper() if webhook_status else 'UNKNOWN', data)
-                    crypto_payment_webhooks_logger.info(
-                        f"PAYMENT_STATUS_UPDATED - MerchantOrderId: {merchant_order_id}, "
-                        f"NewStatus: {webhook_status}, Type: {webhook_type}"
-                    )
-            else:
-                crypto_payment_webhooks_logger.warning(
-                    f"PAYMENT_NOT_FOUND - MerchantOrderId: {merchant_order_id}, "
-                    f"WebhookType: {webhook_type}, WebhookStatus: {webhook_status}"
-                )
-        else:
+        merchant_order_id = data_section.get('merchantOrderId')
+        tylt_status = data_section.get('status')
+        
+        if not merchant_order_id:
             crypto_payment_webhooks_logger.warning(
-                f"WEBHOOK_NO_MERCHANT_ID - IP: {client_ip}, Data: {json.dumps(data, default=str)}"
+                f"WEBHOOK_NO_MERCHANT_ID - IP: {client_ip}, Payload: {json.dumps(payload, default=str)}"
+            )
+            return "ok"  # Return plain text as specified
+        
+        # Find payment record
+        payment = await get_payment_by_merchant_order_id(db, merchant_order_id)
+        
+        if not payment:
+            crypto_payment_webhooks_logger.warning(
+                f"PAYMENT_NOT_FOUND - MerchantOrderId: {merchant_order_id}, "
+                f"WebhookType: {webhook_type}, TyltStatus: {tylt_status}"
+            )
+            return "ok"  # Return plain text as specified
+        
+        # Map Tylt status to internal status
+        internal_status = map_tylt_status_to_internal(tylt_status)
+        
+        crypto_payment_webhooks_logger.info(
+            f"PAYMENT_FOUND - MerchantOrderId: {merchant_order_id}, "
+            f"CurrentStatus: {payment.status}, WebhookType: {webhook_type}, "
+            f"TyltStatus: {tylt_status}, MappedStatus: {internal_status}"
+        )
+        
+        # Update payment with webhook data (always update base_amount and other fields)
+        await update_payment_status(db, payment, internal_status, payload)
+        
+        # Log status-specific actions (no wallet updates - only record updates)
+        if internal_status in ["COMPLETED", "PARTIAL"]:  # Completed, UnderPayment, OverPayment
+            crypto_payment_webhooks_logger.info(
+                f"PAYMENT_FINALIZED - MerchantOrderId: {merchant_order_id}, "
+                f"User: {payment.user_id}, Status: {internal_status}, TyltStatus: {tylt_status}, "
+                f"BaseAmount: {data_section.get('baseAmount')}, "
+                f"BaseAmountReceived: {data_section.get('baseAmountReceived')}, "
+                f"SettledAmountCredited: {data_section.get('settledAmountCredited')}"
+            )
+            
+        elif internal_status == "FAILED":
+            crypto_payment_webhooks_logger.warning(
+                f"PAYMENT_FAILED - MerchantOrderId: {merchant_order_id}, "
+                f"User: {payment.user_id}, TyltStatus: {tylt_status}"
+            )
+            
+        elif internal_status == "EXPIRED":
+            crypto_payment_webhooks_logger.warning(
+                f"PAYMENT_EXPIRED - MerchantOrderId: {merchant_order_id}, "
+                f"User: {payment.user_id}, TyltStatus: {tylt_status}"
+            )
+            
+        else:
+            crypto_payment_webhooks_logger.info(
+                f"PAYMENT_STATUS_UPDATED - MerchantOrderId: {merchant_order_id}, "
+                f"NewStatus: {internal_status}, TyltStatus: {tylt_status}, Type: {webhook_type}"
             )
 
-        return {"status": "ok"}
+        return "ok"  # Return plain text body as specified
         
     except HTTPException:
         raise  # Re-raise HTTP exceptions
