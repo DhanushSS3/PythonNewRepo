@@ -577,6 +577,13 @@ async def place_order(
         order_type = order_request.order_type.upper()
         quantity = order_request.order_quantity
         
+        # Step 1.5: Backend idempotency check to prevent duplicate orders
+        from app.core.idempotency import handle_backend_idempotency
+        user_type_str = 'demo' if isinstance(current_user, DemoUser) else 'live'
+        idempotency_record = await handle_backend_idempotency(
+            db, current_user.id, user_type_str, "place_order", order_request.model_dump()
+        )
+        
         # Step 2: ULTRA-OPTIMIZED parallel validation and data preparation
         # Define validation functions inline to avoid scope issues
         async def validate_user_order_permissions(user, symbol, order_type, quantity):
@@ -761,6 +768,13 @@ async def place_order(
         total_time = time.perf_counter() - start_total
         orders_logger.info(f"[PERF] TOTAL place_order: {total_time:.4f}s")
         
+        # Update idempotency record on successful order placement
+        from app.core.idempotency import IdempotencyService
+        response_data = {"message": "Order placed successfully!", "order_id": processed_order_data['order_id']}
+        await IdempotencyService.update_idempotency_record(
+            db, idempotency_record, "completed", response_data, processed_order_data['order_id']
+        )
+        
         # Log structured finalized order to audit log
         order_audit_logger.info(orjson.dumps({
             "event": "order_finalized",
@@ -773,7 +787,7 @@ async def place_order(
             "commission": str(getattr(new_order, 'commission', '')),
             "timestamp": datetime.datetime.utcnow().isoformat()
         }).decode())
-        return {"message": "Order placed successfully!"}
+        return response_data
         
     except HTTPException:
         raise
@@ -1315,6 +1329,14 @@ async def close_order(
         except InvalidOperation:
             raise HTTPException(status_code=400, detail="Invalid close price format.")
         orders_logger.info(f"Request to close order {order_id} for user {user_to_operate_on.id} (user_type: {user_type}) with price {close_price}. Frontend provided type: {close_request.order_type}, company: {close_request.order_company_name}, status: {close_request.order_status}, frontend_status: {close_request.status}.")
+        
+        # Handle backend idempotency (5-second TTL duplicate prevention)
+        from app.core.idempotency import handle_backend_idempotency
+        user_type_str = 'demo' if isinstance(user_to_operate_on, DemoUser) else 'live'
+        idempotency_record = await handle_backend_idempotency(
+            db, user_to_operate_on.id, user_type_str, "close_order", close_request.model_dump()
+        )
+        
         from app.services.order_processing import generate_unique_10_digit_id
         close_id = await generate_unique_10_digit_id(db, order_model_class, 'close_id')
 
@@ -1489,7 +1511,14 @@ async def close_order(
                             "commission": str(getattr(db_order_for_response, 'commission', '')),
                             "timestamp": datetime.datetime.utcnow().isoformat()
                         }).decode())
-                        return {"message": "Order close request sent to external service (Barclays)."}
+                        # Update idempotency record on successful Barclays order close request
+                        from app.core.idempotency import IdempotencyService
+                        response_data = {"message": "Order close request sent to external service (Barclays).", "order_id": order_id}
+                        await IdempotencyService.update_idempotency_record(
+                            db, idempotency_record, "completed", response_data, order_id
+                        )
+                        
+                        return response_data
                     else:
                         raise HTTPException(status_code=404, detail="Order not found for external closure processing.")
                 else:
@@ -1871,7 +1900,14 @@ async def close_order(
                     asyncio.create_task(add_user_to_symbol_cache(redis_client, order_symbol, user_id, user_type_str))
                     asyncio.create_task(push_websocket_updates())
 
-                return {"message": "Order closed successfully!"}
+                # Update idempotency record on successful order closure
+                from app.core.idempotency import IdempotencyService
+                response_data = {"message": "Order closed successfully!", "order_id": order_id}
+                await IdempotencyService.update_idempotency_record(
+                    db, idempotency_record, "completed", response_data, order_id
+                )
+                
+                return response_data
 
         except Exception as e:
             orders_logger.error(f"Error processing close order: {str(e)}", exc_info=True)

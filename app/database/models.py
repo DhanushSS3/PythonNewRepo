@@ -799,3 +799,38 @@ class RejectedOrder(Base):
 
     def __repr__(self):
         return f"<RejectedOrder(order_id='{self.order_id}', rejected_id='{self.rejected_id}', user_id={self.order_user_id})>"
+
+
+class IdempotencyKeys(Base):
+    """
+    SQLAlchemy model for storing idempotency keys with TTL.
+    Prevents duplicate requests within a specified time window.
+    """
+    __tablename__ = "idempotency_keys"
+
+    id = Column(Integer, primary_key=True, index=True)
+    
+    # Idempotency key (hash of request data + user + endpoint)
+    idempotency_key = Column(String(255), unique=True, index=True, nullable=False)
+    
+    # User and endpoint identification
+    user_id = Column(Integer, nullable=False, index=True)
+    user_type = Column(String(10), nullable=False, index=True)  # 'live' or 'demo'
+    endpoint_name = Column(String(100), nullable=False)
+    
+    # Request status tracking
+    status = Column(String(20), default="processing", nullable=False)  # processing, completed, failed
+    
+    # Cached response data (JSON string)
+    response_data = Column(String(2000), nullable=True)
+    
+    # Optional reference ID (e.g., order_id)
+    reference_id = Column(String(255), nullable=True)
+    
+    # Timestamps with automatic expiry
+    created_at = Column(DateTime, server_default=func.now(), nullable=False, index=True)
+    expires_at = Column(DateTime, nullable=False, index=True)
+    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
+
+    def __repr__(self):
+        return f"<IdempotencyKeys(key='{self.idempotency_key[:20]}...', user_id={self.user_id}, status='{self.status}')>"
