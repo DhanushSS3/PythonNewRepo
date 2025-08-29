@@ -665,3 +665,63 @@ async def get_rejected_orders_by_user_id(
     except Exception as e:
         orders_crud_logger.error(f"Error getting rejected orders for user {user_id}: {e}", exc_info=True)
         return []
+
+async def get_closed_orders_by_email_paginated(
+    db: AsyncSession,
+    email: str,
+    page: int = 1,
+    limit: int = 100
+) -> tuple[List[Any], int]:
+    """
+    Get paginated closed orders for a user by their email address.
+    
+    Args:
+        db: The database session
+        email: The email address of the user
+        page: Page number (1-based)
+        limit: Number of orders per page (max 100)
+        
+    Returns:
+        A tuple containing (list of closed orders, total count)
+    """
+    try:
+        from app.database.models import User
+        
+        # First, find the user by email
+        user_result = await db.execute(select(User).filter(User.email == email))
+        user = user_result.scalars().first()
+        
+        if not user:
+            orders_crud_logger.warning(f"User not found with email: {email}")
+            return [], 0
+        
+        # Calculate offset for pagination
+        offset = (page - 1) * limit
+        
+        # Base query for closed orders
+        query = select(UserOrder).filter(
+            UserOrder.order_user_id == user.id,
+            UserOrder.order_status == "CLOSED"
+        )
+        count_query = select(func.count()).select_from(UserOrder).filter(
+            UserOrder.order_user_id == user.id,
+            UserOrder.order_status == "CLOSED"
+        )
+        
+        # Get total count
+        count_result = await db.execute(count_query)
+        total_count = count_result.scalar_one()
+        
+        # Apply pagination and order by most recent first
+        query = query.order_by(UserOrder.updated_at.desc()).offset(offset).limit(limit)
+        
+        # Execute query
+        result = await db.execute(query)
+        orders = result.scalars().all()
+        
+        orders_crud_logger.debug(f"Retrieved {len(orders)} closed orders for user {user.id} (email: {email}), page {page}")
+        
+        return list(orders), total_count
+    except Exception as e:
+        orders_crud_logger.error(f"Error getting closed orders for email {email}: {e}", exc_info=True)
+        return [], 0

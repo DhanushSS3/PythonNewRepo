@@ -1,6 +1,6 @@
 # app/api/v1/endpoints/orders.py
 
-from fastapi import APIRouter, Depends, HTTPException, status, Body, Request, BackgroundTasks, Query
+from fastapi import APIRouter, Depends, HTTPException, status, Body, Request, BackgroundTasks, Query, Header
 from sqlalchemy.ext.asyncio import AsyncSession
 from redis.asyncio import Redis
 import logging
@@ -10,6 +10,7 @@ import json
 import uuid
 import datetime
 import time
+import os
 from pydantic import BaseModel, Field, validator
 from sqlalchemy import select
 from fastapi.security import OAuth2PasswordBearer
@@ -5419,3 +5420,53 @@ async def service_provider_rejected_order(
             status_code=500,
             detail=f"Failed to record rejected order: {str(e)}"
         )
+
+# --- New Endpoint: Get Paginated Closed Orders by Email ---
+from app.schemas.order import PaginatedClosedOrdersResponse, ClosedOrderByEmailResponse
+from app.crud.crud_order import get_closed_orders_by_email_paginated
+from app.database.session import get_db
+
+@router.get("/closed-orders/by-email", response_model=PaginatedClosedOrdersResponse)
+async def get_closed_orders_by_email(
+    email: str = Query(..., description="User email address"),
+    page: int = Query(1, ge=1, description="Page number (1-based)"),
+    limit: int = Query(100, ge=1, le=100, description="Number of orders per page (max 100)"),
+    db: AsyncSession = Depends(get_db),
+    auth_token: str = Header(..., alias="AuthToken")
+):
+    """
+    Get paginated closed orders for a user by email (live users only).
+    Requires header-based key authentication.
+    """
+    # Validate authentication token
+    auth_key = os.getenv("AUTH_KEY")
+    if not auth_key or auth_token != auth_key:
+        return PaginatedClosedOrdersResponse(
+            status="false",
+            message="Unauthorized Request",
+            data=[]
+        )
+    orders, total_count = await get_closed_orders_by_email_paginated(db, email=email, page=page, limit=limit)
+    if not orders:
+        return PaginatedClosedOrdersResponse(status="error", message="No closed orders found for this user", data=[])
+
+    # Convert ORM objects to schema
+    data = [
+        ClosedOrderByEmailResponse(
+            order_id=o.order_id,
+            order_company_name=o.order_company_name,
+            order_type=o.order_type,
+            order_price=o.order_price,
+            order_quantity=o.order_quantity,
+            contract_value=getattr(o, "contract_value", None),
+            margin=getattr(o, "margin", None),
+            close_price=getattr(o, "close_price", None),
+            net_profit=getattr(o, "net_profit", None),
+            swap=getattr(o, "swap", None),
+            commission=getattr(o, "commission", None),
+            close_message=getattr(o, "close_message", None),
+            updated_at=o.updated_at,
+            created_at=o.created_at
+        ) for o in orders
+    ]
+    return PaginatedClosedOrdersResponse(status="success", message=f"Retrieved {len(data)} closed orders.", data=data)

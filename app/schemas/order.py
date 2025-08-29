@@ -2,7 +2,7 @@ from typing import Optional, Any
 from pydantic import BaseModel, Field, model_validator
 from decimal import Decimal
 from pydantic import validator
-
+from typing import List
 # --- Place Order ---
 class OrderPlacementRequest(BaseModel):
     symbol: str # Corresponds to order_company_name from your description
@@ -347,3 +347,36 @@ class ClosedOrderSummaryResponse(BaseModel):
 
 class OrderSuccessMessage(BaseModel):
     message: str
+
+# Schema for closed orders by email response
+class ClosedOrderByEmailResponse(BaseModel):
+    order_id: str
+    order_company_name: str
+    order_type: str
+    order_price: Decimal
+    order_quantity: Decimal
+    contract_value: Optional[Decimal] = None
+    margin: Optional[Decimal] = None
+    close_price: Optional[Decimal] = None
+    net_profit: Optional[Decimal] = None
+    swap: Optional[Decimal] = None
+    commission: Optional[Decimal] = None
+    close_message: Optional[str] = None
+    updated_at: Optional[Any] = None
+    created_at: Optional[Any] = None
+
+    class Config:
+        json_encoders = {
+            Decimal: lambda v: str(v),
+        }
+
+# Response schema for the paginated closed orders API
+class PaginatedClosedOrdersResponse(BaseModel):
+    status: str
+    message: str
+    data: List[ClosedOrderByEmailResponse]
+
+    class Config:
+        json_encoders = {
+            Decimal: lambda v: str(v),
+        }
