@@ -14,6 +14,9 @@ from app.core.security import get_current_user
 from app.database.models import User, DemoUser, CryptoPayment
 from app.schemas.crypto_payment import PaymentRequest, PaymentResponse, CurrencyListResponse, CallbackData
 from app.crud.crypto_payment import create_payment_record, get_payment_by_merchant_order_id, update_payment_status
+from app.crud.money_request import create_money_request
+from app.schemas.money_request import MoneyRequestCreate
+from decimal import Decimal, InvalidOperation
 
 # Import crypto payment loggers
 from app.core.logging_config import (
@@ -246,6 +249,36 @@ async def crypto_callback(request: Request, db: AsyncSession = Depends(get_db)):
         
         # Update payment with webhook data (always update base_amount and other fields)
         await update_payment_status(db, payment, internal_status, payload)
+
+        # On COMPLETED or PARTIAL, create a MoneyRequest deposit with baseAmountReceived
+        if internal_status in ["COMPLETED", "PARTIAL"]:
+            try:
+                base_amount_received_raw = data_section.get("baseAmountReceived")
+                if base_amount_received_raw is not None:
+                    try:
+                        amount_dec = Decimal(str(base_amount_received_raw))
+                    except (InvalidOperation, TypeError):
+                        amount_dec = None
+
+                    if amount_dec is not None and amount_dec > 0:
+                        mr = MoneyRequestCreate(amount=amount_dec, type="deposit")
+                        await create_money_request(db, mr, payment.user_id)
+                        crypto_payment_webhooks_logger.info(
+                            f"MONEY_REQUEST_CREATED - MerchantOrderId: {merchant_order_id}, User: {payment.user_id}, Amount: {amount_dec}, Type: deposit"
+                        )
+                    else:
+                        crypto_payment_webhooks_logger.warning(
+                            f"MONEY_REQUEST_SKIPPED_INVALID_AMOUNT - MerchantOrderId: {merchant_order_id}, Received: {base_amount_received_raw}"
+                        )
+                else:
+                    crypto_payment_webhooks_logger.warning(
+                        f"MONEY_REQUEST_SKIPPED_NO_AMOUNT - MerchantOrderId: {merchant_order_id}"
+                    )
+            except Exception as e:
+                crypto_payment_errors_logger.error(
+                    f"MONEY_REQUEST_CREATION_ERROR - MerchantOrderId: {merchant_order_id}, Error: {str(e)}",
+                    exc_info=True
+                )
         
         # Log status-specific actions (no wallet updates - only record updates)
         if internal_status in ["COMPLETED", "PARTIAL"]:  # Completed, UnderPayment, OverPayment
